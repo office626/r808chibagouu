@@ -1,0 +1,165 @@
+{
+  "note": "被災後にあるとよい情報・機能・行動の案。投票は今後の機能追加と新しいサービスの参考にする。申請窓口ではない。ログイン不要。1つの案につき、このブラウザで1票。",
+  "ideas": [
+    {
+      "id": "risai-windows",
+      "category": "info",
+      "category_label": "情報",
+      "title": "市町村ごとの罹災証明：受付日・窓口・必要書類",
+      "summary": "いつ、どこで、何を持って申請するかを一表にする。臨時窓口や即日交付の有無も公式リンク付きで出す。",
+      "for": "県民"
+    },
+    {
+      "id": "status-calendar",
+      "category": "info",
+      "category_label": "情報",
+      "title": "制度カレンダー（いま申請できる／これから／終了）",
+      "summary": "罹災証明、応急修理、みなし仮設、支援金などを時系列で分ける。空白期間に何を準備するかも添える。",
+      "for": "県民"
+    },
+    {
+      "id": "damage-next-step",
+      "category": "info",
+      "category_label": "情報",
+      "title": "被害の程度別「次にすること」",
+      "summary": "床下・床上・一部損壊・全壊など、区分ごとの次の手続きを公式の言葉に合わせて案内する。金額は公式確認後のみ。",
+      "for": "県民"
+    },
+    {
+      "id": "lifeline-log",
+      "category": "info",
+      "category_label": "情報",
+      "title": "断水・節水・通行止めの復旧履歴",
+      "summary": "最新だけでなく、いつ始まったかを残す。公式発表が上書きされても、後から経緯を辿れるようにする。",
+      "for": "県民・支援者"
+    },
+    {
+      "id": "waste-guide",
+      "category": "info",
+      "category_label": "情報",
+      "title": "災害ごみの出し方・仮置き場・収集日",
+      "summary": "市町村公式の仮置き場と分別を、地図や一覧でたどれるようにする。受付時間の変更も履歴で残す。",
+      "for": "県民"
+    },
+    {
+      "id": "repair-or-temp",
+      "category": "info",
+      "category_label": "情報",
+      "title": "応急修理か、応急仮設（みなし仮設）かの分岐",
+      "summary": "転居が必要な場合の選択肢を図で示す。期間や対象は各実施機関の公式で確認する導線を必ず付ける。",
+      "for": "県民"
+    },
+    {
+      "id": "qa-navigator",
+      "category": "feature",
+      "category_label": "機能",
+      "title": "質問に答えると制度が出るナビ（県全域）",
+      "summary": "袖ケ浦市の災害支援ナビゲーターと同じ体験を、千葉県全市町村向けに広げる。適用可否は公式の判断と明記する。",
+      "for": "県民"
+    },
+    {
+      "id": "my-muni-alert",
+      "category": "feature",
+      "category_label": "機能",
+      "title": "自分の市町村だけを追う（変化の要約）",
+      "summary": "ブックマークした市町のログで、昨日から何が変わったかだけを短く見せる。通知はメール必須にせず、ページとRSSから始める。",
+      "for": "県民"
+    },
+    {
+      "id": "photo-checklist",
+      "category": "feature",
+      "category_label": "機能",
+      "title": "被害写真の残し方チェックリスト",
+      "summary": "罹災証明や保険の前に、日付・部屋・浸水の高さが分かる写真を残す手順。個人の写真はサイトに上げない。",
+      "for": "県民"
+    },
+    {
+      "id": "official-diff",
+      "category": "feature",
+      "category_label": "機能",
+      "title": "公式発表の「昨日との違い」",
+      "summary": "県ポータルや市町村の新着を、全文転載せず見出しとURLの差分だけ出す。パトロール後に情報が変わる朝に使う。",
+      "for": "支援者・県民"
+    },
+    {
+      "id": "print-card",
+      "category": "feature",
+      "category_label": "機能",
+      "title": "窓口用の手続きカード（印刷できる）",
+      "summary": "電話がつながりにくいとき、持参物と窓口名だけを1枚にまとめて印刷できるようにする。最新は必ず公式で確認する注記付き。",
+      "for": "県民"
+    },
+    {
+      "id": "easy-japanese",
+      "category": "feature",
+      "category_label": "機能",
+      "title": "やさしい日本語・多言語の案内",
+      "summary": "支援策の見出しと「公式へ」の導線を、やさしい日本語と主な外国語でも出す。制度の本文は翻訳せず公式へ渡す。",
+      "for": "県民"
+    },
+    {
+      "id": "map-shelters",
+      "category": "feature",
+      "category_label": "機能",
+      "title": "避難所・通行止め・仮置き場の地図",
+      "summary": "県や市町村が公開している位置情報へ案内する。独自の現地情報は載せない。開設・閉鎖は県ポータルと市公式を優先する。",
+      "for": "県民"
+    },
+    {
+      "id": "photo-before-cleanup",
+      "category": "action",
+      "category_label": "行動",
+      "title": "片づける前に、被害が分かる記録を残す",
+      "summary": "泥出しの前に浸水の高さや被害箇所を写真に残す、という案内をサイトの目立つ位置に置く。",
+      "for": "県民"
+    },
+    {
+      "id": "insurance-then-risai",
+      "category": "action",
+      "category_label": "行動",
+      "title": "保険会社への連絡と、罹災証明の準備を並行する",
+      "summary": "証明の交付を待っている間にできることを並べる。契約内容は各社へ。サイトは手順の型だけを示す。",
+      "for": "県民"
+    },
+    {
+      "id": "follow-official-only",
+      "category": "action",
+      "category_label": "行動",
+      "title": "市町村公式と県ポータルを先に見る",
+      "summary": "SNSの伝聞より公式を先に確認する、という使い方を県民面の最初に置く。支援者は出典URL付きでログへ載せる。",
+      "for": "県民・支援者"
+    },
+    {
+      "id": "volunteer-via-shakyo",
+      "category": "action",
+      "category_label": "行動",
+      "title": "現地ボランティアは社協などの受付を確認してから",
+      "summary": "マッチングそのものはこのサイトでは行わない。受付の公式案内へ誘導するサービスとして載せるかを問う。",
+      "for": "支援者"
+    },
+    {
+      "id": "share-muni-logs",
+      "category": "action",
+      "category_label": "行動",
+      "title": "市町村の公式新着を分担してログに載せる",
+      "summary": "許可リストの確認と誤りの指摘を、やること一覧から続けられるようにする。空の市町村を協働で埋める。",
+      "for": "支援者"
+    },
+    {
+      "id": "scam-watch",
+      "category": "action",
+      "category_label": "行動",
+      "title": "義援金・修理業者の注意喚起（公式の受け取り案内）",
+      "summary": "詐称や不要な契約への注意を、県・市町村・警察などの公式注意喚起へリンクして載せる。独自の断定はしない。",
+      "for": "県民"
+    },
+    {
+      "id": "peacetime-pages",
+      "category": "action",
+      "category_label": "行動",
+      "title": "復興後も市町村ページを平時の備えとして残す",
+      "summary": "関心が薄れたあとも、罹災証明の常設案内と公式防災ページへの入口として維持する。次の災害までの継続策。",
+      "for": "支援者"
+    }
+  ]
+}

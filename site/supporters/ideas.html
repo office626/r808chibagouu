@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>今後の案への投票 | CTZC 千葉豪雨ポータル</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="../index.html">CTZC 千葉豪雨ポータル</a></div>
+    <nav class="nav">
+      <a href="index.html">支援者ホーム</a>
+      <a href="ideas.html">今後の案に投票</a>
+    </nav>
+    <p class="meta">支援者向け。ここは申請窓口ではありません。</p>
+  </header>
+  <main>
+    <h1>被災後にあるとよいこと（投票）</h1>
+    <p class="notice" id="ideas-note">
+      案は今後の機能追加や新しいサービスの参考にします。個人情報は取りません。申請・被害の申告は公式窓口へ。
+    </p>
+    <p id="tally" class="meta"></p>
+    <p id="top-pick" class="notice" hidden></p>
+    <div class="idea-toolbar">
+      <div class="chips" role="group" aria-label="種類で絞る">
+        <button type="button" class="chip on" data-filter="all">すべて</button>
+        <button type="button" class="chip" data-filter="info">情報</button>
+        <button type="button" class="chip" data-filter="feature">機能</button>
+        <button type="button" class="chip" data-filter="action">行動</button>
+      </div>
+      <label class="sort-label">並び替え
+        <select id="sort">
+          <option value="votes">票が多い順</option>
+          <option value="category">種類ごと</option>
+        </select>
+      </label>
+    </div>
+    <div id="ideas" class="idea-list"></div>
+    <p id="empty" class="empty" hidden>表示できる案がありません。</p>
+    <div class="card">
+      <h2>票の扱い</h2>
+      <ul>
+        <li>ログインは不要です。県民・支援者・一般の方も投票できます。</li>
+        <li>1つの案につき、このブラウザで1票です（取り消し可）。氏名は取りません。</li>
+        <li>運用シートの投票用スクリプトを公開すると、全員の票が合算されて件数に出ます。</li>
+        <li>結果は参考値です。今後サイトに何を足すか、どの案内を先に作るかを決める材料にします。</li>
+        <li>救命・現地マッチング・罹災調査そのものは対象外です。</li>
+      </ul>
+      <p>別の案がある場合は <a href="https://civictechzenchiba.slack.com/archives/C0BPSMN4L5D">Slack</a> か <a href="https://github.com/office626/r808chibagouu/issues/new">GitHub の Issue</a> へ。</p>
+    </div>
+    <p><a href="index.html">支援者ホームへ戻る</a></p>
+  </main>
+  <footer>
+    <p>本サイトは行政の公式発表ではありません。申請は公式窓口へ。</p>
+    <p class="org-links">
+      <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC ウェブサイト</a>
+      <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook グループ</a>
+      <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook ページ</a>
+    </p>
+  </footer>
+  <script src="../js/ideas-vote.js"></script>
+</body>
+</html>
