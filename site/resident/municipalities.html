@@ -16,7 +16,7 @@
   </header>
   <main>
     <h1>市町村から探す</h1>
-    <p>枠は全市町村分あります。初日にログを厚くする対象（警戒レベル5および流山市）には印を付けています。</p>
+    <p>全市町村に、県防災ポータルの避難・避難所のスナップショットを載せています。初日対象（レベル5および流山市）は警報・救助法の件も厚くしています。</p>
     <h2>初日対象</h2>
     <ul class="list" id="day1"></ul>
     <h2>その他</h2>
@@ -26,29 +26,47 @@
     <p>有志運営 / 公式ではありません。</p>
   </footer>
   <script>
-    fetch("../data/municipalities.json")
-      .then(function (r) { return r.json(); })
-      .then(function (rows) {
-        function fill(id, list) {
-          var ul = document.getElementById(id);
-          list.forEach(function (m) {
-            var li = document.createElement("li");
-            var a = document.createElement("a");
-            a.href = "municipality.html?slug=" + encodeURIComponent(m.slug);
-            a.textContent = m.name;
-            if (m.day1) {
-              var b = document.createElement("span");
-              b.className = "badge pri";
-              b.textContent = "初日";
-              a.prepend(b);
-            }
-            li.appendChild(a);
-            ul.appendChild(li);
-          });
-        }
-        fill("day1", rows.filter(function (m) { return m.day1; }));
-        fill("rest", rows.filter(function (m) { return !m.day1; }));
-      });
+    Promise.all([
+      fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
+      fetch("../data/collection.json").then(function (r) { return r.json(); })
+    ]).then(function (pair) {
+      var rows = pair[0];
+      var snaps = pair[1].snapshots;
+      function fill(id, list) {
+        var ul = document.getElementById(id);
+        list.forEach(function (m) {
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.href = "municipality.html?slug=" + encodeURIComponent(m.slug);
+          a.textContent = m.name;
+          if (m.day1) {
+            var b = document.createElement("span");
+            b.className = "badge pri";
+            b.textContent = "初日";
+            a.prepend(b);
+          }
+          var s = snaps[m.slug] || {};
+          if (s.shelter && s.shelter.status === "開設") {
+            var sh = document.createElement("span");
+            sh.className = "badge admin";
+            sh.textContent = "避難所開設";
+            a.appendChild(document.createTextNode(" "));
+            a.appendChild(sh);
+          }
+          if (s.disaster_relief === "applied" || s.disaster_relief === "chiba_direct") {
+            var r = document.createElement("span");
+            r.className = "badge admin";
+            r.textContent = "救助法";
+            a.appendChild(document.createTextNode(" "));
+            a.appendChild(r);
+          }
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+      }
+      fill("day1", rows.filter(function (m) { return m.day1; }));
+      fill("rest", rows.filter(function (m) { return !m.day1; }));
+    });
   </script>
 </body>
 </html>

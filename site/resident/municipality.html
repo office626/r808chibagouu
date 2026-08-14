@@ -13,20 +13,20 @@
       <a href="index.html">県民ホーム</a>
       <a href="municipalities.html">市町村一覧</a>
     </nav>
-    <p class="meta" id="fetched">最終取得: 手動公開（自動収集は未接続）</p>
+    <p class="meta" id="fetched"></p>
   </header>
   <main>
     <h1 id="title">読み込み中</h1>
-    <p class="notice">ログの自動収集はまだ接続していません。いまは公式サイトで最新を確認してください。</p>
+    <p class="notice">有志による要約です。申請は公式へ。数値は速報で変わります。全文は転載していません。</p>
     <p><a class="btn" id="official" href="#" target="_blank" rel="noopener">公式サイトへ</a>
       <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>防災・災害ページ</a></p>
-    <div class="card">
+    <div class="card" id="now-card">
       <h2>いま</h2>
-      <p class="empty">準備中。公式発表の履歴は、日次収集が動き始めてからここに残します。</p>
+      <div id="now"></div>
     </div>
     <div class="card">
       <h2>いま受けられる支援策</h2>
-      <p class="empty">受付状態は各市町村の公式で確認してください。本サイトでは断定しません。</p>
+      <div id="support"></div>
       <ul>
         <li><a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/">国の被災者支援制度（内閣府）</a> <span class="badge admin">行政</span></li>
         <li><a href="prefecture.html">千葉県の支援・防災情報</a> <span class="badge admin">行政</span></li>
@@ -34,7 +34,7 @@
     </div>
     <div class="card">
       <h2>被害状況ログ</h2>
-      <p class="empty">まだ自動では取り込んでいません。過去ログは上書きせず残す予定です。</p>
+      <ul class="log" id="log"></ul>
     </div>
     <div class="card">
       <h2>生活再建の段取り（共通の型）</h2>
@@ -46,27 +46,103 @@
     <p>本サイトは行政の公式発表ではありません。</p>
   </footer>
   <script>
+    function fmt(iso) {
+      if (!iso) return "";
+      return iso.replace("T", " ").replace("+09:00", " JST");
+    }
+    function badge(type) {
+      var span = document.createElement("span");
+      span.className = "badge " + (type === "admin" ? "admin" : "press");
+      span.textContent = type === "admin" ? "行政" : "報道";
+      return span;
+    }
+    function renderItem(it) {
+      var li = document.createElement("li");
+      var time = document.createElement("time");
+      time.textContent = fmt(it.occurred_at);
+      var title = document.createElement("strong");
+      title.textContent = it.title;
+      var p = document.createElement("p");
+      p.textContent = it.summary;
+      var src = document.createElement("p");
+      src.className = "src";
+      src.appendChild(badge(it.source_type));
+      var a = document.createElement("a");
+      a.href = it.source_url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = it.medium + "（出典）";
+      src.appendChild(a);
+      li.appendChild(time);
+      li.appendChild(title);
+      li.appendChild(p);
+      li.appendChild(src);
+      return li;
+    }
     var params = new URLSearchParams(location.search);
     var slug = params.get("slug");
-    fetch("../data/municipalities.json")
-      .then(function (r) { return r.json(); })
-      .then(function (rows) {
-        var m = rows.find(function (x) { return x.slug === slug; });
-        if (!m) {
-          document.getElementById("title").textContent = "市町村が見つかりません";
-          return;
-        }
-        document.title = m.name + " | CTZC 千葉豪雨ポータル";
-        document.getElementById("title").textContent = m.name;
-        var off = document.getElementById("official");
-        off.href = m.url;
-        off.textContent = m.name + " 公式サイトへ";
-        if (m.bousai) {
-          var b = document.getElementById("bousai");
-          b.href = m.bousai;
-          b.hidden = false;
-        }
+    Promise.all([
+      fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
+      fetch("../data/collection.json").then(function (r) { return r.json(); })
+    ]).then(function (pair) {
+      var rows = pair[0];
+      var col = pair[1];
+      document.getElementById("fetched").textContent = "最終取得: " + fmt(col.fetched_at);
+      var m = rows.find(function (x) { return x.slug === slug; });
+      if (!m) {
+        document.getElementById("title").textContent = "市町村が見つかりません";
+        return;
+      }
+      document.title = m.name + " | CTZC 千葉豪雨ポータル";
+      document.getElementById("title").textContent = m.name;
+      var off = document.getElementById("official");
+      off.href = m.url;
+      off.textContent = m.name + " 公式サイトへ";
+      if (m.bousai) {
+        var b = document.getElementById("bousai");
+        b.href = m.bousai;
+        b.hidden = false;
+      }
+      var snap = col.snapshots[slug] || {};
+      var now = document.getElementById("now");
+      var bits = [];
+      if (snap.evacuation) {
+        bits.push("避難情報（県ポータル）: " + snap.evacuation.status + "（" + snap.evacuation.at + "発表）");
+      } else {
+        bits.push("今回の大雨としての避難情報は、県ポータル上では未掲載か対象外です。市公式を確認してください。");
+      }
+      if (snap.shelter) {
+        bits.push("避難所（県ポータル）: " + snap.shelter.status + "（" + snap.shelter.at + "発表）");
+      }
+      if (snap.l5_rain) bits.push("レベル5大雨特別警報の対象リストに含まれた（報道。現在は切替済みの可能性）");
+      if (snap.l5_landslide) bits.push("レベル5土砂災害特別警報の対象リストに含まれた（報道）");
+      bits.forEach(function (t) {
+        var p = document.createElement("p");
+        p.textContent = t;
+        now.appendChild(p);
       });
+      var sup = document.getElementById("support");
+      var sp = document.createElement("p");
+      if (snap.disaster_relief === "applied") {
+        sp.innerHTML = '県第3報時点で<strong>災害救助法の適用市町</strong>です。窓口・受付開始は公式で確認してください。 <a href="' + col.links.relief + '" target="_blank" rel="noopener">県の発表</a>';
+      } else if (snap.disaster_relief === "chiba_direct") {
+        sp.innerHTML = '県第3報では千葉市は<strong>災害救助を直接実施</strong>とされています。 <a href="' + col.links.relief + '" target="_blank" rel="noopener">県の発表</a>';
+      } else {
+        sp.textContent = "県第3報時点では災害救助法の適用市町に含まれていません。制度の有無は公式で確認してください。";
+      }
+      sup.appendChild(sp);
+      var logs = col.items.filter(function (it) { return it.slug === slug; });
+      logs.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
+      var ul = document.getElementById("log");
+      if (!logs.length) {
+        var empty = document.createElement("p");
+        empty.className = "empty";
+        empty.textContent = "この市町村に紐づく収集件はまだありません。公式サイトを確認してください。";
+        ul.replaceWith(empty);
+      } else {
+        logs.forEach(function (it) { ul.appendChild(renderItem(it)); });
+      }
+    });
   </script>
 </body>
 </html>

@@ -82,6 +82,11 @@ header { padding-top: 1.25rem; }
   margin: 0.85rem 0;
 }
 .empty { color: var(--muted); }
+.log { list-style: none; padding: 0; margin: 0; }
+.log li { border-top: 1px solid var(--border); padding: 0.75rem 0; }
+.log li:first-child { border-top: 0; }
+.log time { display: block; color: var(--muted); font-size: 0.85rem; }
+.log .src { font-size: 0.9rem; }
 footer {
   color: var(--muted);
   font-size: 0.88rem;

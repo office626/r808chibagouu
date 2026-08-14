@@ -1,0 +1,2207 @@
+{
+  "fetched_at": "2026-08-14T21:20:00+09:00",
+  "method": "手動。許可リストの行政・報道から見出しと短い要約のみ。",
+  "links": {
+    "portal": "https://www.bousai.pref.chiba.lg.jp/",
+    "pref": "https://www.pref.chiba.lg.jp/bousai/bousai/r8-0813ooame.html",
+    "relief": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+    "fdma": "https://www.fdma.go.jp/disaster/info/",
+    "fdma8": "https://www.fdma.go.jp/disaster/info/items/20260813ooame8.pdf",
+    "jma": "https://www.jma.go.jp/bosai/warning/#area_type=offices&area_code=120000",
+    "cao": "https://www.bousai.go.jp/taisaku/hisaisyagyousei/"
+  },
+  "snapshots": {
+    "chiba": {
+      "l5_rain": true,
+      "l5_landslide": true,
+      "disaster_relief": "chiba_direct",
+      "evacuation": {
+        "status": "指示継続",
+        "at": "08/14 10:41",
+        "label": "避難指示（警戒レベル4）"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 19:35"
+      }
+    },
+    "ichikawa": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:36",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 05:40"
+      }
+    },
+    "funabashi": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 06:18",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 09:38"
+      }
+    },
+    "matsudo": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 08:12",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/13 18:22"
+      }
+    },
+    "mobara": {
+      "l5_rain": true,
+      "l5_landslide": true,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 15:01",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 19:35"
+      }
+    },
+    "sakura": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 11:23",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 16:25"
+      }
+    },
+    "togane": {
+      "l5_rain": true,
+      "l5_landslide": true,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 11:21",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 11:47"
+      }
+    },
+    "narashino": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 06:12",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 09:25"
+      }
+    },
+    "kashiwa": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:39",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 16:46"
+      }
+    },
+    "ichihara": {
+      "l5_rain": true,
+      "l5_landslide": true,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 16:48",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 19:09"
+      }
+    },
+    "yachiyo": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 11:01",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 16:13"
+      }
+    },
+    "abiko": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 09:41",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 12:18"
+      }
+    },
+    "kamagaya": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 07:47",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 11:13"
+      }
+    },
+    "yotsukaido": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 11:57",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 19:19"
+      }
+    },
+    "yachimata": {
+      "l5_rain": true,
+      "l5_landslide": true,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 12:39",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 14:14"
+      }
+    },
+    "inzai": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 17:10",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 10:51"
+      }
+    },
+    "shiroi": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:32",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 08:02"
+      }
+    },
+    "sammu": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 06:28",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 06:29"
+      }
+    },
+    "oamishirasato": {
+      "l5_rain": true,
+      "l5_landslide": true,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 15:35",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 17:42"
+      }
+    },
+    "kujukuri": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:41",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 14:41"
+      }
+    },
+    "shirako": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:25",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 06:42"
+      }
+    },
+    "nagara": {
+      "l5_rain": true,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:20",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 11:00"
+      }
+    },
+    "nagareyama": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 09:11"
+      }
+    },
+    "choshi": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "tateyama": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:20",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 06:08"
+      }
+    },
+    "kisarazu": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:49",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 05:37"
+      }
+    },
+    "noda": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 08:26"
+      }
+    },
+    "narita": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:37",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "開設",
+        "at": "08/14 18:48"
+      }
+    },
+    "asahi": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "katsuura": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:21",
+        "label": "避難情報"
+      },
+      "shelter": null
+    },
+    "kamogawa": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 08:16"
+      }
+    },
+    "kimitsu": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 06:34",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 08:18"
+      }
+    },
+    "futtsu": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:43",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 06:57"
+      }
+    },
+    "urayasu": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "sodegaura": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 11:00",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 13:19"
+      }
+    },
+    "tomisato": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 06:19",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 07:03"
+      }
+    },
+    "minamiboso": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:59",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 06:08"
+      }
+    },
+    "sosa": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 05:50"
+      }
+    },
+    "katori": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "isumi": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:56",
+        "label": "避難情報"
+      },
+      "shelter": null
+    },
+    "shisui": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "applied",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 09:19",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 15:10"
+      }
+    },
+    "sakae": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 08:30",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 08:35"
+      }
+    },
+    "kozaki": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "tako": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "tonosho": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "shibayama": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "yokoshibahikari": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 06:10"
+      }
+    },
+    "ichinomiya": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "mutsuzawa": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "chosei": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "chonan": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "otaki": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:49",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 05:47"
+      }
+    },
+    "onjuku": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": null,
+      "shelter": null
+    },
+    "kyonan": {
+      "l5_rain": false,
+      "l5_landslide": false,
+      "disaster_relief": "none",
+      "evacuation": {
+        "status": "解除",
+        "at": "08/14 05:28",
+        "label": "避難情報"
+      },
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/14 05:31"
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "pref-hq",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "hq",
+      "title": "千葉県が災害対策本部を設置",
+      "summary": "県は令和8年8月13日からの大雨に伴う対応ページを公開。第1〜3回災害対策本部会議資料と、帰宅困難者輸送等のための自衛隊災害派遣要請を案内している。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousai/bousai/r8-0813ooame.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "pref-portal-now",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-14T14:36:00+09:00",
+      "kind": "warning",
+      "title": "県防災ポータル：14日も大雨と土砂災害に警戒",
+      "summary": "13日の前例がないほどの大雨で甚大な被害。地盤が水を含み少雨でも土砂災害の危険があるとして、不要不急の外出を控えるよう呼びかけている。冠水した道路への進入も避けるよう注意がある。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "pref-damage-docs",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-14T18:21:00+09:00",
+      "kind": "damage",
+      "title": "県の被害情報PDF（第5報修正まで）",
+      "summary": "県防災ポータルの被害集計に、令和8年8月13日大雨の被害情報第1報〜第5報（修正）が掲載されている。数値は公式PDFで確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/PUB_VF_Detail_Docs",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "pref-relief",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-14T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法を24市町に適用（千葉市は直接実施）",
+      "summary": "適用日は令和8年8月13日。第3報時点の追加は富里市・山武市・酒々井町・九十九里町。効果は県が行う救助の費用負担。避難所設置等が措置として挙げられている。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "fdma-8",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-14T17:00:00+09:00",
+      "kind": "damage",
+      "title": "消防庁「令和8年8月千葉豪雨」第8報",
+      "summary": "速報であり数値は変わりうる。人的被害の内訳として市川市1人・佐倉市2人・八千代市1人が記載されている。県は13日19時30分に災害対策本部を設置。",
+      "source_url": "https://www.fdma.go.jp/disaster/info/items/20260813ooame8.pdf",
+      "source_type": "admin",
+      "medium": "総務省消防庁"
+    },
+    {
+      "id": "wni-l5",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象22市町（報道）",
+      "summary": "ウェザーニュースは対象を千葉市・市川市・船橋市・松戸市・茂原市・佐倉市・東金市・習志野市・柏市・市原市・八千代市・我孫子市・鎌ケ谷市・四街道市・八街市・印西市・白井市・山武市・大網白里市・九十九里町・白子町・長柄町と伝え、土砂災害特別警報は6市とした。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "wni-switch",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-14T05:15:00+09:00",
+      "kind": "warning",
+      "title": "特別警報は14日明け方にレベル4へ切替（報道）",
+      "summary": "ウェザーニュースは、広範囲のレベル5特別警報が14日明け方にレベル4危険警報等へ切り替わったと伝えている。地盤が緩んでおり少ない雨でも災害につながるおそれがあるとしている。",
+      "source_url": "https://weathernews.jp/news/202608/140101/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "nikkei-l5",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "運用見直し後、大雨・土砂のレベル5は初めて（報道）",
+      "summary": "日本経済新聞は、気象庁が県内22市町にレベル5大雨特別警報を発表し、うち6市に土砂災害特別警報も出たと報じた。見出しとリンクのみ掲載する。",
+      "source_url": "https://www.nikkei.com/article/DGXZQOUD137E20T10C26A8000000/",
+      "source_type": "news",
+      "medium": "日本経済新聞"
+    },
+    {
+      "id": "fdma-casualty-ichikawa",
+      "slug": "ichikawa",
+      "occurred_at": "2026-08-14T17:00:00+09:00",
+      "kind": "damage",
+      "title": "消防庁第8報：市川市の死者1人（速報）",
+      "summary": "総務省消防庁の第8報に記載。速報であり数値は今後変わることがある。詳細は公式PDFと各市の発表を確認すること。",
+      "source_url": "https://www.fdma.go.jp/disaster/info/items/20260813ooame8.pdf",
+      "source_type": "admin",
+      "medium": "総務省消防庁"
+    },
+    {
+      "id": "fdma-casualty-sakura",
+      "slug": "sakura",
+      "occurred_at": "2026-08-14T17:00:00+09:00",
+      "kind": "damage",
+      "title": "消防庁第8報：佐倉市の死者2人（速報）",
+      "summary": "総務省消防庁の第8報に記載。速報であり数値は今後変わることがある。詳細は公式PDFと各市の発表を確認すること。",
+      "source_url": "https://www.fdma.go.jp/disaster/info/items/20260813ooame8.pdf",
+      "source_type": "admin",
+      "medium": "総務省消防庁"
+    },
+    {
+      "id": "fdma-casualty-yachiyo",
+      "slug": "yachiyo",
+      "occurred_at": "2026-08-14T17:00:00+09:00",
+      "kind": "damage",
+      "title": "消防庁第8報：八千代市の死者1人（速報）",
+      "summary": "総務省消防庁の第8報に記載。速報であり数値は今後変わることがある。詳細は公式PDFと各市の発表を確認すること。",
+      "source_url": "https://www.fdma.go.jp/disaster/info/items/20260813ooame8.pdf",
+      "source_type": "admin",
+      "medium": "総務省消防庁"
+    },
+    {
+      "id": "sammu-jma-relay",
+      "slug": "sammu",
+      "occurred_at": "2026-08-14T00:30:00+09:00",
+      "kind": "warning",
+      "title": "山武市が気象警報の発表を公式に転載",
+      "summary": "山武市公式サイトが、8月14日0時30分配信の千葉県気象警報・注意報を掲載している。詳細は気象庁の発表を確認するよう案内している。",
+      "source_url": "https://www.city.sammu.lg.jp/bousai-syobo/bousai-kikinogashi/page008716.html",
+      "source_type": "admin",
+      "medium": "山武市"
+    },
+    {
+      "id": "l5-rain-chiba",
+      "slug": "chiba",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-ichikawa",
+      "slug": "ichikawa",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-funabashi",
+      "slug": "funabashi",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-matsudo",
+      "slug": "matsudo",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-mobara",
+      "slug": "mobara",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-sakura",
+      "slug": "sakura",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-togane",
+      "slug": "togane",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-narashino",
+      "slug": "narashino",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-kashiwa",
+      "slug": "kashiwa",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-ichihara",
+      "slug": "ichihara",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-yachiyo",
+      "slug": "yachiyo",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-abiko",
+      "slug": "abiko",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-kamagaya",
+      "slug": "kamagaya",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-yotsukaido",
+      "slug": "yotsukaido",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-yachimata",
+      "slug": "yachimata",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-inzai",
+      "slug": "inzai",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-shiroi",
+      "slug": "shiroi",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-sammu",
+      "slug": "sammu",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-oamishirasato",
+      "slug": "oamishirasato",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-kujukuri",
+      "slug": "kujukuri",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-shirako",
+      "slug": "shirako",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-rain-nagara",
+      "slug": "nagara",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "レベル5大雨特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースが伝えた気象庁発表の二次細分区域。特別警報は14日明け方に切り替えられたと後報がある。最新の警報は気象庁で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-landslide-chiba",
+      "slug": "chiba",
+      "occurred_at": "2026-08-13T21:55:00+09:00",
+      "kind": "warning",
+      "title": "レベル5土砂災害特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースは千葉市・茂原市・東金市・市原市・八街市・大網白里市を対象とした。地盤が緩んでいるため、解除後も斜面や渓流に近づかないこと。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-landslide-mobara",
+      "slug": "mobara",
+      "occurred_at": "2026-08-13T21:55:00+09:00",
+      "kind": "warning",
+      "title": "レベル5土砂災害特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースは千葉市・茂原市・東金市・市原市・八街市・大網白里市を対象とした。地盤が緩んでいるため、解除後も斜面や渓流に近づかないこと。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-landslide-togane",
+      "slug": "togane",
+      "occurred_at": "2026-08-13T21:55:00+09:00",
+      "kind": "warning",
+      "title": "レベル5土砂災害特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースは千葉市・茂原市・東金市・市原市・八街市・大網白里市を対象とした。地盤が緩んでいるため、解除後も斜面や渓流に近づかないこと。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-landslide-ichihara",
+      "slug": "ichihara",
+      "occurred_at": "2026-08-13T21:55:00+09:00",
+      "kind": "warning",
+      "title": "レベル5土砂災害特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースは千葉市・茂原市・東金市・市原市・八街市・大網白里市を対象とした。地盤が緩んでいるため、解除後も斜面や渓流に近づかないこと。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-landslide-yachimata",
+      "slug": "yachimata",
+      "occurred_at": "2026-08-13T21:55:00+09:00",
+      "kind": "warning",
+      "title": "レベル5土砂災害特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースは千葉市・茂原市・東金市・市原市・八街市・大網白里市を対象とした。地盤が緩んでいるため、解除後も斜面や渓流に近づかないこと。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "l5-landslide-oamishirasato",
+      "slug": "oamishirasato",
+      "occurred_at": "2026-08-13T21:55:00+09:00",
+      "kind": "warning",
+      "title": "レベル5土砂災害特別警報の対象に含まれた（報道による対象リスト）",
+      "summary": "ウェザーニュースは千葉市・茂原市・東金市・市原市・八街市・大網白里市を対象とした。地盤が緩んでいるため、解除後も斜面や渓流に近づかないこと。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    },
+    {
+      "id": "relief-ichikawa",
+      "slug": "ichikawa",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-funabashi",
+      "slug": "funabashi",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-tateyama",
+      "slug": "tateyama",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-matsudo",
+      "slug": "matsudo",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-mobara",
+      "slug": "mobara",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-sakura",
+      "slug": "sakura",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-togane",
+      "slug": "togane",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-narashino",
+      "slug": "narashino",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-kashiwa",
+      "slug": "kashiwa",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-ichihara",
+      "slug": "ichihara",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-yachiyo",
+      "slug": "yachiyo",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-abiko",
+      "slug": "abiko",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-kamagaya",
+      "slug": "kamagaya",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-yotsukaido",
+      "slug": "yotsukaido",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-yachimata",
+      "slug": "yachimata",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-inzai",
+      "slug": "inzai",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-shiroi",
+      "slug": "shiroi",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-oamishirasato",
+      "slug": "oamishirasato",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-shirako",
+      "slug": "shirako",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-nagara",
+      "slug": "nagara",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-tomisato",
+      "slug": "tomisato",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-sammu",
+      "slug": "sammu",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-shisui",
+      "slug": "shisui",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-kujukuri",
+      "slug": "kujukuri",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "災害救助法の適用市町に含まれる（県第3報）",
+      "summary": "適用日は令和8年8月13日。県が行う救助の費用を国と県が負担する。罹災証明や応急修理などの窓口・受付開始は各市町の公式発表を確認すること。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "relief-chiba",
+      "slug": "chiba",
+      "occurred_at": "2026-08-13T00:00:00+09:00",
+      "kind": "support",
+      "title": "千葉市は災害救助を直接実施（県第3報）",
+      "summary": "県の適用市町一覧では千葉市を除き、千葉市は直接災害救助を実施するとされている。申請先は市の公式窓口。",
+      "source_url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+      "source_type": "admin",
+      "medium": "千葉県"
+    },
+    {
+      "id": "evac-chiba",
+      "slug": "chiba",
+      "occurred_at": "2026-08-14T10:41:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：千葉市は避難指示が継続（08/14 10:41発表）",
+      "summary": "避難指示（警戒レベル4）が継続と表示されている。対象区域の最新は県防災ポータルと市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-ichihara",
+      "slug": "ichihara",
+      "occurred_at": "2026-08-14T16:48:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：市原市の避難情報は解除（08/14 16:48発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-narita",
+      "slug": "narita",
+      "occurred_at": "2026-08-14T05:37:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：成田市の避難情報は解除（08/14 05:37発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-sakura",
+      "slug": "sakura",
+      "occurred_at": "2026-08-14T11:23:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：佐倉市の避難情報は解除（08/14 11:23発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-yotsukaido",
+      "slug": "yotsukaido",
+      "occurred_at": "2026-08-14T11:57:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：四街道市の避難情報は解除（08/14 11:57発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-yachimata",
+      "slug": "yachimata",
+      "occurred_at": "2026-08-14T12:39:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：八街市の避難情報は解除（08/14 12:39発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-inzai",
+      "slug": "inzai",
+      "occurred_at": "2026-08-14T17:10:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：印西市の避難情報は解除（08/14 17:10発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-shiroi",
+      "slug": "shiroi",
+      "occurred_at": "2026-08-14T05:32:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：白井市の避難情報は解除（08/14 05:32発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-tomisato",
+      "slug": "tomisato",
+      "occurred_at": "2026-08-14T06:19:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：富里市の避難情報は解除（08/14 06:19発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-shisui",
+      "slug": "shisui",
+      "occurred_at": "2026-08-14T09:19:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：酒々井町の避難情報は解除（08/14 09:19発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-sakae",
+      "slug": "sakae",
+      "occurred_at": "2026-08-14T08:30:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：栄町の避難情報は解除（08/14 08:30発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-ichikawa",
+      "slug": "ichikawa",
+      "occurred_at": "2026-08-14T05:36:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：市川市の避難情報は解除（08/14 05:36発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-funabashi",
+      "slug": "funabashi",
+      "occurred_at": "2026-08-14T06:18:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：船橋市の避難情報は解除（08/14 06:18発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-matsudo",
+      "slug": "matsudo",
+      "occurred_at": "2026-08-14T08:12:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：松戸市の避難情報は解除（08/14 08:12発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-narashino",
+      "slug": "narashino",
+      "occurred_at": "2026-08-14T06:12:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：習志野市の避難情報は解除（08/14 06:12発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-kashiwa",
+      "slug": "kashiwa",
+      "occurred_at": "2026-08-14T05:39:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：柏市の避難情報は解除（08/14 05:39発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-yachiyo",
+      "slug": "yachiyo",
+      "occurred_at": "2026-08-14T11:01:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：八千代市の避難情報は解除（08/14 11:01発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-abiko",
+      "slug": "abiko",
+      "occurred_at": "2026-08-14T09:41:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：我孫子市の避難情報は解除（08/14 09:41発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-kamagaya",
+      "slug": "kamagaya",
+      "occurred_at": "2026-08-14T07:47:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：鎌ケ谷市の避難情報は解除（08/14 07:47発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-mobara",
+      "slug": "mobara",
+      "occurred_at": "2026-08-14T15:01:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：茂原市の避難情報は解除（08/14 15:01発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-togane",
+      "slug": "togane",
+      "occurred_at": "2026-08-14T11:21:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：東金市の避難情報は解除（08/14 11:21発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-sammu",
+      "slug": "sammu",
+      "occurred_at": "2026-08-14T06:28:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：山武市の避難情報は解除（08/14 06:28発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-oamishirasato",
+      "slug": "oamishirasato",
+      "occurred_at": "2026-08-14T15:35:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：大網白里市の避難情報は解除（08/14 15:35発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-kujukuri",
+      "slug": "kujukuri",
+      "occurred_at": "2026-08-14T05:41:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：九十九里町の避難情報は解除（08/14 05:41発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-shirako",
+      "slug": "shirako",
+      "occurred_at": "2026-08-14T05:25:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：白子町の避難情報は解除（08/14 05:25発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-nagara",
+      "slug": "nagara",
+      "occurred_at": "2026-08-14T05:20:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：長柄町の避難情報は解除（08/14 05:20発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-kisarazu",
+      "slug": "kisarazu",
+      "occurred_at": "2026-08-14T05:49:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：木更津市の避難情報は解除（08/14 05:49発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-kimitsu",
+      "slug": "kimitsu",
+      "occurred_at": "2026-08-14T06:34:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：君津市の避難情報は解除（08/14 06:34発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-futtsu",
+      "slug": "futtsu",
+      "occurred_at": "2026-08-14T05:43:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：富津市の避難情報は解除（08/14 05:43発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-sodegaura",
+      "slug": "sodegaura",
+      "occurred_at": "2026-08-14T11:00:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：袖ケ浦市の避難情報は解除（08/14 11:00発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-tateyama",
+      "slug": "tateyama",
+      "occurred_at": "2026-08-14T05:20:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：館山市の避難情報は解除（08/14 05:20発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-katsuura",
+      "slug": "katsuura",
+      "occurred_at": "2026-08-14T05:21:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：勝浦市の避難情報は解除（08/14 05:21発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-minamiboso",
+      "slug": "minamiboso",
+      "occurred_at": "2026-08-14T05:59:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：南房総市の避難情報は解除（08/14 05:59発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-isumi",
+      "slug": "isumi",
+      "occurred_at": "2026-08-14T05:56:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：いすみ市の避難情報は解除（08/14 05:56発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-otaki",
+      "slug": "otaki",
+      "occurred_at": "2026-08-14T05:49:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：大多喜町の避難情報は解除（08/14 05:49発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "evac-kyonan",
+      "slug": "kyonan",
+      "occurred_at": "2026-08-14T05:28:00+09:00",
+      "kind": "evacuation",
+      "title": "県ポータル：鋸南町の避難情報は解除（08/14 05:28発表）",
+      "summary": "解除後も浸水・土砂の現場や増水した水路には近づかないこと。再発令の有無は公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-chiba",
+      "slug": "chiba",
+      "occurred_at": "2026-08-14T19:35:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：千葉市の避難所は開設（08/14 19:35発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-ichihara",
+      "slug": "ichihara",
+      "occurred_at": "2026-08-14T19:09:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：市原市の避難所は開設（08/14 19:09発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-narita",
+      "slug": "narita",
+      "occurred_at": "2026-08-14T18:48:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：成田市の避難所は開設（08/14 18:48発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-sakura",
+      "slug": "sakura",
+      "occurred_at": "2026-08-14T16:25:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：佐倉市の避難所は開設（08/14 16:25発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-yotsukaido",
+      "slug": "yotsukaido",
+      "occurred_at": "2026-08-14T19:19:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：四街道市の避難所は開設（08/14 19:19発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-yachimata",
+      "slug": "yachimata",
+      "occurred_at": "2026-08-14T14:14:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：八街市の避難所は閉鎖（08/14 14:14発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-inzai",
+      "slug": "inzai",
+      "occurred_at": "2026-08-14T10:51:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：印西市の避難所は閉鎖（08/14 10:51発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-shiroi",
+      "slug": "shiroi",
+      "occurred_at": "2026-08-14T08:02:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：白井市の避難所は閉鎖（08/14 08:02発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-tomisato",
+      "slug": "tomisato",
+      "occurred_at": "2026-08-14T07:03:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：富里市の避難所は閉鎖（08/14 07:03発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-shisui",
+      "slug": "shisui",
+      "occurred_at": "2026-08-14T15:10:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：酒々井町の避難所は閉鎖（08/14 15:10発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-sakae",
+      "slug": "sakae",
+      "occurred_at": "2026-08-14T08:35:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：栄町の避難所は閉鎖（08/14 08:35発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-ichikawa",
+      "slug": "ichikawa",
+      "occurred_at": "2026-08-14T05:40:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：市川市の避難所は閉鎖（08/14 05:40発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-funabashi",
+      "slug": "funabashi",
+      "occurred_at": "2026-08-14T09:38:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：船橋市の避難所は閉鎖（08/14 09:38発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-matsudo",
+      "slug": "matsudo",
+      "occurred_at": "2026-08-13T18:22:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：松戸市の避難所は開設（08/13 18:22発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-noda",
+      "slug": "noda",
+      "occurred_at": "2026-08-14T08:26:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：野田市の避難所は閉鎖（08/14 08:26発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-narashino",
+      "slug": "narashino",
+      "occurred_at": "2026-08-14T09:25:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：習志野市の避難所は閉鎖（08/14 09:25発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-kashiwa",
+      "slug": "kashiwa",
+      "occurred_at": "2026-08-14T16:46:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：柏市の避難所は閉鎖（08/14 16:46発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-nagareyama",
+      "slug": "nagareyama",
+      "occurred_at": "2026-08-14T09:11:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：流山市の避難所は閉鎖（08/14 09:11発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-yachiyo",
+      "slug": "yachiyo",
+      "occurred_at": "2026-08-14T16:13:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：八千代市の避難所は開設（08/14 16:13発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-abiko",
+      "slug": "abiko",
+      "occurred_at": "2026-08-14T12:18:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：我孫子市の避難所は閉鎖（08/14 12:18発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-kamagaya",
+      "slug": "kamagaya",
+      "occurred_at": "2026-08-14T11:13:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：鎌ケ谷市の避難所は閉鎖（08/14 11:13発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-sosa",
+      "slug": "sosa",
+      "occurred_at": "2026-08-14T05:50:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：匝瑳市の避難所は閉鎖（08/14 05:50発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-mobara",
+      "slug": "mobara",
+      "occurred_at": "2026-08-14T19:35:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：茂原市の避難所は開設（08/14 19:35発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-togane",
+      "slug": "togane",
+      "occurred_at": "2026-08-14T11:47:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：東金市の避難所は開設（08/14 11:47発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-sammu",
+      "slug": "sammu",
+      "occurred_at": "2026-08-14T06:29:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：山武市の避難所は閉鎖（08/14 06:29発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-oamishirasato",
+      "slug": "oamishirasato",
+      "occurred_at": "2026-08-14T17:42:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：大網白里市の避難所は開設（08/14 17:42発表）",
+      "summary": "開設中の施設名・対象は県ポータルと市公式の避難所一覧で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-kujukuri",
+      "slug": "kujukuri",
+      "occurred_at": "2026-08-14T14:41:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：九十九里町の避難所は閉鎖（08/14 14:41発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-yokoshibahikari",
+      "slug": "yokoshibahikari",
+      "occurred_at": "2026-08-14T06:10:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：横芝光町の避難所は閉鎖（08/14 06:10発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-shirako",
+      "slug": "shirako",
+      "occurred_at": "2026-08-14T06:42:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：白子町の避難所は閉鎖（08/14 06:42発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-nagara",
+      "slug": "nagara",
+      "occurred_at": "2026-08-14T11:00:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：長柄町の避難所は閉鎖（08/14 11:00発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-kisarazu",
+      "slug": "kisarazu",
+      "occurred_at": "2026-08-14T05:37:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：木更津市の避難所は閉鎖（08/14 05:37発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-kimitsu",
+      "slug": "kimitsu",
+      "occurred_at": "2026-08-14T08:18:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：君津市の避難所は閉鎖（08/14 08:18発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-futtsu",
+      "slug": "futtsu",
+      "occurred_at": "2026-08-14T06:57:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：富津市の避難所は閉鎖（08/14 06:57発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-sodegaura",
+      "slug": "sodegaura",
+      "occurred_at": "2026-08-14T13:19:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：袖ケ浦市の避難所は閉鎖（08/14 13:19発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-tateyama",
+      "slug": "tateyama",
+      "occurred_at": "2026-08-14T06:08:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：館山市の避難所は閉鎖（08/14 06:08発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-kamogawa",
+      "slug": "kamogawa",
+      "occurred_at": "2026-08-14T08:16:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：鴨川市の避難所は閉鎖（08/14 08:16発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-minamiboso",
+      "slug": "minamiboso",
+      "occurred_at": "2026-08-14T06:08:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：南房総市の避難所は閉鎖（08/14 06:08発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-otaki",
+      "slug": "otaki",
+      "occurred_at": "2026-08-14T05:47:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：大多喜町の避難所は閉鎖（08/14 05:47発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-kyonan",
+      "slug": "kyonan",
+      "occurred_at": "2026-08-14T05:31:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：鋸南町の避難所は閉鎖（08/14 05:31発表）",
+      "summary": "閉鎖と表示されている。再開や福祉避難所の扱いは市公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "nagareyama-not-l5",
+      "slug": "nagareyama",
+      "occurred_at": "2026-08-13T19:30:00+09:00",
+      "kind": "warning",
+      "title": "流山市はレベル5大雨特別警報の対象リストに含まれていない（報道）",
+      "summary": "ウェザーニュースが伝えた22市町の対象に流山市は入っていない。県第3報の災害救助法適用市町にも含まれていない。避難所は県ポータル上14日9時11分発表で閉鎖。最新は市公式で確認すること。",
+      "source_url": "https://weathernews.jp/news/202608/130321/",
+      "source_type": "news",
+      "medium": "ウェザーニュース"
+    }
+  ]
+}
