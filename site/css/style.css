@@ -95,6 +95,15 @@ footer {
   margin-top: 2rem;
 }
 .org-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
+.hero { margin: 0 0 1rem; }
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #d7e4f0;
+}
 h1 { font-size: 1.45rem; margin: 0.4rem 0 0.8rem; }
 h2 { font-size: 1.15rem; margin: 1.4rem 0 0.5rem; }
 h3 { font-size: 1.05rem; margin: 0.35rem 0 0.4rem; }
