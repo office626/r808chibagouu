@@ -26,7 +26,9 @@
     </div>
     <div class="card">
       <h2>いま受けられる支援策</h2>
+      <p class="empty">申請は公式窓口へ。リンク先の受付対象・期間を確認してください。</p>
       <div id="support"></div>
+      <ul id="muni-support"></ul>
       <ul>
         <li><a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/">国の被災者支援制度（内閣府）</a> <span class="badge admin">行政</span></li>
         <li><a href="prefecture.html">千葉県の支援・防災情報</a> <span class="badge admin">行政</span></li>
@@ -88,10 +90,12 @@
     var slug = params.get("slug");
     Promise.all([
       fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
-      fetch("../data/collection.json").then(function (r) { return r.json(); })
+      fetch("../data/collection.json").then(function (r) { return r.json(); }),
+      fetch("../data/supports.json").then(function (r) { return r.json(); })
     ]).then(function (pair) {
       var rows = pair[0];
       var col = pair[1];
+      var supports = pair[2];
       document.getElementById("fetched").textContent = "最終取得: " + fmt(col.fetched_at);
       var m = rows.find(function (x) { return x.slug === slug; });
       if (!m) {
@@ -136,6 +140,23 @@
         sp.textContent = "県第3報時点では災害救助法の適用市町に含まれていません。制度の有無は公式で確認してください。";
       }
       sup.appendChild(sp);
+      var muniUl = document.getElementById("muni-support");
+      var muniLinks = (supports.by_slug && supports.by_slug[slug]) || [];
+      muniLinks.forEach(function (item) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = item.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = item.title;
+        li.appendChild(a);
+        li.appendChild(document.createTextNode(" "));
+        var badgeEl = document.createElement("span");
+        badgeEl.className = "badge admin";
+        badgeEl.textContent = item.kind_label;
+        li.appendChild(badgeEl);
+        muniUl.appendChild(li);
+      });
       var logs = col.items.filter(function (it) { return it.slug === slug; });
       logs.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
       var ul = document.getElementById("log");
