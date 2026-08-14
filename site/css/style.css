@@ -93,5 +93,6 @@ footer {
   border-top: 1px solid var(--border);
   margin-top: 2rem;
 }
+.org-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
 h1 { font-size: 1.45rem; margin: 0.4rem 0 0.8rem; }
 h2 { font-size: 1.15rem; margin: 1.4rem 0 0.5rem; }

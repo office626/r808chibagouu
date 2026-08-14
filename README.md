@@ -54,4 +54,7 @@ CivicTechZenChiba（CTZC）として、令和8年8月千葉豪雨の復興・災
 
 ## 連絡
 
-CTZC Slack: https://civictechzenchiba.slack.com/archives/C0BPSMN4L5D
+- CTZC ウェブサイト: https://sites.google.com/view/civictechzenchiba/
+- Facebook グループ: https://www.facebook.com/groups/civictechzenchiba/
+- Facebook ページ: https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/
+- CTZC Slack: https://civictechzenchiba.slack.com/archives/C0BPSMN4L5D
