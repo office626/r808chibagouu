@@ -22,11 +22,42 @@
     <div class="card">
       <h2>いま確認してほしい公式情報</h2>
       <ul>
-        <li><a href="https://www.bousai.pref.chiba.lg.jp/">千葉県防災ポータル</a>（行政）</li>
-        <li><a href="https://www.pref.chiba.lg.jp/">千葉県庁</a>（行政）</li>
-        <li><a href="https://www.jma.go.jp/bosai/warning/#area_type=offices&amp;area_code=120000">気象庁 千葉県の警報</a>（行政）</li>
-        <li><a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/">内閣府 被災者支援</a>（行政）</li>
+        <li><a href="https://www.bousai.pref.chiba.lg.jp/" target="_blank" rel="noopener">千葉県防災ポータル</a> <span class="badge admin">行政</span></li>
+        <li><a href="https://www.pref.chiba.lg.jp/bousai/bousai/r8-0813ooame.html" target="_blank" rel="noopener">千葉県：令和8年8月13日からの大雨に伴う対応</a> <span class="badge admin">行政</span></li>
+        <li><a href="https://www.jma.go.jp/bosai/warning/#area_type=offices&amp;area_code=120000" target="_blank" rel="noopener">気象庁 千葉県の警報</a> <span class="badge admin">行政</span></li>
       </ul>
+    </div>
+    <div class="card">
+      <h2>家屋に被害が出たときの初期対応（参考）</h2>
+      <p>一般的な対策です。今回の大雨での受付や仮置き場は、下の市町村リンクと公式発表で確認してください。本文は転載しません。</p>
+      <ul>
+        <li><a href="https://www.gov-online.go.jp/article/202003/entry-9034.html" target="_blank" rel="noopener">住まいが被害を受けたとき 最初にすること</a>（政府広報オンライン） <span class="badge admin">行政</span></li>
+        <li><a href="https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/risaisyomei.html" target="_blank" rel="noopener">罹災証明書について（被害写真を残す案内あり）</a>（千葉県） <span class="badge admin">行政</span></li>
+        <li><a href="https://www.mhlw.go.jp/stf/newpage_00341.html" target="_blank" rel="noopener">被災した家屋での感染症対策</a>（厚生労働省） <span class="badge admin">行政</span></li>
+        <li><a href="https://policies.env.go.jp/recycle/disaster_waste/" target="_blank" rel="noopener">災害廃棄物対策情報サイト</a>（環境省。片付けごみの出し方は市町村公式へ） <span class="badge admin">行政</span></li>
+        <li><a href="https://www.caa.go.jp/notice/entry/035897/" target="_blank" rel="noopener">災害に便乗した悪質商法に注意</a>（消費者庁） <span class="badge admin">行政</span></li>
+        <li><a href="https://www.caa.go.jp/notice/entry/038391/index.html" target="_blank" rel="noopener">保険金を使った無料修理などをうたう契約への注意</a>（消費者庁） <span class="badge admin">行政</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>今後の支援の受け方（参考）</h2>
+      <p>多くの手続きの起点は市町村の罹災証明書です。対象・期間・金額は各公式で確認し、申請は公式窓口へ。適用可否は各実施機関の判断です。</p>
+      <ul>
+        <li><a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/" target="_blank" rel="noopener">被災者支援に関する各種制度</a>（内閣府） <span class="badge admin">行政</span></li>
+        <li><a href="https://www.bousai.go.jp/kyoiku/hokenkyousai/sienseido.html" target="_blank" rel="noopener">公的支援制度について（生活再建支援金・応急修理など）</a>（内閣府） <span class="badge admin">行政</span></li>
+        <li><a href="https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/risaisyomei.html" target="_blank" rel="noopener">罹災証明書（申請先はお住まいの市町村）</a>（千葉県） <span class="badge admin">行政</span></li>
+        <li><a href="https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/hisaisyashien-chiba.html" target="_blank" rel="noopener">千葉県被災者生活再建支援事業</a>（千葉県） <span class="badge admin">行政</span></li>
+        <li><a href="https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html" target="_blank" rel="noopener">災害救助法の適用（第3報）</a>（千葉県。応急修理・応急仮設などの前提になり得る） <span class="badge admin">行政</span></li>
+        <li><a href="prefecture.html">県・国の支援情報（このサイトの案内）</a></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>各市町村の支援施策を探す</h2>
+      <p>各市町村公式の罹災証明・支援案内です。今回の大雨専用でないページもあります。受付の有無は必ず公式で確認してください。</p>
+      <label class="sort-label" for="muni-q">市町村名で検索</label>
+      <input class="search" id="muni-q" type="search" placeholder="例：千葉市、市川、鋸南" autocomplete="off">
+      <ul class="muni-support-list" id="muni-supports"></ul>
+      <p class="empty" id="muni-empty" hidden>該当する市町村がありません。</p>
     </div>
     <p><a href="../supporters/index.html">支援・協働する方はこちら</a></p>
   </main>
@@ -47,6 +78,63 @@
           col.fetched_at.replace("T", " ").replace("+09:00", " JST") +
           " 時点の公式・報道の見出しを市町村ページに載せています。最新は必ず公式で確認してください。";
       });
+    Promise.all([
+      fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
+      fetch("../data/supports.json").then(function (r) { return r.json(); })
+    ]).then(function (pair) {
+      var munis = pair[0];
+      var bySlug = (pair[1] && pair[1].by_slug) || {};
+      var ul = document.getElementById("muni-supports");
+      var empty = document.getElementById("muni-empty");
+      var q = document.getElementById("muni-q");
+      function draw() {
+        var word = (q.value || "").trim();
+        ul.innerHTML = "";
+        var shown = 0;
+        munis.forEach(function (m) {
+          if (word && m.name.indexOf(word) === -1) return;
+          shown += 1;
+          var li = document.createElement("li");
+          var title = document.createElement("strong");
+          title.textContent = m.name;
+          li.appendChild(title);
+          var nav = document.createElement("p");
+          var page = document.createElement("a");
+          page.href = "municipality.html?slug=" + encodeURIComponent(m.slug);
+          page.textContent = "このサイトの市町村ページ";
+          nav.appendChild(page);
+          nav.appendChild(document.createTextNode(" ／ "));
+          var home = document.createElement("a");
+          home.href = m.url;
+          home.target = "_blank";
+          home.rel = "noopener";
+          home.textContent = "公式トップ";
+          nav.appendChild(home);
+          li.appendChild(nav);
+          var links = document.createElement("ul");
+          (bySlug[m.slug] || []).forEach(function (item) {
+            var row = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = item.url;
+            a.target = "_blank";
+            a.rel = "noopener";
+            a.textContent = item.title;
+            row.appendChild(a);
+            row.appendChild(document.createTextNode(" "));
+            var b = document.createElement("span");
+            b.className = "badge admin";
+            b.textContent = item.kind_label;
+            row.appendChild(b);
+            links.appendChild(row);
+          });
+          li.appendChild(links);
+          ul.appendChild(li);
+        });
+        empty.hidden = shown > 0;
+      }
+      q.addEventListener("input", draw);
+      draw();
+    });
   </script>
 </body>
 </html>
