@@ -1,6 +1,8 @@
 # 令和8年8月千葉豪雨 — CTZC 復興支援ポータル（要件）
 
-CivicTechZenChiba（CTZC）として、令和8年8月千葉豪雨の復興・災害対策のために検討しているポータルサイトの**要件定義**です。実装はまだありません。
+CivicTechZenChiba（CTZC）として、令和8年8月千葉豪雨の復興・災害対策のために検討しているポータルサイトの**要件定義**と、GitHub Pages 上の簡易公開サイトです。
+
+**公開サイト:** https://office626.github.io/r808chibagouu/
 
 検証・添削・協働編集を歓迎します。Issue や Pull Request で指摘してください。
 
@@ -18,6 +20,10 @@ CivicTechZenChiba（CTZC）として、令和8年8月千葉豪雨の復興・災
 | [docs/input/feature-list.md](./docs/input/feature-list.md) | 機能一覧 |
 | [docs/input/mvp-scope.md](./docs/input/mvp-scope.md) | MVP範囲 |
 | [docs/input/ui-ux-direction.md](./docs/input/ui-ux-direction.md) | UI/UX方針 |
+| [docs/input/source-allowlist.md](./docs/input/source-allowlist.md) | 行政・報道の収集許可リスト（毎日 6:00 JST） |
+| [docs/output/system_requirements.md](./docs/output/system_requirements.md) | システム要件 |
+| [docs/output/detailed_requirements_specification.md](./docs/output/detailed_requirements_specification.md) | 詳細要件（実装向け） |
+| [運用スプレッドシート](https://docs.google.com/spreadsheets/d/1_dHZHMLvTx6iTCzwvbw6U9cTHjTIH_6RlEob81Ng7KM/edit?usp=sharing) | 許可リスト・やること・訂正。リンクを知っている人は閲覧可 |
 
 `docs/prompts/` と `docs/template/` は、要件を引き出すためのプロンプトとテンプレートです。
 
@@ -28,13 +34,15 @@ CivicTechZenChiba（CTZC）として、令和8年8月千葉豪雨の復興・災
 1. **県民向け** — 市町村ごとの被害状況ログ（過去〜現在）と、いま受けられる支援策
 2. **支援者向け** — 有志が集まり、行政情報の収集と伝達拡散を分担する場
 
-先行事例として [シビックテック袖ケ浦の災害支援ナビゲーター](https://civictechsodegaura.org/) を県全域・市町村別に広げる。現地の行政プロセスはシビックテックもばら篠田さんの状況報告を参考にしている。
+先行事例として [シビックテック袖ケ浦の災害支援ナビゲーター](https://civictechsodegaura.org/) を県全域・市町村別に広げる（ソース再利用は作成後に確認）。現地の行政プロセスは「とある行政」の知見として一般化しており、個人名・特定の内部情報は出さない。
+
+初日に被害ログを出す対象は、警戒レベル5（大雨特別警報）が出た自治体および流山市。県民向け情報は行政機関と報道機関から収集し、1日1回自動更新する。
 
 ## 検証してほしいこと
 
 - 県民入口と支援者入口の切り分けは分かりそうか
 - 市町村ページのテンプレート（ログ／いまの支援策／生活再建の段取り）に足りない欄はないか
-- MVP の切り方（枠は全市町村、中身は優先市町村から）は現場で回るか
+- MVP の切り方（枠は全市町村、初日ログはレベル5対象＋流山市）は現場で回るか
 - 公式情報の扱いに危うい断定がないか（金額・日数は裏取り前に断定しない方針）
 - 既存の行政・社協・他団体の取り組みと重複していないか
 

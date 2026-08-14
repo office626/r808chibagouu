@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>市町村から探す | CTZC 千葉豪雨ポータル</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="../index.html">CTZC 千葉豪雨ポータル</a></div>
+    <nav class="nav">
+      <a href="index.html">県民ホーム</a>
+      <a href="municipalities.html">市町村から探す</a>
+    </nav>
+  </header>
+  <main>
+    <h1>市町村から探す</h1>
+    <p>枠は全市町村分あります。初日にログを厚くする対象（警戒レベル5および流山市）には印を付けています。</p>
+    <h2>初日対象</h2>
+    <ul class="list" id="day1"></ul>
+    <h2>その他</h2>
+    <ul class="list" id="rest"></ul>
+  </main>
+  <footer>
+    <p>有志運営 / 公式ではありません。</p>
+  </footer>
+  <script>
+    fetch("../data/municipalities.json")
+      .then(function (r) { return r.json(); })
+      .then(function (rows) {
+        function fill(id, list) {
+          var ul = document.getElementById(id);
+          list.forEach(function (m) {
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = "municipality.html?slug=" + encodeURIComponent(m.slug);
+            a.textContent = m.name;
+            if (m.day1) {
+              var b = document.createElement("span");
+              b.className = "badge pri";
+              b.textContent = "初日";
+              a.prepend(b);
+            }
+            li.appendChild(a);
+            ul.appendChild(li);
+          });
+        }
+        fill("day1", rows.filter(function (m) { return m.day1; }));
+        fill("rest", rows.filter(function (m) { return !m.day1; }));
+      });
+  </script>
+</body>
+</html>
