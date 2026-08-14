@@ -11,7 +11,7 @@ NOTE = (
 # kind: risai=罹災証明, support=支援まとめ, home=公式トップ（個別ページ未確認）
 PAGES = {
     "chiba": [
-        ("risai", "罹災証明書・被災証明書の交付", "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/sinnrisaishomei.html"),
+        ("risai", "罹災証明書・被災証明書（8月15・16日に臨時窓口）", "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/sinnrisaishomei.html"),
         ("support", "被災者生活再建支援金（国制度）", "https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/hisaisha-shien_gov.html"),
         ("support", "被災者生活再建支援金（千葉県制度）", "https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/hisaisha-shien_chiba-pref.html"),
     ],
@@ -45,12 +45,14 @@ PAGES = {
     ],
     "yachiyo": [
         ("risai", "罹災証明書・被害届出証明書の発行", "https://www.city.yachiyo.lg.jp/soshiki/11/2167.html"),
+        ("support", "被災したら・被災者支援", "https://www.city.yachiyo.lg.jp/life/1/9/63/"),
     ],
     "abiko": [
         ("risai", "り災証明書・被災証明書・り災届出証明書", "https://www.city.abiko.chiba.jp/anshin/bousai/hisaichifukko/risaishomeisho.html"),
     ],
     "kamagaya": [
         ("risai", "罹災証明書等の交付", "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/hisaishoumeisho.html"),
+        ("support", "被災された方のための各種手続き・支援の手引き", "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/mimaikin.files/tebikiR6.pdf"),
     ],
     "yotsukaido": [
         ("risai", "罹災証明書及び罹災届出証明書の発行", "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/bosai/saigai-hassei/risaishomei.html"),
@@ -162,6 +164,19 @@ PAGES = {
     ],
     "onjuku": [
         ("risai", "り災証明書の発行", "https://www.town.onjuku.chiba.jp/sub1/1/34.html"),
+    ],
+    "isumi": [
+        ("support", "オンライン手続き（被災証明関係）", "https://www.city.isumi.lg.jp/gyosei/kurashi_tetsuzuki/6574.html"),
+    ],
+    "kozaki": [
+        ("risai", "オンライン申請（罹災証明書の発行申請）", "https://www.town.kozaki.chiba.jp/kurashi/todokede/one-stop-service.html"),
+        ("support", "災害情報・被災者支援", "https://www.town.kozaki.chiba.jp/kurashi/living_bosai/bosai/saigai.html"),
+    ],
+    "ichinomiya": [
+        ("risai", "罹災証明書・被災証明書の交付申請", "https://www.town.ichinomiya.chiba.jp/emergency_info/415.html"),
+    ],
+    "kyonan": [
+        ("risai", "罹災証明・被災届出申請書", "https://www.town.kyonan.chiba.jp/site/fukkou/list49.html"),
     ],
 }
 

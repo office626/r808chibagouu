@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-14T21:20:00+09:00",
-  "method": "手動。許可リストの行政・報道から見出しと短い要約のみ。",
+  "fetched_at": "2026-08-15T06:39:41+09:00",
+  "method": "日次ジョブ。許可リストの見出しとURLのみ。失敗したソースは前回を維持。",
   "links": {
     "portal": "https://www.bousai.pref.chiba.lg.jp/",
     "pref": "https://www.pref.chiba.lg.jp/bousai/bousai/r8-0813ooame.html",
@@ -16,13 +16,13 @@
       "l5_landslide": true,
       "disaster_relief": "chiba_direct",
       "evacuation": {
-        "status": "指示継続",
-        "at": "08/14 10:41",
-        "label": "避難指示（警戒レベル4）"
+        "status": "解除",
+        "at": "08/14 23:18",
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
-        "at": "08/14 19:35"
+        "at": "08/15 05:43"
       }
     },
     "ichikawa": {
@@ -32,7 +32,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:36",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -46,7 +46,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 06:18",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -60,7 +60,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 08:12",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
@@ -74,7 +74,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 15:01",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
@@ -88,7 +88,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 11:23",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
@@ -102,7 +102,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 11:21",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
@@ -116,7 +116,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 06:12",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -130,7 +130,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:39",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -144,7 +144,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 16:48",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
@@ -158,11 +158,11 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 11:01",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
-        "at": "08/14 16:13"
+        "at": "08/14 23:14"
       }
     },
     "abiko": {
@@ -172,7 +172,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 09:41",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -186,7 +186,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 07:47",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -200,7 +200,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 11:57",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
@@ -214,7 +214,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 12:39",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -228,11 +228,11 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 17:10",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
-        "status": "閉鎖",
-        "at": "08/14 10:51"
+        "status": "開設",
+        "at": "08/14 23:18"
       }
     },
     "shiroi": {
@@ -242,7 +242,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:32",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -256,7 +256,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 06:28",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -270,7 +270,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 15:35",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
@@ -284,7 +284,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:41",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -298,7 +298,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:25",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -312,7 +312,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:20",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -334,7 +334,10 @@
       "l5_landslide": false,
       "disaster_relief": "none",
       "evacuation": null,
-      "shelter": null
+      "shelter": {
+        "status": "閉鎖",
+        "at": "08/12 07:49"
+      }
     },
     "tateyama": {
       "l5_rain": false,
@@ -343,7 +346,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:20",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -357,7 +360,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:49",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -381,7 +384,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:37",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "開設",
@@ -402,7 +405,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:21",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": null
     },
@@ -423,7 +426,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 06:34",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -437,7 +440,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:43",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -458,7 +461,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 11:00",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -472,7 +475,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 06:19",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -486,7 +489,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:59",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -517,7 +520,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:56",
-        "label": "避難情報"
+        "label": "[訂正]"
       },
       "shelter": null
     },
@@ -528,7 +531,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 09:19",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -542,11 +545,11 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 08:30",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
-        "status": "閉鎖",
-        "at": "08/14 08:35"
+        "status": "開設",
+        "at": "08/15 02:59"
       }
     },
     "kozaki": {
@@ -622,7 +625,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:49",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -643,7 +646,7 @@
       "evacuation": {
         "status": "解除",
         "at": "08/14 05:28",
-        "label": "避難情報"
+        "label": "解除"
       },
       "shelter": {
         "status": "閉鎖",
@@ -2202,6 +2205,105 @@
       "source_url": "https://weathernews.jp/news/202608/130321/",
       "source_type": "news",
       "medium": "ウェザーニュース"
+    },
+    {
+      "id": "portal-refresh-2026-08-15",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-15T06:37:00+09:00",
+      "kind": "warning",
+      "title": "県防災ポータルの避難・避難所情報を再取得",
+      "summary": "8月13日からの大雨に関する市町村の避難情報・避難所開設状況を県ポータルから更新した。地盤が緩んでいるため、少雨でも土砂災害に注意するよう呼びかけが続いている。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "fdma-ttps-www-fdma-go-jp-disaster-info-070115",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-13T07:06:47+09:00",
+      "kind": "damage",
+      "title": "令和８年８月千葉豪雨による被害及び消防機関等の対応状況（第8報・R8.8.14更新）",
+      "summary": "消防庁の災害情報一覧の見出し。詳細は公式PDF・ページで確認すること。速報であり数値は変わりうる。",
+      "source_url": "https://www.fdma.go.jp/disaster/info/#070115",
+      "source_type": "admin",
+      "medium": "総務省消防庁"
+    },
+    {
+      "id": "chiba-risai-temp-20260815",
+      "slug": "chiba",
+      "occurred_at": "2026-08-14T00:00:00+09:00",
+      "kind": "support",
+      "title": "千葉市：8月15・16日に罹災証明の臨時窓口",
+      "summary": "令和8年8月13日の大雨による罹災証明書・被災証明書の申請のため、15日・16日に各区で臨時窓口を開設すると公式が案内。即日交付は行わない。詳細は市公式。",
+      "source_url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/sinnrisaishomei.html",
+      "source_type": "admin",
+      "medium": "千葉市"
+    },
+    {
+      "id": "evac-chiba-08/14-2318",
+      "slug": "chiba",
+      "occurred_at": "2026-08-14T23:18:00+09:00",
+      "kind": "warning",
+      "title": "県ポータル：千葉市の避難情報は解除（08/14 23:18発表）",
+      "summary": "県防災ポータルの避難情報表の見出し。対象区域・解除範囲は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-chiba-08/15-0543",
+      "slug": "chiba",
+      "occurred_at": "2026-08-15T05:43:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：千葉市の避難所は開設（08/15 05:43発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-inzai-08/14-2318",
+      "slug": "inzai",
+      "occurred_at": "2026-08-14T23:18:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：印西市の避難所は開設（08/14 23:18発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-sakae-08/15-0259",
+      "slug": "sakae",
+      "occurred_at": "2026-08-15T02:59:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：栄町の避難所は開設（08/15 02:59発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-yachiyo-08/14-2314",
+      "slug": "yachiyo",
+      "occurred_at": "2026-08-14T23:14:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：八千代市の避難所は開設（08/14 23:14発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-choshi-08/12-0749",
+      "slug": "choshi",
+      "occurred_at": "2026-08-12T07:49:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：銚子市の避難所は閉鎖（08/12 07:49発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
     }
   ]
 }

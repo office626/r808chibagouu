@@ -5,7 +5,7 @@
       {
         "kind": "risai",
         "kind_label": "罹災証明",
-        "title": "罹災証明書・被災証明書の交付",
+        "title": "罹災証明書・被災証明書（8月15・16日に臨時窓口）",
         "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/sinnrisaishomei.html"
       },
       {
@@ -105,6 +105,12 @@
         "kind_label": "罹災証明",
         "title": "罹災証明書・被害届出証明書の発行",
         "url": "https://www.city.yachiyo.lg.jp/soshiki/11/2167.html"
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "title": "被災したら・被災者支援",
+        "url": "https://www.city.yachiyo.lg.jp/life/1/9/63/"
       }
     ],
     "abiko": [
@@ -121,6 +127,12 @@
         "kind_label": "罹災証明",
         "title": "罹災証明書等の交付",
         "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/hisaishoumeisho.html"
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "title": "被災された方のための各種手続き・支援の手引き",
+        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/mimaikin.files/tebikiR6.pdf"
       }
     ],
     "yotsukaido": [
@@ -333,10 +345,10 @@
     ],
     "isumi": [
       {
-        "kind": "home",
-        "kind_label": "公式",
-        "title": "いすみ市公式サイトで罹災証明・支援窓口を検索",
-        "url": "https://www.city.isumi.lg.jp/"
+        "kind": "support",
+        "kind_label": "支援策",
+        "title": "オンライン手続き（被災証明関係）",
+        "url": "https://www.city.isumi.lg.jp/gyosei/kurashi_tetsuzuki/6574.html"
       }
     ],
     "shisui": [
@@ -357,10 +369,16 @@
     ],
     "kozaki": [
       {
-        "kind": "home",
-        "kind_label": "公式",
-        "title": "神崎町公式サイトで罹災証明・支援窓口を検索",
-        "url": "https://www.town.kozaki.chiba.jp/"
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "title": "オンライン申請（罹災証明書の発行申請）",
+        "url": "https://www.town.kozaki.chiba.jp/kurashi/todokede/one-stop-service.html"
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "title": "災害情報・被災者支援",
+        "url": "https://www.town.kozaki.chiba.jp/kurashi/living_bosai/bosai/saigai.html"
       }
     ],
     "tako": [
@@ -397,10 +415,10 @@
     ],
     "ichinomiya": [
       {
-        "kind": "home",
-        "kind_label": "公式",
-        "title": "一宮町公式サイトで罹災証明・支援窓口を検索",
-        "url": "https://www.town.ichinomiya.chiba.jp/"
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "title": "罹災証明書・被災証明書の交付申請",
+        "url": "https://www.town.ichinomiya.chiba.jp/emergency_info/415.html"
       }
     ],
     "mutsuzawa": [
@@ -445,10 +463,10 @@
     ],
     "kyonan": [
       {
-        "kind": "home",
-        "kind_label": "公式",
-        "title": "鋸南町公式サイトで罹災証明・支援窓口を検索",
-        "url": "https://www.town.kyonan.chiba.jp/"
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "title": "罹災証明・被災届出申請書",
+        "url": "https://www.town.kyonan.chiba.jp/site/fukkou/list49.html"
       }
     ]
   }

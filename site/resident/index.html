@@ -17,7 +17,7 @@
   </header>
   <main>
     <h1>県民の方へ</h1>
-    <p class="notice">有志運営です。申請は各公式窓口へ。2026-08-14 21:20 JST 時点の公式・報道の見出しを市町村ページに載せています。最新は必ず公式で確認してください。</p>
+    <p class="notice" id="notice">有志運営です。申請は各公式窓口へ。最新は必ず公式で確認してください。</p>
     <p><a class="btn" href="municipalities.html">市町村から探す</a></p>
     <div class="card">
       <h2>いま確認してほしい公式情報</h2>
@@ -38,5 +38,15 @@
       <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook ページ</a>
     </p>
   </footer>
+  <script>
+    fetch("../data/collection.json")
+      .then(function (r) { return r.json(); })
+      .then(function (col) {
+        document.getElementById("notice").textContent =
+          "有志運営です。申請は各公式窓口へ。" +
+          col.fetched_at.replace("T", " ").replace("+09:00", " JST") +
+          " 時点の公式・報道の見出しを市町村ページに載せています。最新は必ず公式で確認してください。";
+      });
+  </script>
 </body>
 </html>

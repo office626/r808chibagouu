@@ -1,0 +1,51 @@
+name: Daily collect and GitHub Pages
+
+on:
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# pages.yml と同じ group にすると、手動 push と打ち消し合うため分ける。
+# Actions の GITHUB_TOKEN による push は pages.yml を起動しないため、ここで Pages も公開する。
+concurrency:
+  group: daily-collect
+  cancel-in-progress: false
+
+jobs:
+  collect-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Collect official headlines
+        run: python scripts/daily_collect.py
+        continue-on-error: true
+      - name: Rebuild support links
+        run: python scripts/build_supports.py
+      - name: Commit data if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/collection.json site/data/supports.json
+          if git diff --staged --quiet; then
+            echo "no data changes"
+          else
+            git commit -m "日次収集（6:00 JST）の結果をサイトデータへ反映する。"
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
