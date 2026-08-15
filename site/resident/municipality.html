@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>市町村 | CTZC 千葉豪雨ポータル</title>
   <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="市町村ごとの避難情報、被害の報道、いま受けられる支援策、行政の記録、生活再建の段取り。見出しと公式リンクのみで、報道の全文は転載しません。">
+  <meta name="theme-color" content="#0b5cab">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="canonical" id="canonical" href="https://office626.github.io/r808chibagouu/resident/municipalities.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CTZC 千葉豪雨ポータル">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="市町村ページ | CTZC 千葉豪雨ポータル">
+  <meta property="og:description" content="市町村ごとの避難情報、被害の報道、いま受けられる支援策、行政の記録、生活再建の段取り。見出しと公式リンクのみで、報道の全文は転載しません。">
+  <meta property="og:url" content="https://office626.github.io/r808chibagouu/resident/municipality.html">
+  <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta property="og:image:alt" content="令和8年8月千葉豪雨からの復旧のために。主催 CivicTechZenChiba">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="市町村ページ | CTZC 千葉豪雨ポータル">
+  <meta name="twitter:description" content="市町村ごとの避難情報、被害の報道、いま受けられる支援策、行政の記録、生活再建の段取り。見出しと公式リンクのみで、報道の全文は転載しません。">
+  <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
 </head>
 <body>
   <header>
@@ -155,6 +175,22 @@
       }
       document.title = m.name + " | CTZC 千葉豪雨ポータル";
       document.getElementById("title").textContent = m.name;
+      (function () {
+        var pageUrl = "https://office626.github.io/r808chibagouu/resident/municipality.html?slug=" + encodeURIComponent(m.slug);
+        var pageTitle = m.name + "の被害経過と支援策 | CTZC 千葉豪雨ポータル";
+        var pageDesc = m.name + "の避難情報、被害の報道、いま受けられる支援策、行政の記録、生活再建の段取り。公式リンクと見出しのみ。";
+        document.getElementById("canonical").setAttribute("href", pageUrl);
+        function setMeta(sel, val) {
+          var el = document.querySelector(sel);
+          if (el) el.setAttribute("content", val);
+        }
+        setMeta('meta[property="og:url"]', pageUrl);
+        setMeta('meta[property="og:title"]', pageTitle);
+        setMeta('meta[name="twitter:title"]', pageTitle);
+        setMeta('meta[name="description"]', pageDesc);
+        setMeta('meta[property="og:description"]', pageDesc);
+        setMeta('meta[name="twitter:description"]', pageDesc);
+      })();
       var off = document.getElementById("official");
       off.href = m.url;
       off.textContent = m.name + " 公式サイトへ";
