@@ -194,3 +194,19 @@ h3 { font-size: 1.05rem; margin: 0.35rem 0 0.4rem; }
 .muni-support-list > li:first-child { border-top: 0; }
 .muni-support-list p { margin: 0.25rem 0 0.4rem; font-size: 0.92rem; }
 .muni-support-list ul { margin: 0.2rem 0 0; padding-left: 1.1rem; }
+.steps { margin: 0.4rem 0 0.2rem; padding-left: 1.25rem; }
+.steps li { margin: 0.45rem 0; }
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 0.6rem 0;
+}
+.compare th, .compare td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+.compare th { background: #eef3f8; }
+.door { min-height: 6.5rem; }
