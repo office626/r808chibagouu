@@ -5,7 +5,7 @@
   var serverCounts = {};
   var endpoint = "";
   var filter = "all";
-  var sortBy = "votes";
+  var sortBy = "order";
   var busy = false;
 
   function uuid() {
@@ -77,8 +77,12 @@
         if (d) return d;
         if (!!mine.votes[b.id] !== !!mine.votes[a.id]) return mine.votes[b.id] ? -1 : 1;
       }
-      var order = { info: 0, feature: 1, action: 2 };
-      return (order[a.category] || 9) - (order[b.category] || 9);
+      if (sortBy === "category") {
+        var cat = { info: 0, feature: 1, action: 2 };
+        var c = (cat[a.category] || 9) - (cat[b.category] || 9);
+        if (c) return c;
+      }
+      return (a._i || 0) - (b._i || 0);
     });
     root.innerHTML = "";
     if (!rows.length) {
@@ -195,6 +199,7 @@
     fetch("../data/vote-config.json").then(function (r) { return r.json(); }).catch(function () { return {}; })
   ]).then(function (pair) {
     ideas = (pair[0] && pair[0].ideas) || [];
+    ideas.forEach(function (it, i) { it._i = i; });
     var note = document.getElementById("ideas-note");
     if (note && pair[0].note) note.textContent = pair[0].note;
     endpoint = normalizeEndpoint((pair[1] && pair[1].endpoint) || "");

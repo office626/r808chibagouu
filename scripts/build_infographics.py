@@ -73,7 +73,7 @@ class Sheet:
         self.title = title
         self.subtitle = subtitle
         self._header()
-        self.y = 250
+        self.y = 332
         self._footer()
 
     def f(self, kind: str, size: int) -> ImageFont.FreeTypeFont:
@@ -89,17 +89,24 @@ class Sheet:
         self.d.text((M, 28), self.kicker, font=f_k, fill=(210, 228, 248))
         self.d.text((M, 68), self.title, font=f_t, fill=(255, 255, 255))
         text_block(self.d, (M, 140), self.subtitle, f_s, (230, 240, 250), W - M * 2, 36)
+        self.d.rectangle((0, 236, W, 318), fill=WARN_BG)
+        self.d.rectangle((0, 318, W, 322), fill=WARN_BD)
+        f_w = self.f("b", 26)
+        self.d.text(
+            (M, 258),
+            "図の中の枠はボタンではありません。入口やリンクのボタンは、このページの下にあります。",
+            font=f_w,
+            fill=PRESS,
+        )
 
     def _footer(self):
-        y = H - 118
+        y = H - 148
         self.d.rectangle((0, y, W, H), fill=ACCENT_DK)
         f = self.f("r", 22)
-        lines = [
-            "CTZC（CivicTechZenChiba）有志運営　／　行政の公式発表ではありません",
-            "申請・対象・期間は市町村・県・国の公式窓口で確認　／　office626.github.io/r808chibagouu/",
-        ]
-        self.d.text((M, y + 28), lines[0], font=f, fill=(230, 240, 250))
-        self.d.text((M, y + 64), lines[1], font=f, fill=(180, 206, 232))
+        fb = self.f("b", 22)
+        self.d.text((M, y + 18), "図の中はタップしても進みません。実際のボタンはページの下にあります。", font=fb, fill=(255, 232, 170))
+        self.d.text((M, y + 56), "CTZC（CivicTechZenChiba）有志運営　／　行政の公式発表ではありません", font=f, fill=(230, 240, 250))
+        self.d.text((M, y + 92), "申請・対象・期間は市町村・県・国の公式窓口で確認　／　office626.github.io/r808chibagouu/", font=f, fill=(180, 206, 232))
 
     def space(self, n=18):
         self.y += n
@@ -222,7 +229,7 @@ def build_all() -> None:
         "千葉県にお住まいの方の状況・支援案内と、支援者が協働する場を分けています。",
     )
     s.note("有志運営です。行政の公式発表ではありません。申請は県・市町村の公式窓口へ。")
-    s.h2("二つの入口")
+    s.h2("二つの入口（ボタンはページの下）")
     s.grid(
         [
             ("千葉県にお住まいの方へ", "住まい・移動と生活・事業者。市町村ごとの被害経過と公式リンク。支援策の探し方。"),

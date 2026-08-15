@@ -129,6 +129,7 @@ footer {
   background: #d7e4f0;
 }
 .infographic { margin: 0 0 1.25rem; }
+#page-actions { scroll-margin-top: 0.75rem; }
 .infographic img {
   display: block;
   width: 100%;

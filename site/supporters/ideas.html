@@ -17,16 +17,17 @@
   </header>
   <main>
     <h1>被災後にあるとよいこと（投票）</h1>
+    <p class="notice infographic-hint"><strong>この図はボタンではありません。</strong> 実際の投票ボタンは、<a href="#page-actions">図の下</a>にあります。</p>
     <figure class="infographic">
-      <img src="../img/info-ideas.png" width="1240" height="1754" alt="A4縦の要点図。今後の案への投票。ログイン不要、1案1票、氏名は取らない。結果は参考値。救命や現地マッチングは対象外。">
-      <figcaption>このページの要点（A4縦）。印刷や画像保存ができます。<a href="../img/info-ideas.png" download>画像を保存</a></figcaption>
+      <img src="../img/info-ideas.png" width="1240" height="1754" alt="A4縦の要点図。図の中はボタンではない。実際の投票はページの下。">
+      <figcaption>このページの要点（A4縦）。図をタップしても進みません。ボタンは下にあります。<a href="../img/info-ideas.png" download>画像を保存</a></figcaption>
     </figure>
     <p class="notice" id="ideas-note">
       案は今後の機能追加や新しいサービスの参考にします。個人情報は取りません。申請・被害の申告は公式窓口へ。
     </p>
     <p id="tally" class="meta"></p>
     <p id="top-pick" class="notice" hidden></p>
-    <div class="idea-toolbar">
+    <div class="idea-toolbar" id="page-actions">
       <div class="chips" role="group" aria-label="種類で絞る">
         <button type="button" class="chip on" data-filter="all">すべて</button>
         <button type="button" class="chip" data-filter="info">情報</button>
@@ -35,6 +36,7 @@
       </div>
       <label class="sort-label">並び替え
         <select id="sort">
+          <option value="order" selected>項目順</option>
           <option value="votes">票が多い順</option>
           <option value="category">種類ごと</option>
         </select>
