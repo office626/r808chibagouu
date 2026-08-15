@@ -14,20 +14,39 @@
       <a href="housing.html">住まいが被災した方</a>
       <a href="life.html">移動と生活</a>
       <a href="municipalities.html">市町村一覧</a>
+      <a href="prefecture.html">県・国の支援</a>
     </nav>
     <p class="meta" id="fetched"></p>
   </header>
   <main>
     <h1 id="title">読み込み中</h1>
-    <p class="notice">有志による要約です。申請は公式へ。数値は速報で変わります。全文は転載していません。</p>
+    <p class="notice">有志による要約です。申請は公式へ。数値は速報で変わります。報道は見出しとリンクのみで、記事全文は転載していません。</p>
     <p><a class="btn" id="official" href="#" target="_blank" rel="noopener">公式サイトへ</a>
       <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>防災・災害ページ</a>
       <a class="btn secondary" href="housing.html">住まいが被災した方へ</a></p>
+    <p class="page-toc">
+      <a href="#now-card">いま</a>
+      <a href="#press-card">被害の報道</a>
+      <a href="#support-card">支援策</a>
+      <a href="#log-card">行政などの記録</a>
+      <a href="#steps-card">生活再建の段取り</a>
+    </p>
     <div class="card" id="now-card">
       <h2>いま</h2>
       <div id="now"></div>
     </div>
-    <div class="card">
+    <div class="card" id="press-card">
+      <h2>この市町村の被害に関する報道</h2>
+      <p class="empty">Yahoo!ニュースやテレビ各社の記事へリンクします。内容の正誤は各社・公式で確認してください。</p>
+      <ul class="log" id="press-local"></ul>
+      <h3>県全体の報道</h3>
+      <p class="empty" id="press-county-note"></p>
+      <ul class="log" id="press-county"></ul>
+      <h3>インターネットで探す</h3>
+      <p class="empty">新しい記事は日々出ます。市町村名で検索してください。</p>
+      <p class="more-search" id="press-search"></p>
+    </div>
+    <div class="card" id="support-card">
       <h2>いま受けられる支援策</h2>
       <p class="empty">申請は公式窓口へ。リンク先の受付対象・期間を確認してください。</p>
       <div id="support"></div>
@@ -37,11 +56,12 @@
         <li><a href="prefecture.html">千葉県の支援・防災情報</a> <span class="badge admin">行政</span></li>
       </ul>
     </div>
-    <div class="card">
-      <h2>被害状況ログ</h2>
+    <div class="card" id="log-card">
+      <h2>行政などの被害状況ログ</h2>
+      <p class="empty">県防災ポータルや消防庁など、行政側の記録です。報道は上の欄にまとめています。</p>
       <ul class="log" id="log"></ul>
     </div>
-    <div class="card">
+    <div class="card" id="steps-card">
       <h2>生活再建の段取り（共通の型）</h2>
       <p>避難・応急 → 災害救助法 → 被害状況調査 → 罹災証明書 → 応急仮設（家賃補助など）または被災住宅の応急修理</p>
       <p>「いま申請できること」と「これから」は、各自治体の公式発表で確認してください。適用可否は各機関の判断です。</p>
@@ -90,16 +110,37 @@
       li.appendChild(src);
       return li;
     }
+    function fillLog(ul, items, emptyText) {
+      if (!items.length) {
+        var empty = document.createElement("p");
+        empty.className = "empty";
+        empty.textContent = emptyText;
+        ul.replaceWith(empty);
+        return;
+      }
+      items.forEach(function (it) { ul.appendChild(renderItem(it)); });
+    }
+    function searchLink(href, label) {
+      var a = document.createElement("a");
+      a.className = "btn secondary";
+      a.href = href;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = label;
+      return a;
+    }
     var params = new URLSearchParams(location.search);
     var slug = params.get("slug");
     Promise.all([
       fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
       fetch("../data/collection.json").then(function (r) { return r.json(); }),
-      fetch("../data/supports.json").then(function (r) { return r.json(); })
+      fetch("../data/supports.json").then(function (r) { return r.json(); }),
+      fetch("../data/press.json").then(function (r) { return r.json(); })
     ]).then(function (pair) {
       var rows = pair[0];
       var col = pair[1];
       var supports = pair[2];
+      var press = pair[3];
       document.getElementById("fetched").textContent = "最終取得: " + fmt(col.fetched_at);
       var m = rows.find(function (x) { return x.slug === slug; });
       if (!m) {
@@ -161,17 +202,44 @@
         li.appendChild(badgeEl);
         muniUl.appendChild(li);
       });
-      var logs = col.items.filter(function (it) { return it.slug === slug; });
-      logs.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
-      var ul = document.getElementById("log");
-      if (!logs.length) {
-        var empty = document.createElement("p");
-        empty.className = "empty";
-        empty.textContent = "この市町村に紐づく収集件はまだありません。公式サイトを確認してください。";
-        ul.replaceWith(empty);
-      } else {
-        logs.forEach(function (it) { ul.appendChild(renderItem(it)); });
+      var seen = {};
+      function takeNews(list) {
+        var out = [];
+        (list || []).forEach(function (it) {
+          var key = it.source_url + "\t" + it.title;
+          if (seen[key]) return;
+          seen[key] = true;
+          out.push(it);
+        });
+        return out;
       }
+      var localNews = takeNews((press.by_slug && press.by_slug[slug]) || []);
+      col.items.filter(function (it) {
+        return it.slug === slug && it.source_type === "news";
+      }).forEach(function (it) { localNews = localNews.concat(takeNews([it])); });
+      localNews.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
+      fillLog(document.getElementById("press-local"), localNews, "この市町村名が本文の中心になっている記事は、まだ収録できていません。下の県全体の報道と検索から探してください。");
+      var countyNote = document.getElementById("press-county-note");
+      if ((press.l5_slugs || []).indexOf(slug) !== -1) {
+        countyNote.textContent = "レベル5大雨特別警報の対象リストに含まれた市町です。県全体のまとめでも名前が出ます。";
+      } else {
+        countyNote.textContent = "個別記事が少ない場合は、県全体のまとめと検索を使ってください。記事中にこの市町村名がないこともあります。";
+      }
+      var county = (press.county || []).slice();
+      county.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
+      fillLog(document.getElementById("press-county"), county, "県全体の報道はまだありません。");
+      var box = document.getElementById("press-search");
+      var qYahoo = encodeURIComponent(m.name + " 千葉豪雨");
+      var qYahoo2 = encodeURIComponent(m.name + " 大雨 被害");
+      var yahooTpl = (press.search && press.search.yahoo) || "https://news.search.yahoo.co.jp/search?ei=UTF-8&p={q}";
+      box.appendChild(searchLink(yahooTpl.replace("{q}", qYahoo), "Yahoo!ニュースで「" + m.name + " 千葉豪雨」"));
+      box.appendChild(searchLink(yahooTpl.replace("{q}", qYahoo2), "Yahoo!ニュースで「" + m.name + " 大雨 被害」"));
+      box.appendChild(searchLink((press.search && press.search.nhk_chiba) || "https://news.web.nhk/newsweb/area/120", "NHKニュース（千葉）"));
+      var logs = col.items.filter(function (it) {
+        return it.slug === slug && it.source_type !== "news";
+      });
+      logs.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
+      fillLog(document.getElementById("log"), logs, "この市町村に紐づく行政の収集件はまだありません。公式サイトを確認してください。");
     });
   </script>
   <script src="../js/share.js"></script>
