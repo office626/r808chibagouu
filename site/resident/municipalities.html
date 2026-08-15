@@ -41,10 +41,15 @@
   <main>
     <h1>市町村から探す</h1>
     <p>全市町村に、県防災ポータルの避難・避難所のスナップショットを載せています。初日対象（レベル5および流山市）は警報・救助法の件も厚くしています。</p>
-    <h2 id="page-actions">初日対象</h2>
+    <div id="page-actions">
+      <label class="sort-label" for="muni-q">市町村名で検索（ひらがな・カタカナでも可）</label>
+      <input class="search" id="muni-q" type="search" placeholder="例：千葉市、いちかわ、キョナン" autocomplete="off">
+    </div>
+    <h2 id="day1-h">初日対象</h2>
     <ul class="list" id="day1"></ul>
-    <h2>その他</h2>
+    <h2 id="rest-h">その他</h2>
     <ul class="list" id="rest"></ul>
+    <p class="empty" id="muni-empty" hidden>該当する市町村がありません。</p>
     <figure class="infographic">
       <figcaption>このページの要点（A4縦）。図をタップしても進みません。ボタンは上にあります。<a href="../img/info-municipalities.png" download>画像を保存</a></figcaption>
       <img src="../img/info-municipalities.png" width="1240" height="1754" alt="A4縦の要点図。図の中はボタンではない。実際の一覧はページの上。54市町村の入口。">
@@ -59,6 +64,7 @@
     </p>
     <div data-share></div>
   </footer>
+  <script src="../js/muni-search.js"></script>
   <script>
     Promise.all([
       fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
@@ -66,8 +72,11 @@
     ]).then(function (pair) {
       var rows = pair[0];
       var snaps = pair[1].snapshots;
+      var q = document.getElementById("muni-q");
       function fill(id, list) {
         var ul = document.getElementById(id);
+        ul.innerHTML = "";
+        document.getElementById(id + "-h").hidden = list.length === 0;
         list.forEach(function (m) {
           var li = document.createElement("li");
           var a = document.createElement("a");
@@ -98,8 +107,15 @@
           ul.appendChild(li);
         });
       }
-      fill("day1", rows.filter(function (m) { return m.day1; }));
-      fill("rest", rows.filter(function (m) { return !m.day1; }));
+      function draw() {
+        var word = MuniSearch.norm(q.value);
+        var hit = rows.filter(function (m) { return MuniSearch.matches(m, word); });
+        fill("day1", hit.filter(function (m) { return m.day1; }));
+        fill("rest", hit.filter(function (m) { return !m.day1; }));
+        document.getElementById("muni-empty").hidden = hit.length > 0;
+      }
+      q.addEventListener("input", draw);
+      draw();
     });
   </script>
   <script src="../js/share.js"></script>

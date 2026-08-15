@@ -87,6 +87,7 @@
     </p>
     <div data-share></div>
   </footer>
+  <script src="../js/muni-search.js"></script>
   <script>
     fetch("../data/collection.json")
       .then(function (r) { return r.json(); })
@@ -105,27 +106,12 @@
       var ul = document.getElementById("muni-supports");
       var empty = document.getElementById("muni-empty");
       var q = document.getElementById("muni-q");
-      // 読みでも引けるようにする。カタカナ・全角英数はひらがな・半角に寄せる。
-      function norm(s) {
-        s = (s || "").normalize("NFKC").trim().toLowerCase();
-        return s.replace(/[\u30a1-\u30f6]/g, function (ch) {
-          return String.fromCharCode(ch.charCodeAt(0) - 0x60);
-        }).replace(/\s+/g, "");
-      }
-      function matches(m, word) {
-        if (!word) return true;
-        var name = norm(m.name);
-        var kana = norm(m.kana);
-        if (name.indexOf(word) !== -1 || kana.indexOf(word) !== -1) return true;
-        if (m.slug && m.slug.indexOf(word) === 0) return true;
-        return false;
-      }
       function draw() {
-        var word = norm(q.value);
+        var word = MuniSearch.norm(q.value);
         ul.innerHTML = "";
         var shown = 0;
         munis.forEach(function (m) {
-          if (!matches(m, word)) return;
+          if (!MuniSearch.matches(m, word)) return;
           shown += 1;
           var li = document.createElement("li");
           var title = document.createElement("strong");
