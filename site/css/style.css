@@ -95,6 +95,27 @@ footer {
   margin-top: 2rem;
 }
 .org-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
+[data-share] { margin-top: 1rem; }
+.share-label { font-weight: 700; color: var(--text); margin: 0 0 0.4rem; }
+.share-btns { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0; }
+.share-btn {
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+.share-btn.share-copy {
+  background: var(--card);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
 .hero { margin: 0 0 1rem; }
 .hero img {
   display: block;
