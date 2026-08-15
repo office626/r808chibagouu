@@ -75,7 +75,7 @@ p .btn { margin: 0.25rem 0.55rem 0.25rem 0; }
 }
 .badge.admin { background: #e7f1fb; color: var(--accent); }
 .badge.press { background: #f6eedc; color: var(--press); }
-.badge.pri { background: #e8f6ea; color: #1b6b2a; font-size: 0.75rem; }
+.badge.npo { background: #eef6ee; color: #1b6b2a; }
 .card {
   background: var(--card);
   border: 1px solid var(--border);
