@@ -47,6 +47,7 @@
       <label class="sort-label" for="muni-q">市町村名で検索（ひらがな・カタカナでも可）</label>
       <input class="search" id="muni-q" type="search" placeholder="例：千葉市、いちかわ、キョナン" autocomplete="off">
     </div>
+    <p class="meta" id="muni-share" hidden>この絞り込みは URL に入っています。 <button type="button" class="btn secondary btn-small">絞り込んだURLをコピー</button> <span data-note></span></p>
     <h2 id="day1-h">初日対象</h2>
     <ul class="list" id="day1"></ul>
     <h2 id="rest-h">その他</h2>
@@ -116,8 +117,7 @@
         fill("rest", hit.filter(function (m) { return !m.day1; }));
         document.getElementById("muni-empty").hidden = hit.length > 0;
       }
-      q.addEventListener("input", draw);
-      draw();
+      MuniSearch.bindQuery(q, draw, document.getElementById("muni-share"));
     });
   </script>
   <script src="../js/share.js"></script>

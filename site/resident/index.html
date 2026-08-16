@@ -71,6 +71,7 @@
       <p>各市町村公式の罹災証明・支援案内です。今回の大雨専用でないページもあります。受付の有無は必ず公式で確認してください。</p>
       <label class="sort-label" for="muni-q">市町村名で検索（ひらがな・カタカナでも可）</label>
       <input class="search" id="muni-q" type="search" placeholder="例：千葉市、いちかわ、キョナン" autocomplete="off">
+      <p class="meta" id="muni-share" hidden>この絞り込みは URL に入っています。 <button type="button" class="btn secondary btn-small">絞り込んだURLをコピー</button> <span data-note></span></p>
       <ul class="muni-support-list" id="muni-supports"></ul>
       <p class="empty" id="muni-empty" hidden>該当する市町村がありません。</p>
     </div>
@@ -153,8 +154,7 @@
         });
         empty.hidden = shown > 0;
       }
-      q.addEventListener("input", draw);
-      draw();
+      MuniSearch.bindQuery(q, draw, document.getElementById("muni-share"));
     });
   </script>
   <script src="../js/share.js"></script>
