@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-16T06:18:15+09:00",
+  "fetched_at": "2026-08-17T06:17:16+09:00",
   "method": "日次ジョブ。許可リストの見出しとURLのみ。失敗したソースは前回を維持。",
   "links": {
     "portal": "https://www.bousai.pref.chiba.lg.jp/",
@@ -78,7 +78,7 @@
       },
       "shelter": {
         "status": "開設",
-        "at": "08/15 19:10"
+        "at": "08/16 18:13"
       }
     },
     "sakura": {
@@ -92,7 +92,7 @@
       },
       "shelter": {
         "status": "開設",
-        "at": "08/15 10:55"
+        "at": "08/16 14:10"
       }
     },
     "togane": {
@@ -105,8 +105,8 @@
         "label": "解除"
       },
       "shelter": {
-        "status": "開設",
-        "at": "08/15 13:36"
+        "status": "閉鎖",
+        "at": "08/16 09:07"
       }
     },
     "narashino": {
@@ -148,7 +148,7 @@
       },
       "shelter": {
         "status": "開設",
-        "at": "08/15 20:26"
+        "at": "08/16 17:32"
       }
     },
     "yachiyo": {
@@ -198,13 +198,13 @@
       "l5_landslide": false,
       "disaster_relief": "applied",
       "evacuation": {
-        "status": "解除",
-        "at": "08/14 11:57",
-        "label": "解除"
+        "status": "指示継続",
+        "at": "08/16 15:46",
+        "label": "避難指示（4）"
       },
       "shelter": {
         "status": "開設",
-        "at": "08/14 19:19"
+        "at": "08/16 15:49"
       }
     },
     "yachimata": {
@@ -274,7 +274,7 @@
       },
       "shelter": {
         "status": "開設",
-        "at": "08/14 17:42"
+        "at": "08/16 19:56"
       }
     },
     "kujukuri": {
@@ -2410,6 +2410,94 @@
       "occurred_at": "2026-08-13T07:06:47+09:00",
       "kind": "damage",
       "title": "令和８年８月千葉豪雨による被害及び消防機関等の対応状況（第9報・R8.8.15更新）",
+      "summary": "消防庁の災害情報一覧の見出し。詳細は公式PDF・ページで確認すること。速報であり数値は変わりうる。",
+      "source_url": "https://www.fdma.go.jp/disaster/info/#070115",
+      "source_type": "admin",
+      "medium": "総務省消防庁"
+    },
+    {
+      "id": "evac-yotsukaido-08/16-1546",
+      "slug": "yotsukaido",
+      "occurred_at": "2026-08-16T15:46:00+09:00",
+      "kind": "warning",
+      "title": "県ポータル：四街道市の避難情報は避難指示（4）（08/16 15:46発表）",
+      "summary": "県防災ポータルの避難情報表の見出し。対象区域・解除範囲は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-ichihara-08/16-1732",
+      "slug": "ichihara",
+      "occurred_at": "2026-08-16T17:32:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：市原市の避難所は開設（08/16 17:32発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-sakura-08/16-1410",
+      "slug": "sakura",
+      "occurred_at": "2026-08-16T14:10:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：佐倉市の避難所は開設（08/16 14:10発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-yotsukaido-08/16-1549",
+      "slug": "yotsukaido",
+      "occurred_at": "2026-08-16T15:49:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：四街道市の避難所は開設（08/16 15:49発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-mobara-08/16-1813",
+      "slug": "mobara",
+      "occurred_at": "2026-08-16T18:13:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：茂原市の避難所は開設（08/16 18:13発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-togane-08/16-0907",
+      "slug": "togane",
+      "occurred_at": "2026-08-16T09:07:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：東金市の避難所は閉鎖（08/16 09:07発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-oamishirasato-08/16-1956",
+      "slug": "oamishirasato",
+      "occurred_at": "2026-08-16T19:56:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：大網白里市の避難所は開設（08/16 19:56発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "fdma-ttps-www-fdma-go-jp-disaster-info-070115",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-13T07:06:47+09:00",
+      "kind": "damage",
+      "title": "令和８年８月千葉豪雨による被害及び消防機関等の対応状況（第10報・R8.8.16更新）",
       "summary": "消防庁の災害情報一覧の見出し。詳細は公式PDF・ページで確認すること。速報であり数値は変わりうる。",
       "source_url": "https://www.fdma.go.jp/disaster/info/#070115",
       "source_type": "admin",
