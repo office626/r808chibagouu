@@ -257,3 +257,15 @@ h3 { font-size: 1.05rem; margin: 0.35rem 0 0.4rem; }
 }
 .compare th { background: #eef3f8; }
 .door { min-height: 6.5rem; }
+
+/* これから起きること（時期別） */
+.badge.deadline { background: #fbe9e7; color: #9a2f1f; }
+.timeline { list-style: none; padding: 0; margin: 0.4rem 0 0; }
+.timeline li {
+  padding: 0.7rem 0 0.7rem 1rem;
+  border-left: 3px solid var(--accent);
+  border-bottom: 1px solid var(--border);
+}
+.timeline li:last-child { border-bottom: none; }
+.timeline li strong { display: block; margin-bottom: 0.15rem; }
+.timeline .src { display: block; margin-top: 0.3rem; font-size: 0.9rem; color: var(--muted); }

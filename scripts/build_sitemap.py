@@ -13,6 +13,7 @@ BASE = "https://office626.github.io/r808chibagouu/"
 STATIC = [
     ("", "daily", "1.0"),
     ("resident/index.html", "daily", "0.9"),
+    ("resident/timeline.html", "weekly", "0.9"),
     ("resident/housing.html", "weekly", "0.8"),
     ("resident/life.html", "weekly", "0.8"),
     ("resident/business.html", "weekly", "0.8"),
