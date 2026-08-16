@@ -67,8 +67,8 @@
     <div class="card">
       <h2>各市町村の支援施策を探す</h2>
       <p>各市町村公式の罹災証明・支援案内です。今回の大雨専用でないページもあります。受付の有無は必ず公式で確認してください。</p>
-      <label class="sort-label" for="muni-q">市町村名で検索</label>
-      <input class="search" id="muni-q" type="search" placeholder="例：千葉市、市川、鋸南" autocomplete="off">
+      <label class="sort-label" for="muni-q">市町村名で検索（ひらがな・カタカナでも可）</label>
+      <input class="search" id="muni-q" type="search" placeholder="例：千葉市、いちかわ、キョナン" autocomplete="off">
       <ul class="muni-support-list" id="muni-supports"></ul>
       <p class="empty" id="muni-empty" hidden>該当する市町村がありません。</p>
     </div>
@@ -87,6 +87,7 @@
     </p>
     <div data-share></div>
   </footer>
+  <script src="../js/muni-search.js"></script>
   <script>
     fetch("../data/collection.json")
       .then(function (r) { return r.json(); })
@@ -106,11 +107,11 @@
       var empty = document.getElementById("muni-empty");
       var q = document.getElementById("muni-q");
       function draw() {
-        var word = (q.value || "").trim();
+        var word = MuniSearch.norm(q.value);
         ul.innerHTML = "";
         var shown = 0;
         munis.forEach(function (m) {
-          if (word && m.name.indexOf(word) === -1) return;
+          if (!MuniSearch.matches(m, word)) return;
           shown += 1;
           var li = document.createElement("li");
           var title = document.createElement("strong");
