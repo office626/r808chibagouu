@@ -281,3 +281,6 @@ h3 { font-size: 1.05rem; margin: 0.35rem 0 0.4rem; }
   header .nav, footer [data-share], #sit-print, #sit-link, #sit-clear, .org-links { display: none !important; }
   .card { break-inside: avoid; }
 }
+
+.btn.btn-small { padding: 0.35rem 0.7rem; font-size: 0.9rem; }
+button.btn { font: inherit; cursor: pointer; }
