@@ -269,3 +269,15 @@ h3 { font-size: 1.05rem; margin: 0.35rem 0 0.4rem; }
 .timeline li:last-child { border-bottom: none; }
 .timeline li strong { display: block; margin-bottom: 0.15rem; }
 .timeline .src { display: block; margin-top: 0.3rem; font-size: 0.9rem; color: var(--muted); }
+
+/* 困りごとから探す */
+[hidden] { display: none !important; }
+.section-title { font-size: 1.2rem; margin: 1.6rem 0 0.4rem; }
+.card h3 { font-size: 1.1rem; margin: 0 0 0.5rem; }
+.card .src { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+.support-table td, .support-table th { vertical-align: top; }
+.support-table td:first-child { font-weight: 600; }
+@media print {
+  header .nav, footer [data-share], #sit-print, #sit-link, #sit-clear, .org-links { display: none !important; }
+  .card { break-inside: avoid; }
+}
