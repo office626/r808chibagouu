@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>困りごとから探す | CTZC 千葉豪雨ポータル</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="床上浸水、床下だけ、賃貸、車の水没、店舗・農地、休業、子ども、高齢の家族、持病、ペット、外国籍。自分の状況にチェックすると、まずやること・あとで困ること・見落としがちな支援だけを表示します。印刷とリンク保存ができます。">
+  <meta name="theme-color" content="#0b5cab">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="canonical" href="https://office626.github.io/r808chibagouu/resident/situations.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CTZC 千葉豪雨ポータル">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="困りごとから探す | CTZC 千葉豪雨ポータル">
+  <meta property="og:description" content="床上浸水、床下だけ、賃貸、車の水没、店舗・農地、休業、子ども、高齢の家族、持病、ペット、外国籍。自分の状況にチェックすると、まずやること・あとで困ること・見落としがちな支援だけを表示します。">
+  <meta property="og:url" content="https://office626.github.io/r808chibagouu/resident/situations.html">
+  <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta property="og:image:alt" content="令和8年8月千葉豪雨からの復旧のために。主催 CivicTechZenChiba">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="困りごとから探す | CTZC 千葉豪雨ポータル">
+  <meta name="twitter:description" content="自分の状況にチェックすると、まずやること・あとで困ること・見落としがちな支援だけを表示します。印刷とリンク保存ができます。">
+  <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="../index.html">CTZC 千葉豪雨ポータル</a></div>
+    <nav class="nav">
+      <a href="index.html">千葉県にお住まいの方へ</a>
+      <a href="situations.html">困りごとから探す</a>
+      <a href="timeline.html">これから起きること</a>
+      <a href="housing.html">住まいが被災した方</a>
+      <a href="life.html">移動と生活</a>
+      <a href="business.html">事業者が被災した方</a>
+      <a href="municipalities.html">市町村から探す</a>
+      <a href="prefecture.html">県・国の支援</a>
+    </nav>
+  </header>
+  <main>
+    <h1>困りごとから探す</h1>
+    <p class="notice">
+      有志運営です。申請窓口ではありません。状況ごとに「まずやること」「あとで困ること」「見落としがちな支援」を並べています。
+      対象・金額・期限は市町村や制度ごとに違います。必ず公式で確認してください。適用可否は各実施機関の判断です。
+    </p>
+
+    <div class="card" id="page-actions">
+      <h2>あなたの状況にチェック（いくつでも）</h2>
+      <p>選ぶと該当するものだけになります。選択はこの端末に残り、サイトには送られません。</p>
+      <div class="chips" role="group" aria-label="状況を選ぶ">
+        <button type="button" class="chip" data-sit="house-over" aria-pressed="false">床上まで浸水した</button>
+        <button type="button" class="chip" data-sit="house-under" aria-pressed="false">床下浸水だけ</button>
+        <button type="button" class="chip" data-sit="house-roof" aria-pressed="false">屋根・雨漏り・土砂・擁壁</button>
+        <button type="button" class="chip" data-sit="rent" aria-pressed="false">賃貸に住んでいる</button>
+        <button type="button" class="chip" data-sit="car" aria-pressed="false">車が水没した</button>
+        <button type="button" class="chip" data-sit="lifeline" aria-pressed="false">停電・断水があった</button>
+        <button type="button" class="chip" data-sit="shop" aria-pressed="false">店舗・工場・農地</button>
+        <button type="button" class="chip" data-sit="work" aria-pressed="false">勤め先が休業・出勤できない</button>
+        <button type="button" class="chip" data-sit="child" aria-pressed="false">子どもがいる</button>
+        <button type="button" class="chip" data-sit="elder" aria-pressed="false">高齢の家族・介護</button>
+        <button type="button" class="chip" data-sit="health" aria-pressed="false">持病・薬・透析</button>
+        <button type="button" class="chip" data-sit="pet" aria-pressed="false">ペット</button>
+        <button type="button" class="chip" data-sit="foreign" aria-pressed="false">外国籍・日本語が不安</button>
+      </div>
+      <p class="meta" id="sit-count">すべて表示しています。</p>
+      <p>
+        <button type="button" class="btn secondary" id="sit-clear" hidden>選択を消す</button>
+        <button type="button" class="btn secondary" id="sit-print">この表示を印刷する</button>
+        <button type="button" class="btn secondary" id="sit-link" hidden>この選択をリンクにする</button>
+      </p>
+      <p class="meta" id="sit-link-note"></p>
+      <p class="meta">時期ごとの見通しは <a href="timeline.html">これから起きること（時期別）</a> へ。市町村の窓口は <a href="municipalities.html">市町村から探す</a> へ。</p>
+    </div>
+
+    <section data-section>
+      <h2 class="section-title">状況ごとの案内</h2>
+
+      <div class="card" data-tags="house-over">
+        <h3>床上まで浸水した</h3>
+        <p><strong>まずやる：</strong> 片付ける前に写真（四方向、浸水の深さ、部屋ごと、捨てる家財）。領収書を全部残す。罹災証明の申請を市町村で始める。先に修理を契約すると公費の応急修理の対象外になり得るので、契約前に市町村の案内を見る。</p>
+        <p><strong>あとで困る：</strong> 判定（全壊・半壊など）で使える制度が変わる。乾かさずに床を閉じるとカビ・悪臭。浸水した家電・分電盤は通電前に点検。応急修理か、みなし仮設か。支援金は判定と再建方法で分かれ、申請期限がある。</p>
+        <p class="src">
+          <a href="housing.html">住まいが被災した方へ</a> ／
+          <a href="timeline.html#week1">〜1週目にやること</a> ／
+          <a href="https://www.bousai.go.jp/taisaku/unyou.html" target="_blank" rel="noopener">住家の被害認定（内閣府）</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/hisaisyashien-chiba.html" target="_blank" rel="noopener">千葉県被災者生活再建支援事業</a> <span class="badge admin">行政</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="house-under">
+        <h3>床下浸水だけ</h3>
+        <p><strong>まずやる：</strong> 床下の水と泥を出し、風を通して乾かしてから消毒。写真は撮る（床下点検口からでも）。市町村によっては床下浸水でも罹災証明・見舞金・消毒剤の配布などの対象になるので、公式のお知らせを見る。</p>
+        <p><strong>あとで困る：</strong> 判定は「準半壊に至らない（一部損壊）」など軽い区分になりやすく、支援金の対象外でも、応急修理制度・見舞金・税の減免・保険の対象になることはある。乾かさないと後からシロアリ・カビ・断熱材の腐り。</p>
+        <p class="src">
+          <a href="https://www.mhlw.go.jp/stf/newpage_00341.html" target="_blank" rel="noopener">被災した家屋での感染症対策（厚生労働省）</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.shintsuna.org/tools/" target="_blank" rel="noopener">「水害にあったときに」（震災がつなぐ全国ネットワーク）</a> <span class="badge npo">NPO</span> ／
+          <a href="municipalities.html">市町村ページ（公式お知らせ）</a>
+        </p>
+      </div>
+
+      <div class="card" data-tags="house-roof">
+        <h3>屋根・雨漏り・土砂・擁壁</h3>
+        <p><strong>まずやる：</strong> 屋根に登らない（転落事故が毎回起きています）。ブルーシートは業者か消防団・ボランティアの手順で。土砂や擁壁のひびは写真を撮り、市町村へ連絡。裏山・崖の近くは、次の雨で再び危ない。</p>
+        <p><strong>あとで困る：</strong> 「屋根修理は火災保険で無料」の訪問販売はトラブルが多い。擁壁・地盤は誰の所有か（隣地・道路・県）で窓口が変わる。応急修理制度は屋根も対象になり得る。</p>
+        <p class="src">
+          <a href="https://www.caa.go.jp/notice/entry/035897/" target="_blank" rel="noopener">災害に便乗した悪質商法に注意（消費者庁）</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.pref.chiba.lg.jp/customer/" target="_blank" rel="noopener">千葉県消費者センター</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.chiba-ben.or.jp/soudan/consultation/saigai.html" target="_blank" rel="noopener">千葉県弁護士会（隣地・擁壁の相談）</a> <span class="badge npo">弁護士会</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="rent">
+        <h3>賃貸に住んでいる</h3>
+        <p><strong>まずやる：</strong> 大家・管理会社に被害を連絡し、写真を送る。罹災証明は住んでいる本人が申請できる（建物の修繕は大家）。自分の家財は自分の保険（借家人賠償・家財保険）を確認。</p>
+        <p><strong>あとで困る：</strong> 住めない状態なら家賃の扱い、退去・転居費用は誰が持つか、応急仮設（みなし仮設）の対象になるか。契約書と大家とのやり取りの記録を残す。もめたら弁護士会・法テラス。</p>
+        <p class="src">
+          <a href="https://www.chiba-ben.or.jp/soudan/consultation/saigai.html" target="_blank" rel="noopener">千葉県弁護士会 災害でお困りの方へ</a> <span class="badge npo">弁護士会</span> ／
+          <a href="https://www.houterasu.or.jp/" target="_blank" rel="noopener">法テラス</a> <span class="badge admin">公式</span> ／
+          <a href="timeline.html#week2">2週目〜：応急修理か仮住まいか</a>
+        </p>
+      </div>
+
+      <div class="card" data-tags="car">
+        <h3>車が水没した</h3>
+        <p><strong>まずやる：</strong> エンジンをかけない（ショート・発火のおそれ）。写真を撮り、保険会社へ。動かすときは販売店・整備工場・ロードサービス。</p>
+        <p><strong>あとで困る：</strong> 車両保険に水災が含まれるかは契約次第。廃車なら抹消の手続き。車の被害は罹災証明ではなく被災証明の対象になる市町村がある。通勤・通院・送迎の代替手段。</p>
+        <p class="src">
+          <a href="housing.html#car">車が水没した（このサイト）</a> ／
+          <a href="https://www.sonpo.or.jp/insurance/car/" target="_blank" rel="noopener">自動車保険（日本損害保険協会）</a> <span class="badge admin">公式</span> ／
+          <a href="https://jaf.or.jp/" target="_blank" rel="noopener">JAF</a> <span class="badge admin">公式</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="lifeline">
+        <h3>停電・断水があった</h3>
+        <p><strong>まずやる：</strong> 復電のときはブレーカーを上げる前に、浸水した家電のプラグを抜き、燃えやすい物が近くにないか見る。冷蔵庫の中身は迷ったら捨てる。断水明けは最初に濁り水を流す。井戸水は検査まで飲まない。</p>
+        <p><strong>あとで困る：</strong> 電気・ガス・水道の料金の減免や支払猶予は申請が要ることが多い。停電で捨てた食品・薬の記録も出費メモに。</p>
+        <p class="src">
+          <a href="life.html">移動と生活（ライフライン各社）</a> ／
+          <a href="https://www.nite.go.jp/jiko/chuikanki/poster/sonota/2021082601.html" target="_blank" rel="noopener">浸水した家電製品から発火（NITE）</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.pref.chiba.lg.jp/suidou/" target="_blank" rel="noopener">千葉県企業局（水道）</a> <span class="badge admin">行政</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="shop">
+        <h3>店舗・工場・農地が被災した</h3>
+        <p><strong>まずやる：</strong> 被害の写真、在庫・設備・農作物の被害の記録、領収書。事業所は「被災証明」の対象になる市町村がある。取引先・従業員への連絡。</p>
+        <p><strong>あとで困る：</strong> 運転資金（セーフティネット保証、政策公庫の災害貸付、県の融資）、休業中の従業員の雇用（雇用調整助成金・雇用保険の特例）、税の申告期限、農業共済の請求期限。</p>
+        <p class="src">
+          <a href="business.html">事業者が被災した方へ（このサイト）</a> ／
+          <a href="https://www.jfc.go.jp/n/finance/saftynet/" target="_blank" rel="noopener">日本政策金融公庫 セーフティネット・災害貸付</a> <span class="badge admin">公式</span> ／
+          <a href="https://www.pref.chiba.lg.jp/keishi/chuushou-yuushi/yuushiseido/chuushou/index.html" target="_blank" rel="noopener">千葉県 中小企業向け融資制度</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.nosai-chiba.or.jp/" target="_blank" rel="noopener">NOSAI千葉（農業共済）</a> <span class="badge admin">公式</span> ／
+          <a href="https://www.maff.go.jp/j/saigai/" target="_blank" rel="noopener">農林水産省 災害関連情報</a> <span class="badge admin">行政</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="work">
+        <h3>勤め先が休業・出勤できない</h3>
+        <p><strong>まずやる：</strong> 会社に状況を伝え、休業か有給か、在宅かを確認。通勤経路の復旧は各社の公式で。</p>
+        <p><strong>あとで困る：</strong> 災害救助法の適用地域では、事業所の休業で働けない人に、離職していなくても雇用保険の基本手当が受けられる特例が出ることがある。休業手当や災害時の労務の扱いは労働局へ。</p>
+        <p class="src">
+          <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00177.html" target="_blank" rel="noopener">自然災害が発生した場合の支援や制度（厚生労働省）</a> <span class="badge admin">行政</span> ／
+          <a href="https://jsite.mhlw.go.jp/chiba-roudoukyoku/" target="_blank" rel="noopener">千葉労働局</a> <span class="badge admin">行政</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="child">
+        <h3>子どもがいる</h3>
+        <p><strong>まずやる：</strong> 学校・園からの連絡（2学期の開始日、通学路、給食）。片付け中は子どもを泥や家電から離す。赤ちゃんの粉ミルク・おむつは市町村の配布があれば市町村ページで。</p>
+        <p><strong>あとで困る：</strong> 学用品・給食費の負担には就学援助や災害救助法の学用品給与。眠れない・赤ちゃん返り・怒りっぽいは自然な反応だが、続くなら学校の先生やスクールカウンセラー、県の相談窓口へ。</p>
+        <p class="src">
+          <a href="https://www.mext.go.jp/a_menu/shotou/career/05010502/017.htm" target="_blank" rel="noopener">就学援助制度（文部科学省）</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.pref.chiba.lg.jp/kyouiku/" target="_blank" rel="noopener">千葉県教育委員会</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.pref.chiba.lg.jp/kodomo/" target="_blank" rel="noopener">千葉県 子ども家庭課</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.pref.chiba.lg.jp/cmhc/kokoro/cmhc-saigai-kokoro.html" target="_blank" rel="noopener">災害時心のケア（県精神保健福祉センター）</a> <span class="badge admin">行政</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="elder">
+        <h3>高齢の家族・介護</h3>
+        <p><strong>まずやる：</strong> 本人の安否と薬・通院。片付けを一人でさせない（熱中症・転倒）。ケアマネジャー・地域包括支援センターに連絡し、デイサービスや訪問の再開を確認。福祉避難所は市町村へ。</p>
+        <p><strong>あとで困る：</strong> 罹災証明・支援金・減免の申請を本人ができない場合の代理。介護保険料・利用料の減免。住まいの修理か施設か転居かの判断は、家族だけで抱えず包括へ。</p>
+        <p class="src">
+          <a href="municipalities.html">市町村ページ（地域包括支援センター・福祉避難所は市町村へ）</a> ／
+          <a href="https://www.pref.chiba.lg.jp/kenfuku/" target="_blank" rel="noopener">千葉県 健康福祉部</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.chibakenshakyo.com/" target="_blank" rel="noopener">千葉県社会福祉協議会</a> <span class="badge npo">社協</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="health">
+        <h3>持病・薬・透析</h3>
+        <p><strong>まずやる：</strong> 薬が流された・切れそうなら、かかりつけか近くの薬局へ（お薬手帳がなくても相談できる）。透析は通院先の稼働と代替施設を確認。災害救助法の適用地域では、保険証がなくても受診できる扱いが出ることがある。</p>
+        <p><strong>あとで困る：</strong> 医療費の窓口負担の免除・猶予は申請が要る。健診・予防接種の日程がずれる。けがは破傷風のおそれ。</p>
+        <p class="src">
+          <a href="https://www.qq.pref.chiba.lg.jp/" target="_blank" rel="noopener">ちば救急医療ネット（医療機関を探す）</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.saigai-touseki.net/" target="_blank" rel="noopener">日本透析医会 災害時情報ネットワーク</a> <span class="badge admin">公式</span> ／
+          <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html" target="_blank" rel="noopener">医療保険（厚生労働省。災害時の取扱いの通知が出ます）</a> <span class="badge admin">行政</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="pet">
+        <h3>ペット</h3>
+        <p><strong>まずやる：</strong> 避難所での扱い（同行避難はできても居室には入れないことが多い）は市町村へ。逃げた・保護したは県動物愛護センターと市町村。泥を浴びた動物は洗って皮膚を確認。</p>
+        <p><strong>あとで困る：</strong> 仮住まいでペット可か。フード・薬の確保。県は災害時の動物救護活動の枠組みを持っています。</p>
+        <p class="src">
+          <a href="https://www.pref.chiba.lg.jp/eishi/pet/doubutsu/animal-rescue.html" target="_blank" rel="noopener">災害時における動物救護活動（千葉県）</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.pref.chiba.lg.jp/aigo/" target="_blank" rel="noopener">千葉県動物愛護センター</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.env.go.jp/nature/dobutsu/aigo/2_data/pamph/h3009a.html" target="_blank" rel="noopener">人とペットの災害対策ガイドライン（環境省）</a> <span class="badge admin">行政</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="foreign">
+        <h3>外国籍・日本語が不安</h3>
+        <p><strong>まずやる：</strong> 「罹災証明書（りさいしょうめいしょ）」は、家（いえ）の被害（ひがい）を市役所（しやくしょ）・町役場（まちやくば）が証明（しょうめい）する紙（かみ）です。支援（しえん）を受（う）けるために必要（ひつよう）です。写真（しゃしん）を撮（と）ってから片付（かたづ）けてください。</p>
+        <p><strong>相談（そうだん）：</strong> 千葉県国際交流センターは多言語で相談できます。市町村の窓口で「やさしい日本語でお願いします」と言ってください。在留資格・在留カードの再発行は出入国在留管理庁へ。</p>
+        <p class="src">
+          <a href="https://www.mcic.or.jp/" target="_blank" rel="noopener">千葉県国際交流センター（多言語相談）</a> <span class="badge admin">公式</span> ／
+          <a href="https://www.moj.go.jp/isa/support/portal/index.html" target="_blank" rel="noopener">外国人生活支援ポータル（出入国在留管理庁）</a> <span class="badge admin">行政</span> ／
+          <a href="https://www.clair.or.jp/tagengo/" target="_blank" rel="noopener">多言語 生活情報（CLAIR）</a> <span class="badge admin">公式</span> ／
+          <a href="https://www.pref.chiba.lg.jp/kokusai/" target="_blank" rel="noopener">千葉県 国際課</a> <span class="badge admin">行政</span>
+        </p>
+      </div>
+    </section>
+
+    <section data-section>
+      <h2 class="section-title">見落としがちな支援（罹災証明のほかに）</h2>
+      <p class="meta">存在を知らないと申請できないもの。対象・要件・期限は各制度の公式へ。金額は書いていません。</p>
+      <div class="card">
+        <table class="compare support-table">
+          <thead>
+            <tr><th>制度・措置</th><th>どんな人</th><th>窓口</th></tr>
+          </thead>
+          <tbody>
+            <tr data-tags="house-over house-under house-roof rent lifeline"><td>電気・ガス・水道の料金の減免・支払猶予</td><td>被災した世帯</td><td>各事業者の災害ページ（<a href="life.html">ライフライン各社</a>）</td></tr>
+            <tr data-tags="house-over house-under house-roof rent"><td>NHK受信料の免除、携帯電話料金の支払期限延長など</td><td>被災した世帯（要申請）</td><td><a href="https://pid.nhk.or.jp/jushinryo/" target="_blank" rel="noopener">NHK</a>、各携帯会社</td></tr>
+            <tr data-tags="house-over house-under house-roof rent car shop"><td>住民税・固定資産税・県税・所得税の減免、申告・納付期限の延長</td><td>被害の程度に応じて</td><td>市町村、<a href="https://www.pref.chiba.lg.jp/zeimu/" target="_blank" rel="noopener">千葉県税務課</a>、<a href="https://www.nta.go.jp/taxes/shiraberu/saigai/index.htm" target="_blank" rel="noopener">国税庁</a></td></tr>
+            <tr data-tags="house-over house-under house-roof rent car shop"><td>翌年の確定申告で雑損控除または災害減免法</td><td>住宅・家財・車に損害があった人（給与所得者も）</td><td><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1110.htm" target="_blank" rel="noopener">国税庁 雑損控除</a></td></tr>
+            <tr data-tags="house-over house-under rent elder health"><td>国民健康保険料・後期高齢者医療・介護保険料の減免、医療費の窓口負担の免除・猶予</td><td>被災した被保険者（要申請）</td><td>市町村の保険担当</td></tr>
+            <tr data-tags="house-over house-under rent work"><td>国民年金保険料の免除</td><td>被災で納付が難しい人</td><td><a href="https://www.nenkin.go.jp/service/kokunen/menjo/index.html" target="_blank" rel="noopener">日本年金機構</a>、市町村</td></tr>
+            <tr data-tags="work shop"><td>雇用保険の特例（事業所の休業でも基本手当）</td><td>災害救助法適用地域で休業した事業所の労働者</td><td><a href="https://jsite.mhlw.go.jp/chiba-roudoukyoku/" target="_blank" rel="noopener">千葉労働局</a>・ハローワーク</td></tr>
+            <tr data-tags="house-over house-under rent"><td>災害援護資金の貸付、生活福祉資金（緊急小口など）</td><td>被災世帯（貸付＝返す）</td><td>市町村、<a href="https://www.chibakenshakyo.com/" target="_blank" rel="noopener">社会福祉協議会</a></td></tr>
+            <tr data-tags="house-over house-under house-roof rent"><td>災害弔慰金・災害障害見舞金、市町村独自の見舞金</td><td>亡くなった方の遺族、重い障害が残った方、被災世帯</td><td>市町村</td></tr>
+            <tr data-tags="house-over house-roof rent"><td>被災者生活再建支援金（国）・県の支援金</td><td>判定と再建方法による</td><td>市町村（<a href="https://www.bousai.go.jp/taisaku/seikatsusaiken/shiensya.html" target="_blank" rel="noopener">内閣府</a>・<a href="https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/hisaisyashien-chiba.html" target="_blank" rel="noopener">千葉県</a>）</td></tr>
+            <tr data-tags="house-over house-roof"><td>住宅の応急修理、応急仮設（みなし仮設）、公費解体</td><td>災害救助法適用市町の被災世帯</td><td>市町村（実施は県）</td></tr>
+            <tr data-tags="house-over house-roof rent"><td>住宅ローンなどの債務整理（自然災害債務整理ガイドライン）</td><td>返済が難しくなった人</td><td><a href="https://www.dgl.or.jp/" target="_blank" rel="noopener">運営機関</a>、借入先、弁護士会</td></tr>
+            <tr data-tags="child"><td>就学援助、災害救助法による学用品の給与</td><td>被災した児童生徒の家庭</td><td>学校・教育委員会（<a href="https://www.mext.go.jp/a_menu/shotou/career/05010502/017.htm" target="_blank" rel="noopener">文部科学省</a>）</td></tr>
+            <tr data-tags="shop"><td>セーフティネット保証、政策公庫の災害貸付、県の融資、雇用調整助成金の特例</td><td>被災した中小企業・個人事業主</td><td>商工会議所・商工会、<a href="https://www.jfc.go.jp/n/finance/saftynet/" target="_blank" rel="noopener">日本政策金融公庫</a>、<a href="https://www.pref.chiba.lg.jp/keishi/chuushou-yuushi/yuushiseido/chuushou/index.html" target="_blank" rel="noopener">千葉県</a></td></tr>
+            <tr data-tags="shop"><td>農業共済、農林水産の災害支援</td><td>農作物・農機具・施設の被害</td><td><a href="https://www.nosai-chiba.or.jp/" target="_blank" rel="noopener">NOSAI千葉</a>、<a href="https://www.pref.chiba.lg.jp/annou/" target="_blank" rel="noopener">県農林水産部</a>、市町村</td></tr>
+            <tr data-tags="house-over house-under house-roof rent car shop"><td>弁護士・司法書士の無料相談</td><td>契約・保険・隣地・大家・ローンで困っている人</td><td><a href="https://www.chiba-ben.or.jp/soudan/consultation/saigai.html" target="_blank" rel="noopener">千葉県弁護士会</a>、<a href="https://www.houterasu.or.jp/" target="_blank" rel="noopener">法テラス</a></td></tr>
+            <tr data-tags="house-over house-under house-roof rent child elder health"><td>こころの相談</td><td>眠れない、片付けが手につかない、子どもの様子が心配</td><td><a href="https://www.pref.chiba.lg.jp/kenzu/kokoro/soudanitiran.html" target="_blank" rel="noopener">千葉県 相談窓口一覧</a></td></tr>
+          </tbody>
+        </table>
+        <p class="meta">出典の総覧：<a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/pdf/kakusyuseido_tsuujou.pdf" target="_blank" rel="noopener">被災者支援に関する各種制度の概要（内閣府 PDF）</a> <span class="badge admin">行政</span></p>
+      </div>
+    </section>
+
+    <div class="card">
+      <h2>この一覧にない困りごと</h2>
+      <p>まずお住まいの市町村の代表窓口へ。市町村ページに公式サイトへのボタンがあります。案内に載せてほしい状況は <a href="https://github.com/office626/r808chibagouu/issues/new" target="_blank" rel="noopener">GitHub の Issue</a> か <a href="../supporters/index.html">支援者ページ</a> から。</p>
+    </div>
+  </main>
+  <footer>
+    <p>本サイトは行政の公式発表ではありません。制度の適用可否・期限は各実施機関の判断です。</p>
+    <p class="org-links">
+      <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC ウェブサイト</a>
+      <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook グループ</a>
+      <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook ページ</a>
+    </p>
+    <div data-share></div>
+  </footer>
+  <script src="../js/situations.js"></script>
+  <script src="../js/share.js"></script>
+</body>
+</html>
