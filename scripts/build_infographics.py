@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "site" / "img"
@@ -66,12 +66,23 @@ def text_block(draw, xy, text, fnt, fill, max_w, leading=None):
 
 
 class Sheet:
-    def __init__(self, kicker: str, title: str, subtitle: str):
+    def __init__(
+        self,
+        kicker: str,
+        title: str,
+        subtitle: str,
+        guide_image: str,
+        guide_message: str,
+        guide_center: tuple[float, float] = (0.5, 0.5),
+    ):
         self.im = Image.new("RGB", (W, H), PAGE)
         self.d = ImageDraw.Draw(self.im)
         self.kicker = kicker
         self.title = title
         self.subtitle = subtitle
+        self.guide_image = OUT / guide_image
+        self.guide_message = guide_message
+        self.guide_center = guide_center
         self._header()
         self.y = 332
         self._footer()
@@ -83,18 +94,25 @@ class Sheet:
     def _header(self):
         self.d.rectangle((0, 0, W, 228), fill=ACCENT)
         self.d.rectangle((0, 228, W, 236), fill=ACCENT_DK)
+        guide = Image.open(self.guide_image).convert("RGB")
+        guide = ImageOps.fit(guide, (310, 212), method=Image.Resampling.LANCZOS, centering=self.guide_center)
+        mask = Image.new("L", guide.size, 0)
+        ImageDraw.Draw(mask).rounded_rectangle((0, 0, 309, 211), radius=20, fill=255)
+        self.im.paste(guide, (866, 12), mask)
+        self.d.rounded_rectangle((864, 10, 1178, 226), radius=22, outline=(255, 255, 255), width=4)
         f_k = self.f("m", 28)
         f_t = self.f("b", 52)
-        f_s = self.f("r", 26)
+        f_s = self.f("r", 24)
         self.d.text((M, 28), self.kicker, font=f_k, fill=(210, 228, 248))
         self.d.text((M, 68), self.title, font=f_t, fill=(255, 255, 255))
-        text_block(self.d, (M, 140), self.subtitle, f_s, (230, 240, 250), W - M * 2, 36)
+        text_block(self.d, (M, 140), self.subtitle, f_s, (230, 240, 250), 760, 33)
         self.d.rectangle((0, 236, W, 318), fill=WARN_BG)
         self.d.rectangle((0, 318, W, 322), fill=WARN_BD)
-        f_w = self.f("b", 26)
+        self.d.polygon(((1000, 236), (1050, 236), (1025, 250)), fill=WARN_BG)
+        f_w = self.f("b", 25)
         self.d.text(
             (M, 258),
-            "図の中の枠はボタンではありません。入口やリンクのボタンは、このページの上にあります。",
+            "案内役：「" + self.guide_message + "」",
             font=f_w,
             fill=PRESS,
         )
@@ -227,6 +245,9 @@ def build_all() -> None:
         "令和8年8月千葉豪雨　復興支援ポータル",
         "このサイトの入り口",
         "千葉県にお住まいの方の状況・支援案内と、支援者が協働する場を分けています。",
+        "anime-guide-map.jpg",
+        "上にある二つの入口から、あなたに合う方を選んでください。",
+        (0.5, 0.55),
     )
     s.note("有志運営です。行政の公式発表ではありません。申請は県・市町村の公式窓口へ。")
     s.h2("二つの入口（ボタンはページの上）")
@@ -250,6 +271,9 @@ def build_all() -> None:
         "千葉県にお住まいの方へ",
         "自分の状況から探す",
         "住まい・移動・事業者の3つの扉と、市町村検索から入れます。",
+        "anime-guide-map.jpg",
+        "住まい・移動・事業者から、いま必要な案内を選びましょう。",
+        (0.5, 0.58),
     )
     s.note("最新の避難・支援の有無は、必ずお住まいの市町村公式で確認してください。")
     s.h2("3つの案内")
@@ -270,6 +294,9 @@ def build_all() -> None:
         "住まいが被災した方へ",
         "記録してから、公式へ",
         "片付けの前に写真。契約の前に市町村の案内。金額はこのサイトに書きません。",
+        "anime-guide-map.jpg",
+        "片付ける前に写真を。契約前に市町村の案内を確認してください。",
+        (0.22, 0.57),
     )
     s.note("先に修理契約すると、後から公費の補助が受けられない場合があります。")
     s.h2("いますぐ")
@@ -294,6 +321,9 @@ def build_all() -> None:
         "移動と生活",
         "運行・ライフラインは公式で",
         "お盆明けの移動、停電・断水、病院や買い物。このページに区間名や店名の一覧は載せません。",
+        "anime-guide-map.jpg",
+        "移動やライフラインは、出発前に最新の公式情報を見ましょう。",
+        (0.5, 0.58),
     )
     s.note("通行できた道でも、その後に規制が出ることがあります。現地の誘導に従ってください。")
     s.h2("確認する場所")
@@ -313,6 +343,9 @@ def build_all() -> None:
         "事業者が被災した方へ",
         "店舗・工場も、まず記録",
         "飲食店、小売、工場、事務所。個人事業も法人も。融資は借り入れです。金額は書きません。",
+        "anime-guide-map.jpg",
+        "建物・設備・在庫を撮影し、契約前に相談窓口を確認しましょう。",
+        (0.78, 0.57),
     )
     s.note("自宅兼店舗は、住まいのページも見てください。住居と店舗で手続が分かれることがあります。")
     s.h2("いまの流れ")
@@ -337,6 +370,9 @@ def build_all() -> None:
         "市町村から探す",
         "54市町村の入口",
         "県防災ポータルの避難・避難所スナップショットと、公式の罹災・支援リンクへつなぎます。",
+        "anime-guide-map.jpg",
+        "お住まいの市町村を選び、公式の支援案内へ進んでください。",
+        (0.5, 0.54),
     )
     s.note("初日対象はレベル5の市町と流山市。他市町村は枠を先に出し、公式リンクから確認します。")
     s.h2("ページの使い方")
@@ -356,6 +392,9 @@ def build_all() -> None:
         "各市町村ページ",
         "このページの見方",
         "いま → 報道 → 支援策 → 行政の記録 → 生活再建。見出しとリンクのみです。",
+        "anime-guide-map.jpg",
+        "まず上の公式ボタンを確認し、必要な支援策へ進んでください。",
+        (0.5, 0.58),
     )
     s.note("報道は全文転載しません。Yahoo!ニュース等は出典へ。数値は速報です。")
     s.h2("上から読む")
@@ -375,6 +414,9 @@ def build_all() -> None:
         "県・国の支援",
         "公式への案内",
         "千葉県と国の発表、事業者向け相談。本文は転載せず、リンク先で確認します。",
+        "anime-guide-map.jpg",
+        "制度の対象や受付期間は、県・国・市町村の公式で確認しましょう。",
+        (0.78, 0.57),
     )
     s.note("災害救助法は応急の住まい・生活が中心です。店舗の復旧は別制度になることが多いです。")
     s.h2("まず開く公式")
@@ -393,6 +435,9 @@ def build_all() -> None:
         "支援・協働する方へ",
         "情報を集め、届ける",
         "CTZC有志の活動。行政・報道の公開情報を集め、県民へ分かりやすく渡すことから着手します。",
+        "anime-guide-team.jpg",
+        "公開情報を整理し、必要な方へ分かりやすく届けていきます。",
+        (0.52, 0.5),
     )
     s.note("救命、現地ボランティアのマッチング、罹災調査そのものは担いません。")
     s.h2("いまやっていること")
@@ -412,6 +457,9 @@ def build_all() -> None:
         "今後の案への投票",
         "何があるとよいか、票で示す",
         "結果は今後の機能や案内の参考です。個人情報は取りません。申請や被害の申告ではありません。",
+        "anime-guide-team.jpg",
+        "必要だと思う案を選んでください。投票は今後の活動の参考にします。",
+        (0.38, 0.5),
     )
     s.note("1つの案につき、このブラウザで1票（取り消し可）。結果は参考値です。")
     s.h2("投票のルール")
