@@ -76,6 +76,40 @@ header { padding-top: 1.25rem; }
 }
 .door strong { display: block; color: var(--accent); font-size: 1.2rem; margin-bottom: 0.4rem; }
 .nav { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; margin: 0.75rem 0 1rem; }
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0.55rem 0.85rem;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  background: #e7f1fb;
+}
+.menu-panel {
+  flex-direction: column;
+  gap: 0;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+.menu-panel[hidden] { display: none; }
+.menu-panel a {
+  padding: 0.55rem 0.15rem;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+}
+.menu-panel a:last-child { border-bottom: 0; }
 .btn {
   display: inline-block;
   background: var(--accent);
@@ -309,7 +343,7 @@ h3 { font-size: 1.05rem; margin: 0.35rem 0 0.4rem; }
 .support-table td, .support-table th { vertical-align: top; }
 .support-table td:first-child { font-weight: 600; }
 @media print {
-  header .nav, footer [data-share], #sit-print, #sit-link, #sit-clear, .org-links { display: none !important; }
+  header .nav, .menu-toggle, footer [data-share], #sit-print, #sit-link, #sit-clear, .org-links { display: none !important; }
   .card { break-inside: avoid; }
 }
 

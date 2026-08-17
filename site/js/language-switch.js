@@ -42,4 +42,42 @@
   nav.appendChild(languageItem("ja", "日本語"));
   nav.appendChild(languageItem("en", "English"));
   document.body.insertBefore(nav, document.body.firstChild);
+
+  var pageNav = document.querySelector("header .nav");
+  if (!pageNav) return;
+
+  var openLabel = isEnglish ? "☰ Menu" : "☰ メニュー";
+  var closeLabel = isEnglish ? "× Close" : "× 閉じる";
+  var menuId = "site-menu";
+  var button = document.createElement("button");
+  button.type = "button";
+  button.className = "menu-toggle";
+  button.setAttribute("aria-controls", menuId);
+  button.setAttribute("aria-expanded", "false");
+  button.textContent = openLabel;
+
+  pageNav.id = menuId;
+  pageNav.classList.add("menu-panel");
+  pageNav.setAttribute("aria-label", isEnglish ? "Other pages" : "他のページ");
+  pageNav.hidden = true;
+  pageNav.parentNode.insertBefore(button, pageNav);
+
+  function setOpen(open) {
+    pageNav.hidden = !open;
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+    button.textContent = open ? closeLabel : openLabel;
+  }
+
+  button.addEventListener("click", function () {
+    setOpen(button.getAttribute("aria-expanded") !== "true");
+  });
+  pageNav.addEventListener("click", function (event) {
+    if (event.target.closest("a")) setOpen(false);
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && !pageNav.hidden) {
+      setOpen(false);
+      button.focus();
+    }
+  });
 })();

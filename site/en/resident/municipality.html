@@ -32,19 +32,22 @@
 <body>
   <header>
     <div class="brand"><a href="../index.html">CTZC Chiba Heavy Rain Portal</a></div>
+    <nav class="nav">
+      <a href="index.html">For Chiba Residents</a>
+      <a href="situations.html">Find Help by Situation</a>
+      <a href="timeline.html">What Happens Next</a>
+      <a href="housing.html">Housing Damage</a>
+      <a href="life.html">Transport and Daily Life</a>
+      <a href="business.html">For Affected Businesses</a>
+      <a href="municipalities.html">Municipality List</a>
+      <a href="prefecture.html">Prefectural and National Support</a>
+    </nav>
   </header>
   <main>
     <h1 id="title">Loading…</h1>
-    <p class="notice">This is a volunteer-produced summary. Apply through official channels. Preliminary figures may change. News articles are represented only by their original titles and links; full text is not reproduced.</p>
-    <div class="card" id="now-card">
-      <h2>Current Status</h2>
-      <p class="meta" id="fetched"></p>
-      <p id="page-actions"><a class="btn" id="official" href="#" target="_blank" rel="noopener">Official website</a>
-        <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>Disaster prevention page</a></p>
-      <div id="now"></div>
-    </div>
     <div class="card" id="support-card">
       <h2>Support Currently Available</h2>
+      <p class="notice">This is a volunteer-produced summary. Apply through official channels. Preliminary figures may change. News articles are represented only by their original titles and links; full text is not reproduced.</p>
       <p class="empty">Apply through the official office. Check eligibility and application periods at each linked destination.</p>
       <div id="support"></div>
       <ul id="muni-support"></ul>
@@ -52,6 +55,13 @@
         <li><a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/">National disaster victim support programs (Cabinet Office; Japanese)</a> <span class="badge admin">Government</span></li>
         <li><a href="prefecture.html">Chiba Prefecture support and disaster information</a> <span class="badge admin">Government</span></li>
       </ul>
+    </div>
+    <div class="card" id="now-card">
+      <h2>Current Status</h2>
+      <p class="meta" id="fetched"></p>
+      <p id="page-actions"><a class="btn" id="official" href="#" target="_blank" rel="noopener">Official website</a>
+        <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>Disaster prevention page</a></p>
+      <div id="now"></div>
     </div>
     <div class="card" id="log-card">
       <h2>Government and Other Damage Records</h2>
@@ -78,16 +88,6 @@
   </main>
   <footer>
     <p>This is not an official government website.</p>
-    <nav class="nav" aria-label="Other pages">
-      <a href="index.html">For Chiba Residents</a>
-      <a href="situations.html">Find Help by Situation</a>
-      <a href="timeline.html">What Happens Next</a>
-      <a href="housing.html">Housing Damage</a>
-      <a href="life.html">Transport and Daily Life</a>
-      <a href="business.html">For Affected Businesses</a>
-      <a href="municipalities.html">Municipality List</a>
-      <a href="prefecture.html">Prefectural and National Support</a>
-    </nav>
   </footer>
   <script src="../js/municipality-names.js"></script>
   <script>
