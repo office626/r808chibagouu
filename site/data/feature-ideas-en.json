@@ -1,0 +1,165 @@
+{
+  "note": "Ideas for useful information, features, and actions after a disaster. Votes will help guide future features and new services. This is not an application desk. No login is required. You may cast one vote per idea in this browser.",
+  "ideas": [
+    {
+      "id": "risai-windows",
+      "category": "info",
+      "category_label": "Information",
+      "title": "Disaster damage certificates by municipality: application dates, offices, and required documents",
+      "summary": "Provide one table showing when and where to apply and what to bring. Include official links and indicate whether temporary offices or same-day issuance are available.",
+      "for": "Residents"
+    },
+    {
+      "id": "status-calendar",
+      "category": "info",
+      "category_label": "Information",
+      "title": "Support program calendar (open now, opening soon, or closed)",
+      "summary": "Arrange disaster damage certificates, emergency repairs, deemed temporary housing, relief payments, and other programs on a timeline. Also explain what people can prepare while waiting.",
+      "for": "Residents"
+    },
+    {
+      "id": "damage-next-step",
+      "category": "info",
+      "category_label": "Information",
+      "title": "Next steps by level of damage",
+      "summary": "Explain the next official procedures for categories such as below-floor flooding, above-floor flooding, partial damage, and total destruction, using official terminology. Show monetary amounts only after official confirmation.",
+      "for": "Residents"
+    },
+    {
+      "id": "lifeline-log",
+      "category": "info",
+      "category_label": "Information",
+      "title": "Recovery history for water outages, water-use restrictions, and road closures",
+      "summary": "Keep a record of when each disruption began, not just the latest status, so people can trace what happened even after official notices are updated.",
+      "for": "Residents and supporters"
+    },
+    {
+      "id": "waste-guide",
+      "category": "info",
+      "category_label": "Information",
+      "title": "How to dispose of disaster waste, temporary collection sites, and collection dates",
+      "summary": "Make official municipal collection sites and sorting rules easy to find on a map or list. Keep a history of changes to opening hours.",
+      "for": "Residents"
+    },
+    {
+      "id": "repair-or-temp",
+      "category": "info",
+      "category_label": "Information",
+      "title": "Choosing between emergency repairs and emergency temporary housing (including rented housing)",
+      "summary": "Use a diagram to show the options when relocation is necessary. Always link to the responsible agency's official information for eligibility and time limits.",
+      "for": "Residents"
+    },
+    {
+      "id": "qa-navigator",
+      "category": "feature",
+      "category_label": "Feature",
+      "title": "Question-based support program navigator for all of Chiba Prefecture",
+      "summary": "Extend the experience of Sodegaura City's Disaster Support Navigator to every municipality in Chiba Prefecture. Clearly state that eligibility is determined by the relevant authorities.",
+      "for": "Residents"
+    },
+    {
+      "id": "my-muni-alert",
+      "category": "feature",
+      "category_label": "Feature",
+      "title": "Follow only your municipality with a summary of changes",
+      "summary": "Show a short summary of what has changed since yesterday in the log for a bookmarked municipality. Start with a web page and RSS rather than requiring email notifications.",
+      "for": "Residents"
+    },
+    {
+      "id": "photo-checklist",
+      "category": "feature",
+      "category_label": "Feature",
+      "title": "Checklist for documenting damage with photos",
+      "summary": "Explain how to take photos that show the date, each room, and the floodwater level before applying for a disaster damage certificate or making an insurance claim. Personal photos would not be uploaded to this site.",
+      "for": "Residents"
+    },
+    {
+      "id": "official-diff",
+      "category": "feature",
+      "category_label": "Feature",
+      "title": "What changed in official announcements since yesterday",
+      "summary": "Show only changes to headlines and URLs from the prefectural portal and municipal updates, without republishing the full text. This would be useful in the morning when information may have changed overnight.",
+      "for": "Supporters and residents"
+    },
+    {
+      "id": "print-card",
+      "category": "feature",
+      "category_label": "Feature",
+      "title": "Printable procedure cards for service counters",
+      "summary": "When phone lines are busy, provide a one-page printable card listing what to bring and which office to visit. Include a note telling users to confirm the latest details with the official source.",
+      "for": "Residents"
+    },
+    {
+      "id": "easy-japanese",
+      "category": "feature",
+      "category_label": "Feature",
+      "title": "Guidance in Easy Japanese and other languages",
+      "summary": "Provide support program headings and links to official sources in Easy Japanese and major foreign languages. Do not translate the full program rules; direct users to the official source.",
+      "for": "Residents"
+    },
+    {
+      "id": "map-shelters",
+      "category": "feature",
+      "category_label": "Feature",
+      "title": "Map of shelters, road closures, and temporary waste collection sites",
+      "summary": "Direct users to location information published by the prefecture and municipalities. Do not post independently collected field reports. Give priority to the prefectural portal and official municipal sources for openings and closures.",
+      "for": "Residents"
+    },
+    {
+      "id": "photo-before-cleanup",
+      "category": "action",
+      "category_label": "Action",
+      "title": "Document the damage before cleaning up",
+      "summary": "Place a prominent notice on the site telling people to photograph the floodwater level and damaged areas before removing mud or starting cleanup.",
+      "for": "Residents"
+    },
+    {
+      "id": "insurance-then-risai",
+      "category": "action",
+      "category_label": "Action",
+      "title": "Contact your insurer while preparing for a disaster damage certificate",
+      "summary": "List what people can do while waiting for the certificate to be issued. Ask each insurer about policy details; the site would provide only a general sequence of steps.",
+      "for": "Residents"
+    },
+    {
+      "id": "follow-official-only",
+      "category": "action",
+      "category_label": "Action",
+      "title": "Check official municipal sources and the prefectural portal first",
+      "summary": "Start the residents' section by encouraging people to check official information before relying on secondhand reports on social media. Supporters would add information to the log with source URLs.",
+      "for": "Residents and supporters"
+    },
+    {
+      "id": "volunteer-via-shakyo",
+      "category": "action",
+      "category_label": "Action",
+      "title": "Check registration with a social welfare council before volunteering on site",
+      "summary": "This site would not match volunteers with assignments. The idea is to provide a service that directs volunteers to official registration information.",
+      "for": "Supporters"
+    },
+    {
+      "id": "share-muni-logs",
+      "category": "action",
+      "category_label": "Action",
+      "title": "Work together to add official municipal updates to the log",
+      "summary": "Make it easy to continue checking approved URLs and reporting errors from the task list. Collaboratively fill gaps for municipalities that do not yet have entries.",
+      "for": "Supporters"
+    },
+    {
+      "id": "scam-watch",
+      "category": "action",
+      "category_label": "Action",
+      "title": "Official warnings about donation and repair scams",
+      "summary": "Link to official warnings from the prefecture, municipalities, police, and other authorities about impersonation and unnecessary contracts. Do not make independent claims.",
+      "for": "Residents"
+    },
+    {
+      "id": "peacetime-pages",
+      "category": "action",
+      "category_label": "Action",
+      "title": "Keep municipal pages as preparedness resources after recovery",
+      "summary": "Even after public attention fades, maintain the pages as entry points to standing guidance on disaster damage certificates and official disaster-preparedness pages. This would help sustain preparedness until the next disaster.",
+      "for": "Supporters"
+    }
+  ]
+}

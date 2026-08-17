@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find Help for Your Situation | CTZC Chiba Heavy Rain Portal</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <meta name="description" content="Select your situation—flooding above or below floor level, renting, a flooded car, damage to a shop or farmland, work closure, children, older family members, chronic illness, pets, or foreign nationality—to see only what to do first, what may cause problems later, and support that is easy to miss. You can print the results or save a link.">
+  <meta name="theme-color" content="#0b5cab">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="canonical" href="https://office626.github.io/r808chibagouu/en/resident/situations.html">
+  <link rel="alternate" hreflang="ja" href="https://office626.github.io/r808chibagouu/resident/situations.html">
+  <link rel="alternate" hreflang="en" href="https://office626.github.io/r808chibagouu/en/resident/situations.html">
+  <link rel="alternate" hreflang="x-default" href="https://office626.github.io/r808chibagouu/resident/situations.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CTZC Chiba Heavy Rain Portal">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:title" content="Find Help for Your Situation | CTZC Chiba Heavy Rain Portal">
+  <meta property="og:description" content="Select your situation to see only what to do first, what may cause problems later, and support that is easy to miss.">
+  <meta property="og:url" content="https://office626.github.io/r808chibagouu/en/resident/situations.html">
+  <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta property="og:image:alt" content="For recovery from the August 2026 Chiba heavy rain disaster. Organized by CivicTechZenChiba.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Find Help for Your Situation | CTZC Chiba Heavy Rain Portal">
+  <meta name="twitter:description" content="Select your situation to see what to do first, what may cause problems later, and support that is easy to miss. You can print the results or save a link.">
+  <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta name="twitter:image:alt" content="For recovery from the August 2026 Chiba heavy rain disaster. Organized by CivicTechZenChiba.">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="../index.html">CTZC Chiba Heavy Rain Portal</a></div>
+    <nav class="nav">
+      <a href="index.html">For Chiba Residents</a>
+      <a href="situations.html">Find Help for Your Situation</a>
+      <a href="timeline.html">What Happens Next</a>
+      <a href="housing.html">If Your Home Was Damaged</a>
+      <a href="life.html">Transport and Daily Life</a>
+      <a href="business.html">If Your Business Was Damaged</a>
+      <a href="municipalities.html">Find Your Municipality</a>
+      <a href="prefecture.html">Prefectural and National Support</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Find Help for Your Situation</h1>
+    <p class="notice">
+      This site is run by volunteers and is not an application office. For each situation, it lists “What to do first,” “Problems you may face later,” and “Support that is easy to miss.”
+      Eligibility, amounts, and deadlines differ by municipality and program. Always check official information. Each administering organization makes the final eligibility decision.
+    </p>
+
+    <div class="card" id="page-actions">
+      <h2>Select all situations that apply to you</h2>
+      <p>After you select an option, only relevant information will be shown. Your choices stay on this device and are not sent to this site.</p>
+      <div class="chips" role="group" aria-label="Select your situation">
+        <button type="button" class="chip" data-sit="house-over" aria-pressed="false">Flooding reached above floor level</button>
+        <button type="button" class="chip" data-sit="house-under" aria-pressed="false">Flooding stayed below floor level</button>
+        <button type="button" class="chip" data-sit="house-roof" aria-pressed="false">Roof, leaks, landslide, or retaining wall</button>
+        <button type="button" class="chip" data-sit="rent" aria-pressed="false">I live in a rental home</button>
+        <button type="button" class="chip" data-sit="car" aria-pressed="false">My car was flooded</button>
+        <button type="button" class="chip" data-sit="lifeline" aria-pressed="false">Power or water was cut off</button>
+        <button type="button" class="chip" data-sit="shop" aria-pressed="false">Shop, factory, or farmland</button>
+        <button type="button" class="chip" data-sit="work" aria-pressed="false">My workplace closed or I cannot get to work</button>
+        <button type="button" class="chip" data-sit="child" aria-pressed="false">I have children</button>
+        <button type="button" class="chip" data-sit="elder" aria-pressed="false">Older family member or caregiving</button>
+        <button type="button" class="chip" data-sit="health" aria-pressed="false">Chronic illness, medication, or dialysis</button>
+        <button type="button" class="chip" data-sit="pet" aria-pressed="false">Pets</button>
+        <button type="button" class="chip" data-sit="foreign" aria-pressed="false">Foreign national or not confident in Japanese</button>
+      </div>
+      <p class="meta" id="sit-count">Showing all information.</p>
+      <p>
+        <button type="button" class="btn secondary" id="sit-clear" hidden>Clear selections</button>
+        <button type="button" class="btn secondary" id="sit-print">Print this view</button>
+        <button type="button" class="btn secondary" id="sit-link" hidden>Create a link to these selections</button>
+      </p>
+      <p class="meta" id="sit-link-note"></p>
+      <p class="meta">For a time-based overview, see <a href="timeline.html">What Happens Next</a>. For municipal service counters, see <a href="municipalities.html">Find Your Municipality</a>.</p>
+    </div>
+
+    <section data-section>
+      <h2 class="section-title">Guidance by situation</h2>
+
+      <div class="card" data-tags="house-over">
+        <h3>Flooding reached above floor level</h3>
+        <p><strong>What to do first:</strong> Before cleaning up, take photos from all four sides, showing the water depth, each room, and any household items you discard. Keep every receipt. Begin applying for a disaster damage certificate (risai shomeisho) through your municipality. If you sign a repair contract first, you may become ineligible for publicly funded emergency repairs, so check municipal guidance before signing.</p>
+        <p><strong>Problems you may face later:</strong> The programs available depend on the damage classification, such as total or partial destruction. Closing the floor before it is dry can cause mold and odors. Have flooded appliances and the breaker panel inspected before turning on the power. You may need to choose between emergency repairs and temporary rental housing. Support payments differ according to the damage classification and rebuilding method, and application deadlines apply.</p>
+        <p class="src">
+          <a href="housing.html">If Your Home Was Damaged</a> /
+          <a href="timeline.html#week1">What to do in the first week</a> /
+          <a href="https://www.bousai.go.jp/taisaku/unyou.html" target="_blank" rel="noopener">Assessment of damage to homes (Cabinet Office)</a> <span class="badge admin">Government</span> /
+          <a href="https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/hisaisyashien-chiba.html" target="_blank" rel="noopener">Chiba Prefecture Disaster Victim Livelihood Recovery Support Program</a> <span class="badge admin">Government</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="house-under">
+        <h3>Flooding stayed below floor level</h3>
+        <p><strong>What to do first:</strong> Remove water and mud from beneath the floor, ventilate and dry the area, and then disinfect it. Take photos, even if only through an underfloor access hatch. In some municipalities, below-floor flooding may still qualify for a disaster damage certificate, condolence payment, disinfectant distribution, or other help, so check official notices.</p>
+        <p><strong>Problems you may face later:</strong> The damage is often classified in a lighter category, such as “minor damage not reaching semi-partial destruction.” Even if you do not qualify for a support payment, you may still qualify for emergency repairs, a condolence payment, tax reductions, or insurance coverage. If the area is not dried, termites, mold, and rotting insulation may appear later.</p>
+        <p class="src">
+          <a href="https://www.mhlw.go.jp/stf/newpage_00341.html" target="_blank" rel="noopener">Preventing infections in disaster-damaged homes (Ministry of Health, Labour and Welfare)</a> <span class="badge admin">Government</span> /
+          <a href="https://www.shintsuna.org/tools/" target="_blank" rel="noopener">“When Your Home Is Flooded” (Japan National Network for Disaster Relief)</a> <span class="badge npo">NPO</span> /
+          <a href="municipalities.html">Municipal pages and official notices</a>
+        </p>
+      </div>
+
+      <div class="card" data-tags="house-roof">
+        <h3>Roof, leaks, landslide, or retaining wall</h3>
+        <p><strong>What to do first:</strong> Do not climb onto the roof; falls occur after every disaster. Have a contractor, fire brigade, or volunteer team follow proper procedures when installing a blue tarp. Photograph landslide damage or cracks in retaining walls and contact your municipality. Areas near hillsides and cliffs may become dangerous again in the next rainfall.</p>
+        <p><strong>Problems you may face later:</strong> Door-to-door claims that “your fire insurance will make roof repairs free” often lead to trouble. The contact point for a retaining wall or the ground depends on who owns it, such as a neighbor, the municipality, or the prefecture. Roof work may qualify for the emergency repair program.</p>
+        <p class="src">
+          <a href="https://www.caa.go.jp/notice/entry/035897/" target="_blank" rel="noopener">Beware of dishonest sales practices exploiting disasters (Consumer Affairs Agency)</a> <span class="badge admin">Government</span> /
+          <a href="https://www.pref.chiba.lg.jp/customer/" target="_blank" rel="noopener">Chiba Prefectural Consumer Affairs Center</a> <span class="badge admin">Government</span> /
+          <a href="https://www.chiba-ben.or.jp/soudan/consultation/saigai.html" target="_blank" rel="noopener">Chiba Bar Association: advice on neighboring land and retaining walls</a> <span class="badge npo">Bar Association</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="rent">
+        <h3>I live in a rental home</h3>
+        <p><strong>What to do first:</strong> Tell the landlord or property manager about the damage and send photos. The resident can apply for a disaster damage certificate; the landlord is responsible for building repairs. Check your own insurance for your belongings, tenant liability, and household property coverage.</p>
+        <p><strong>Problems you may face later:</strong> If the home is uninhabitable, clarify how rent will be handled, who will pay moving and relocation costs, and whether you qualify for emergency temporary rental housing. Keep the lease and a record of all communication with the landlord. If a dispute arises, consult the bar association or the Japan Legal Support Center.</p>
+        <p class="src">
+          <a href="https://www.chiba-ben.or.jp/soudan/consultation/saigai.html" target="_blank" rel="noopener">Chiba Bar Association: help for people affected by disasters</a> <span class="badge npo">Bar Association</span> /
+          <a href="https://www.houterasu.or.jp/" target="_blank" rel="noopener">Japan Legal Support Center (Houterasu)</a> <span class="badge admin">Official</span> /
+          <a href="timeline.html#week2">From week two: emergency repairs or temporary housing</a>
+        </p>
+      </div>
+
+      <div class="card" data-tags="car">
+        <h3>My car was flooded</h3>
+        <p><strong>What to do first:</strong> Do not start the engine because it may short-circuit or catch fire. Take photos and contact your insurer. Ask a dealer, repair shop, or roadside assistance service to move the vehicle.</p>
+        <p><strong>Problems you may face later:</strong> Whether comprehensive vehicle insurance covers flood damage depends on your policy. If the vehicle is scrapped, you must complete deregistration procedures. Some municipalities issue a disaster-affected property certificate, rather than a disaster damage certificate for a home, for vehicle damage. You may also need alternative transport for commuting, medical visits, or taking family members places.</p>
+        <p class="src">
+          <a href="housing.html#car">If your car was flooded</a> /
+          <a href="https://www.sonpo.or.jp/insurance/car/" target="_blank" rel="noopener">Automobile insurance (General Insurance Association of Japan)</a> <span class="badge admin">Official</span> /
+          <a href="https://jaf.or.jp/" target="_blank" rel="noopener">Japan Automobile Federation (JAF)</a> <span class="badge admin">Official</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="lifeline">
+        <h3>Power or water was cut off</h3>
+        <p><strong>What to do first:</strong> When power returns, unplug flooded appliances and check that no flammable items are nearby before switching the breaker on. When in doubt, discard food from the refrigerator. After water service returns, first run the tap until cloudy water clears. Do not drink well water until it has been tested.</p>
+        <p><strong>Problems you may face later:</strong> Reductions, exemptions, or deferred payment for electricity, gas, and water often require an application. Include food and medicine discarded during the outage in your expense records.</p>
+        <p class="src">
+          <a href="life.html">Transport and Daily Life: utility providers</a> /
+          <a href="https://www.nite.go.jp/jiko/chuikanki/poster/sonota/2021082601.html" target="_blank" rel="noopener">Fire from flooded electrical appliances (NITE)</a> <span class="badge admin">Government</span> /
+          <a href="https://www.pref.chiba.lg.jp/suidou/" target="_blank" rel="noopener">Chiba Prefectural Public Enterprises Bureau: water services</a> <span class="badge admin">Government</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="shop">
+        <h3>My shop, factory, or farmland was damaged</h3>
+        <p><strong>What to do first:</strong> Take photos and keep records of damage to inventory, equipment, and crops, along with receipts. In some municipalities, business premises qualify for a disaster-affected property certificate. Contact customers, suppliers, and employees.</p>
+        <p><strong>Problems you may face later:</strong> You may need operating funds through safety-net guarantees, disaster loans from the Japan Finance Corporation, or prefectural financing; employment support for workers during closure through employment adjustment subsidies or special employment insurance measures; extensions for tax filing deadlines; and agricultural mutual aid claims before their deadlines.</p>
+        <p class="src">
+          <a href="business.html">If Your Business Was Damaged</a> /
+          <a href="https://www.jfc.go.jp/n/finance/saftynet/" target="_blank" rel="noopener">Japan Finance Corporation: safety-net and disaster loans</a> <span class="badge admin">Official</span> /
+          <a href="https://www.pref.chiba.lg.jp/keishi/chuushou-yuushi/yuushiseido/chuushou/index.html" target="_blank" rel="noopener">Chiba Prefecture financing for small and medium-sized enterprises</a> <span class="badge admin">Government</span> /
+          <a href="https://www.nosai-chiba.or.jp/" target="_blank" rel="noopener">NOSAI Chiba agricultural mutual aid</a> <span class="badge admin">Official</span> /
+          <a href="https://www.maff.go.jp/j/saigai/" target="_blank" rel="noopener">Disaster information from the Ministry of Agriculture, Forestry and Fisheries</a> <span class="badge admin">Government</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="work">
+        <h3>My workplace closed or I cannot get to work</h3>
+        <p><strong>What to do first:</strong> Tell your employer about your situation and confirm whether the absence will be treated as business closure, paid leave, or remote work. Check transport operators’ official information for restoration of your commuting route.</p>
+        <p><strong>Problems you may face later:</strong> In areas covered by the Disaster Relief Act, special measures may allow workers unable to work because their workplace closed to receive basic employment insurance benefits even if they have not left their jobs. Ask the Labour Bureau about leave allowances and employment rules during a disaster.</p>
+        <p class="src">
+          <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00177.html" target="_blank" rel="noopener">Support and programs after a natural disaster (Ministry of Health, Labour and Welfare)</a> <span class="badge admin">Government</span> /
+          <a href="https://jsite.mhlw.go.jp/chiba-roudoukyoku/" target="_blank" rel="noopener">Chiba Labour Bureau</a> <span class="badge admin">Government</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="child">
+        <h3>I have children</h3>
+        <p><strong>What to do first:</strong> Check messages from schools and childcare facilities about the start of the second term, school routes, and meals. Keep children away from mud and electrical appliances during cleanup. Check your municipal page for distributions of infant formula and diapers.</p>
+        <p><strong>Problems you may face later:</strong> School expense assistance and the Disaster Relief Act’s provision of school supplies may help with supplies and meal costs. Trouble sleeping, regression, and irritability are natural reactions, but if they continue, consult a teacher, school counselor, or prefectural service.</p>
+        <p class="src">
+          <a href="https://www.mext.go.jp/a_menu/shotou/career/05010502/017.htm" target="_blank" rel="noopener">School expense assistance program (Ministry of Education, Culture, Sports, Science and Technology)</a> <span class="badge admin">Government</span> /
+          <a href="https://www.pref.chiba.lg.jp/kyouiku/" target="_blank" rel="noopener">Chiba Prefectural Board of Education</a> <span class="badge admin">Government</span> /
+          <a href="https://www.pref.chiba.lg.jp/kodomo/" target="_blank" rel="noopener">Chiba Prefecture Children and Families Division</a> <span class="badge admin">Government</span> /
+          <a href="https://www.pref.chiba.lg.jp/cmhc/kokoro/cmhc-saigai-kokoro.html" target="_blank" rel="noopener">Mental health care during disasters (Prefectural Mental Health and Welfare Center)</a> <span class="badge admin">Government</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="elder">
+        <h3>Older family member or caregiving</h3>
+        <p><strong>What to do first:</strong> Confirm the person’s safety, medication, and medical visits. Do not let them clean up alone because of heatstroke and fall risks. Contact their care manager and community comprehensive support center to confirm when day services or home visits will resume. Ask your municipality about welfare shelters.</p>
+        <p><strong>Problems you may face later:</strong> Someone may need to apply on the person’s behalf for a disaster damage certificate, support payments, or fee reductions. Reductions may be available for long-term care insurance premiums and user charges. Do not make decisions about home repairs, institutional care, or moving only within the family; consult the community comprehensive support center.</p>
+        <p class="src">
+          <a href="municipalities.html">Municipal pages: ask your municipality about community comprehensive support centers and welfare shelters</a> /
+          <a href="https://www.pref.chiba.lg.jp/kenfuku/" target="_blank" rel="noopener">Chiba Prefecture Health and Welfare Department</a> <span class="badge admin">Government</span> /
+          <a href="https://www.chibakenshakyo.com/" target="_blank" rel="noopener">Chiba Prefecture Council of Social Welfare</a> <span class="badge npo">Social Welfare Council</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="health">
+        <h3>Chronic illness, medication, or dialysis</h3>
+        <p><strong>What to do first:</strong> If medicine was washed away or is running out, contact your regular clinic or a nearby pharmacy; you can ask for help even without your medication notebook. For dialysis, confirm whether your regular facility is operating and ask about alternatives. In areas covered by the Disaster Relief Act, temporary arrangements may allow treatment without an insurance card.</p>
+        <p><strong>Problems you may face later:</strong> Exemption or deferral of out-of-pocket medical costs requires an application. Health checkup and vaccination schedules may change. Injuries can carry a risk of tetanus.</p>
+        <p class="src">
+          <a href="https://www.qq.pref.chiba.lg.jp/" target="_blank" rel="noopener">Chiba Emergency Medical Network: find a medical provider</a> <span class="badge admin">Government</span> /
+          <a href="https://www.saigai-touseki.net/" target="_blank" rel="noopener">Japanese Association of Dialysis Physicians Disaster Information Network</a> <span class="badge admin">Official</span> /
+          <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html" target="_blank" rel="noopener">Health insurance (Ministry of Health, Labour and Welfare; disaster arrangements are announced here)</a> <span class="badge admin">Government</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="pet">
+        <h3>Pets</h3>
+        <p><strong>What to do first:</strong> Ask your municipality how pets are handled at shelters. You may be allowed to evacuate with a pet but unable to keep it in the living area. Report lost or found animals to the prefectural animal welfare center and municipality. Wash mud off an animal and check its skin.</p>
+        <p><strong>Problems you may face later:</strong> Check whether temporary housing allows pets and secure food and medicine. Chiba Prefecture has a framework for animal rescue activities during disasters.</p>
+        <p class="src">
+          <a href="https://www.pref.chiba.lg.jp/eishi/pet/doubutsu/animal-rescue.html" target="_blank" rel="noopener">Animal rescue activities during disasters (Chiba Prefecture)</a> <span class="badge admin">Government</span> /
+          <a href="https://www.pref.chiba.lg.jp/aigo/" target="_blank" rel="noopener">Chiba Prefectural Animal Welfare Center</a> <span class="badge admin">Government</span> /
+          <a href="https://www.env.go.jp/nature/dobutsu/aigo/2_data/pamph/h3009a.html" target="_blank" rel="noopener">Disaster preparedness guidelines for people and pets (Ministry of the Environment)</a> <span class="badge admin">Government</span>
+        </p>
+      </div>
+
+      <div class="card" data-tags="foreign">
+        <h3>Foreign national or not confident in Japanese</h3>
+        <p><strong>What to do first:</strong> A “risai shomeisho” (disaster damage certificate) is a document issued by your city or town office that certifies damage to your home. You need it to receive support. Take photos before cleaning up.</p>
+        <p><strong>Where to ask for help:</strong> The Chiba Convention Bureau and International Center offers consultations in multiple languages. At a municipal counter, you can say “Yasashii Nihongo de onegaishimasu” (“Please use plain Japanese”). Contact the Immigration Services Agency about your residence status or reissuing a residence card.</p>
+        <p class="src">
+          <a href="https://www.mcic.or.jp/" target="_blank" rel="noopener">Chiba Convention Bureau and International Center: multilingual consultation</a> <span class="badge admin">Official</span> /
+          <a href="https://www.moj.go.jp/isa/support/portal/index.html" target="_blank" rel="noopener">Daily Life Support Portal for Foreign Nationals (Immigration Services Agency)</a> <span class="badge admin">Government</span> /
+          <a href="https://www.clair.or.jp/tagengo/" target="_blank" rel="noopener">Multilingual Living Information (CLAIR)</a> <span class="badge admin">Official</span> /
+          <a href="https://www.pref.chiba.lg.jp/kokusai/" target="_blank" rel="noopener">Chiba Prefecture International Affairs Division</a> <span class="badge admin">Government</span>
+        </p>
+      </div>
+    </section>
+
+    <section data-section>
+      <h2 class="section-title">Support that is easy to miss, in addition to a disaster damage certificate</h2>
+      <p class="meta">You cannot apply for programs you do not know exist. Check each program’s official source for eligibility, requirements, and deadlines. Amounts are not listed here.</p>
+      <div class="card">
+        <table class="compare support-table">
+          <thead>
+            <tr><th>Program or measure</th><th>Who it is for</th><th>Contact</th></tr>
+          </thead>
+          <tbody>
+            <tr data-tags="house-over house-under house-roof rent lifeline"><td>Reductions, exemptions, or deferred payment for electricity, gas, and water</td><td>Disaster-affected households</td><td>Each provider’s disaster page; see <a href="life.html">Utility providers</a></td></tr>
+            <tr data-tags="house-over house-under house-roof rent"><td>NHK reception fee exemption, extended mobile phone payment deadlines, and similar measures</td><td>Disaster-affected households; application required</td><td><a href="https://pid.nhk.or.jp/jushinryo/" target="_blank" rel="noopener">NHK</a> and each mobile phone provider</td></tr>
+            <tr data-tags="house-over house-under house-roof rent car shop"><td>Reduction or exemption of resident, fixed-asset, prefectural, and income taxes; extensions of filing and payment deadlines</td><td>According to the extent of damage</td><td>Your municipality, <a href="https://www.pref.chiba.lg.jp/zeimu/" target="_blank" rel="noopener">Chiba Prefecture Tax Division</a>, and <a href="https://www.nta.go.jp/taxes/shiraberu/saigai/index.htm" target="_blank" rel="noopener">National Tax Agency</a></td></tr>
+            <tr data-tags="house-over house-under house-roof rent car shop"><td>Casualty loss deduction or Disaster Tax Reduction and Exemption Act relief on the following year’s tax return</td><td>People whose home, household belongings, or car was damaged, including salaried employees</td><td><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1110.htm" target="_blank" rel="noopener">National Tax Agency: casualty loss deduction</a></td></tr>
+            <tr data-tags="house-over house-under rent elder health"><td>Reduction or exemption of National Health Insurance, medical insurance for older people, and long-term care insurance premiums; exemption or deferral of out-of-pocket medical costs</td><td>Disaster-affected insured people; application required</td><td>Your municipality’s insurance section</td></tr>
+            <tr data-tags="house-over house-under rent work"><td>Exemption from National Pension contributions</td><td>People who have difficulty paying because of the disaster</td><td><a href="https://www.nenkin.go.jp/service/kokunen/menjo/index.html" target="_blank" rel="noopener">Japan Pension Service</a> and your municipality</td></tr>
+            <tr data-tags="work shop"><td>Special employment insurance measures, including basic allowance during workplace closure</td><td>Workers at closed workplaces in areas covered by the Disaster Relief Act</td><td><a href="https://jsite.mhlw.go.jp/chiba-roudoukyoku/" target="_blank" rel="noopener">Chiba Labour Bureau</a> and Hello Work</td></tr>
+            <tr data-tags="house-over house-under rent"><td>Disaster relief fund loans and livelihood welfare loans, including emergency small loans</td><td>Disaster-affected households; loans must be repaid</td><td>Your municipality and <a href="https://www.chibakenshakyo.com/" target="_blank" rel="noopener">Council of Social Welfare</a></td></tr>
+            <tr data-tags="house-over house-under house-roof rent"><td>Disaster condolence money, disability condolence money, and municipal disaster relief payments</td><td>Bereaved families, people left with a severe disability, and disaster-affected households</td><td>Your municipality</td></tr>
+            <tr data-tags="house-over house-roof rent"><td>National and prefectural livelihood recovery support payments for disaster victims</td><td>Depends on the damage classification and rebuilding method</td><td>Your municipality; see the <a href="https://www.bousai.go.jp/taisaku/seikatsusaiken/shiensya.html" target="_blank" rel="noopener">Cabinet Office</a> and <a href="https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/hisaisyashien-chiba.html" target="_blank" rel="noopener">Chiba Prefecture</a></td></tr>
+            <tr data-tags="house-over house-roof"><td>Emergency home repairs, emergency temporary housing including leased rentals, and publicly funded demolition</td><td>Disaster-affected households in municipalities covered by the Disaster Relief Act</td><td>Your municipality; implemented by the prefecture</td></tr>
+            <tr data-tags="house-over house-roof rent"><td>Debt restructuring for mortgages and other loans under the Natural Disaster Debt Restructuring Guidelines</td><td>People who now have difficulty making repayments</td><td><a href="https://www.dgl.or.jp/" target="_blank" rel="noopener">Operating organization</a>, your lender, and the bar association</td></tr>
+            <tr data-tags="child"><td>School expense assistance and school supplies provided under the Disaster Relief Act</td><td>Families of disaster-affected schoolchildren</td><td>Your school or board of education; see the <a href="https://www.mext.go.jp/a_menu/shotou/career/05010502/017.htm" target="_blank" rel="noopener">Ministry of Education, Culture, Sports, Science and Technology</a></td></tr>
+            <tr data-tags="shop"><td>Safety-net guarantees, Japan Finance Corporation disaster loans, prefectural financing, and special employment adjustment subsidy measures</td><td>Disaster-affected small businesses and sole proprietors</td><td>Chamber or society of commerce and industry, <a href="https://www.jfc.go.jp/n/finance/saftynet/" target="_blank" rel="noopener">Japan Finance Corporation</a>, and <a href="https://www.pref.chiba.lg.jp/keishi/chuushou-yuushi/yuushiseido/chuushou/index.html" target="_blank" rel="noopener">Chiba Prefecture</a></td></tr>
+            <tr data-tags="shop"><td>Agricultural mutual aid and disaster support for agriculture, forestry, and fisheries</td><td>Damage to crops, agricultural machinery, or facilities</td><td><a href="https://www.nosai-chiba.or.jp/" target="_blank" rel="noopener">NOSAI Chiba</a>, <a href="https://www.pref.chiba.lg.jp/annou/" target="_blank" rel="noopener">Prefectural Agriculture, Forestry and Fisheries Department</a>, and your municipality</td></tr>
+            <tr data-tags="house-over house-under house-roof rent car shop"><td>Free consultations with attorneys and judicial scriveners</td><td>People facing problems involving contracts, insurance, neighboring land, landlords, or loans</td><td><a href="https://www.chiba-ben.or.jp/soudan/consultation/saigai.html" target="_blank" rel="noopener">Chiba Bar Association</a> and <a href="https://www.houterasu.or.jp/" target="_blank" rel="noopener">Japan Legal Support Center</a></td></tr>
+            <tr data-tags="house-over house-under house-roof rent child elder health"><td>Mental health consultation</td><td>People who cannot sleep or begin cleaning up, or who are worried about a child’s behavior</td><td><a href="https://www.pref.chiba.lg.jp/kenzu/kokoro/soudanitiran.html" target="_blank" rel="noopener">Chiba Prefecture consultation services</a></td></tr>
+          </tbody>
+        </table>
+        <p class="meta">Overview of sources: <a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/pdf/kakusyuseido_tsuujou.pdf" target="_blank" rel="noopener">Overview of Programs for Disaster Victims (Cabinet Office PDF)</a> <span class="badge admin">Government</span></p>
+      </div>
+    </section>
+
+    <div class="card">
+      <h2>If your problem is not listed</h2>
+      <p>First contact the main service counter of your municipality. The municipal pages include buttons to official websites. To suggest another situation for this guide, open a <a href="https://github.com/office626/r808chibagouu/issues/new" target="_blank" rel="noopener">GitHub issue</a> or visit the <a href="../supporters/index.html">supporters’ page</a>.</p>
+    </div>
+  </main>
+  <footer>
+    <p>This site is not an official government announcement. Each administering organization determines program eligibility and deadlines.</p>
+    <p class="org-links">
+      <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC website</a>
+      <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook group</a>
+      <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook page</a>
+    </p>
+    <div data-share></div>
+  </footer>
+  <script src="../../js/situations.js"></script>
+  <script src="../../js/share.js"></script>
+  <script src="../../js/language-switch.js"></script>
+</body>
+</html>

@@ -2,6 +2,7 @@
 // チップで状況を選ぶと data-tags が重なるカードと行だけを表示する。選択は localStorage と URL の ?s= に残す。
 // サーバーには何も送らない。
 (function () {
+  var isEnglish = document.documentElement.lang === "en";
   var STORE = "ctzc_situations_v1";
   var chips = Array.prototype.slice.call(document.querySelectorAll("[data-sit]"));
   var targets = Array.prototype.slice.call(document.querySelectorAll("[data-tags]"));
@@ -49,8 +50,12 @@
     });
     if (count) {
       count.textContent = on.length === 0
-        ? "すべて表示しています。上のボタンで状況を選ぶと、該当するものだけになります。"
-        : on.length + "件の状況を選択中。該当 " + shown + " 件を表示しています。";
+        ? (isEnglish
+          ? "Showing all information. Choose one or more situations above to narrow the list."
+          : "すべて表示しています。上のボタンで状況を選ぶと、該当するものだけになります。")
+        : (isEnglish
+          ? on.length + " situation(s) selected. Showing " + shown + " matching item(s)."
+          : on.length + "件の状況を選択中。該当 " + shown + " 件を表示しています。");
     }
     if (clearBtn) clearBtn.hidden = on.length === 0;
     if (linkBtn) linkBtn.hidden = on.length === 0;
@@ -70,7 +75,11 @@
     var url = location.origin + location.pathname + "?s=" + encodeURIComponent(keys().join(","));
     function done(msg) { if (linkNote) linkNote.textContent = msg; }
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function () { done("リンクをコピーしました。LINE などで自分に送っておくと、あとで同じ表示を開けます。"); },
+      navigator.clipboard.writeText(url).then(function () {
+        done(isEnglish
+          ? "Link copied. Save or send it to reopen the same selection later."
+          : "リンクをコピーしました。LINE などで自分に送っておくと、あとで同じ表示を開けます。");
+      },
         function () { done(url); });
     } else {
       done(url);

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find Your Municipality | CTZC Chiba Heavy Rain Portal</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <meta name="description" content="A list of damage timelines and support pages for all 54 municipalities in Chiba Prefecture, with shelter and Disaster Relief Act status badges.">
+  <meta name="theme-color" content="#0b5cab">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="canonical" href="https://office626.github.io/r808chibagouu/en/resident/municipalities.html">
+  <link rel="alternate" hreflang="ja" href="https://office626.github.io/r808chibagouu/resident/municipalities.html">
+  <link rel="alternate" hreflang="en" href="https://office626.github.io/r808chibagouu/en/resident/municipalities.html">
+  <link rel="alternate" hreflang="x-default" href="https://office626.github.io/r808chibagouu/resident/municipalities.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CTZC Chiba Heavy Rain Portal">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Find Your Municipality | CTZC Chiba Heavy Rain Portal">
+  <meta property="og:description" content="A list of damage timelines and support pages for all 54 municipalities in Chiba Prefecture, with shelter and Disaster Relief Act status badges.">
+  <meta property="og:url" content="https://office626.github.io/r808chibagouu/en/resident/municipalities.html">
+  <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta property="og:image:alt" content="Supporting recovery from the August 2026 Chiba heavy rain disaster. Organized by CivicTechZenChiba.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Find Your Municipality | CTZC Chiba Heavy Rain Portal">
+  <meta name="twitter:description" content="A list of damage timelines and support pages for all 54 municipalities in Chiba Prefecture, with shelter and Disaster Relief Act status badges.">
+  <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="../index.html">CTZC Chiba Heavy Rain Portal</a></div>
+    <nav class="nav">
+      <a href="index.html">For Chiba Residents</a>
+      <a href="situations.html">Find Help by Situation</a>
+      <a href="timeline.html">What Happens Next</a>
+      <a href="housing.html">Housing Damage</a>
+      <a href="life.html">Transport and Daily Life</a>
+      <a href="business.html">For Affected Businesses</a>
+      <a href="municipalities.html">Find Your Municipality</a>
+      <a href="prefecture.html">Prefectural and National Support</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Find Your Municipality</h1>
+    <p>Every municipality page includes a snapshot of evacuation information and shelter status from the Chiba Prefecture Disaster Prevention Portal. Municipalities affected on the first day—including Nagareyama City—also include more detail on warnings and the Disaster Relief Act.</p>
+    <div id="page-actions">
+      <label class="sort-label" for="muni-q">Search by municipality name (English, Japanese, kana, or slug)</label>
+      <input class="search" id="muni-q" type="search" placeholder="Examples: Chiba, Ichikawa, Kyonan" autocomplete="off">
+    </div>
+    <p class="meta" id="muni-share" hidden>This filter is included in the URL. <button type="button" class="btn secondary btn-small">Copy filtered URL</button> <span data-note></span></p>
+    <h2 id="day1-h">Affected on the First Day</h2>
+    <ul class="list" id="day1"></ul>
+    <h2 id="rest-h">Other Municipalities</h2>
+    <ul class="list" id="rest"></ul>
+    <p class="empty" id="muni-empty" hidden>No matching municipality was found.</p>
+    <figure class="infographic">
+      <figcaption>Key points from this page (A4 portrait). The graphic is not interactive; use the list above. <a href="../../img/info-municipalities-en.png" download>Save image</a></figcaption>
+      <img loading="lazy" decoding="async" src="../../img/info-municipalities-en.png" width="1240" height="1754" alt="A4 portrait summary graphic. The graphic is not interactive; use the municipality list above. An entry point for all 54 municipalities.">
+    </figure>
+  </main>
+  <footer>
+    <p>Volunteer-run / Not an official government website.</p>
+    <p class="org-links">
+      <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC website</a>
+      <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook group</a>
+      <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook page</a>
+    </p>
+    <div data-share></div>
+  </footer>
+  <script src="../js/municipality-names.js"></script>
+  <script src="../js/muni-search.js"></script>
+  <script>
+    Promise.all([
+      fetch("../../data/municipalities.json").then(function (response) { return response.json(); }),
+      fetch("../../data/collection.json").then(function (response) { return response.json(); })
+    ]).then(function (pair) {
+      var rows = pair[0];
+      var snapshots = pair[1].snapshots;
+      var query = document.getElementById("muni-q");
+      function fill(id, list) {
+        var ul = document.getElementById(id);
+        ul.innerHTML = "";
+        document.getElementById(id + "-h").hidden = list.length === 0;
+        list.forEach(function (municipality) {
+          var li = document.createElement("li");
+          var link = document.createElement("a");
+          link.href = "municipality.html?slug=" + encodeURIComponent(municipality.slug);
+          link.textContent = MunicipalityNames.get(municipality.slug);
+          if (municipality.day1) {
+            var firstDay = document.createElement("span");
+            firstDay.className = "badge pri";
+            firstDay.textContent = "First day";
+            link.prepend(firstDay);
+          }
+          var snapshot = snapshots[municipality.slug] || {};
+          if (snapshot.shelter && snapshot.shelter.status === "開設") {
+            var shelter = document.createElement("span");
+            shelter.className = "badge admin";
+            shelter.textContent = "Shelter open";
+            link.appendChild(document.createTextNode(" "));
+            link.appendChild(shelter);
+          }
+          if (snapshot.disaster_relief === "applied" || snapshot.disaster_relief === "chiba_direct") {
+            var relief = document.createElement("span");
+            relief.className = "badge admin";
+            relief.textContent = "Relief Act";
+            link.appendChild(document.createTextNode(" "));
+            link.appendChild(relief);
+          }
+          li.appendChild(link);
+          ul.appendChild(li);
+        });
+      }
+      function draw() {
+        var word = MuniSearch.norm(query.value);
+        var matches = rows.filter(function (municipality) { return MuniSearch.matches(municipality, word); });
+        fill("day1", matches.filter(function (municipality) { return municipality.day1; }));
+        fill("rest", matches.filter(function (municipality) { return !municipality.day1; }));
+        document.getElementById("muni-empty").hidden = matches.length > 0;
+      }
+      MuniSearch.bindQuery(query, draw, document.getElementById("muni-share"));
+    });
+  </script>
+  <script src="../../js/share.js"></script>
+  <script src="../../js/language-switch.js"></script>
+</body>
+</html>

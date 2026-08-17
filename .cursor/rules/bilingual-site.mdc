@@ -1,0 +1,15 @@
+---
+description: Keep the Japanese and English public sites synchronized
+globs: "{site/**/*.html,site/**/*.js,site/data/*.json,scripts/build_*.py}"
+alwaysApply: false
+---
+
+# Bilingual site synchronization
+
+- Japanese pages under `site/` and English mirrors under `site/en/` are one feature.
+- When changing visible copy, navigation, links, forms, metadata, dynamic UI text, or infographics, update both languages in the same change.
+- Preserve page pairs and query parameters when switching languages, especially `slug`, `q`, and `s`.
+- Keep external source headlines in their original language when no verified translation exists; explain this in English UI instead of inventing a translation.
+- Run `python scripts/check_bilingual.py` after changes.
+- Run `python scripts/check_bilingual.py --update-manifest` only after reviewing both language versions.
+- Do not commit if the bilingual check fails.

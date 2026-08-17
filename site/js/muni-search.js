@@ -1,6 +1,7 @@
 // 市町村の読み検索。県民ホームと市町村一覧で共通に使う。
 // カタカナ・全角英数はひらがな・半角に寄せ、名前・読み（kana）・slug の先頭に当てる。
 (function () {
+  var isEnglish = document.documentElement.lang === "en";
   function norm(s) {
     s = (s || "").normalize("NFKC").trim().toLowerCase();
     return s.replace(/[ァ-ヶ]/g, function (ch) {
@@ -35,7 +36,11 @@
         var url = location.href;
         function done(msg) { if (copyNote) copyNote.textContent = msg; }
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(url).then(function () { done("コピーしました。LINE などで「" + input.value.trim() + "」の人に送れます。"); },
+          navigator.clipboard.writeText(url).then(function () {
+            done(isEnglish
+              ? "Copied. You can send this filtered list to someone looking for “" + input.value.trim() + ".”"
+              : "コピーしました。LINE などで「" + input.value.trim() + "」の人に送れます。");
+          },
             function () { done(url); });
         } else {
           done(url);

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""sitemap.xml と robots.txt を生成する。市町村ページは municipalities.json の slug から並べる。"""
+"""日英 sitemap.xml と robots.txt を生成する。市町村は slug から並べる。"""
 from __future__ import annotations
 
 import json
@@ -30,17 +30,34 @@ def main() -> int:
     rows = list(STATIC)
     for m in munis:
         rows.append((f"resident/municipality.html?slug={quote(m['slug'])}", "daily", "0.8"))
-    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
-             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+        'xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    ]
     for path, freq, pri in rows:
-        loc = BASE + path.replace("&", "&amp;")
-        lines.append(f"  <url><loc>{loc}</loc><changefreq>{freq}</changefreq><priority>{pri}</priority></url>")
+        ja = BASE + path
+        en = BASE + "en/" + path
+        for loc in (ja, en):
+            loc_xml = loc.replace("&", "&amp;")
+            ja_xml = ja.replace("&", "&amp;")
+            en_xml = en.replace("&", "&amp;")
+            lines.extend([
+                "  <url>",
+                f"    <loc>{loc_xml}</loc>",
+                f'    <xhtml:link rel="alternate" hreflang="ja" href="{ja_xml}"/>',
+                f'    <xhtml:link rel="alternate" hreflang="en" href="{en_xml}"/>',
+                f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ja_xml}"/>',
+                f"    <changefreq>{freq}</changefreq>",
+                f"    <priority>{pri}</priority>",
+                "  </url>",
+            ])
     lines.append("</urlset>")
     (SITE / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (SITE / "robots.txt").write_text(
         "User-agent: *\nAllow: /\n\nSitemap: " + BASE + "sitemap.xml\n", encoding="utf-8"
     )
-    print(f"wrote sitemap.xml ({len(rows)} urls) and robots.txt")
+    print(f"wrote sitemap.xml ({len(rows) * 2} urls) and robots.txt")
     return 0
 
 

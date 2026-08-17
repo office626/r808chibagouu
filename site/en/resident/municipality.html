@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Municipality | CTZC Chiba Heavy Rain Portal</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <meta name="description" content="Municipality-level evacuation information, damage reports, currently available support, administrative records, and recovery steps.">
+  <meta name="theme-color" content="#0b5cab">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="canonical" href="https://office626.github.io/r808chibagouu/en/resident/municipality.html" id="canonical">
+  <link rel="alternate" hreflang="ja" href="https://office626.github.io/r808chibagouu/resident/municipality.html">
+  <link rel="alternate" hreflang="en" href="https://office626.github.io/r808chibagouu/en/resident/municipality.html">
+  <link rel="alternate" hreflang="x-default" href="https://office626.github.io/r808chibagouu/resident/municipality.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CTZC Chiba Heavy Rain Portal">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Municipality | CTZC Chiba Heavy Rain Portal">
+  <meta property="og:description" content="Municipality-level evacuation information, damage reports, currently available support, administrative records, and recovery steps.">
+  <meta property="og:url" content="https://office626.github.io/r808chibagouu/en/resident/municipality.html">
+  <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta property="og:image:alt" content="Supporting recovery from the August 2026 Chiba heavy rain disaster. Organized by CivicTechZenChiba.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Municipality | CTZC Chiba Heavy Rain Portal">
+  <meta name="twitter:description" content="Municipality-level evacuation information, damage reports, currently available support, administrative records, and recovery steps.">
+  <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="../index.html">CTZC Chiba Heavy Rain Portal</a></div>
+    <nav class="nav">
+      <a href="index.html">For Chiba Residents</a>
+      <a href="situations.html">Find Help by Situation</a>
+      <a href="timeline.html">What Happens Next</a>
+      <a href="housing.html">Housing Damage</a>
+      <a href="life.html">Transport and Daily Life</a>
+      <a href="business.html">For Affected Businesses</a>
+      <a href="municipalities.html">Municipality List</a>
+      <a href="prefecture.html">Prefectural and National Support</a>
+    </nav>
+    <p class="meta" id="fetched"></p>
+  </header>
+  <main>
+    <h1 id="title">Loading…</h1>
+    <p class="notice">This is a volunteer-produced summary. Apply through official channels. Preliminary figures may change. News articles are represented only by their original titles and links; full text is not reproduced.</p>
+    <p id="page-actions"><a class="btn" id="official" href="#" target="_blank" rel="noopener">Official website</a>
+      <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>Disaster prevention page</a>
+      <a class="btn secondary" href="housing.html">Help for housing damage</a>
+      <a class="btn secondary" href="business.html">Help for affected businesses</a></p>
+    <p class="page-toc">
+      <a href="#now-card">Current Status</a>
+      <a href="#press-card">Damage Reports</a>
+      <a href="#support-card">Support</a>
+      <a href="#log-card">Administrative Records</a>
+      <a href="#steps-card">Recovery Steps</a>
+    </p>
+    <div class="card" id="now-card">
+      <h2>Current Status</h2>
+      <div id="now"></div>
+    </div>
+    <div class="card" id="press-card">
+      <h2>News Reports About Damage in This Municipality</h2>
+      <p class="empty">Links lead to Yahoo! Japan News and television news websites. Verify details with the publisher and official sources.</p>
+      <ul class="log" id="press-local"></ul>
+      <h3>Prefecture-wide News Reports</h3>
+      <p class="empty" id="press-county-note"></p>
+      <ul class="log" id="press-county"></ul>
+      <h3>Search Online</h3>
+      <p class="empty">New reports appear daily. The buttons below search using the municipality’s Japanese name.</p>
+      <p class="more-search" id="press-search"></p>
+    </div>
+    <div class="card" id="support-card">
+      <h2>Support Currently Available</h2>
+      <p class="empty">Apply through the official office. Check eligibility and application periods at each linked destination.</p>
+      <div id="support"></div>
+      <ul id="muni-support"></ul>
+      <ul>
+        <li><a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/">National disaster victim support programs (Cabinet Office; Japanese)</a> <span class="badge admin">Government</span></li>
+        <li><a href="prefecture.html">Chiba Prefecture support and disaster information</a> <span class="badge admin">Government</span></li>
+      </ul>
+    </div>
+    <div class="card" id="log-card">
+      <h2>Government and Other Damage Records</h2>
+      <p class="empty">These records come from government sources such as the prefectural disaster portal and the Fire and Disaster Management Agency. News reports are listed above.</p>
+      <ul class="log" id="log"></ul>
+    </div>
+    <div class="card" id="steps-card">
+      <h2>Typical Recovery Steps</h2>
+      <p>Evacuation and emergency response → Disaster Relief Act → Damage assessment → Disaster damage certificate → Emergency temporary housing or emergency housing repairs</p>
+      <p>Check the municipality’s official announcements to confirm what can be applied for now and what will become available later. Eligibility is determined by the relevant authority.</p>
+      <p><a class="btn secondary" href="timeline.html">See upcoming needs and time-sensitive procedures by stage</a></p>
+    </div>
+    <figure class="infographic">
+      <figcaption>Key points from this page (A4 portrait). The graphic is not interactive; use the buttons above. <a href="../../img/info-municipality-en.png" download>Save image</a></figcaption>
+      <img loading="lazy" decoding="async" src="../../img/info-municipality-en.png" width="1240" height="1754" alt="A4 portrait summary explaining how to use a municipality page. The graphic is not interactive; use the buttons above.">
+    </figure>
+  </main>
+  <footer>
+    <p>This is not an official government website.</p>
+    <p class="org-links">
+      <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC website</a>
+      <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook group</a>
+      <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook page</a>
+    </p>
+    <div data-share></div>
+  </footer>
+  <script src="../js/municipality-names.js"></script>
+  <script>
+    function fmt(iso) {
+      if (!iso) return "";
+      return iso.replace("T", " ").replace("+09:00", " JST");
+    }
+    function badge(type) {
+      var span = document.createElement("span");
+      span.className = "badge " + (type === "admin" ? "admin" : "press");
+      span.textContent = type === "admin" ? "Government" : "News";
+      return span;
+    }
+    function sourceTitle(title) {
+      return (title || "Untitled") + " (Japanese source title)";
+    }
+    function renderItem(item) {
+      var li = document.createElement("li");
+      var time = document.createElement("time");
+      time.textContent = fmt(item.occurred_at);
+      var title = document.createElement("strong");
+      title.textContent = sourceTitle(item.title);
+      var description = document.createElement("p");
+      description.textContent = "Details are available in Japanese at the linked source.";
+      var source = document.createElement("p");
+      source.className = "src";
+      source.appendChild(badge(item.source_type));
+      var link = document.createElement("a");
+      link.href = item.source_url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = (item.medium || "Original source") + " (source)";
+      source.appendChild(link);
+      li.appendChild(time);
+      li.appendChild(title);
+      li.appendChild(description);
+      li.appendChild(source);
+      return li;
+    }
+    function fillLog(ul, items, emptyText) {
+      if (!items.length) {
+        var empty = document.createElement("p");
+        empty.className = "empty";
+        empty.textContent = emptyText;
+        ul.replaceWith(empty);
+        return;
+      }
+      items.forEach(function (item) { ul.appendChild(renderItem(item)); });
+    }
+    function searchLink(href, label) {
+      var link = document.createElement("a");
+      link.className = "btn secondary";
+      link.href = href;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = label;
+      return link;
+    }
+    function statusLabel(value) {
+      var labels = { "解除": "Lifted", "開設": "Open", "閉鎖": "Closed", "発令": "Issued" };
+      return labels[value] || "See official source";
+    }
+    var params = new URLSearchParams(location.search);
+    var slug = params.get("slug");
+    Promise.all([
+      fetch("../../data/municipalities.json").then(function (response) { return response.json(); }),
+      fetch("../../data/collection.json").then(function (response) { return response.json(); }),
+      fetch("../../data/supports.json").then(function (response) { return response.json(); }),
+      fetch("../../data/press.json").then(function (response) { return response.json(); })
+    ]).then(function (pair) {
+      var rows = pair[0];
+      var collection = pair[1];
+      var supports = pair[2];
+      var press = pair[3];
+      document.getElementById("fetched").textContent = "Last retrieved: " + fmt(collection.fetched_at);
+      var municipality = rows.find(function (item) { return item.slug === slug; });
+      if (!municipality) {
+        document.getElementById("title").textContent = "Municipality not found";
+        return;
+      }
+      var englishName = MunicipalityNames.get(municipality.slug);
+      document.title = englishName + " | CTZC Chiba Heavy Rain Portal";
+      document.getElementById("title").textContent = englishName;
+      (function () {
+        var englishUrl = "https://office626.github.io/r808chibagouu/en/resident/municipality.html?slug=" + encodeURIComponent(municipality.slug);
+        var japaneseUrl = "https://office626.github.io/r808chibagouu/resident/municipality.html?slug=" + encodeURIComponent(municipality.slug);
+        var pageTitle = englishName + " Damage Timeline and Support | CTZC Chiba Heavy Rain Portal";
+        var pageDescription = "Evacuation information, damage reports, available support, administrative records, and recovery steps for " + englishName + ".";
+        document.getElementById("canonical").href = englishUrl;
+        document.querySelector('link[hreflang="ja"]').href = japaneseUrl;
+        document.querySelector('link[hreflang="en"]').href = englishUrl;
+        document.querySelector('link[hreflang="x-default"]').href = japaneseUrl;
+        function setMeta(selector, value) {
+          var element = document.querySelector(selector);
+          if (element) element.setAttribute("content", value);
+        }
+        setMeta('meta[property="og:url"]', englishUrl);
+        setMeta('meta[property="og:title"]', pageTitle);
+        setMeta('meta[name="twitter:title"]', pageTitle);
+        setMeta('meta[name="description"]', pageDescription);
+        setMeta('meta[property="og:description"]', pageDescription);
+        setMeta('meta[name="twitter:description"]', pageDescription);
+      })();
+      var official = document.getElementById("official");
+      official.href = municipality.url;
+      official.textContent = englishName + " official website";
+      if (municipality.bousai) {
+        var disasterPage = document.getElementById("bousai");
+        disasterPage.href = municipality.bousai;
+        disasterPage.hidden = false;
+      }
+      var snapshot = collection.snapshots[slug] || {};
+      var current = document.getElementById("now");
+      var currentItems = [];
+      if (snapshot.evacuation) {
+        currentItems.push("Evacuation information (prefectural portal): " + statusLabel(snapshot.evacuation.status) + " (announced " + snapshot.evacuation.at + ")");
+      } else {
+        currentItems.push("Evacuation information for this heavy rain event is not listed or is not applicable on the prefectural portal. Check the municipality’s official website.");
+      }
+      if (snapshot.shelter) {
+        currentItems.push("Shelter status (prefectural portal): " + statusLabel(snapshot.shelter.status) + " (announced " + snapshot.shelter.at + ")");
+      }
+      if (snapshot.l5_rain) currentItems.push("Included in a reported list of areas under a Level 5 heavy rain emergency warning. The warning may since have changed.");
+      if (snapshot.l5_landslide) currentItems.push("Included in a reported list of areas under a Level 5 landslide emergency warning.");
+      currentItems.forEach(function (text) {
+        var paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        current.appendChild(paragraph);
+      });
+      var support = document.getElementById("support");
+      var reliefText = document.createElement("p");
+      function appendRelief(prefix, emphasis, suffix) {
+        reliefText.appendChild(document.createTextNode(prefix));
+        var strong = document.createElement("strong");
+        strong.textContent = emphasis;
+        reliefText.appendChild(strong);
+        reliefText.appendChild(document.createTextNode(suffix + " "));
+        var announcement = document.createElement("a");
+        announcement.href = collection.links.relief;
+        announcement.target = "_blank";
+        announcement.rel = "noopener";
+        announcement.textContent = "Prefectural announcement (Japanese)";
+        reliefText.appendChild(announcement);
+      }
+      if (snapshot.disaster_relief === "applied") {
+        appendRelief("As of the prefecture’s third report, this municipality is ", "covered by the Disaster Relief Act", ". Check official information for contacts and application opening dates.");
+      } else if (snapshot.disaster_relief === "chiba_direct") {
+        appendRelief("The prefecture’s third report states that ", "Chiba City directly administers disaster relief", ".");
+      } else {
+        reliefText.textContent = "As of the prefecture’s third report, this municipality is not listed as covered by the Disaster Relief Act. Check official information for available programs.";
+      }
+      support.appendChild(reliefText);
+      var municipalitySupport = document.getElementById("muni-support");
+      var supportLinks = (supports.by_slug && supports.by_slug[slug]) || [];
+      supportLinks.forEach(function (item) {
+        var li = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = item.url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = sourceTitle(item.title);
+        li.appendChild(link);
+        li.appendChild(document.createTextNode(" "));
+        var supportBadge = document.createElement("span");
+        supportBadge.className = "badge admin";
+        supportBadge.textContent = item.kind === "risai" ? "Damage certificate" : "Support";
+        li.appendChild(supportBadge);
+        municipalitySupport.appendChild(li);
+      });
+      var seen = {};
+      function takeNews(list) {
+        var output = [];
+        (list || []).forEach(function (item) {
+          var key = item.source_url + "\t" + item.title;
+          if (seen[key]) return;
+          seen[key] = true;
+          output.push(item);
+        });
+        return output;
+      }
+      var localNews = takeNews((press.by_slug && press.by_slug[slug]) || []);
+      collection.items.filter(function (item) {
+        return item.slug === slug && item.source_type === "news";
+      }).forEach(function (item) { localNews = localNews.concat(takeNews([item])); });
+      localNews.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
+      fillLog(document.getElementById("press-local"), localNews, "No article focused primarily on this municipality has been collected yet. Use the prefecture-wide reports and searches below.");
+      var countyNote = document.getElementById("press-county-note");
+      if ((press.l5_slugs || []).indexOf(slug) !== -1) {
+        countyNote.textContent = "This municipality was included in the list of areas under a Level 5 heavy rain emergency warning and may be named in prefecture-wide reports.";
+      } else {
+        countyNote.textContent = "If few local articles are available, use the prefecture-wide reports and searches. Some articles may not name this municipality.";
+      }
+      var countyNews = (press.county || []).slice();
+      countyNews.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
+      fillLog(document.getElementById("press-county"), countyNews, "No prefecture-wide reports have been collected yet.");
+      var searchBox = document.getElementById("press-search");
+      var heavyRainQuery = encodeURIComponent(municipality.name + " 千葉豪雨");
+      var damageQuery = encodeURIComponent(municipality.name + " 大雨 被害");
+      var yahooTemplate = (press.search && press.search.yahoo) || "https://news.search.yahoo.co.jp/search?ei=UTF-8&p={q}";
+      searchBox.appendChild(searchLink(yahooTemplate.replace("{q}", heavyRainQuery), "Search Yahoo! Japan News for this municipality and the Chiba heavy rain"));
+      searchBox.appendChild(searchLink(yahooTemplate.replace("{q}", damageQuery), "Search Yahoo! Japan News for damage in this municipality"));
+      searchBox.appendChild(searchLink((press.search && press.search.nhk_chiba) || "https://news.web.nhk/newsweb/area/120", "NHK Chiba News (Japanese)"));
+      var logs = collection.items.filter(function (item) {
+        return item.slug === slug && item.source_type !== "news";
+      });
+      logs.sort(function (a, b) { return a.occurred_at < b.occurred_at ? 1 : -1; });
+      fillLog(document.getElementById("log"), logs, "No government record linked to this municipality has been collected yet. Check the official website.");
+    });
+  </script>
+  <script src="../../js/share.js"></script>
+  <script src="../../js/language-switch.js"></script>
+</body>
+</html>

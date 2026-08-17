@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vote on Future Ideas | CTZC Chiba Heavy Rain Portal</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <meta name="description" content="Vote on ideas for useful information, features, and actions after a disaster. No login is required, and we do not collect your name.">
+  <meta name="theme-color" content="#0b5cab">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="canonical" href="https://office626.github.io/r808chibagouu/en/supporters/ideas.html">
+  <link rel="alternate" hreflang="ja" href="https://office626.github.io/r808chibagouu/supporters/ideas.html">
+  <link rel="alternate" hreflang="en" href="https://office626.github.io/r808chibagouu/en/supporters/ideas.html">
+  <link rel="alternate" hreflang="x-default" href="https://office626.github.io/r808chibagouu/supporters/ideas.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CTZC Chiba Heavy Rain Portal">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:title" content="Vote on Future Ideas | CTZC Chiba Heavy Rain Portal">
+  <meta property="og:description" content="Vote on ideas for useful information, features, and actions after a disaster. No login is required, and we do not collect your name.">
+  <meta property="og:url" content="https://office626.github.io/r808chibagouu/en/supporters/ideas.html">
+  <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta property="og:image:alt" content="Supporting recovery from the August 2026 Chiba heavy rain disaster, organized by CivicTechZenChiba">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vote on Future Ideas | CTZC Chiba Heavy Rain Portal">
+  <meta name="twitter:description" content="Vote on ideas for useful information, features, and actions after a disaster. No login is required, and we do not collect your name.">
+  <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta name="twitter:image:alt" content="Supporting recovery from the August 2026 Chiba heavy rain disaster, organized by CivicTechZenChiba">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="../index.html">CTZC Chiba Heavy Rain Portal</a></div>
+    <nav class="nav">
+      <a href="index.html">Supporters' Home</a>
+      <a href="ideas.html">Vote on Future Ideas</a>
+    </nav>
+    <p class="meta">For supporters. This is not an application desk.</p>
+  </header>
+  <main>
+    <h1>What Would Help After a Disaster? Vote on Ideas</h1>
+    <p class="notice" id="ideas-note">
+      Your votes will help guide future features and new services. We do not collect personal information. Submit applications and damage reports through official service desks.
+    </p>
+    <p id="tally" class="meta"></p>
+    <p id="top-pick" class="notice" hidden></p>
+    <div class="idea-toolbar" id="page-actions">
+      <div class="chips" role="group" aria-label="Filter by type">
+        <button type="button" class="chip on" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="info">Information</button>
+        <button type="button" class="chip" data-filter="feature">Features</button>
+        <button type="button" class="chip" data-filter="action">Actions</button>
+      </div>
+      <label class="sort-label">Sort by
+        <select id="sort">
+          <option value="order" selected>Original order</option>
+          <option value="votes">Most votes</option>
+          <option value="category">Type</option>
+        </select>
+      </label>
+    </div>
+    <div id="ideas" class="idea-list"></div>
+    <p id="empty" class="empty" hidden>No ideas are available to display.</p>
+    <div class="card">
+      <h2>How Votes Are Handled</h2>
+      <ul>
+        <li>No login is required. Residents, supporters, and members of the public may vote.</li>
+        <li>You may cast one vote per idea in this browser, and you may remove it. We do not collect your name.</li>
+        <li>After the voting script for the operations sheet is published, votes from all users will be combined in the displayed totals.</li>
+        <li>The results are for reference. They will help us decide what to add to the site and which guidance to prepare first.</li>
+        <li>Life-saving operations, on-site matching, and damage assessments themselves are outside the scope of this vote.</li>
+      </ul>
+      <p>Have another idea? Share it on <a href="https://civictechzenchiba.slack.com/archives/C0BPSMN4L5D">Slack</a> or open a <a href="https://github.com/office626/r808chibagouu/issues/new">GitHub issue</a>.</p>
+    </div>
+    <p><a href="index.html">Back to Supporters' Home</a></p>
+    <figure class="infographic">
+      <figcaption>Key points from this page in a portrait A4 graphic. Tapping the graphic will not open a link; use the voting buttons above. <a href="../../img/info-ideas-en.png" download>Save the image</a></figcaption>
+      <img loading="lazy" decoding="async" src="../../img/info-ideas-en.png" width="1240" height="1754" alt="Portrait A4 summary graphic. The graphic itself is not interactive. Vote using the buttons above.">
+    </figure>
+  </main>
+  <footer>
+    <p>This site is not an official government announcement. Submit applications through the appropriate official service desk.</p>
+    <p class="org-links">
+      <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC website</a>
+      <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook group</a>
+      <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook page</a>
+    </p>
+    <div data-share></div>
+  </footer>
+  <script src="../../js/ideas-vote-en.js"></script>
+  <script src="../../js/share.js"></script>
+  <script src="../../js/language-switch.js"></script>
+</body>
+</html>

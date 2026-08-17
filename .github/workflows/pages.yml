@@ -22,6 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Verify Japanese and English mirrors
+        run: python scripts/check_bilingual.py
+      - name: Build bilingual sitemap
+        run: python scripts/build_sitemap.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

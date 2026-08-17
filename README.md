@@ -27,6 +27,14 @@ CivicTechZenChiba（CTZC）として、令和8年8月千葉豪雨の復興・災
 
 `docs/prompts/` と `docs/template/` は、要件を引き出すためのプロンプトとテンプレートです。
 
+## 日本語版・英語版の更新
+
+- 日本語版は `site/`、英語版は同じ構成の `site/en/` にあります。
+- 表示文言、リンク、メタデータ、動的UI、インフォグラフィックを変更するときは、日英を同じ変更で更新します。
+- `python scripts/sync_language_chrome.py` で全ページの言語切替と `hreflang` を補完します。
+- 日英双方を確認後、`python scripts/check_bilingual.py --update-manifest` で同期記録を更新します。
+- 通常の確認は `python scripts/check_bilingual.py` です。GitHub Pages の公開前にも同じ検査が動きます。
+
 ## プロダクトの骨格（要約）
 
 一つのサイトに二つの入口を持つ。
