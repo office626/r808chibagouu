@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Municipality | CTZC Chiba Heavy Rain Portal</title>
   <link rel="stylesheet" href="../../css/style.css">
-  <meta name="description" content="Municipality-level evacuation information, damage reports, currently available support, administrative records, and recovery steps.">
+  <meta name="description" content="Municipality-level evacuation information, currently available support, administrative records, and damage reports.">
   <meta name="theme-color" content="#0b5cab">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="CTZC Chiba Heavy Rain Portal">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Municipality | CTZC Chiba Heavy Rain Portal">
-  <meta property="og:description" content="Municipality-level evacuation information, damage reports, currently available support, administrative records, and recovery steps.">
+  <meta property="og:description" content="Municipality-level evacuation information, currently available support, administrative records, and damage reports.">
   <meta property="og:url" content="https://office626.github.io/r808chibagouu/en/resident/municipality.html">
   <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
   <meta property="og:image:width" content="1024">
@@ -26,52 +26,22 @@
   <meta property="og:image:alt" content="Supporting recovery from the August 2026 Chiba heavy rain disaster. Organized by CivicTechZenChiba.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Municipality | CTZC Chiba Heavy Rain Portal">
-  <meta name="twitter:description" content="Municipality-level evacuation information, damage reports, currently available support, administrative records, and recovery steps.">
+  <meta name="twitter:description" content="Municipality-level evacuation information, currently available support, administrative records, and damage reports.">
   <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
 </head>
 <body>
   <header>
     <div class="brand"><a href="../index.html">CTZC Chiba Heavy Rain Portal</a></div>
-    <nav class="nav">
-      <a href="index.html">For Chiba Residents</a>
-      <a href="situations.html">Find Help by Situation</a>
-      <a href="timeline.html">What Happens Next</a>
-      <a href="housing.html">Housing Damage</a>
-      <a href="life.html">Transport and Daily Life</a>
-      <a href="business.html">For Affected Businesses</a>
-      <a href="municipalities.html">Municipality List</a>
-      <a href="prefecture.html">Prefectural and National Support</a>
-    </nav>
-    <p class="meta" id="fetched"></p>
   </header>
   <main>
     <h1 id="title">Loading…</h1>
     <p class="notice">This is a volunteer-produced summary. Apply through official channels. Preliminary figures may change. News articles are represented only by their original titles and links; full text is not reproduced.</p>
-    <p id="page-actions"><a class="btn" id="official" href="#" target="_blank" rel="noopener">Official website</a>
-      <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>Disaster prevention page</a>
-      <a class="btn secondary" href="housing.html">Help for housing damage</a>
-      <a class="btn secondary" href="business.html">Help for affected businesses</a></p>
-    <p class="page-toc">
-      <a href="#now-card">Current Status</a>
-      <a href="#press-card">Damage Reports</a>
-      <a href="#support-card">Support</a>
-      <a href="#log-card">Administrative Records</a>
-      <a href="#steps-card">Recovery Steps</a>
-    </p>
     <div class="card" id="now-card">
       <h2>Current Status</h2>
+      <p class="meta" id="fetched"></p>
+      <p id="page-actions"><a class="btn" id="official" href="#" target="_blank" rel="noopener">Official website</a>
+        <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>Disaster prevention page</a></p>
       <div id="now"></div>
-    </div>
-    <div class="card" id="press-card">
-      <h2>News Reports About Damage in This Municipality</h2>
-      <p class="empty">Links lead to Yahoo! Japan News and television news websites. Verify details with the publisher and official sources.</p>
-      <ul class="log" id="press-local"></ul>
-      <h3>Prefecture-wide News Reports</h3>
-      <p class="empty" id="press-county-note"></p>
-      <ul class="log" id="press-county"></ul>
-      <h3>Search Online</h3>
-      <p class="empty">New reports appear daily. The buttons below search using the municipality’s Japanese name.</p>
-      <p class="more-search" id="press-search"></p>
     </div>
     <div class="card" id="support-card">
       <h2>Support Currently Available</h2>
@@ -85,28 +55,39 @@
     </div>
     <div class="card" id="log-card">
       <h2>Government and Other Damage Records</h2>
-      <p class="empty">These records come from government sources such as the prefectural disaster portal and the Fire and Disaster Management Agency. News reports are listed above.</p>
+      <p class="empty">These records come from government sources such as the prefectural disaster portal and the Fire and Disaster Management Agency. News reports are listed below.</p>
       <ul class="log" id="log"></ul>
     </div>
-    <div class="card" id="steps-card">
-      <h2>Typical Recovery Steps</h2>
-      <p>Evacuation and emergency response → Disaster Relief Act → Damage assessment → Disaster damage certificate → Emergency temporary housing or emergency housing repairs</p>
-      <p>Check the municipality’s official announcements to confirm what can be applied for now and what will become available later. Eligibility is determined by the relevant authority.</p>
-      <p><a class="btn secondary" href="timeline.html">See upcoming needs and time-sensitive procedures by stage</a></p>
+    <div class="card" id="press-card">
+      <h2>News Reports About Damage in This Municipality</h2>
+      <p class="empty">Links lead to Yahoo! Japan News and television news websites. Verify details with the publisher and official sources.</p>
+      <ul class="log" id="press-local"></ul>
+      <h3>Prefecture-wide News Reports</h3>
+      <p class="empty" id="press-county-note"></p>
+      <ul class="log" id="press-county"></ul>
+      <h3>Search Online</h3>
+      <p class="empty">New reports appear daily. The buttons below search using the municipality’s Japanese name.</p>
+      <p class="more-search" id="press-search"></p>
     </div>
-    <figure class="infographic">
-      <figcaption>Key points from this page (A4 portrait). The graphic is not interactive; use the buttons above. <a href="../../img/info-municipality-en.png" download>Save image</a></figcaption>
-      <img loading="lazy" decoding="async" src="../../img/info-municipality-en.png" width="1240" height="1754" alt="A4 portrait summary explaining how to use a municipality page. The graphic is not interactive; use the buttons above.">
-    </figure>
-  </main>
-  <footer>
-    <p>This is not an official government website.</p>
     <p class="org-links">
       <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC website</a>
       <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook group</a>
       <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook page</a>
     </p>
     <div data-share></div>
+  </main>
+  <footer>
+    <p>This is not an official government website.</p>
+    <nav class="nav" aria-label="Other pages">
+      <a href="index.html">For Chiba Residents</a>
+      <a href="situations.html">Find Help by Situation</a>
+      <a href="timeline.html">What Happens Next</a>
+      <a href="housing.html">Housing Damage</a>
+      <a href="life.html">Transport and Daily Life</a>
+      <a href="business.html">For Affected Businesses</a>
+      <a href="municipalities.html">Municipality List</a>
+      <a href="prefecture.html">Prefectural and National Support</a>
+    </nav>
   </footer>
   <script src="../js/municipality-names.js"></script>
   <script>
@@ -194,7 +175,7 @@
         var englishUrl = "https://office626.github.io/r808chibagouu/en/resident/municipality.html?slug=" + encodeURIComponent(municipality.slug);
         var japaneseUrl = "https://office626.github.io/r808chibagouu/resident/municipality.html?slug=" + encodeURIComponent(municipality.slug);
         var pageTitle = englishName + " Damage Timeline and Support | CTZC Chiba Heavy Rain Portal";
-        var pageDescription = "Evacuation information, damage reports, available support, administrative records, and recovery steps for " + englishName + ".";
+        var pageDescription = "Evacuation information, available support, administrative records, and damage reports for " + englishName + ".";
         document.getElementById("canonical").href = englishUrl;
         document.querySelector('link[hreflang="ja"]').href = japaneseUrl;
         document.querySelector('link[hreflang="en"]').href = englishUrl;

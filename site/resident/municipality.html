@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>市町村 | CTZC 千葉豪雨ポータル</title>
   <link rel="stylesheet" href="../css/style.css">
-  <meta name="description" content="市町村ごとの避難情報、被害の報道、いま受けられる支援策、行政の記録、生活再建の段取り。見出しと公式リンクのみで、報道の全文は転載しません。">
+  <meta name="description" content="市町村ごとの避難情報、いま受けられる支援策、行政の記録、被害の報道。見出しと公式リンクのみで、報道の全文は転載しません。">
   <meta name="theme-color" content="#0b5cab">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="CTZC 千葉豪雨ポータル">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="市町村ページ | CTZC 千葉豪雨ポータル">
-  <meta property="og:description" content="市町村ごとの避難情報、被害の報道、いま受けられる支援策、行政の記録、生活再建の段取り。見出しと公式リンクのみで、報道の全文は転載しません。">
+  <meta property="og:description" content="市町村ごとの避難情報、いま受けられる支援策、行政の記録、被害の報道。見出しと公式リンクのみで、報道の全文は転載しません。">
   <meta property="og:url" content="https://office626.github.io/r808chibagouu/resident/municipality.html">
   <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
   <meta property="og:image:width" content="1024">
@@ -27,52 +27,22 @@
   <meta property="og:image:alt" content="令和8年8月千葉豪雨からの復旧のために。主催 CivicTechZenChiba">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="市町村ページ | CTZC 千葉豪雨ポータル">
-  <meta name="twitter:description" content="市町村ごとの避難情報、被害の報道、いま受けられる支援策、行政の記録、生活再建の段取り。見出しと公式リンクのみで、報道の全文は転載しません。">
+  <meta name="twitter:description" content="市町村ごとの避難情報、いま受けられる支援策、行政の記録、被害の報道。見出しと公式リンクのみで、報道の全文は転載しません。">
   <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
 </head>
 <body>
   <header>
     <div class="brand"><a href="../index.html">CTZC 千葉豪雨ポータル</a></div>
-    <nav class="nav">
-      <a href="index.html">千葉県にお住まいの方へ</a>
-      <a href="situations.html">困りごとから探す</a>
-      <a href="timeline.html">これから起きること</a>
-      <a href="housing.html">住まいが被災した方</a>
-      <a href="life.html">移動と生活</a>
-      <a href="business.html">被災した事業者の方</a>
-      <a href="municipalities.html">市町村一覧</a>
-      <a href="prefecture.html">県・国の支援</a>
-    </nav>
-    <p class="meta" id="fetched"></p>
   </header>
   <main>
     <h1 id="title">読み込み中</h1>
     <p class="notice">有志による要約です。申請は公式へ。数値は速報で変わります。報道は見出しとリンクのみで、記事全文は転載していません。</p>
-    <p id="page-actions"><a class="btn" id="official" href="#" target="_blank" rel="noopener">公式サイトへ</a>
-      <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>防災・災害ページ</a>
-      <a class="btn secondary" href="housing.html">住まいが被災した方へ</a>
-      <a class="btn secondary" href="business.html">被災した事業者の方へ</a></p>
-    <p class="page-toc">
-      <a href="#now-card">いま</a>
-      <a href="#press-card">被害の報道</a>
-      <a href="#support-card">支援策</a>
-      <a href="#log-card">行政などの記録</a>
-      <a href="#steps-card">生活再建の段取り</a>
-    </p>
     <div class="card" id="now-card">
       <h2>いま</h2>
+      <p class="meta" id="fetched"></p>
+      <p id="page-actions"><a class="btn" id="official" href="#" target="_blank" rel="noopener">公式サイトへ</a>
+        <a class="btn secondary" id="bousai" href="#" target="_blank" rel="noopener" hidden>防災・災害ページ</a></p>
       <div id="now"></div>
-    </div>
-    <div class="card" id="press-card">
-      <h2>この市町村の被害に関する報道</h2>
-      <p class="empty">Yahoo!ニュースやテレビ各社の記事へリンクします。内容の正誤は各社・公式で確認してください。</p>
-      <ul class="log" id="press-local"></ul>
-      <h3>県全体の報道</h3>
-      <p class="empty" id="press-county-note"></p>
-      <ul class="log" id="press-county"></ul>
-      <h3>インターネットで探す</h3>
-      <p class="empty">新しい記事は日々出ます。市町村名で検索してください。</p>
-      <p class="more-search" id="press-search"></p>
     </div>
     <div class="card" id="support-card">
       <h2>いま受けられる支援策</h2>
@@ -86,28 +56,39 @@
     </div>
     <div class="card" id="log-card">
       <h2>行政などの被害状況ログ</h2>
-      <p class="empty">県防災ポータルや消防庁など、行政側の記録です。報道は上の欄にまとめています。</p>
+      <p class="empty">県防災ポータルや消防庁など、行政側の記録です。報道は下の欄にまとめています。</p>
       <ul class="log" id="log"></ul>
     </div>
-    <div class="card" id="steps-card">
-      <h2>生活再建の段取り（共通の型）</h2>
-      <p>避難・応急 → 災害救助法 → 被害状況調査 → 罹災証明書 → 応急仮設（家賃補助など）または被災住宅の応急修理</p>
-      <p>「いま申請できること」と「これから」は、各自治体の公式発表で確認してください。適用可否は各機関の判断です。</p>
-      <p><a class="btn secondary" href="timeline.html">時期別に、これから困ること・期限があるものを見る</a></p>
+    <div class="card" id="press-card">
+      <h2>この市町村の被害に関する報道</h2>
+      <p class="empty">Yahoo!ニュースやテレビ各社の記事へリンクします。内容の正誤は各社・公式で確認してください。</p>
+      <ul class="log" id="press-local"></ul>
+      <h3>県全体の報道</h3>
+      <p class="empty" id="press-county-note"></p>
+      <ul class="log" id="press-county"></ul>
+      <h3>インターネットで探す</h3>
+      <p class="empty">新しい記事は日々出ます。市町村名で検索してください。</p>
+      <p class="more-search" id="press-search"></p>
     </div>
-    <figure class="infographic">
-      <figcaption>このページの要点（A4縦）。図をタップしても進みません。ボタンは上にあります。<a href="../img/info-municipality.png" download>画像を保存</a></figcaption>
-      <img loading="lazy" decoding="async" src="../img/info-municipality.png" width="1240" height="1754" alt="A4縦の要点図。図の中はボタンではない。実際のボタンはページの上。市町村ページの見方。">
-    </figure>
-  </main>
-  <footer>
-    <p>本サイトは行政の公式発表ではありません。</p>
     <p class="org-links">
       <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC ウェブサイト</a>
       <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook グループ</a>
       <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook ページ</a>
     </p>
     <div data-share></div>
+  </main>
+  <footer>
+    <p>本サイトは行政の公式発表ではありません。</p>
+    <nav class="nav" aria-label="他のページ">
+      <a href="index.html">千葉県にお住まいの方へ</a>
+      <a href="situations.html">困りごとから探す</a>
+      <a href="timeline.html">これから起きること</a>
+      <a href="housing.html">住まいが被災した方</a>
+      <a href="life.html">移動と生活</a>
+      <a href="business.html">被災した事業者の方</a>
+      <a href="municipalities.html">市町村一覧</a>
+      <a href="prefecture.html">県・国の支援</a>
+    </nav>
   </footer>
   <script>
     function fmt(iso) {
@@ -185,7 +166,7 @@
       (function () {
         var pageUrl = "https://office626.github.io/r808chibagouu/resident/municipality.html?slug=" + encodeURIComponent(m.slug);
         var pageTitle = m.name + "の被害経過と支援策 | CTZC 千葉豪雨ポータル";
-        var pageDesc = m.name + "の避難情報、被害の報道、いま受けられる支援策、行政の記録、生活再建の段取り。公式リンクと見出しのみ。";
+        var pageDesc = m.name + "の避難情報、いま受けられる支援策、行政の記録、被害の報道。公式リンクと見出しのみ。";
         document.getElementById("canonical").setAttribute("href", pageUrl);
         function setMeta(sel, val) {
           var el = document.querySelector(sel);
