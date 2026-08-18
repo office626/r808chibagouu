@@ -1,472 +1,1589 @@
 {
-  "note": "各市町村公式の申請案内へのリンク。今回の大雨専用ページでない場合もある。受付の有無・対象は必ず公式で確認すること。",
+  "note": "各市町村公式のお知らせへのリンク。今回の大雨専用ページでない場合もある。受付の有無・対象・期限は必ず公式で確認すること。status と checked は有志が確認した時点の値。",
+  "kind_labels": {
+    "hub": "大雨情報まとめ",
+    "risai": "罹災証明",
+    "support": "支援策",
+    "waste": "災害ごみ",
+    "disinfect": "消毒",
+    "water": "断水・水道",
+    "housing": "住まい",
+    "vc": "ボランティア",
+    "home": "公式"
+  },
+  "kind_labels_en": {
+    "hub": "Heavy-rain information hub",
+    "risai": "Damage certificate",
+    "support": "Support",
+    "waste": "Disaster waste",
+    "disinfect": "Disinfection",
+    "water": "Water supply",
+    "housing": "Housing",
+    "vc": "Volunteer center",
+    "home": "Official site"
+  },
+  "status_labels": {
+    "open": "受付中・掲載中",
+    "preparing": "準備中",
+    "closed": "終了",
+    "unknown": "要確認"
+  },
+  "status_labels_en": {
+    "open": "Open / posted",
+    "preparing": "Preparing",
+    "closed": "Closed",
+    "unknown": "Unverified"
+  },
   "by_slug": {
     "chiba": [
       {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月千葉豪雨に関する情報（市の総合ページ）",
+        "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/bosai/oamejoho20260813.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "risai",
         "kind_label": "罹災証明",
-        "title": "罹災証明書・被災証明書（8月15・16日に臨時窓口）",
-        "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/sinnrisaishomei.html"
+        "kind_label_en": "Damage certificate",
+        "title": "罹災証明書・被災証明書の申請",
+        "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/sinnrisaishomei.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": "8/15・16の臨時窓口は終了。通常窓口は市公式で確認"
       },
       {
         "kind": "support",
         "kind_label": "支援策",
+        "kind_label_en": "Support",
         "title": "被災者生活再建支援金（国制度）",
-        "url": "https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/hisaisha-shien_gov.html"
+        "url": "https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/hisaisha-shien_gov.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       },
       {
         "kind": "support",
         "kind_label": "支援策",
+        "kind_label_en": "Support",
         "title": "被災者生活再建支援金（千葉県制度）",
-        "url": "https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/hisaisha-shien_chiba-pref.html"
+        "url": "https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/hisaisha-shien_chiba-pref.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害に伴う各種支援制度一覧",
+        "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/shienseidoichiran.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "大雨の被害により発生した災害ごみの出し方",
+        "url": "https://www.city.chiba.jp/kankyo/junkan/haikibutsu/junbichu-saigaigomi.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水被害発生時の衛生対策（消毒）",
+        "url": "https://www.city.chiba.jp/hokenfukushi/iryoeisei/seikatsueisei/shinsui_shoudoku.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "vc",
+        "kind_label": "ボランティア",
+        "kind_label_en": "Volunteer center",
+        "title": "千葉市災害ボランティアセンターについて",
+        "url": "https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/saigaivolunteer.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "ichikawa": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書等の申請（地震等・風水害）",
-        "url": "https://www.city.ichikawa.lg.jp/page/7339.html"
+        "url": "https://www.city.ichikawa.lg.jp/page/7339.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害見舞金",
+        "url": "https://www.city.ichikawa.lg.jp/page/6987.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "funabashi": [
       {
-        "kind": "support",
-        "kind_label": "支援策",
-        "title": "自然災害の被害に遭われた市民の方へ（支援制度）",
-        "url": "https://www.city.funabashi.lg.jp/bousai/003/risai/p084061.html"
-      },
-      {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災（届出）証明書",
-        "url": "https://www.city.funabashi.lg.jp/bousai/003/risai/p020912.html"
+        "url": "https://www.city.funabashi.lg.jp/bousai/003/risai/p020912.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "自然災害の被害に遭われた市民の方へ（支援制度）",
+        "url": "https://www.city.funabashi.lg.jp/bousai/003/risai/p084061.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水した家屋等の消毒方法について",
+        "url": "https://www.city.funabashi.lg.jp/kenkou/eisei/002/p092254.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "matsudo": [
       {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月千葉豪雨の被害により被災された方へ",
+        "url": "https://www.city.matsudo.chiba.jp/kurashi/anzen_anshin/saigai/hisai.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・罹災届出証明書の発行",
-        "url": "https://www.city.matsudo.chiba.jp/kurashi/todokede/shoumeisho/aaa.html"
+        "url": "https://www.city.matsudo.chiba.jp/kurashi/todokede/shoumeisho/aaa.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "令和8年8月千葉豪雨の被害により発生した災害ごみの出し方",
+        "url": "https://www.city.matsudo.chiba.jp/kurashi/gomi_shinyou/oshirase/R080816.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水被害に遭われた家屋等の消毒について",
+        "url": "https://www.city.matsudo.chiba.jp/kurashi/kankyou/202608syoudoku.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "市内被災者に対する市営住宅の提供について",
+        "url": "https://www.city.matsudo.chiba.jp/kurashi/sumai/tatemono_jyosei/kouei/kumamoto.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "mobara": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災証明書",
-        "url": "https://www.city.mobara.chiba.jp/0000000787.html"
+        "url": "https://www.city.mobara.chiba.jp/0000000787.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "「罹災証明」「被災証明」の発行について（令和8年8月大雨）",
+        "url": "https://www.city.mobara.chiba.jp/0000008102.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "災害廃棄物の出し方について",
+        "url": "https://www.city.mobara.chiba.jp/0000008100.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "屋内用消毒薬の配布について",
+        "url": "https://www.city.mobara.chiba.jp/emergencyinfo/0000000303.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "sakura": [
       {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "8月13日大雨警報について（市の総合ページ）",
+        "url": "https://www.city.sakura.lg.jp/kinkyu/22247.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災証明書の発行",
-        "url": "https://www.city.sakura.lg.jp/soshiki/kikikanrika/112/risai/4872.html"
+        "url": "https://www.city.sakura.lg.jp/soshiki/kikikanrika/112/risai/4872.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "罹災証明書・被災証明書の発行について（令和8年8月大雨）",
+        "url": "https://www.city.sakura.lg.jp/soshiki/kikikanrika/taihuujouhou/22264.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "被災中小企業・小規模事業者支援措置",
+        "url": "https://www.city.sakura.lg.jp/soshiki/kikikanrika/taihuujouhou/22268.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "令和8年8月13日に被災したごみの処理について",
+        "url": "https://www.city.sakura.lg.jp/soshiki/kikikanrika/taihuujouhou/22266.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "水害時の衛生対策と消毒方法について",
+        "url": "https://www.city.sakura.lg.jp/soshiki/kikikanrika/taihuujouhou/22272.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "togane": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災届出証明書",
-        "url": "https://www.city.togane.chiba.jp/0000001068.html"
+        "url": "https://www.city.togane.chiba.jp/0000001068.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "narashino": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書、被災証明書の発行",
-        "url": "https://www.city.narashino.lg.jp/soshiki/kikikanri/gyomu/bosaibohan/hisaisyasien/risaisyoumei_hisaisyoumei.html"
+        "url": "https://www.city.narashino.lg.jp/soshiki/kikikanri/gyomu/bosaibohan/hisaisyasien/risaisyoumei_hisaisyoumei.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "kashiwa": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書及び被災届出証明書の申請・発行",
-        "url": "https://www.city.kashiwa.lg.jp/shisanzei/shiseijoho/forms/kojin/risai.html"
+        "url": "https://www.city.kashiwa.lg.jp/shisanzei/shiseijoho/forms/kojin/risai.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "「罹災証明書」及び「被災届出証明書」の申請・発行（令和8年8月大雨）",
+        "url": "https://www.city.kashiwa.lg.jp/bosaianzen/saigaijoho/risai.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "8月13日に発生した大雨に伴う災害ごみの処分について",
+        "url": "https://www.city.kashiwa.lg.jp/bosaianzen/saigaijoho/saigaigomi.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水被害に遭われた家屋等の消毒",
+        "url": "https://www.city.kashiwa.lg.jp/bosaianzen/saigaijoho/syodoku.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "大雨被災者に対する市営住宅の提供",
+        "url": "https://www.city.kashiwa.lg.jp/bosaianzen/saigaijoho/shieijutaku-ichijishiyo3.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "ichihara": [
       {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "8月13日、14日大雨に伴う情報一覧",
+        "url": "https://www.city.ichihara.chiba.jp/article?articleId=6a7dbdc496a0342af047ba24",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "「罹災証明書」「被災証明書」をとりたい（8月13日大雨の受付案内あり）",
-        "url": "https://www.city.ichihara.chiba.jp/article?articleId=60237e61ece4651c88c190e7"
+        "url": "https://www.city.ichihara.chiba.jp/article?articleId=60237e61ece4651c88c190e7",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "yachiyo": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被害届出証明書の発行",
-        "url": "https://www.city.yachiyo.lg.jp/soshiki/11/2167.html"
+        "url": "https://www.city.yachiyo.lg.jp/soshiki/11/2167.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "8月13日の大雨に関する罹災証明書・被害届出証明書の申請受付について",
+        "url": "https://www.city.yachiyo.lg.jp/soshiki/20/84252.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       },
       {
         "kind": "support",
         "kind_label": "支援策",
+        "kind_label_en": "Support",
         "title": "被災したら・被災者支援",
-        "url": "https://www.city.yachiyo.lg.jp/life/1/9/63/"
+        "url": "https://www.city.yachiyo.lg.jp/life/1/9/63/",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水した住居等の消毒について",
+        "url": "https://www.city.yachiyo.lg.jp/soshiki/22/84262.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "water",
+        "kind_label": "断水・水道",
+        "kind_label_en": "Water supply",
+        "title": "水道・断水情報（八千代市上下水道局）",
+        "url": "https://www.city.yachiyo.lg.jp/site/jougesui/",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "abiko": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書・被災証明書・り災届出証明書",
-        "url": "https://www.city.abiko.chiba.jp/anshin/bousai/hisaichifukko/risaishomeisho.html"
+        "url": "https://www.city.abiko.chiba.jp/anshin/bousai/hisaichifukko/risaishomeisho.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "災害ごみの受け入れについて（臨時対応）",
+        "url": "https://www.city.abiko.chiba.jp/kurashi/gomi_shigen/wakekata/saigai-gomi_ukeire.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "kamagaya": [
       {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月千葉豪雨に係る被害状況",
+        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/saigai/chibagouu.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書等の交付",
-        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/hisaishoumeisho.html"
+        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/hisaishoumeisho.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "令和8年8月千葉豪雨に伴う罹災証明書等の交付について",
+        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/hisaishoumeisho.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       },
       {
         "kind": "support",
         "kind_label": "支援策",
+        "kind_label_en": "Support",
         "title": "被災された方のための各種手続き・支援の手引き",
-        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/mimaikin.files/tebikiR6.pdf"
+        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/mimaikin.files/tebikiR6.pdf",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "大雨等に伴う災害ごみの受付開始について",
+        "url": "https://www.city.kamagaya.chiba.jp/kurashi-tetsuzuki/gomi/oshirase/saigaigomi_uketuke.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "yotsukaido": [
       {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月13日の大雨に関する情報",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/saigai/r8-8-13rain/index.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "risai",
         "kind_label": "罹災証明",
-        "title": "罹災証明書及び罹災届出証明書の発行",
-        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/bosai/saigai-hassei/risaishomei.html"
+        "kind_label_en": "Damage certificate",
+        "title": "罹災証明書・罹災届出証明書の申請（令和8年8月大雨）",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/bosai/saigai-hassei/risair2608.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "ごみの収集と粗大ごみ・災害ごみの持込について",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/gomi/oshirase_event/20260814.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "yachimata": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書及び被災証明書の発行",
-        "url": "https://www.city.yachimata.lg.jp/soshiki/8/44368.html"
+        "url": "https://www.city.yachimata.lg.jp/soshiki/8/44368.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "inzai": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書の交付",
-        "url": "https://www.city.inzai.lg.jp/bousaiportal/0000008733.html"
+        "url": "https://www.city.inzai.lg.jp/bousaiportal/0000008733.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "shiroi": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書等の交付",
-        "url": "https://www.city.shiroi.chiba.jp/kurashi/bosai/b02/1472018650409.html"
+        "url": "https://www.city.shiroi.chiba.jp/kurashi/bosai/b02/1472018650409.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "sammu": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書の発行",
-        "url": "https://www.city.sammu.lg.jp/bousai-syobo/bousai/taifu13/page000827.html"
+        "url": "https://www.city.sammu.lg.jp/bousai-syobo/bousai/taifu13/page000827.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "罹災証明書の発行について（令和8年8月13日大雨特別警報）",
+        "url": "https://www.city.sammu.lg.jp/bousai-syobo/saigai/page008729.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "被災証明書の発行について（令和8年8月13日大雨特別警報）",
+        "url": "https://www.city.sammu.lg.jp/bousai-syobo/saigai/page008734.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "床上浸水に係る消毒液の配付について",
+        "url": "https://www.city.sammu.lg.jp/bousai-syobo/saigai/page008730.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "vc",
+        "kind_label": "ボランティア",
+        "kind_label_en": "Volunteer center",
+        "title": "山武市社協ボランティア・市民活動センターによるボランティアの依頼について",
+        "url": "https://www.city.sammu.lg.jp/bousai-syobo/saigai/page008732.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "oamishirasato": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災証明書",
-        "url": "https://www.city.oamishirasato.lg.jp/0000013209.html"
+        "url": "https://www.city.oamishirasato.lg.jp/0000013209.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "罹災証明書・被災証明書について（令和8年8月大雨）",
+        "url": "https://www.city.oamishirasato.lg.jp/0000015510.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "被災された方への支援内容一覧",
+        "url": "https://www.city.oamishirasato.lg.jp/0000015509.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害支援センターによる「被災家屋の対応説明会」（8月16日）",
+        "url": "https://www.city.oamishirasato.lg.jp/0000015523.html",
+        "status": "closed",
+        "status_label": "終了",
+        "status_label_en": "Closed",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "災害ごみ仮置き場の開設のお知らせ",
+        "url": "https://www.city.oamishirasato.lg.jp/0000015513.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "水害時の衛生対策と消毒方法について",
+        "url": "https://www.city.oamishirasato.lg.jp/0000009944.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "vc",
+        "kind_label": "ボランティア",
+        "kind_label_en": "Volunteer center",
+        "title": "災害ボランティアセンターの開設について",
+        "url": "https://www.city.oamishirasato.lg.jp/0000015516.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "kujukuri": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災証明書",
-        "url": "https://www.town.kujukuri.chiba.jp/0000001345.html"
+        "url": "https://www.town.kujukuri.chiba.jp/0000001345.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "令和8年8月千葉豪雨に伴う罹災証明および被災証明の申請受付開始",
+        "url": "https://www.town.kujukuri.chiba.jp/0000008246.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "ご自宅が床上浸水の被害にあわれた方へ",
+        "url": "https://www.town.kujukuri.chiba.jp/0000009054.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "shirako": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書の発行",
-        "url": "https://www.town.shirako.lg.jp/0000001936.html"
+        "url": "https://www.town.shirako.lg.jp/0000001936.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "nagara": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書等の発行申請",
-        "url": "https://www.town.nagara.chiba.jp/soshiki/1/12166.html"
+        "url": "https://www.town.nagara.chiba.jp/soshiki/1/12166.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "nagareyama": [
       {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月千葉豪雨に対する支援・手続きについて",
+        "url": "https://www.city.nagareyama.chiba.jp/life/1003604/1055358.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災証明書の発行",
-        "url": "https://www.city.nagareyama.chiba.jp/life/1003604/1027795/1023527.html"
+        "url": "https://www.city.nagareyama.chiba.jp/life/1003604/1027795/1023527.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "choshi": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書",
-        "url": "https://www.city.choshi.chiba.jp/kurashi/page040031.html"
+        "url": "https://www.city.choshi.chiba.jp/kurashi/page040031.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "tateyama": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書・被災届出証明書の発行",
-        "url": "https://www.city.tateyama.chiba.jp/zeimu/page100071.html"
+        "url": "https://www.city.tateyama.chiba.jp/zeimu/page100071.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "令和8年8月千葉豪雨に関する罹災証明書の調査依頼・発行申請について",
+        "url": "https://www.city.tateyama.chiba.jp/zeimu/page100158.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "令和8年8月13日からの大雨に関する住宅の修理等について",
+        "url": "https://www.city.tateyama.chiba.jp/kenchikushisetsu/page100061.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "kisarazu": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書・り災届出証明書",
-        "url": "https://www.city.kisarazu.lg.jp/soshiki/somu/kikikanri/1/941.html"
+        "url": "https://www.city.kisarazu.lg.jp/soshiki/somu/kikikanri/1/941.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "noda": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・罹災届出証明書（地震、風水害等）",
-        "url": "https://www.city.noda.chiba.jp/kurashi/anzen/bousai/1008712.html"
+        "url": "https://www.city.noda.chiba.jp/kurashi/anzen/bousai/1008712.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "narita": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・罹災届出証明書",
-        "url": "https://www.city.narita.chiba.jp/anshin/page071200_00001.html"
+        "url": "https://www.city.narita.chiba.jp/anshin/page071200_00001.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "asahi": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災（被災）証明書の発行",
-        "url": "https://www.city.asahi.lg.jp/soshiki/6/2620.html"
+        "url": "https://www.city.asahi.lg.jp/soshiki/6/2620.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "katsuura": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書等の交付",
-        "url": "https://www.city.katsuura.lg.jp/site/bousai/1451.html"
+        "url": "https://www.city.katsuura.lg.jp/site/bousai/1451.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "kamogawa": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災届出証明書",
-        "url": "https://www.city.kamogawa.lg.jp/site/bousai/7703.html"
+        "url": "https://www.city.kamogawa.lg.jp/site/bousai/7703.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "kimitsu": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書等の発行申請",
-        "url": "https://www.city.kimitsu.lg.jp/soshiki/6/1142.html"
+        "url": "https://www.city.kimitsu.lg.jp/soshiki/6/1142.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "futtsu": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書・被災届出証明書の発行",
-        "url": "https://www.city.futtsu.lg.jp/0000001482.html"
+        "url": "https://www.city.futtsu.lg.jp/0000001482.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "urayasu": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書・り災届出証明書",
-        "url": "https://www.city.urayasu.lg.jp/todokede/anzen/bousai/1030674/1027478.html"
+        "url": "https://www.city.urayasu.lg.jp/todokede/anzen/bousai/1030674/1027478.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "sodegaura": [
       {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月13日発生大雨に伴う情報一覧",
+        "url": "https://www.city.sodegaura.lg.jp/soshiki/0/20260813.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書及び被災届出証明書の発行",
-        "url": "https://www.city.sodegaura.lg.jp/soshiki/chiiki/risaisyoumeisyo.html"
+        "url": "https://www.city.sodegaura.lg.jp/soshiki/chiiki/risaisyoumeisyo.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "tomisato": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書（罹災届出証明書）の申請方法",
-        "url": "https://www.city.tomisato.lg.jp/0000013819.html"
+        "url": "https://www.city.tomisato.lg.jp/0000013819.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "minamiboso": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書等の交付",
-        "url": "https://www.city.minamiboso.chiba.jp/bousai/0000019689.html"
+        "url": "https://www.city.minamiboso.chiba.jp/bousai/0000019689.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "sosa": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書、被害届出証明の交付",
-        "url": "https://www.city.sosa.lg.jp/page/page000398.html"
+        "url": "https://www.city.sosa.lg.jp/page/page000398.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "katori": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書",
-        "url": "https://www.city.katori.lg.jp/download/other/somu001.html"
+        "url": "https://www.city.katori.lg.jp/download/other/somu001.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害に見舞われたとき",
+        "url": "https://www.city.katori.lg.jp/kenko_fukushi/saigai/index.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "isumi": [
       {
         "kind": "support",
         "kind_label": "支援策",
+        "kind_label_en": "Support",
         "title": "オンライン手続き（被災証明関係）",
-        "url": "https://www.city.isumi.lg.jp/gyosei/kurashi_tetsuzuki/6574.html"
+        "url": "https://www.city.isumi.lg.jp/gyosei/kurashi_tetsuzuki/6574.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "shisui": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書及び被災証明書",
-        "url": "https://www.town.shisui.chiba.jp/docs/2021040900042/"
+        "url": "https://www.town.shisui.chiba.jp/docs/2021040900042/",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "sakae": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明交付申請書（自然災害）",
-        "url": "https://www.town.sakae.chiba.jp/kurashi/emergency/disaster-about/page004412.html"
+        "url": "https://www.town.sakae.chiba.jp/kurashi/emergency/disaster-about/page004412.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "kozaki": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "オンライン申請（罹災証明書の発行申請）",
-        "url": "https://www.town.kozaki.chiba.jp/kurashi/todokede/one-stop-service.html"
+        "url": "https://www.town.kozaki.chiba.jp/kurashi/todokede/one-stop-service.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       },
       {
         "kind": "support",
         "kind_label": "支援策",
+        "kind_label_en": "Support",
         "title": "災害情報・被災者支援",
-        "url": "https://www.town.kozaki.chiba.jp/kurashi/living_bosai/bosai/saigai.html"
+        "url": "https://www.town.kozaki.chiba.jp/kurashi/living_bosai/bosai/saigai.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "tako": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書等の申請",
-        "url": "https://www.town.tako.chiba.jp/docs/2020081300026/"
+        "url": "https://www.town.tako.chiba.jp/docs/2020081300026/",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "被災者相談等窓口について",
+        "url": "https://www.town.tako.chiba.jp/docs/2026081200038/",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "tonosho": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書の発行",
-        "url": "https://www.town.tohnosho.chiba.jp/soshiki/chominka/koteishisanzei_kakari/shinseisho_shoshikidownlord/20/6730.html"
+        "url": "https://www.town.tohnosho.chiba.jp/soshiki/chominka/koteishisanzei_kakari/shinseisho_shoshikidownlord/20/6730.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "shibayama": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書の発行",
-        "url": "https://www.town.shibayama.lg.jp/0000001165.html"
+        "url": "https://www.town.shibayama.lg.jp/0000001165.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "yokoshibahikari": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災・被災証明書の発行",
-        "url": "https://www.town.yokoshibahikari.chiba.jp/soshiki/6/1038.html"
+        "url": "https://www.town.yokoshibahikari.chiba.jp/soshiki/6/1038.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "ichinomiya": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災証明書の交付申請",
-        "url": "https://www.town.ichinomiya.chiba.jp/emergency_info/415.html"
+        "url": "https://www.town.ichinomiya.chiba.jp/emergency_info/415.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "mutsuzawa": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災証明書の発行",
-        "url": "https://www.town.mutsuzawa.chiba.jp/kurashi/osirase/risaihisai.html"
+        "url": "https://www.town.mutsuzawa.chiba.jp/kurashi/osirase/risaihisai.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "chosei": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書の発行",
-        "url": "https://www.vill.chosei.chiba.jp/0000000513.html"
+        "url": "https://www.vill.chosei.chiba.jp/0000000513.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "chonan": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明書・被災証明書の発行",
-        "url": "https://www.town.chonan.chiba.jp/osirase/21004/"
+        "url": "https://www.town.chonan.chiba.jp/osirase/21004/",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "otaki": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書等の交付",
-        "url": "https://www.town.otaki.chiba.jp/kurashi/todoke/1/1075.html"
+        "url": "https://www.town.otaki.chiba.jp/kurashi/todoke/1/1075.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "onjuku": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "り災証明書の発行",
-        "url": "https://www.town.onjuku.chiba.jp/sub1/1/34.html"
+        "url": "https://www.town.onjuku.chiba.jp/sub1/1/34.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ],
     "kyonan": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
         "title": "罹災証明・被災届出申請書",
-        "url": "https://www.town.kyonan.chiba.jp/site/fukkou/list49.html"
+        "url": "https://www.town.kyonan.chiba.jp/site/fukkou/list49.html",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
       }
     ]
   }

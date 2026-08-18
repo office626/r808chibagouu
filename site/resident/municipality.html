@@ -49,13 +49,16 @@
     <div class="card" id="support-card">
       <h2>いま受けられる支援策</h2>
       <p class="notice">有志による要約です。申請は公式へ。数値は速報で変わります。報道は見出しとリンクのみで、記事全文は転載していません。</p>
-      <p class="empty">申請は公式窓口へ。リンク先の受付対象・期間を確認してください。</p>
+      <p class="empty">罹災証明・災害ごみ・消毒・住まい・ボランティアなど、市町村公式のページへのリンクです。受付状態と確認日は有志が見た時点のもの。申請は公式窓口へ。</p>
+      <ul class="support-list" id="muni-support"></ul>
+      <p class="meta" id="support-meta"></p>
       <div id="support"></div>
-      <ul id="muni-support"></ul>
       <ul>
+        <li><a href="https://saigai-chiba.com/" target="_blank" rel="noopener">千葉災害ボランティア情報（県内の災害ボランティアセンター一覧）</a> <span class="badge npo">社協</span></li>
         <li><a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/">国の被災者支援制度（内閣府）</a> <span class="badge admin">行政</span></li>
         <li><a href="prefecture.html">千葉県の支援・防災情報</a> <span class="badge admin">行政</span></li>
       </ul>
+      <p class="meta"><a id="issue-link" href="https://github.com/office626/r808chibagouu/issues/new" target="_blank" rel="noopener">この市町村の公式リンクを足す・直す（GitHub Issue）</a>。リンク切れや新しいお知らせに気づいたら教えてください。</p>
     </div>
     <div class="card" id="now-card">
       <h2>いま</h2>
@@ -90,6 +93,7 @@
   <footer>
     <p>本サイトは行政の公式発表ではありません。</p>
   </footer>
+  <script src="../js/supports.js"></script>
   <script>
     function fmt(iso) {
       if (!iso) return "";
@@ -217,21 +221,15 @@
       sup.appendChild(sp);
       var muniUl = document.getElementById("muni-support");
       var muniLinks = (supports.by_slug && supports.by_slug[slug]) || [];
-      muniLinks.forEach(function (item) {
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = item.url;
-        a.target = "_blank";
-        a.rel = "noopener";
-        a.textContent = item.title;
-        li.appendChild(a);
-        li.appendChild(document.createTextNode(" "));
-        var badgeEl = document.createElement("span");
-        badgeEl.className = "badge admin";
-        badgeEl.textContent = item.kind_label;
-        li.appendChild(badgeEl);
-        muniUl.appendChild(li);
-      });
+      SupportsView.renderList(muniUl, muniLinks);
+      var supportMeta = document.getElementById("support-meta");
+      var latest = SupportsView.latestChecked(muniLinks);
+      if (muniLinks.length && muniLinks[0].kind === "home") {
+        supportMeta.textContent = "この市町村の個別ページはまだ集められていません。公式サイトの新着・防災のお知らせを確認してください。";
+      } else if (latest) {
+        supportMeta.textContent = "最後に有志が確認した日: " + latest.replace(/-/g, "/") + "。それ以降に変わっていることがあります。";
+      }
+      document.getElementById("issue-link").href = SupportsView.issueLink(m.name, slug);
       var seen = {};
       function takeNews(list) {
         var out = [];

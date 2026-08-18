@@ -70,8 +70,8 @@
       </ul>
     </div>
     <div class="card">
-      <h2>Find Support Programs in Each Municipality</h2>
-      <p>These links cover official municipal guidance on disaster damage certificates and support. Some pages are general information rather than pages created specifically for this heavy rain. Always check the official source to see whether applications are open.</p>
+      <h2>Find Official Notices and Support in Each Municipality</h2>
+      <p>Links to official municipal pages on damage certificates, disaster waste, disinfection, housing, volunteer centers and more (Japanese). Some pages are general information rather than pages created for this heavy rain. Status and check dates reflect when a volunteer last looked. Always check the official source.</p>
       <label class="sort-label" for="muni-q">Search by municipality name (Japanese kana or romanized slug also accepted)</label>
       <input class="search" id="muni-q" type="search" placeholder="Examples: Chiba, Ichikawa, kyonan" autocomplete="off">
       <p class="meta" id="muni-share" hidden>This filter is included in the URL. <button type="button" class="btn secondary btn-small">Copy filtered URL</button> <span data-note></span></p>
@@ -95,6 +95,7 @@
   </footer>
   <script src="../js/municipality-names.js"></script>
   <script src="../../js/muni-search.js"></script>
+  <script src="../../js/supports.js"></script>
   <script>
     fetch("../../data/collection.json")
       .then(function (r) { return r.json(); })
@@ -138,22 +139,8 @@
           nav.appendChild(home);
           li.appendChild(nav);
           var links = document.createElement("ul");
-          (bySlug[m.slug] || []).forEach(function (item) {
-            var row = document.createElement("li");
-            var a = document.createElement("a");
-            a.href = item.url;
-            a.target = "_blank";
-            a.rel = "noopener";
-            a.lang = "ja";
-            a.textContent = item.title;
-            row.appendChild(a);
-            row.appendChild(document.createTextNode(" "));
-            var b = document.createElement("span");
-            b.className = "badge admin";
-            b.textContent = item.kind === "risai" ? "Damage certificate" : "Support";
-            row.appendChild(b);
-            links.appendChild(row);
-          });
+          links.className = "support-list";
+          SupportsView.renderList(links, bySlug[m.slug] || []);
           li.appendChild(links);
           ul.appendChild(li);
         });
