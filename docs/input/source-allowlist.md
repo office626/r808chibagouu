@@ -41,7 +41,7 @@ Yahoo!ニュース RSS と NHK 公式 RSS は、個人利用・再配信禁止�
 | M-MATSUDO | 松戸市 | https://www.city.matsudo.chiba.jp/ | 公式の防災・新着 |
 | M-MOBARA | 茂原市 | https://www.city.mobara.chiba.jp/ | 公式の防災・新着 |
 | M-SAKURA | 佐倉市 | https://www.city.sakura.lg.jp/ | 公式の防災・新着 |
-| M-TOGANE | 東金市 | https://www.city.togane.lg.jp/ | 公式の防災・新着 |
+| M-TOGANE | 東金市 | https://www.city.togane.chiba.jp/ | 公式の防災・新着 |
 | M-NARASHINO | 習志野市 | https://www.city.narashino.lg.jp/ | 公式の防災・新着 |
 | M-KASHIWA | 柏市 | https://www.city.kashiwa.lg.jp/ | 公式の防災・新着 |
 | M-ICHIHARA | 市原市 | https://www.city.ichihara.chiba.jp/ | 公式の防災・新着 |
@@ -51,7 +51,7 @@ Yahoo!ニュース RSS と NHK 公式 RSS は、個人利用・再配信禁止�
 | M-YOTSUKAIDO | 四街道市 | https://www.city.yotsukaido.chiba.jp/ | 公式の防災・新着 |
 | M-YACHIMATA | 八街市 | https://www.city.yachimata.lg.jp/ | 公式の防災・新着 |
 | M-INZAI | 印西市 | https://www.city.inzai.lg.jp/ | 公式の防災・新着 |
-| M-SHIROI | 白井市 | https://www.city.shiroi.lg.jp/ | 公式の防災・新着 |
+| M-SHIROI | 白井市 | https://www.city.shiroi.chiba.jp/ | 公式の防災・新着 |
 | M-SAMMU | 山武市 | https://www.city.sammu.lg.jp/ | 公式の防災・新着 |
 | M-OAMISHIRASATO | 大網白里市 | https://www.city.oamishirasato.lg.jp/ | 公式の防災・新着 |
 | M-KUJUKURI | 九十九里町 | https://www.town.kujukuri.chiba.jp/ | 公式の防災・新着 |

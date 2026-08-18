@@ -71,8 +71,8 @@
       </ul>
     </div>
     <div class="card">
-      <h2>各市町村の支援施策を探す</h2>
-      <p>各市町村公式の罹災証明・支援案内です。今回の大雨専用でないページもあります。受付の有無は必ず公式で確認してください。</p>
+      <h2>各市町村の公式お知らせ・支援策を探す</h2>
+      <p>各市町村公式の罹災証明・災害ごみ・消毒・住まい・ボランティアなどの案内です。今回の大雨専用でないページもあります。受付状態と確認日は有志が見た時点のもの。必ず公式で確認してください。</p>
       <label class="sort-label" for="muni-q">市町村名で検索（ひらがな・カタカナでも可）</label>
       <input class="search" id="muni-q" type="search" placeholder="例：千葉市、いちかわ、キョナン" autocomplete="off">
       <p class="meta" id="muni-share" hidden>この絞り込みは URL に入っています。 <button type="button" class="btn secondary btn-small">絞り込んだURLをコピー</button> <span data-note></span></p>
@@ -95,6 +95,7 @@
     <div data-share></div>
   </footer>
   <script src="../js/muni-search.js"></script>
+  <script src="../js/supports.js"></script>
   <script>
     fetch("../data/collection.json")
       .then(function (r) { return r.json(); })
@@ -138,21 +139,8 @@
           nav.appendChild(home);
           li.appendChild(nav);
           var links = document.createElement("ul");
-          (bySlug[m.slug] || []).forEach(function (item) {
-            var row = document.createElement("li");
-            var a = document.createElement("a");
-            a.href = item.url;
-            a.target = "_blank";
-            a.rel = "noopener";
-            a.textContent = item.title;
-            row.appendChild(a);
-            row.appendChild(document.createTextNode(" "));
-            var b = document.createElement("span");
-            b.className = "badge admin";
-            b.textContent = item.kind_label;
-            row.appendChild(b);
-            links.appendChild(row);
-          });
+          links.className = "support-list";
+          SupportsView.renderList(links, bySlug[m.slug] || []);
           li.appendChild(links);
           ul.appendChild(li);
         });
