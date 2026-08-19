@@ -61,6 +61,11 @@
       </a>
     </div>
     <p><a class="btn" href="municipalities.html">Find your municipality</a> <a class="btn" href="situations.html">Find help by problem</a> <a class="btn secondary" href="timeline.html">What may happen next, by stage</a></p>
+    <div class="card" id="recent-card" hidden>
+      <h2>Recently Updated Official Municipal Pages (detected automatically)</h2>
+      <p class="meta">We check about every 3 hours whether the text of official municipal heavy-rain pages has changed. See the official page (Japanese) for what changed.</p>
+      <ul class="recent-updates" id="recent-list"></ul>
+    </div>
     <div class="card">
       <h2>Official Information to Check Now</h2>
       <ul>
@@ -107,10 +112,42 @@
       });
     Promise.all([
       fetch("../../data/municipalities.json").then(function (r) { return r.json(); }),
-      fetch("../../data/supports.json").then(function (r) { return r.json(); })
+      fetch("../../data/supports.json").then(function (r) { return r.json(); }),
+      fetch("../../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
     ]).then(function (pair) {
       var munis = pair[0];
       var bySlug = (pair[1] && pair[1].by_slug) || {};
+      var watch = pair[2];
+      SupportsView.setWatch(watch);
+      (function () {
+        if (!watch || !watch.events) return;
+        var ev = watch.events.filter(function (e) { return SupportsView.isFresh(e.at); });
+        ev.sort(function (a, b) { return a.at < b.at ? 1 : -1; });
+        if (!ev.length) return;
+        var list = document.getElementById("recent-list");
+        ev.slice(0, 10).forEach(function (e) {
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " "));
+          var mu = document.createElement("a");
+          mu.href = "municipality.html?slug=" + encodeURIComponent(e.slug);
+          mu.textContent = MunicipalityNames.get(e.slug);
+          li.appendChild(mu);
+          li.appendChild(document.createTextNode(": "));
+          var a = document.createElement("a");
+          a.href = e.url; a.target = "_blank"; a.rel = "noopener"; a.lang = "ja";
+          a.textContent = e.title;
+          li.appendChild(a);
+          li.appendChild(document.createTextNode(" (Japanese source title)"));
+          if (e.added && e.added.length) {
+            var sp = document.createElement("span");
+            sp.className = "added"; sp.lang = "ja";
+            sp.textContent = "New text (auto-extracted): " + e.added.slice(0, 2).join(" / ");
+            li.appendChild(sp);
+          }
+          list.appendChild(li);
+        });
+        document.getElementById("recent-card").hidden = false;
+      })();
       var ul = document.getElementById("muni-supports");
       var empty = document.getElementById("muni-empty");
       var q = document.getElementById("muni-q");
