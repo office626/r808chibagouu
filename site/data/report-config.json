@@ -1,8 +1,8 @@
 {
-  "_comment": "利用者からの『この情報は違う・古い』通報の送り先。Google フォームの公開URLと、事前入力する項目の entry ID を入れる。空のあいだは GitHub Issue へのフォールバックになる。",
-  "form_url": "",
+  "_comment": "利用者からの『この情報は違う・古い』通報の送り先。Google フォームの公開URLと、事前入力する項目の entry ID。page=該当ページのURL、target=対象（市町村・項目・リンク先）。空にすると GitHub Issue へのフォールバックになる。",
+  "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSeJWwzaGJ-aQpG09Ep4ZbU-KrFvOZOhVRSx3SeKn-uyPuvcfg/viewform",
   "entries": {
-    "page": "",
-    "target": ""
+    "page": "entry.366884128",
+    "target": "entry.1181485423"
   }
 }
