@@ -127,6 +127,18 @@
       </p>
       <p><a href="https://github.com/office626/r808chibagouu">GitHub repository</a></p>
     </div>
+    <div class="card" id="report-card">
+      <h2>Handling “this is wrong or outdated” reports from readers</h2>
+      <p>Every page has a “Report” link at the bottom, and each municipal official link has a small “Report” next to it. Reports arrive in the “訂正” (corrections) sheet of the operations spreadsheet (Google Form responses); until the form is configured they arrive as GitHub issues. Report contents are not published.</p>
+      <ol class="steps">
+        <li>Check the corrections sheet or the issue and mark it “checking”. If it concerns a municipal official link, set <code>status</code> to <code>checking</code> in <code>data/supports.csv</code> (the site shows a “Being verified” badge)</li>
+        <li>Verify against official pages only (municipality, prefecture, national government)</li>
+        <li>Fix <code>supports.csv</code> (URL, title, status, date checked) or the page. Mirror any Japanese page change to the English page and run <code>python scripts/check_bilingual.py</code></li>
+        <li>Mark it “resolved” (or “no action” with a reason). Reply briefly if a contact was given</li>
+        <li>Review open reports once a week</li>
+      </ol>
+      <p class="meta">If an emergency (rescue, injury) arrives through the form, direct the person to 119/110 and the municipality. This site does not handle emergencies.</p>
+    </div>
     <p><a href="../resident/index.html">Information for residents</a></p>
     <figure class="infographic">
       <figcaption>Key points from this page in a portrait A4 graphic. Tapping the graphic will not open a link; use the buttons above. <a href="../../img/info-supporters-en.png" download>Save the image</a></figcaption>
@@ -143,6 +155,7 @@
     <div data-share></div>
   </footer>
   <script src="../../js/share.js"></script>
+  <script src="../../js/report.js"></script>
   <script src="../../js/language-switch.js"></script>
 </body>
 </html>

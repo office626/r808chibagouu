@@ -7,7 +7,7 @@ CSV の列:
   kind      hub / risai / support / waste / disinfect / water / housing / vc / home
   title     公式ページの見出し（そのまま。言い換えは最小限）
   url       公式ページの URL
-  status    open（受付中・掲載中）/ preparing（準備中）/ closed（終了）/ unknown（未確認）
+  status    open（受付中・掲載中）/ preparing（準備中）/ closed（終了）/ checking（通報を受けて確認中）/ unknown（未確認）
   checked   最後に人が確認した日 YYYY-MM-DD
   deadline  期限（公式に書かれているときだけ。例 2026-09-30、または「9月末まで」など）
   note      補足（サイトには短く出る）
@@ -52,8 +52,8 @@ KIND_LABEL_EN = {
     "home": "Official site",
 }
 KIND_ORDER = ["hub", "risai", "support", "waste", "disinfect", "water", "housing", "vc", "home"]
-STATUS_LABEL = {"open": "受付中・掲載中", "preparing": "準備中", "closed": "終了", "unknown": "要確認"}
-STATUS_LABEL_EN = {"open": "Open / posted", "preparing": "Preparing", "closed": "Closed", "unknown": "Unverified"}
+STATUS_LABEL = {"open": "受付中・掲載中", "preparing": "準備中", "closed": "終了", "checking": "確認中", "unknown": "要確認"}
+STATUS_LABEL_EN = {"open": "Open / posted", "preparing": "Preparing", "closed": "Closed", "checking": "Being verified", "unknown": "Unverified"}
 
 
 def main() -> int:

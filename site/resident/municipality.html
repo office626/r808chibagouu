@@ -221,7 +221,7 @@
       sup.appendChild(sp);
       var muniUl = document.getElementById("muni-support");
       var muniLinks = (supports.by_slug && supports.by_slug[slug]) || [];
-      SupportsView.renderList(muniUl, muniLinks);
+      SupportsView.renderList(muniUl, muniLinks, m.name);
       var supportMeta = document.getElementById("support-meta");
       var latest = SupportsView.latestChecked(muniLinks);
       if (muniLinks.length && muniLinks[0].kind === "home") {
@@ -271,6 +271,7 @@
     });
   </script>
   <script src="../js/share.js"></script>
+  <script src="../js/report.js"></script>
   <script src="../js/language-switch.js"></script>
 </body>
 </html>

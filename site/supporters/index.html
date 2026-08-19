@@ -126,6 +126,18 @@
       </p>
       <p><a href="https://github.com/office626/r808chibagouu">GitHub リポジトリ</a></p>
     </div>
+    <div class="card" id="report-card">
+      <h2>利用者からの「違う・古い」の報告に対応する</h2>
+      <p>各ページの下と、市町村公式リンクの横に「報告」があります。報告は運用スプレッドシートの「訂正」シート（Google フォームの回答）に届きます。フォーム未設定のあいだは GitHub Issue に届きます。報告の内容は公開しません。</p>
+      <ol class="steps">
+        <li>「訂正」シートか Issue を見て、状態を「確認中」にする。該当が市町村公式リンクなら <code>data/supports.csv</code> の <code>status</code> を <code>checking</code> に（サイトに「確認中」バッジが出る）</li>
+        <li>公式ページで裏取りする。市町村・県・国の公式以外を根拠にしない</li>
+        <li>直す：<code>supports.csv</code>（URL・見出し・受付状態・確認日）か該当ページ。日本語ページを直したら英語版も同じ変更をし、<code>python scripts/check_bilingual.py</code> を通す</li>
+        <li>状態を「対応済み」（対応しない判断なら「対応不要」と理由）にする。連絡先がある報告には一言返す</li>
+        <li>週に一度、未対応の報告を棚卸しする</li>
+      </ol>
+      <p class="meta">緊急（救助・けが）の連絡がフォームに来たら、119／110 と市町村へ案内する。このサイトでは対応しない。</p>
+    </div>
     <p><a href="../resident/index.html">県民の方はこちら</a></p>
     <figure class="infographic">
       <figcaption>このページの要点（A4縦）。図をタップしても進みません。ボタンは上にあります。<a href="../img/info-supporters.png" download>画像を保存</a></figcaption>
@@ -142,6 +154,7 @@
     <div data-share></div>
   </footer>
   <script src="../js/share.js"></script>
+  <script src="../js/report.js"></script>
   <script src="../js/language-switch.js"></script>
 </body>
 </html>

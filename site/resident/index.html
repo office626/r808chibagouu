@@ -140,7 +140,7 @@
           li.appendChild(nav);
           var links = document.createElement("ul");
           links.className = "support-list";
-          SupportsView.renderList(links, bySlug[m.slug] || []);
+          SupportsView.renderList(links, bySlug[m.slug] || [], m.name);
           li.appendChild(links);
           ul.appendChild(li);
         });
@@ -150,6 +150,7 @@
     });
   </script>
   <script src="../js/share.js"></script>
+  <script src="../js/report.js"></script>
   <script src="../js/language-switch.js"></script>
 </body>
 </html>

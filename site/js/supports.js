@@ -49,7 +49,7 @@
     return s;
   }
   // item: {kind, kind_label, kind_label_en, title, url, status, status_label, status_label_en, checked, deadline, note}
-  function renderItem(item) {
+  function renderItem(item, muniName) {
     var li = document.createElement("li");
     li.className = "support-item kind-" + (item.kind || "support");
     var a = document.createElement("a");
@@ -75,11 +75,15 @@
       li.appendChild(document.createTextNode(" "));
       li.appendChild(s);
     }
+    if (window.Report) {
+      li.appendChild(document.createTextNode(" "));
+      li.appendChild(Report.itemLink((muniName ? muniName + " / " : "") + item.title + " / " + item.url));
+    }
     return li;
   }
-  function renderList(ul, items) {
+  function renderList(ul, items, muniName) {
     ul.innerHTML = "";
-    (items || []).forEach(function (it) { ul.appendChild(renderItem(it)); });
+    (items || []).forEach(function (it) { ul.appendChild(renderItem(it, muniName)); });
   }
   function latestChecked(items) {
     var dates = (items || []).map(function (it) { return it.checked; }).filter(Boolean).sort();

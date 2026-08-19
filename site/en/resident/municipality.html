@@ -246,7 +246,7 @@
       support.appendChild(reliefText);
       var municipalitySupport = document.getElementById("muni-support");
       var supportLinks = (supports.by_slug && supports.by_slug[slug]) || [];
-      SupportsView.renderList(municipalitySupport, supportLinks);
+      SupportsView.renderList(municipalitySupport, supportLinks, englishName);
       var supportMeta = document.getElementById("support-meta");
       var latestChecked = SupportsView.latestChecked(supportLinks);
       if (supportLinks.length && supportLinks[0].kind === "home") {
@@ -296,6 +296,7 @@
     });
   </script>
   <script src="../../js/share.js"></script>
+  <script src="../../js/report.js"></script>
   <script src="../../js/language-switch.js"></script>
 </body>
 </html>
