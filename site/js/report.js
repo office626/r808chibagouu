@@ -73,11 +73,12 @@
     p.className = "meta report-footer";
     p.appendChild(document.createTextNode(T.footerLead + " "));
     var a = document.createElement("a");
-    a.setAttribute("data-report", "");
     a.textContent = T.footerLink;
-    a.href = link("");
+    a.href = link(document.title);
     a.target = "_blank";
     a.rel = "noopener";
+    // ページ名（市町村ページでは読み込み後に市町村名が入る）を押した時点で対象に入れる
+    a.addEventListener("click", function () { a.href = link(document.title); });
     p.appendChild(a);
     p.appendChild(document.createTextNode(" " + T.footerNote));
     rootEl.appendChild(p);
@@ -92,6 +93,7 @@
     .catch(function () { config = {}; })
     .then(function () {
       decorate(document);
+      Array.prototype.forEach.call(document.querySelectorAll(".report-footer a"), function (a) { a.href = link(document.title); });
       readyCallbacks.forEach(function (cb) { cb(config); });
       readyCallbacks = [];
     });
