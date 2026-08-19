@@ -75,10 +75,20 @@
   <script>
     Promise.all([
       fetch("../../data/municipalities.json").then(function (response) { return response.json(); }),
-      fetch("../../data/collection.json").then(function (response) { return response.json(); })
+      fetch("../../data/collection.json").then(function (response) { return response.json(); }),
+      fetch("../../data/watch.json").then(function (response) { return response.json(); }).catch(function () { return null; })
     ]).then(function (pair) {
       var rows = pair[0];
       var snapshots = pair[1].snapshots;
+      var watch = pair[2];
+      var FRESH = 72 * 3600 * 1000;
+      var updatedSlugs = {};
+      if (watch && watch.events) {
+        watch.events.forEach(function (e) {
+          var t = Date.parse(e.at || "");
+          if (t && Date.now() - t < FRESH) updatedSlugs[e.slug] = e.at;
+        });
+      }
       var query = document.getElementById("muni-q");
       function fill(id, list) {
         var ul = document.getElementById(id);
@@ -109,6 +119,14 @@
             relief.textContent = "Relief Act";
             link.appendChild(document.createTextNode(" "));
             link.appendChild(relief);
+          }
+          if (updatedSlugs[municipality.slug]) {
+            var updated = document.createElement("span");
+            updated.className = "badge status-updated";
+            updated.textContent = "Official page updated";
+            updated.title = "The text of an official municipal page changed (detected automatically within 3 days)";
+            link.appendChild(document.createTextNode(" "));
+            link.appendChild(updated);
           }
           li.appendChild(link);
           ul.appendChild(li);

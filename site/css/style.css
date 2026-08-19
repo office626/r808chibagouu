@@ -365,3 +365,15 @@ code { font-size: 0.92em; padding: 0.05em 0.3em; border-radius: 4px; background:
 .report-link:hover { color: var(--accent); }
 .report-footer { margin-top: 0.6rem; }
 @media print { .report-link, .report-footer { display: none !important; } }
+
+/* 公式ページの更新検知 / official page update detection */
+.badge.status-updated { background: #e3f2fd; color: #0b4f8a; font-weight: 700; }
+.badge.status-broken { background: #fdecea; color: #8a1c1c; }
+.recent-updates { margin: 0.4rem 0 0.8rem; padding-left: 1.1rem; }
+.recent-updates li { margin: 0.3rem 0; }
+.recent-updates .added { display: block; color: var(--muted); font-size: 0.88rem; }
+.about-strip {
+  background: #eef3f8; border: 1px solid var(--border); border-radius: 10px;
+  padding: 0.6rem 0.9rem; margin: 0.4rem 0 0.9rem; font-size: 0.95rem;
+}
+.about-strip a { white-space: nowrap; }

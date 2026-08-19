@@ -75,10 +75,20 @@
   <script>
     Promise.all([
       fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
-      fetch("../data/collection.json").then(function (r) { return r.json(); })
+      fetch("../data/collection.json").then(function (r) { return r.json(); }),
+      fetch("../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
     ]).then(function (pair) {
       var rows = pair[0];
       var snaps = pair[1].snapshots;
+      var watch = pair[2];
+      var FRESH = 72 * 3600 * 1000;
+      var updatedSlugs = {};
+      if (watch && watch.events) {
+        watch.events.forEach(function (e) {
+          var t = Date.parse(e.at || "");
+          if (t && Date.now() - t < FRESH) updatedSlugs[e.slug] = e.at;
+        });
+      }
       var q = document.getElementById("muni-q");
       function fill(id, list) {
         var ul = document.getElementById(id);
@@ -109,6 +119,14 @@
             r.textContent = "救助法";
             a.appendChild(document.createTextNode(" "));
             a.appendChild(r);
+          }
+          if (updatedSlugs[m.slug]) {
+            var u = document.createElement("span");
+            u.className = "badge status-updated";
+            u.textContent = "公式ページ更新あり";
+            u.title = "市町村公式ページの本文が変わったことを自動で検知しました（3日以内）";
+            a.appendChild(document.createTextNode(" "));
+            a.appendChild(u);
           }
           li.appendChild(a);
           ul.appendChild(li);

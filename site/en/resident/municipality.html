@@ -45,9 +45,15 @@
   </header>
   <main>
     <h1 id="title">Loading…</h1>
+    <p class="about-strip"><strong>About this page:</strong> an <strong>unofficial</strong> one-stop summary of official notices, support, evacuation information and news about the August 2026 Chiba heavy rain for <span id="about-name">this municipality</span>, compiled by civic-tech volunteers (<a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CivicTechZenChiba</a>). Apply and inquire at the municipal office. <a href="../index.html">Site home</a> / <a href="municipalities.html">Other municipalities</a> / <a href="situations.html">Find by situation</a></p>
     <div class="card" id="support-card">
       <h2>Support Currently Available</h2>
       <p class="notice">This is a volunteer-produced summary. Apply through official channels. Preliminary figures may change. News articles are represented only by their original titles and links; full text is not reproduced.</p>
+      <div id="recent-updates-box" hidden>
+        <h3>Recent updates (detected automatically)</h3>
+        <ul class="recent-updates" id="recent-updates"></ul>
+        <p class="meta">We automatically check whether the text of official pages has changed (about every 3 hours). See the official page for what changed.</p>
+      </div>
       <p class="empty">Links to the municipality’s official pages: damage certificates, disaster waste, disinfection, housing, volunteer centers and more (Japanese). Status and check dates reflect when a volunteer last looked. Apply through the official office.</p>
       <ul class="support-list" id="muni-support"></ul>
       <p class="meta" id="support-meta"></p>
@@ -160,12 +166,15 @@
       fetch("../../data/municipalities.json").then(function (response) { return response.json(); }),
       fetch("../../data/collection.json").then(function (response) { return response.json(); }),
       fetch("../../data/supports.json").then(function (response) { return response.json(); }),
-      fetch("../../data/press.json").then(function (response) { return response.json(); })
+      fetch("../../data/press.json").then(function (response) { return response.json(); }),
+      fetch("../../data/watch.json").then(function (response) { return response.json(); }).catch(function () { return null; })
     ]).then(function (pair) {
       var rows = pair[0];
       var collection = pair[1];
       var supports = pair[2];
       var press = pair[3];
+      var watch = pair[4];
+      SupportsView.setWatch(watch);
       document.getElementById("fetched").textContent = "Last retrieved: " + fmt(collection.fetched_at);
       var municipality = rows.find(function (item) { return item.slug === slug; });
       if (!municipality) {
@@ -175,6 +184,32 @@
       var englishName = MunicipalityNames.get(municipality.slug);
       document.title = englishName + " | CTZC Chiba Heavy Rain Portal";
       document.getElementById("title").textContent = englishName;
+      document.getElementById("about-name").textContent = englishName;
+      (function () {
+        if (!watch || !watch.events) return;
+        var ev = watch.events.filter(function (e) { return e.slug === slug && SupportsView.isFresh(e.at); });
+        ev.sort(function (a, b) { return a.at < b.at ? 1 : -1; });
+        if (!ev.length) return;
+        var ul = document.getElementById("recent-updates");
+        ev.slice(0, 5).forEach(function (e) {
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " "));
+          var a = document.createElement("a");
+          a.href = e.url; a.target = "_blank"; a.rel = "noopener"; a.lang = "ja";
+          a.textContent = e.title;
+          li.appendChild(a);
+          li.appendChild(document.createTextNode(" was updated (Japanese source title)"));
+          if (e.added && e.added.length) {
+            var sp = document.createElement("span");
+            sp.className = "added";
+            sp.lang = "ja";
+            sp.textContent = "New text (auto-extracted): " + e.added.slice(0, 2).join(" / ");
+            li.appendChild(sp);
+          }
+          ul.appendChild(li);
+        });
+        document.getElementById("recent-updates-box").hidden = false;
+      })();
       (function () {
         var englishUrl = "https://office626.github.io/r808chibagouu/en/resident/municipality.html?slug=" + encodeURIComponent(municipality.slug);
         var japaneseUrl = "https://office626.github.io/r808chibagouu/resident/municipality.html?slug=" + encodeURIComponent(municipality.slug);

@@ -1,0 +1,57 @@
+name: Watch official pages
+
+# 市町村公式ページ（data/supports.csv）の更新を約3時間おきに検知し、watch.json を更新して公開する。
+# 6:00 JST の日次ジョブ（21:00 UTC）と重ならないよう 30 分ずらす。
+
+on:
+  schedule:
+    - cron: "30 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: watch-pages
+  cancel-in-progress: false
+
+jobs:
+  watch-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Watch official pages
+        run: python scripts/watch_pages.py
+        continue-on-error: true
+      - name: Commit watch data if changed
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/watch-state.json site/data/watch.json
+          if git diff --staged --quiet; then
+            echo "no data changes"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "公式ページの更新検知（3時間おき）の結果を反映する。"
+            git pull --rebase origin main
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/configure-pages@v5
+        if: steps.commit.outputs.changed == 'true'
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.commit.outputs.changed == 'true'
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        if: steps.commit.outputs.changed == 'true'
