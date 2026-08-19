@@ -117,7 +117,7 @@
       <ul>
         <li>許可リストの URL が開けるか確認する</li>
         <li>市町村と公式サイトの紐づけの誤りを指摘する</li>
-        <li><strong>市町村公式のお知らせを1行足す：</strong> <a href="https://github.com/office626/r808chibagouu/blob/main/data/supports.csv" target="_blank" rel="noopener"><code>data/supports.csv</code></a> に「slug, 種類（risai/waste/disinfect/water/housing/vc/support/hub）, 見出し, URL, 受付状態, 確認日」を足すか、市町村ページの「公式リンクを足す・直す」から Issue に書く。まだ個別ページが少ないのは 印西・八街・白井・習志野・長柄・白子・長生・匝瑳 など</li>
+        <li><strong>市町村公式のお知らせを1行足す：</strong> <a href="https://github.com/office626/r808chibagouu/blob/main/data/supports.csv" target="_blank" rel="noopener"><code>data/supports.csv</code></a> に「slug, 種類（risai/waste/disinfect/water/housing/vc/support/hub）, 見出し, URL, 受付状態, 確認日」を足す（git が使えない人は <a href="https://github.com/office626/r808chibagouu/issues/new" target="_blank" rel="noopener">Issue</a> に同じ内容を書く）。一般の方からは市町村ページの「報告フォーム」で届く。まだ個別ページが少ないのは 印西・八街・白井・習志野・長柄・白子・長生・匝瑳 など</li>
         <li>要件の Issue / Pull Request</li>
       </ul>
       <p>
@@ -125,6 +125,18 @@
         （リンクを知っている人は閲覧可。編集は招待制）
       </p>
       <p><a href="https://github.com/office626/r808chibagouu">GitHub リポジトリ</a></p>
+    </div>
+    <div class="card" id="report-card">
+      <h2>利用者からの「違う・古い」の報告に対応する</h2>
+      <p>各ページの下と、市町村公式リンクの横に「報告」があります。報告は運用スプレッドシートの「訂正」シート（Google フォームの回答）に届きます。フォーム未設定のあいだは GitHub Issue に届きます。報告の内容は公開しません。</p>
+      <ol class="steps">
+        <li>「訂正」シートか Issue を見て、状態を「確認中」にする。該当が市町村公式リンクなら <code>data/supports.csv</code> の <code>status</code> を <code>checking</code> に（サイトに「確認中」バッジが出る）</li>
+        <li>公式ページで裏取りする。市町村・県・国の公式以外を根拠にしない</li>
+        <li>直す：<code>supports.csv</code>（URL・見出し・受付状態・確認日）か該当ページ。日本語ページを直したら英語版も同じ変更をし、<code>python scripts/check_bilingual.py</code> を通す</li>
+        <li>状態を「対応済み」（対応しない判断なら「対応不要」と理由）にする。連絡先がある報告には一言返す</li>
+        <li>週に一度、未対応の報告を棚卸しする</li>
+      </ol>
+      <p class="meta">緊急（救助・けが）の連絡がフォームに来たら、119／110 と市町村へ案内する。このサイトでは対応しない。</p>
     </div>
     <p><a href="../resident/index.html">県民の方はこちら</a></p>
     <figure class="infographic">
@@ -142,6 +154,7 @@
     <div data-share></div>
   </footer>
   <script src="../js/share.js"></script>
+  <script src="../js/report.js"></script>
   <script src="../js/language-switch.js"></script>
 </body>
 </html>

@@ -26,12 +26,14 @@
     "open": "受付中・掲載中",
     "preparing": "準備中",
     "closed": "終了",
+    "checking": "確認中",
     "unknown": "要確認"
   },
   "status_labels_en": {
     "open": "Open / posted",
     "preparing": "Preparing",
     "closed": "Closed",
+    "checking": "Being verified",
     "unknown": "Unverified"
   },
   "by_slug": {
