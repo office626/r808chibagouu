@@ -7,34 +7,12 @@
     checked: function (m, d) { return "checked " + m + "/" + d; },
     deadline: "Deadline: ",
     sourceSuffix: " (Japanese source title)",
-    official: "Official site",
-    issueTitle: function (name) { return "[" + name + "] Add or fix an official link"; },
-    issueBody: function (name, slug) {
-      return "Municipality: " + name + " (" + slug + ")\n" +
-        "Kind (risai / support / waste / disinfect / water / housing / vc / hub): \n" +
-        "Official page title: \n" +
-        "URL: \n" +
-        "Status (open / preparing / closed / unknown): \n" +
-        "Deadline (only if stated officially): \n" +
-        "Date checked: \n\n" +
-        "You can also add one row to data/supports.csv.";
-    }
+    official: "Official site"
   } : {
     checked: function (m, d) { return m + "/" + d + " 確認"; },
     deadline: "期限: ",
     sourceSuffix: "",
-    official: "公式",
-    issueTitle: function (name) { return "[" + name + "] 公式リンクの追加・修正"; },
-    issueBody: function (name, slug) {
-      return "対象市町村: " + name + " (" + slug + ")\n" +
-        "種類（罹災証明／支援策／災害ごみ／消毒／断水／住まい／ボランティア／大雨情報まとめ）: \n" +
-        "公式ページの見出し: \n" +
-        "URL: \n" +
-        "受付状態（受付中／準備中／終了／不明）: \n" +
-        "期限（公式に書かれていれば）: \n" +
-        "確認した日: \n\n" +
-        "※ data/supports.csv に1行足すか、この Issue に書いてください。";
-    }
+    official: "公式"
   };
   function fmtDate(ymd) {
     if (!ymd) return "";
@@ -89,10 +67,5 @@
     var dates = (items || []).map(function (it) { return it.checked; }).filter(Boolean).sort();
     return dates.length ? dates[dates.length - 1] : "";
   }
-  // 「情報を足す・直す」用の Issue リンク / prefilled GitHub issue link
-  function issueLink(muniName, slug) {
-    return "https://github.com/office626/r808chibagouu/issues/new?title=" +
-      encodeURIComponent(T.issueTitle(muniName)) + "&body=" + encodeURIComponent(T.issueBody(muniName, slug));
-  }
-  window.SupportsView = { renderItem: renderItem, renderList: renderList, latestChecked: latestChecked, issueLink: issueLink };
+  window.SupportsView = { renderItem: renderItem, renderList: renderList, latestChecked: latestChecked };
 })();

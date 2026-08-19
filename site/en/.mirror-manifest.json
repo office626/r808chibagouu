@@ -9,12 +9,12 @@
   "site/en/resident/index.html": "628affb7ec3bef5905eddef6f2eebef3001842b249dbb143d4b5c662ea77cfcb",
   "site/en/resident/life.html": "4031960d5c603d66a599645e4fa596a4ac39926e0751e9c6ad63c7916117b7b9",
   "site/en/resident/municipalities.html": "216679ed3cc93c668906b0d9f4051fa0af1a7068c46767f50e6add8c38ec54e6",
-  "site/en/resident/municipality.html": "9408e2c512579edd87cb063766e195bb3d97c41dc973387dfe73bf1839d0da9e",
+  "site/en/resident/municipality.html": "b82874021b451c278f2f04006bdb98bcc4c680a8a6a7d92862c168c87b3919e1",
   "site/en/resident/prefecture.html": "76a75e5b8f8d8d3489f78d8805dec393c918eb63ca154966d15e1294c30402c0",
   "site/en/resident/situations.html": "e705e5f64e49e804e6abe8257b93277050e2373b9f503cc5cf50ee7d043a29ec",
   "site/en/resident/timeline.html": "6b5bc64a2dbb2844fcf089eaf2be31a27b26266ff7785bfa47cad42389aa70af",
   "site/en/supporters/ideas.html": "5a8f51bf0c06b8676518b173da5f4514e40bed551b5a956e1b0e75fcfd9efb00",
-  "site/en/supporters/index.html": "d16665853d216262d823530298bc3d87cf4ddfdffb5a381937d3c8314c5f1344",
+  "site/en/supporters/index.html": "a3755779a0c0b3014d5a15e68ce5dfc1e34b9516cfb2168c53fd69bdee3d7e41",
   "site/index.html": "70ec7d6badbdc3beea7235b4b212542f0ecee2dafd8a2a4ca15652fa89708d1b",
   "site/js/ideas-vote-en.js": "1a48626788ebd27e28376f0fe0ca4b53924d03d968a6c91c77c356203ef570e8",
   "site/js/ideas-vote.js": "89e3099885a2e0c02e725788fe96b75266b5278cb03012d8aebb6e765d3fe994",
@@ -23,10 +23,10 @@
   "site/resident/index.html": "740f917ac416394532abded8b6ba1a3958c44626e8dfa732695b4f851d69957d",
   "site/resident/life.html": "f51a42d39154a375419e8ef31e4cf078b520d0e8f9cfb751cc7b14995a6927ed",
   "site/resident/municipalities.html": "737d6971d66cbb6739d1998257656ab07149aaecda497bb805efa424e6be1697",
-  "site/resident/municipality.html": "3f6fd8a951cf13fb20179b53d97f562fc603daf910132d10604212ad7e13e07a",
+  "site/resident/municipality.html": "79e3b8b01871158e044ee7327e465f059f83b361b4ef4415a3e4781941651575",
   "site/resident/prefecture.html": "656579cbcc46dfd51c6e581067b775d167f2af6f381e145b3836f00317139bae",
   "site/resident/situations.html": "90b49a1662ce25d9744aba7bd066571e5898ae508a3e70b985ff728b30945651",
   "site/resident/timeline.html": "31860f8ce9bb851b0e64001efbfab83a0669531fe17962d6b1e9275ff772c116",
   "site/supporters/ideas.html": "6a6aade2a2d5b38ca64699f7743d436ed4b258003d58754e9b038ba47debb5f8",
-  "site/supporters/index.html": "21d70f7075fab89179e8624284a24a8952915283b2935a1d7eea61408e63c905"
+  "site/supporters/index.html": "f4962982c58be8bee939bda4beabf90eb6f9ef4a146af3d1082ee123dfbf85ca"
 }

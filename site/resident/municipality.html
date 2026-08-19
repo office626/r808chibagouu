@@ -58,7 +58,7 @@
         <li><a href="https://www.bousai.go.jp/taisaku/hisaisyagyousei/">国の被災者支援制度（内閣府）</a> <span class="badge admin">行政</span></li>
         <li><a href="prefecture.html">千葉県の支援・防災情報</a> <span class="badge admin">行政</span></li>
       </ul>
-      <p class="meta"><a id="issue-link" href="https://github.com/office626/r808chibagouu/issues/new" target="_blank" rel="noopener">この市町村の公式リンクを足す・直す（GitHub Issue）</a>。リンク切れや新しいお知らせに気づいたら教えてください。</p>
+      <p class="meta"><a id="issue-link" data-report data-report-target="" href="https://github.com/office626/r808chibagouu/issues/new" target="_blank" rel="noopener">この市町村の公式お知らせを足す・直す（報告フォーム。名前不要）</a>。新しいお知らせやリンク切れに気づいたら教えてください。有志が公式で確認して載せます。</p>
     </div>
     <div class="card" id="now-card">
       <h2>いま</h2>
@@ -229,7 +229,9 @@
       } else if (latest) {
         supportMeta.textContent = "最後に有志が確認した日: " + latest.replace(/-/g, "/") + "。それ以降に変わっていることがあります。";
       }
-      document.getElementById("issue-link").href = SupportsView.issueLink(m.name, slug);
+      var issueLink = document.getElementById("issue-link");
+      issueLink.setAttribute("data-report-target", m.name + " / 公式リンクの追加・修正");
+      if (window.Report) Report.decorate(issueLink.parentNode);
       var seen = {};
       function takeNews(list) {
         var out = [];
