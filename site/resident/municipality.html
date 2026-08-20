@@ -46,9 +46,15 @@
   </header>
   <main>
     <h1 id="title">読み込み中</h1>
+    <p class="about-strip"><strong>このページは：</strong>令和8年8月千葉豪雨について、<span id="about-name">この市町村</span>の公式お知らせ・支援策・避難情報・報道を、千葉のシビックテック有志（<a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CivicTechZenChiba</a>）が1か所に集めた<strong>非公式のまとめ</strong>です。申請・問い合わせは市町村の窓口へ。 <a href="../index.html">サイトの入口</a> ／ <a href="municipalities.html">他の市町村</a> ／ <a href="situations.html">困りごとから探す</a></p>
     <div class="card" id="support-card">
       <h2>いま受けられる支援策</h2>
       <p class="notice">有志による要約です。申請は公式へ。数値は速報で変わります。報道は見出しとリンクのみで、記事全文は転載していません。</p>
+      <div id="recent-updates-box" hidden>
+        <h3>最近の更新（自動検知）</h3>
+        <ul class="recent-updates" id="recent-updates"></ul>
+        <p class="meta">公式ページの本文が変わったことを自動で見ています（約3時間おき）。何が変わったかは公式ページで確認してください。</p>
+      </div>
       <p class="empty">罹災証明・災害ごみ・消毒・住まい・ボランティアなど、市町村公式のページへのリンクです。受付状態と確認日は有志が見た時点のもの。申請は公式窓口へ。</p>
       <ul class="support-list" id="muni-support"></ul>
       <p class="meta" id="support-meta"></p>
@@ -153,12 +159,15 @@
       fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
       fetch("../data/collection.json").then(function (r) { return r.json(); }),
       fetch("../data/supports.json").then(function (r) { return r.json(); }),
-      fetch("../data/press.json").then(function (r) { return r.json(); })
+      fetch("../data/press.json").then(function (r) { return r.json(); }),
+      fetch("../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
     ]).then(function (pair) {
       var rows = pair[0];
       var col = pair[1];
       var supports = pair[2];
       var press = pair[3];
+      var watch = pair[4];
+      SupportsView.setWatch(watch);
       document.getElementById("fetched").textContent = "最終取得: " + fmt(col.fetched_at);
       var m = rows.find(function (x) { return x.slug === slug; });
       if (!m) {
@@ -167,6 +176,31 @@
       }
       document.title = m.name + " | CTZC 千葉豪雨ポータル";
       document.getElementById("title").textContent = m.name;
+      document.getElementById("about-name").textContent = m.name;
+      (function () {
+        if (!watch || !watch.events) return;
+        var ev = watch.events.filter(function (e) { return e.slug === slug && SupportsView.isFresh(e.at); });
+        ev.sort(function (a, b) { return a.at < b.at ? 1 : -1; });
+        if (!ev.length) return;
+        var ul = document.getElementById("recent-updates");
+        ev.slice(0, 5).forEach(function (e) {
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " "));
+          var a = document.createElement("a");
+          a.href = e.url; a.target = "_blank"; a.rel = "noopener";
+          a.textContent = e.title;
+          li.appendChild(a);
+          li.appendChild(document.createTextNode(" が更新されました"));
+          if (e.added && e.added.length) {
+            var sp = document.createElement("span");
+            sp.className = "added";
+            sp.textContent = "増えた文の候補: " + e.added.slice(0, 2).join(" ／ ");
+            li.appendChild(sp);
+          }
+          ul.appendChild(li);
+        });
+        document.getElementById("recent-updates-box").hidden = false;
+      })();
       (function () {
         var pageUrl = "https://office626.github.io/r808chibagouu/resident/municipality.html?slug=" + encodeURIComponent(m.slug);
         var pageTitle = m.name + "の被害経過と支援策 | CTZC 千葉豪雨ポータル";
