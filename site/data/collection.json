@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-20T06:22:30+09:00",
+  "fetched_at": "2026-08-21T06:25:01+09:00",
   "method": "日次ジョブ。許可リストの見出しとURLのみ。失敗したソースは前回を維持。",
   "links": {
     "portal": "https://www.bousai.pref.chiba.lg.jp/",
@@ -22,7 +22,7 @@
       },
       "shelter": {
         "status": "開設",
-        "at": "08/15 17:57"
+        "at": "08/20 15:22"
       }
     },
     "ichikawa": {
@@ -92,7 +92,7 @@
       },
       "shelter": {
         "status": "開設",
-        "at": "08/17 13:10"
+        "at": "08/20 13:58"
       }
     },
     "togane": {
@@ -148,7 +148,7 @@
       },
       "shelter": {
         "status": "開設",
-        "at": "08/19 09:56"
+        "at": "08/20 08:33"
       }
     },
     "yachiyo": {
@@ -2619,6 +2619,50 @@
       "occurred_at": "2026-08-13T07:06:47+09:00",
       "kind": "damage",
       "title": "令和８年８月千葉豪雨による被害及び消防機関等の対応状況（第13報・R8.8.19更新）",
+      "summary": "消防庁の災害情報一覧の見出し。詳細は公式PDF・ページで確認すること。速報であり数値は変わりうる。",
+      "source_url": "https://www.fdma.go.jp/disaster/info/#070115",
+      "source_type": "admin",
+      "medium": "総務省消防庁"
+    },
+    {
+      "id": "shelter-chiba-08/20-1522",
+      "slug": "chiba",
+      "occurred_at": "2026-08-20T15:22:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：千葉市の避難所は開設（08/20 15:22発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-ichihara-08/20-0833",
+      "slug": "ichihara",
+      "occurred_at": "2026-08-20T08:33:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：市原市の避難所は開設（08/20 08:33発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-sakura-08/20-1358",
+      "slug": "sakura",
+      "occurred_at": "2026-08-20T13:58:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：佐倉市の避難所は開設（08/20 13:58発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "fdma-ttps-www-fdma-go-jp-disaster-info-070115",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-13T07:06:47+09:00",
+      "kind": "damage",
+      "title": "令和８年８月千葉豪雨による被害及び消防機関等の対応状況（第14報・R8.8.20更新）",
       "summary": "消防庁の災害情報一覧の見出し。詳細は公式PDF・ページで確認すること。速報であり数値は変わりうる。",
       "source_url": "https://www.fdma.go.jp/disaster/info/#070115",
       "source_type": "admin",
