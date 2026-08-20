@@ -51,6 +51,7 @@
     <p class="notice">
       市町村公式の大雨情報・罹災証明・災害ごみなどのページの本文が変わったことを、約3時間おきに自動で見て記録しています。
       <strong>何が変わったかは、必ず公式ページで確認してください。</strong>「増えた文の候補」は機械抽出で、正確でないことがあります。有志運営で、行政の公式発表ではありません。
+      行政ページは統合・移設で開けなくなることがあります。その場合もこの履歴は残し、可能な範囲で保存時点の内容（<a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive</a>）へのリンクを付けます。
     </p>
     <div class="card" id="page-actions">
       <label class="sort-label" for="muni-q">市町村名で絞り込む（ひらがな・カタカナでも可）</label>
@@ -77,9 +78,23 @@
       var m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(iso || "");
       return m ? { day: m[1] + "-" + m[2] + "-" + m[3], dayLabel: Number(m[2]) + "月" + Number(m[3]) + "日", time: m[4] + ":" + m[5] } : null;
     }
+    function monthList() {
+      // 2026-08 から今月までの月別ログを読む
+      var out = [];
+      var d = new Date();
+      var y = 2026, mo = 8;
+      while ((y * 12 + mo) <= (d.getFullYear() * 12 + d.getMonth() + 1)) {
+        out.push(y + "-" + String(mo).padStart(2, "0"));
+        mo += 1; if (mo > 12) { mo = 1; y += 1; }
+      }
+      return out;
+    }
     Promise.all([
       fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
-      fetch("../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
+      fetch("../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; }),
+      Promise.all(monthList().map(function (m) {
+        return fetch("../data/watch-log/" + m + ".json").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
+      }))
     ]).then(function (pair) {
       var munis = pair[0];
       var bySlug = {};
@@ -88,7 +103,17 @@
       if (watch && watch.checked_at) {
         document.getElementById("checked").textContent = "最終確認: " + watch.checked_at.replace("T", " ").replace("+09:00", " JST");
       }
-      var events = (watch && watch.events || []).slice();
+      // 月別ログ（恒久）と watch.json（最近）を合体し、at+url で重複排除
+      var events = [];
+      var seenKeys = {};
+      (pair[2] || []).forEach(function (arr) { (arr || []).forEach(function (e) { events.push(e); }); });
+      (watch && watch.events || []).forEach(function (e) { events.push(e); });
+      events = events.filter(function (e) {
+        var k = e.at + "\t" + e.url;
+        if (seenKeys[k]) return false;
+        seenKeys[k] = true;
+        return true;
+      });
       events.sort(function (a, b) { return a.at < b.at ? 1 : -1; });
       var q = document.getElementById("muni-q");
       function draw() {
@@ -129,11 +154,27 @@
           a.rel = "noopener";
           a.textContent = e.title;
           li.appendChild(a);
+          if (e.archive_url) {
+            li.appendChild(document.createTextNode(" "));
+            var ar = document.createElement("a");
+            ar.className = "report-link";
+            ar.href = e.archive_url;
+            ar.target = "_blank";
+            ar.rel = "noopener";
+            ar.textContent = "保存時点の内容";
+            li.appendChild(ar);
+          }
           if (e.added && e.added.length) {
             var sp = document.createElement("span");
             sp.className = "added";
             sp.textContent = "増えた文の候補: " + e.added.slice(0, 2).join(" ／ ");
             li.appendChild(sp);
+          }
+          if (e.removed && e.removed.length) {
+            var rm = document.createElement("span");
+            rm.className = "added";
+            rm.textContent = "消えた文の候補: " + e.removed.slice(0, 2).join(" ／ ");
+            li.appendChild(rm);
           }
           ul.appendChild(li);
         });

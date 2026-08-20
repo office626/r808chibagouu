@@ -5,6 +5,9 @@
 - 変わっていたら last_changed を更新し、増えた行（見出し候補）を added に残す。履歴は events に追記
 - 初回に見た URL は基準を作るだけで「更新」にはしない
 - 取得に失敗した URL は前回の値を維持し、errors に記録する
+- 変更を検知したページは Internet Archive（Wayback Machine）へ保存を依頼し、スナップショットURLを記録する
+  （fire-and-forget。失敗しても処理は続行。1回の実行で最大 ARCHIVE_MAX 件・間隔をあけて直列）
+- events は消さずに月別ログ site/data/watch-log/YYYY-MM.json へも追記する（追記専用。履歴ページが読む）
 - 3時間おきに GitHub Actions から実行する想定。手動: python scripts/watch_pages.py
 """
 from __future__ import annotations
@@ -16,6 +19,7 @@ import json
 import re
 import ssl
 import sys
+import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -30,6 +34,10 @@ UA = "CTZC-r808chibagouu-watch/1.0 (+https://github.com/office626/r808chibagouu)
 CTX = ssl.create_default_context()
 MAX_EVENTS = 600
 MAX_ADDED = 5
+MAX_REMOVED = 3
+ARCHIVE_MAX = 10          # 1回の実行で Wayback に依頼する最大件数
+ARCHIVE_WAIT = 4          # 依頼の間隔（秒）
+LOG_DIR = ROOT / "site" / "data" / "watch-log"
 
 STRIP = re.compile(r"<(script|style|noscript|nav|header|footer|svg)\b[^>]*>.*?</\1>", re.S | re.I)
 TAGS = re.compile(r"<[^>]+>")
@@ -50,6 +58,47 @@ def fetch(url: str) -> str:
             return raw.decode(enc, errors="replace")
         except LookupError:
             return raw.decode("utf-8", errors="replace")
+
+
+def request_archive(url: str) -> str:
+    """Wayback Machine に保存を依頼し、タイムスタンプ付きのスナップショットURL（近似）を返す。
+    失敗したら空文字。結果は待たない（レスポンスは読み捨て）。"""
+    stamp = now().astimezone(timezone.utc).strftime("%Y%m%d%H%M%S")
+    for attempt in range(2):
+        try:
+            req = urllib.request.Request("https://web.archive.org/save/" + url,
+                                         headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=30, context=CTX) as res:
+                res.read(1024)
+            return f"https://web.archive.org/web/{stamp}/{url}"
+        except Exception:
+            if attempt == 0:
+                time.sleep(3)
+    return ""
+
+
+def append_month_log(new_events: list[dict]) -> None:
+    """月別の追記専用ログへイベントを足す（重複は at+url で排除）。"""
+    if not new_events:
+        return
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    by_month: dict[str, list[dict]] = {}
+    for e in new_events:
+        by_month.setdefault(e["at"][:7], []).append(e)
+    for month, evs in by_month.items():
+        path = LOG_DIR / f"{month}.json"
+        data = []
+        if path.exists():
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+            except Exception:
+                data = []
+        seen = {(x.get("at"), x.get("url")) for x in data}
+        for e in evs:
+            if (e.get("at"), e.get("url")) not in seen:
+                data.append(e)
+        data.sort(key=lambda x: x.get("at", ""))
+        path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def to_lines(page: str) -> list[str]:
@@ -91,6 +140,7 @@ def main() -> int:
     ts = now().isoformat(timespec="seconds")
     changed = 0
     seen = 0
+    new_events: list[dict] = []
     only = sys.argv[1:]  # slug で絞る（手動確認用）
 
     for r in rows:
@@ -130,14 +180,18 @@ def main() -> int:
             entry["lines"] = lines[:400]
         elif prev.get("hash") != h:
             old = set(prev.get("lines") or [])
+            newset = set(lines)
             added = [ln for ln in lines if ln not in old][:MAX_ADDED]
+            removed = [ln for ln in (prev.get("lines") or []) if ln not in newset][:MAX_REMOVED]
             entry["last_changed"] = ts
             entry["added"] = added
             entry["lines"] = lines[:400]
-            events.append({
+            ev = {
                 "at": ts, "slug": slug, "name": munis.get(slug, slug), "kind": r.get("kind", ""),
-                "title": entry["title"], "url": url, "added": added,
-            })
+                "title": entry["title"], "url": url, "added": added, "removed": removed,
+            }
+            events.append(ev)
+            new_events.append(ev)
             changed += 1
         by_url[url] = entry
 
@@ -155,6 +209,22 @@ def main() -> int:
     if not significant:
         print(f"watched={seen} changed=0 errors={len(errors)} no-change at {ts}")
         return 0
+
+    # 変更のあったページを Wayback Machine へ保存依頼（直列・間隔あり・失敗は無視）
+    for i, ev in enumerate(new_events[:ARCHIVE_MAX]):
+        if i:
+            time.sleep(ARCHIVE_WAIT)
+        a = request_archive(ev["url"])
+        if a:
+            ev["archive_url"] = a
+            e = by_url.get(ev["url"])
+            if e is not None:
+                e["archive_url"] = a
+    if len(new_events) > ARCHIVE_MAX:
+        print(f"archive skipped for {len(new_events) - ARCHIVE_MAX} events (over ARCHIVE_MAX)")
+
+    # 月別の追記専用ログ（消えない履歴）
+    append_month_log(new_events)
 
     # 比較用の状態（本文行を含む）は data/ に、公開用（軽い）は site/data/ に分ける
     STATE.write_text(json.dumps({"checked_at": ts, "by_url": by_url, "events": events, "errors": errors},
