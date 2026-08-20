@@ -44,6 +44,7 @@
       We automatically check, about every 3 hours, whether the text of official municipal pages (heavy-rain hubs, damage certificates, disaster waste and more) has changed, and record it here.
       <strong>Always check the official page (Japanese) for what actually changed.</strong> “New text” lines are auto-extracted and may be inaccurate. This site is run by volunteers and is not an official government publication.
       Government pages sometimes become unreachable after reorganizations. This history remains, and where possible we link to a saved copy on the <a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive</a>.
+      Automatic detection started on August 20. Before that date, we show <strong>collected official announcements (reference)</strong> from our daily collection in the same timeline.
     </p>
     <div class="card" id="page-actions">
       <label class="sort-label" for="muni-q">Filter by municipality (Japanese kana or romanized slug also accepted)</label>
@@ -88,7 +89,8 @@
       fetch("../../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; }),
       Promise.all(monthList().map(function (m) {
         return fetch("../../data/watch-log/" + m + ".json").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
-      }))
+      })),
+      fetch("../../data/collection.json").then(function (r) { return r.json(); }).catch(function () { return null; })
     ]).then(function (pair) {
       var munis = pair[0];
       var bySlug = {};
@@ -101,8 +103,21 @@
       var seenKeys = {};
       (pair[2] || []).forEach(function (arr) { (arr || []).forEach(function (e) { events.push(e); }); });
       (watch && watch.events || []).forEach(function (e) { events.push(e); });
+      var BASELINE = "2026-08-20T00:00:00+09:00";
+      var col = pair[3];
+      if (col && col.items) {
+        col.items.forEach(function (it) {
+          if (it.source_type !== "admin") return;
+          if ((it.occurred_at || "") >= BASELINE) return;
+          events.push({
+            at: it.occurred_at, slug: it.slug === "prefecture" ? "" : it.slug,
+            name: it.slug === "prefecture" ? "Prefecture / national" : "",
+            title: it.title, url: it.source_url, kind: "log", medium: it.medium
+          });
+        });
+      }
       events = events.filter(function (e) {
-        var k = e.at + "\t" + e.url;
+        var k = e.at + "\t" + e.url + "\t" + (e.title || "");
         if (seenKeys[k]) return false;
         seenKeys[k] = true;
         return true;
@@ -136,11 +151,23 @@
           }
           var li = document.createElement("li");
           li.appendChild(document.createTextNode(t.time + " "));
-          var mu = document.createElement("a");
-          mu.href = "municipality.html?slug=" + encodeURIComponent(e.slug);
-          mu.textContent = MunicipalityNames.get(e.slug);
-          li.appendChild(mu);
-          li.appendChild(document.createTextNode(": "));
+          var muniName = e.slug && bySlug[e.slug] ? MunicipalityNames.get(e.slug) : (e.name || "");
+          if (e.slug && bySlug[e.slug]) {
+            var mu = document.createElement("a");
+            mu.href = "municipality.html?slug=" + encodeURIComponent(e.slug);
+            mu.textContent = muniName;
+            li.appendChild(mu);
+            li.appendChild(document.createTextNode(": "));
+          } else if (muniName) {
+            li.appendChild(document.createTextNode(muniName + ": "));
+          }
+          if (e.kind === "log") {
+            var lb = document.createElement("span");
+            lb.className = "badge admin";
+            lb.textContent = "Official announcement (collected log; reference)";
+            li.appendChild(lb);
+            li.appendChild(document.createTextNode(" "));
+          }
           var a = document.createElement("a");
           a.href = e.url;
           a.target = "_blank";

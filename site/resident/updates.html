@@ -52,6 +52,7 @@
       市町村公式の大雨情報・罹災証明・災害ごみなどのページの本文が変わったことを、約3時間おきに自動で見て記録しています。
       <strong>何が変わったかは、必ず公式ページで確認してください。</strong>「増えた文の候補」は機械抽出で、正確でないことがあります。有志運営で、行政の公式発表ではありません。
       行政ページは統合・移設で開けなくなることがあります。その場合もこの履歴は残し、可能な範囲で保存時点の内容（<a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive</a>）へのリンクを付けます。
+      自動検知は8月20日からです。それ以前は、日次収集で記録済みの<strong>行政発表のログ（参考）</strong>を同じ時系列に表示しています。
     </p>
     <div class="card" id="page-actions">
       <label class="sort-label" for="muni-q">市町村名で絞り込む（ひらがな・カタカナでも可）</label>
@@ -94,7 +95,8 @@
       fetch("../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; }),
       Promise.all(monthList().map(function (m) {
         return fetch("../data/watch-log/" + m + ".json").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
-      }))
+      })),
+      fetch("../data/collection.json").then(function (r) { return r.json(); }).catch(function () { return null; })
     ]).then(function (pair) {
       var munis = pair[0];
       var bySlug = {};
@@ -108,8 +110,22 @@
       var seenKeys = {};
       (pair[2] || []).forEach(function (arr) { (arr || []).forEach(function (e) { events.push(e); }); });
       (watch && watch.events || []).forEach(function (e) { events.push(e); });
+      // 8/20（自動検知の開始）より前は、収集済みの行政発表ログを参考として混ぜる
+      var BASELINE = "2026-08-20T00:00:00+09:00";
+      var col = pair[3];
+      if (col && col.items) {
+        col.items.forEach(function (it) {
+          if (it.source_type !== "admin") return;
+          if ((it.occurred_at || "") >= BASELINE) return;
+          events.push({
+            at: it.occurred_at, slug: it.slug === "prefecture" ? "" : it.slug,
+            name: it.slug === "prefecture" ? "県・国" : "",
+            title: it.title, url: it.source_url, kind: "log", medium: it.medium
+          });
+        });
+      }
       events = events.filter(function (e) {
-        var k = e.at + "\t" + e.url;
+        var k = e.at + "\t" + e.url + "\t" + (e.title || "");
         if (seenKeys[k]) return false;
         seenKeys[k] = true;
         return true;
@@ -143,11 +159,23 @@
           }
           var li = document.createElement("li");
           li.appendChild(document.createTextNode(t.time + " "));
-          var mu = document.createElement("a");
-          mu.href = "municipality.html?slug=" + encodeURIComponent(e.slug);
-          mu.textContent = e.name;
-          li.appendChild(mu);
-          li.appendChild(document.createTextNode("：" ));
+          var muniName = e.name || (bySlug[e.slug] ? bySlug[e.slug].name : "");
+          if (e.slug && bySlug[e.slug]) {
+            var mu = document.createElement("a");
+            mu.href = "municipality.html?slug=" + encodeURIComponent(e.slug);
+            mu.textContent = muniName;
+            li.appendChild(mu);
+            li.appendChild(document.createTextNode("：" ));
+          } else if (muniName) {
+            li.appendChild(document.createTextNode(muniName + "：" ));
+          }
+          if (e.kind === "log") {
+            var lb = document.createElement("span");
+            lb.className = "badge admin";
+            lb.textContent = "行政発表（収集ログ・参考）";
+            li.appendChild(lb);
+            li.appendChild(document.createTextNode(" "));
+          }
           var a = document.createElement("a");
           a.href = e.url;
           a.target = "_blank";
