@@ -1,0 +1,25 @@
+name: Daily Slack digest
+
+# 公式ページの更新検知（watch.json）の直近24時間分を、毎朝 7:00 JST に Slack へまとめて投稿する。
+# SLACK_WEBHOOK_URL（リポジトリ Secrets）が未設定のときは何もしない。0件の日も投稿しない。
+
+on:
+  schedule:
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Post daily digest to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python scripts/notify_slack.py
