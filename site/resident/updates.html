@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公式ページの更新履歴 | CTZC 千葉豪雨ポータル</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="市町村公式の大雨情報・罹災証明・災害ごみなどのページが更新されたことを自動で検知し、日付ごとに一覧します。何が変わったかは公式ページで確認してください。市町村名で絞り込めます。">
+  <meta name="theme-color" content="#0b5cab">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="canonical" href="https://office626.github.io/r808chibagouu/resident/updates.html">
+  <link rel="alternate" hreflang="ja" href="https://office626.github.io/r808chibagouu/resident/updates.html">
+  <link rel="alternate" hreflang="en" href="https://office626.github.io/r808chibagouu/en/resident/updates.html">
+  <link rel="alternate" hreflang="x-default" href="https://office626.github.io/r808chibagouu/resident/updates.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CTZC 千葉豪雨ポータル">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="公式ページの更新履歴 | CTZC 千葉豪雨ポータル">
+  <meta property="og:description" content="市町村公式の大雨情報・罹災証明・災害ごみなどのページが更新されたことを自動で検知し、日付ごとに一覧します。">
+  <meta property="og:url" content="https://office626.github.io/r808chibagouu/resident/updates.html">
+  <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="537">
+  <meta property="og:image:alt" content="令和8年8月千葉豪雨からの復旧のために。主催 CivicTechZenChiba">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="公式ページの更新履歴 | CTZC 千葉豪雨ポータル">
+  <meta name="twitter:description" content="市町村公式ページの更新を自動検知して日付ごとに一覧します。">
+  <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="../index.html">CTZC 千葉豪雨ポータル</a></div>
+    <nav class="nav">
+      <a href="index.html">千葉県にお住まいの方へ</a>
+      <a href="updates.html">更新履歴</a>
+      <a href="situations.html">困りごとから探す</a>
+      <a href="timeline.html">これから起きること</a>
+      <a href="housing.html">住まいが被災した方</a>
+      <a href="life.html">移動と生活</a>
+      <a href="business.html">被災した事業者の方</a>
+      <a href="municipalities.html">市町村から探す</a>
+      <a href="prefecture.html">県・国の支援</a>
+    </nav>
+    <p class="meta" id="checked"></p>
+  </header>
+  <main>
+    <h1>公式ページの更新履歴</h1>
+    <p class="notice">
+      市町村公式の大雨情報・罹災証明・災害ごみなどのページの本文が変わったことを、約3時間おきに自動で見て記録しています。
+      <strong>何が変わったかは、必ず公式ページで確認してください。</strong>「増えた文の候補」は機械抽出で、正確でないことがあります。有志運営で、行政の公式発表ではありません。
+    </p>
+    <div class="card" id="page-actions">
+      <label class="sort-label" for="muni-q">市町村名で絞り込む（ひらがな・カタカナでも可）</label>
+      <input class="search" id="muni-q" type="search" placeholder="例：千葉市、いちかわ、キョナン" autocomplete="off">
+      <p class="meta" id="muni-share" hidden>この絞り込みは URL に入っています。 <button type="button" class="btn secondary btn-small">絞り込んだURLをコピー</button> <span data-note></span></p>
+      <p class="meta" id="count"></p>
+    </div>
+    <div id="days"></div>
+    <p class="empty" id="empty" hidden>該当する更新はまだありません。検知は約3時間おきです。</p>
+    <p class="meta">この履歴は <a href="https://github.com/office626/r808chibagouu" target="_blank" rel="noopener">GitHub</a> の自動処理（watch.json）が元です。検知漏れ・誤検知に気づいたら、ページ下の「報告する」から教えてください。</p>
+  </main>
+  <footer>
+    <p>本サイトは行政の公式発表ではありません。申請・期限は各公式窓口へ。</p>
+    <p class="org-links">
+      <a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC ウェブサイト</a>
+      <a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook グループ</a>
+      <a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook ページ</a>
+    </p>
+    <div data-share></div>
+  </footer>
+  <script src="../js/muni-search.js"></script>
+  <script>
+    function md(iso) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(iso || "");
+      return m ? { day: m[1] + "-" + m[2] + "-" + m[3], dayLabel: Number(m[2]) + "月" + Number(m[3]) + "日", time: m[4] + ":" + m[5] } : null;
+    }
+    Promise.all([
+      fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
+      fetch("../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
+    ]).then(function (pair) {
+      var munis = pair[0];
+      var bySlug = {};
+      munis.forEach(function (m) { bySlug[m.slug] = m; });
+      var watch = pair[1];
+      if (watch && watch.checked_at) {
+        document.getElementById("checked").textContent = "最終確認: " + watch.checked_at.replace("T", " ").replace("+09:00", " JST");
+      }
+      var events = (watch && watch.events || []).slice();
+      events.sort(function (a, b) { return a.at < b.at ? 1 : -1; });
+      var q = document.getElementById("muni-q");
+      function draw() {
+        var word = MuniSearch.norm(q.value);
+        var days = document.getElementById("days");
+        days.innerHTML = "";
+        var shown = 0;
+        var currentDay = null;
+        var ul = null;
+        events.forEach(function (e) {
+          var m = bySlug[e.slug];
+          if (word && (!m || !MuniSearch.matches(m, word))) return;
+          var t = md(e.at);
+          if (!t) return;
+          shown += 1;
+          if (t.day !== currentDay) {
+            currentDay = t.day;
+            var card = document.createElement("div");
+            card.className = "card";
+            var h = document.createElement("h2");
+            h.textContent = t.dayLabel;
+            card.appendChild(h);
+            ul = document.createElement("ul");
+            ul.className = "recent-updates";
+            card.appendChild(ul);
+            days.appendChild(card);
+          }
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode(t.time + " "));
+          var mu = document.createElement("a");
+          mu.href = "municipality.html?slug=" + encodeURIComponent(e.slug);
+          mu.textContent = e.name;
+          li.appendChild(mu);
+          li.appendChild(document.createTextNode("：" ));
+          var a = document.createElement("a");
+          a.href = e.url;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = e.title;
+          li.appendChild(a);
+          if (e.added && e.added.length) {
+            var sp = document.createElement("span");
+            sp.className = "added";
+            sp.textContent = "増えた文の候補: " + e.added.slice(0, 2).join(" ／ ");
+            li.appendChild(sp);
+          }
+          ul.appendChild(li);
+        });
+        document.getElementById("count").textContent = shown ? shown + "件の更新を表示しています。" : "";
+        document.getElementById("empty").hidden = shown > 0;
+      }
+      MuniSearch.bindQuery(q, draw, document.getElementById("muni-share"));
+    });
+  </script>
+  <script src="../js/share.js"></script>
+  <script src="../js/report.js"></script>
+  <script src="../js/language-switch.js"></script>
+</body>
+</html>

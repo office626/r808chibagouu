@@ -15,6 +15,7 @@ STATIC = [
     ("resident/index.html", "daily", "0.9"),
     ("resident/timeline.html", "weekly", "0.9"),
     ("resident/situations.html", "weekly", "0.9"),
+    ("resident/updates.html", "hourly", "0.8"),
     ("resident/housing.html", "weekly", "0.8"),
     ("resident/life.html", "weekly", "0.8"),
     ("resident/business.html", "weekly", "0.8"),
