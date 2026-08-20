@@ -11,7 +11,8 @@
     updated: function (md) { return "Updated " + md; },
     updatedTitle: "The page text changed (detected automatically). Check the official page for what changed.",
     broken: "Could not open (auto check)",
-    brokenTitle: "The page could not be fetched at the last automatic check. It may have moved."
+    brokenTitle: "The page could not be fetched at the last automatic check. It may have moved.",
+    archived: "archived copy"
   } : {
     checked: function (m, d) { return m + "/" + d + " 確認"; },
     deadline: "期限: ",
@@ -20,7 +21,8 @@
     updated: function (md) { return "更新 " + md; },
     updatedTitle: "ページの本文が変わったことを自動で検知しました。何が変わったかは公式ページで確認してください。",
     broken: "開けない（自動確認）",
-    brokenTitle: "直近の自動確認でページを取得できませんでした。移動した可能性があります。"
+    brokenTitle: "直近の自動確認でページを取得できませんでした。移動した可能性があります。",
+    archived: "当時の内容（アーカイブ）"
   };
   var WATCH = null;            // site/data/watch.json の中身 / contents of watch.json
   var FRESH_MS = 72 * 3600 * 1000;
@@ -67,6 +69,15 @@
       var bb = badge("status-broken", T.broken);
       bb.title = T.brokenTitle;
       li.appendChild(bb);
+      var au = w.archive_url || ("https://web.archive.org/web/*/" + item.url);
+      li.appendChild(document.createTextNode(" "));
+      var aa = document.createElement("a");
+      aa.className = "report-link";
+      aa.href = au;
+      aa.target = "_blank";
+      aa.rel = "noopener";
+      aa.textContent = T.archived;
+      li.appendChild(aa);
     } else if (w && w.last_changed && isFresh(w.last_changed)) {
       li.appendChild(document.createTextNode(" "));
       var ub = badge("status-updated", T.updated(md(w.last_changed)));
