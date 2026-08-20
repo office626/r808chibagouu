@@ -51,6 +51,7 @@
         情報共有と参加（Slack・投票・やること）
       </a>
     </div>
+    <p class="meta" id="updates-line" hidden><a href="resident/updates.html" id="updates-link">昨日から市町村の公式ページが更新されています →</a></p>
     <figure class="infographic">
       <figcaption>このページの要点（A4縦）。図をタップしても進みません。ボタンは上にあります。<a href="img/info-portal.png" download>画像を保存</a></figcaption>
       <img loading="lazy" decoding="async" src="img/info-portal.png" width="1240" height="1754" alt="A4縦の要点図。図の中はボタンではない。実際の入口はページの上。千葉県にお住まいの方へと支援者向け。公式が一次情報。CTZC有志運営。">
@@ -67,6 +68,21 @@
     <div data-share></div>
   </footer>
   <script>
+    fetch("data/watch.json")
+      .then(function (r) { return r.json(); })
+      .then(function (w) {
+        var n = 0;
+        var munis = {};
+        (w.events || []).forEach(function (e) {
+          var t = Date.parse(e.at || "");
+          if (t && Date.now() - t < 24 * 3600 * 1000) { n += 1; munis[e.slug] = true; }
+        });
+        if (!n) return;
+        document.getElementById("updates-link").textContent =
+          "この24時間で " + Object.keys(munis).length + " 市町村・" + n + " 件の公式ページが更新 → 更新履歴を見る";
+        document.getElementById("updates-line").hidden = false;
+      })
+      .catch(function () {});
     fetch("data/collection.json")
       .then(function (r) { return r.json(); })
       .then(function (col) {
