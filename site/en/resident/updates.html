@@ -43,6 +43,7 @@
     <p class="notice">
       We automatically check, about every 3 hours, whether the text of official municipal pages (heavy-rain hubs, damage certificates, disaster waste and more) has changed, and record it here.
       <strong>Always check the official page (Japanese) for what actually changed.</strong> “New text” lines are auto-extracted and may be inaccurate. This site is run by volunteers and is not an official government publication.
+      Government pages sometimes become unreachable after reorganizations. This history remains, and where possible we link to a saved copy on the <a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive</a>.
     </p>
     <div class="card" id="page-actions">
       <label class="sort-label" for="muni-q">Filter by municipality (Japanese kana or romanized slug also accepted)</label>
@@ -72,9 +73,22 @@
       var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
       return { day: m[1] + "-" + m[2] + "-" + m[3], dayLabel: months[Number(m[2]) - 1] + " " + Number(m[3]), time: m[4] + ":" + m[5] };
     }
+    function monthList() {
+      var out = [];
+      var d = new Date();
+      var y = 2026, mo = 8;
+      while ((y * 12 + mo) <= (d.getFullYear() * 12 + d.getMonth() + 1)) {
+        out.push(y + "-" + String(mo).padStart(2, "0"));
+        mo += 1; if (mo > 12) { mo = 1; y += 1; }
+      }
+      return out;
+    }
     Promise.all([
       fetch("../../data/municipalities.json").then(function (r) { return r.json(); }),
-      fetch("../../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
+      fetch("../../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; }),
+      Promise.all(monthList().map(function (m) {
+        return fetch("../../data/watch-log/" + m + ".json").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
+      }))
     ]).then(function (pair) {
       var munis = pair[0];
       var bySlug = {};
@@ -83,7 +97,16 @@
       if (watch && watch.checked_at) {
         document.getElementById("checked").textContent = "Last checked: " + watch.checked_at.replace("T", " ").replace("+09:00", " JST");
       }
-      var events = (watch && watch.events || []).slice();
+      var events = [];
+      var seenKeys = {};
+      (pair[2] || []).forEach(function (arr) { (arr || []).forEach(function (e) { events.push(e); }); });
+      (watch && watch.events || []).forEach(function (e) { events.push(e); });
+      events = events.filter(function (e) {
+        var k = e.at + "\t" + e.url;
+        if (seenKeys[k]) return false;
+        seenKeys[k] = true;
+        return true;
+      });
       events.sort(function (a, b) { return a.at < b.at ? 1 : -1; });
       var q = document.getElementById("muni-q");
       function draw() {
@@ -126,12 +149,29 @@
           a.textContent = e.title;
           li.appendChild(a);
           li.appendChild(document.createTextNode(" (Japanese source title)"));
+          if (e.archive_url) {
+            li.appendChild(document.createTextNode(" "));
+            var ar = document.createElement("a");
+            ar.className = "report-link";
+            ar.href = e.archive_url;
+            ar.target = "_blank";
+            ar.rel = "noopener";
+            ar.textContent = "saved copy";
+            li.appendChild(ar);
+          }
           if (e.added && e.added.length) {
             var sp = document.createElement("span");
             sp.className = "added";
             sp.lang = "ja";
             sp.textContent = "New text (auto-extracted): " + e.added.slice(0, 2).join(" / ");
             li.appendChild(sp);
+          }
+          if (e.removed && e.removed.length) {
+            var rm = document.createElement("span");
+            rm.className = "added";
+            rm.lang = "ja";
+            rm.textContent = "Removed text (auto-extracted): " + e.removed.slice(0, 2).join(" / ");
+            li.appendChild(rm);
           }
           ul.appendChild(li);
         });
