@@ -19,6 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WATCH = ROOT / "site" / "data" / "watch.json"
+CAND = ROOT / "site" / "data" / "candidates.json"
 JST = timezone(timedelta(hours=9))
 SITE = "https://office626.github.io/r808chibagouu/"
 KIND_JA = {
@@ -53,7 +54,8 @@ def main() -> int:
             continue
         if at >= since:
             recent.append(e)
-    if not recent:
+    has_broken = any(v.get("last_error") for v in (watch.get("by_url") or {}).values())
+    if not recent and not has_broken:
         print("no updates in window; not posting")
         return 0
 
@@ -80,7 +82,10 @@ def main() -> int:
         by_muni[name].append(e)
 
     date_label = now.strftime("%-m/%-d")
-    lines = [f"*【公式ページ更新 {date_label}】{len(order)}市町村・{len(recent)}件*（過去{args.hours}時間・自動検知）"]
+    if recent:
+        lines = [f"*【公式ページ更新 {date_label}】{len(order)}市町村・{len(recent)}件*（過去{args.hours}時間・自動検知）"]
+    else:
+        lines = [f"*【公式ページ更新 {date_label}】この24時間の更新検知はありません*"]
     for name in order:
         evs = by_muni[name]
         for e in evs[:3]:
@@ -91,7 +96,30 @@ def main() -> int:
             lines.append(f"・{name}（{kind}）<{e.get('url')}|{t[:60]}>{hint}")
         if len(evs) > 3:
             lines.append(f"・{name}：ほか{len(evs) - 3}件")
-    lines.append(f"検知は約3時間おきで、実際の更新は検知より前のことがあります。何が変わったかは公式ページで確認してください。サイト: <{SITE}resident/index.html|最近の更新一覧>")
+    # 要張り替え：直近の自動確認で開けなかった公式リンク
+    broken = [(u, v) for u, v in (watch.get("by_url") or {}).items() if v.get("last_error")]
+    if broken:
+        lines.append(f"\n*要対応：開けない公式リンク {len(broken)}件*（移設の可能性。張り替え先を探して CSV を修正）")
+        for u, v in broken[:8]:
+            lines.append(f"・{v.get('slug','')}（{KIND_JA.get(v.get('kind',''),'')}）{(v.get('title') or '')[:40]}｜{u}")
+        if len(broken) > 8:
+            lines.append(f"・ほか{len(broken) - 8}件")
+
+    # 本日の候補：公式トップから拾った未収載リンク
+    try:
+        cand = json.loads(CAND.read_text(encoding="utf-8")) if CAND.exists() else {}
+    except Exception:
+        cand = {}
+    cands = cand.get("candidates") or []
+    if cands:
+        lines.append(f"\n*本日の候補：未収載の公式リンク {len(cands)}件*（公式を見て、載せる価値があれば CSV に1行追加）")
+        for c in cands[:10]:
+            lines.append(f"・{c['name']}：<{c['url']}|{c['title'][:48]}>")
+        if len(cands) > 10:
+            lines.append(f"・ほか{len(cands) - 10}件")
+
+    lines.append(f"\n検知は約3時間おきで、実際の更新は検知より前のことがあります。何が変わったかは公式ページで確認してください。サイト: <{SITE}resident/index.html|最近の更新一覧>")
+    lines.append(f"CSV を直す: <https://github.com/office626/r808chibagouu/edit/main/data/supports.csv|data/supports.csv を編集>（列: slug,kind,title,url,status,checked,deadline,note）。反映は毎朝6:00、急ぎは Actions の Daily collect を手動実行。")
     text = "\n".join(lines)
 
     if args.dry_run:
