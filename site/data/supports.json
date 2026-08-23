@@ -1,5 +1,17 @@
 {
   "note": "各市町村公式のお知らせへのリンク。今回の大雨専用ページでない場合もある。受付の有無・対象・期限は必ず公式で確認すること。status と checked は有志が確認した時点の値。",
+  "groups": [
+    {
+      "slug": "pref-chiba",
+      "name": "千葉県",
+      "name_en": "Chiba Prefecture"
+    },
+    {
+      "slug": "japan",
+      "name": "国",
+      "name_en": "National government"
+    }
+  ],
   "kind_labels": {
     "hub": "大雨情報まとめ",
     "risai": "罹災証明",
@@ -37,6 +49,205 @@
     "unknown": "Unverified"
   },
   "by_slug": {
+    "pref-chiba": [
+      {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月千葉豪雨に対する取組について（県の総合ページ）",
+        "url": "https://www.pref.chiba.lg.jp/bousai/saigaifukkyuu/r8chibagouu-torikumi.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月千葉豪雨に伴う対応（本部会議・報道発表）",
+        "url": "https://www.pref.chiba.lg.jp/bousai/bousai/r8-0813ooame.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "千葉県防災ポータル",
+        "url": "https://www.bousai.pref.chiba.lg.jp/",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "risai",
+        "kind_label": "罹災証明",
+        "kind_label_en": "Damage certificate",
+        "title": "罹災証明書について（写真の撮り方など）",
+        "url": "https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/risaisyomei.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "令和8年8月千葉豪雨災害義援金の募集について",
+        "url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/r8-chibagouu-gienkin.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害救助法の適用（第3報）",
+        "url": "https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": "続報が出たら差し替え"
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "千葉県被災者生活再建支援事業",
+        "url": "https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/hisaisyashien-chiba.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "中小企業者への資金繰り支援について",
+        "url": "https://www.pref.chiba.lg.jp/keishi/press/2026/r8chibagouu.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "社会福祉施設等の災害復旧費に対する補助",
+        "url": "https://www.pref.chiba.lg.jp/koufuku/shisetsumuke/saigaihojyo.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "2026-08-28",
+        "note": "応募締切あり"
+      },
+      {
+        "kind": "vc",
+        "kind_label": "ボランティア",
+        "kind_label_en": "Volunteer center",
+        "title": "千葉県 災害ボランティア情報",
+        "url": "https://www.pref.chiba.lg.jp/kkbunka/npo/volunteer/index.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "vc",
+        "kind_label": "ボランティア",
+        "kind_label_en": "Volunteer center",
+        "title": "千葉災害ボランティア情報（県社協・特設）",
+        "url": "https://saigai-chiba.com/",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      }
+    ],
+    "japan": [
+      {
+        "kind": "hub",
+        "kind_label": "大雨情報まとめ",
+        "kind_label_en": "Heavy-rain information hub",
+        "title": "令和8年8月千葉豪雨による被害状況等（国土交通省）",
+        "url": "https://www.mlit.go.jp/saigai/saigai_260813.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "被災者支援に関する各種制度（内閣府）",
+        "url": "https://www.bousai.go.jp/taisaku/hisaisyagyousei/",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "千葉労働局（雇用保険の特例・労働相談）",
+        "url": "https://jsite.mhlw.go.jp/chiba-roudoukyoku/",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "大雨に伴う災害等に対する金融上の措置（関東財務局）",
+        "url": "https://lfb.mof.go.jp/kantou/kinyuu/pagekthp000260814.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-24",
+        "deadline": "",
+        "note": ""
+      }
+    ],
     "chiba": [
       {
         "kind": "hub",

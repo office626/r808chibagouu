@@ -56,9 +56,15 @@ STATUS_LABEL = {"open": "受付中・掲載中", "preparing": "準備中", "clos
 STATUS_LABEL_EN = {"open": "Open / posted", "preparing": "Preparing", "closed": "Closed", "checking": "Being verified", "unknown": "Unverified"}
 
 
+EXTRA_GROUPS = [
+    {"slug": "pref-chiba", "name": "千葉県", "name_en": "Chiba Prefecture"},
+    {"slug": "japan", "name": "国", "name_en": "National government"},
+]
+
+
 def main() -> int:
     munis = json.loads((ROOT / "site" / "data" / "municipalities.json").read_text(encoding="utf-8"))
-    slugs = {m["slug"] for m in munis}
+    slugs = {m["slug"] for m in munis} | {g["slug"] for g in EXTRA_GROUPS}
     rows_by_slug: dict[str, list[dict]] = {}
     bad = []
     with CSV.open(encoding="utf-8", newline="") as f:
@@ -91,6 +97,8 @@ def main() -> int:
             print("skip row", b)
 
     by_slug = {}
+    for g in EXTRA_GROUPS:
+        by_slug[g["slug"]] = sorted(rows_by_slug.get(g["slug"], []), key=lambda x: KIND_ORDER.index(x["kind"]))
     for m in munis:
         slug = m["slug"]
         rows = rows_by_slug.get(slug, [])
@@ -108,6 +116,7 @@ def main() -> int:
     kinds_present = sorted({r["kind"] for rows in by_slug.values() for r in rows})
     out = {
         "note": NOTE,
+        "groups": EXTRA_GROUPS,
         "kind_labels": KIND_LABEL,
         "kind_labels_en": KIND_LABEL_EN,
         "status_labels": STATUS_LABEL,
