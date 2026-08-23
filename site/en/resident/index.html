@@ -63,7 +63,7 @@
     <p><a class="btn" href="municipalities.html">Find your municipality</a> <a class="btn" href="situations.html">Find help by problem</a> <a class="btn secondary" href="timeline.html">What may happen next, by stage</a></p>
     <div class="card" id="recent-card" hidden>
       <h2>Recently Updated Official Municipal Pages (detected automatically)</h2>
-      <p class="meta">We check about every 3 hours whether the text of official municipal heavy-rain pages has changed. See the official page (Japanese) for what changed.</p>
+      <p class="meta">We check about every 3 hours whether the text of official municipal heavy-rain pages has changed. Times are detection times; the actual edit was up to 3 hours earlier. See the official page (Japanese) for what changed.</p>
       <ul class="recent-updates" id="recent-list"></ul>
       <p><a href="updates.html">See the full update history</a></p>
     </div>
@@ -128,7 +128,7 @@
         var list = document.getElementById("recent-list");
         ev.slice(0, 10).forEach(function (e) {
           var li = document.createElement("li");
-          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " "));
+          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " detected "));
           var mu = document.createElement("a");
           mu.href = "municipality.html?slug=" + encodeURIComponent(e.slug);
           mu.textContent = MunicipalityNames.get(e.slug);

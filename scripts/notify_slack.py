@@ -91,7 +91,7 @@ def main() -> int:
             lines.append(f"・{name}（{kind}）<{e.get('url')}|{t[:60]}>{hint}")
         if len(evs) > 3:
             lines.append(f"・{name}：ほか{len(evs) - 3}件")
-    lines.append(f"何が変わったかは公式ページで確認してください。サイト: <{SITE}resident/index.html|最近の更新一覧>")
+    lines.append(f"検知は約3時間おきで、実際の更新は検知より前のことがあります。何が変わったかは公式ページで確認してください。サイト: <{SITE}resident/index.html|最近の更新一覧>")
     text = "\n".join(lines)
 
     if args.dry_run:

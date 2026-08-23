@@ -54,7 +54,7 @@
       <div id="recent-updates-box" hidden>
         <h3>最近の更新（自動検知）</h3>
         <ul class="recent-updates" id="recent-updates"></ul>
-        <p class="meta">公式ページの本文が変わったことを自動で見ています（約3時間おき）。何が変わったかは公式ページで確認してください。</p>
+        <p class="meta">公式ページの本文が変わったことを自動で見ています（約3時間おき）。時刻は検知時刻で、実際の更新は最大3時間前です。何が変わったかは公式ページで確認してください。</p>
       </div>
       <p class="empty">罹災証明・災害ごみ・消毒・住まい・ボランティアなど、市町村公式のページへのリンクです。受付状態と確認日は有志が見た時点のもの。申請は公式窓口へ。</p>
       <ul class="support-list" id="muni-support"></ul>
@@ -186,7 +186,7 @@
         var ul = document.getElementById("recent-updates");
         ev.slice(0, 5).forEach(function (e) {
           var li = document.createElement("li");
-          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " "));
+          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " 検知 "));
           var a = document.createElement("a");
           a.href = e.url; a.target = "_blank"; a.rel = "noopener";
           a.textContent = e.title;
