@@ -47,6 +47,15 @@
   <main>
     <h1>Prefectural and National Support Information</h1>
     <p class="notice">This page links to official information and does not reproduce its content. Check each linked source. Preliminary figures may change.</p>
+    <div class="card" id="watched-card">
+      <h2>Prefectural and National Official Notices (with status and update detection)</h2>
+      <p class="empty">Relief donations, Disaster Relief Act, livelihood-rebuilding support, business financing and more (Japanese). Status and check dates reflect when a volunteer last looked. Page text is checked automatically about every 3 hours (“Update detected” shows the detection time).</p>
+      <h3>Chiba Prefecture</h3>
+      <ul class="support-list" id="pref-support"></ul>
+      <h3>National government</h3>
+      <ul class="support-list" id="japan-support"></ul>
+      <p class="meta"><a id="issue-link" data-report data-report-target="Chiba Prefecture / national - add or fix official links" href="https://github.com/office626/r808chibagouu/issues/new" target="_blank" rel="noopener">Add or fix a prefectural or national official link (report form; no name needed)</a></p>
+    </div>
     <div class="card" id="page-actions">
       <h2>Chiba Prefecture <span class="badge admin">Government</span></h2>
       <ul>
@@ -95,7 +104,17 @@
     </p>
     <div data-share></div>
   </footer>
+  <script src="../../js/supports.js"></script>
   <script>
+    Promise.all([
+      fetch("../../data/supports.json").then(function (r) { return r.json(); }),
+      fetch("../../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
+    ]).then(function (pair) {
+      SupportsView.setWatch(pair[1]);
+      var bySlug = pair[0].by_slug || {};
+      SupportsView.renderList(document.getElementById("pref-support"), bySlug["pref-chiba"] || [], "Chiba Prefecture");
+      SupportsView.renderList(document.getElementById("japan-support"), bySlug["japan"] || [], "National government");
+    });
     function fmt(iso) {
       if (!iso) return "";
       return iso.replace("T", " ").replace("+09:00", " JST");
