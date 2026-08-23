@@ -44,7 +44,7 @@
       We automatically check, about every 3 hours, whether the text of official municipal pages (heavy-rain hubs, damage certificates, disaster waste and more) has changed, and record it here.
       <strong>Always check the official page (Japanese) for what actually changed.</strong> “New text” lines are auto-extracted and may be inaccurate. This site is run by volunteers and is not an official government publication.
       Government pages sometimes become unreachable after reorganizations. This history remains, and where possible we link to a saved copy on the <a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive</a>.
-      Automatic detection started on August 20. Before that date, we show <strong>collected official announcements (reference)</strong> from our daily collection in the same timeline.
+      “Detected” times are when our automatic check noticed the change; the actual edit was up to 3 hours earlier. Times on collected announcements are announcement times. Automatic detection started on August 20. Before that date, we show <strong>collected official announcements (reference)</strong> from our daily collection in the same timeline.
     </p>
     <div class="card" id="page-actions">
       <label class="sort-label" for="muni-q">Filter by municipality (Japanese kana or romanized slug also accepted)</label>
@@ -150,7 +150,7 @@
             days.appendChild(card);
           }
           var li = document.createElement("li");
-          li.appendChild(document.createTextNode(t.time + " "));
+          li.appendChild(document.createTextNode(t.time + (e.kind === "log" ? " " : " detected ")));
           var muniName = e.slug && bySlug[e.slug] ? MunicipalityNames.get(e.slug) : (e.name || "");
           if (e.slug && bySlug[e.slug]) {
             var mu = document.createElement("a");

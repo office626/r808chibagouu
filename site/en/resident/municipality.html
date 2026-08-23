@@ -193,7 +193,7 @@
         var ul = document.getElementById("recent-updates");
         ev.slice(0, 5).forEach(function (e) {
           var li = document.createElement("li");
-          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " "));
+          li.appendChild(document.createTextNode(SupportsView.md(e.at) + " detected "));
           var a = document.createElement("a");
           a.href = e.url; a.target = "_blank"; a.rel = "noopener"; a.lang = "ja";
           a.textContent = e.title;

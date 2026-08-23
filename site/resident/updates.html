@@ -52,7 +52,7 @@
       市町村公式の大雨情報・罹災証明・災害ごみなどのページの本文が変わったことを、約3時間おきに自動で見て記録しています。
       <strong>何が変わったかは、必ず公式ページで確認してください。</strong>「増えた文の候補」は機械抽出で、正確でないことがあります。有志運営で、行政の公式発表ではありません。
       行政ページは統合・移設で開けなくなることがあります。その場合もこの履歴は残し、可能な範囲で保存時点の内容（<a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive</a>）へのリンクを付けます。
-      自動検知は8月20日からです。それ以前は、日次収集で記録済みの<strong>行政発表のログ（参考）</strong>を同じ時系列に表示しています。
+      「検知」の時刻は自動確認で変化に気づいた時刻で、実際の更新はその前（最大3時間前）です。行政発表ログの時刻は発表時刻です。自動検知は8月20日からです。それ以前は、日次収集で記録済みの<strong>行政発表のログ（参考）</strong>を同じ時系列に表示しています。
     </p>
     <div class="card" id="page-actions">
       <label class="sort-label" for="muni-q">市町村名で絞り込む（ひらがな・カタカナでも可）</label>
@@ -158,7 +158,7 @@
             days.appendChild(card);
           }
           var li = document.createElement("li");
-          li.appendChild(document.createTextNode(t.time + " "));
+          li.appendChild(document.createTextNode(t.time + (e.kind === "log" ? " " : " 検知 ")));
           var muniName = e.name || (bySlug[e.slug] ? bySlug[e.slug].name : "");
           if (e.slug && bySlug[e.slug]) {
             var mu = document.createElement("a");
