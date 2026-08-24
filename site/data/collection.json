@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-24T06:19:01+09:00",
+  "fetched_at": "2026-08-25T06:25:53+09:00",
   "method": "日次ジョブ。許可リストの見出しとURLのみ。失敗したソースは前回を維持。",
   "links": {
     "portal": "https://www.bousai.pref.chiba.lg.jp/",
@@ -21,8 +21,8 @@
         "label": "解除"
       },
       "shelter": {
-        "status": "開設",
-        "at": "08/21 20:22"
+        "status": "閉鎖",
+        "at": "08/24 10:23"
       }
     },
     "ichikawa": {
@@ -148,7 +148,7 @@
       },
       "shelter": {
         "status": "開設",
-        "at": "08/23 09:14"
+        "at": "08/24 15:21"
       }
     },
     "yachiyo": {
@@ -2744,6 +2744,28 @@
       "source_url": "https://www.fdma.go.jp/disaster/info/#070115",
       "source_type": "admin",
       "medium": "総務省消防庁"
+    },
+    {
+      "id": "shelter-chiba-08/24-1023",
+      "slug": "chiba",
+      "occurred_at": "2026-08-24T10:23:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：千葉市の避難所は閉鎖（08/24 10:23発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "shelter-ichihara-08/24-1521",
+      "slug": "ichihara",
+      "occurred_at": "2026-08-24T15:21:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：市原市の避難所は開設（08/24 15:21発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
     }
   ]
 }
