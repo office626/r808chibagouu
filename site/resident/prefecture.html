@@ -49,6 +49,15 @@
   <main>
     <h1>県・国の支援情報（公式への案内）</h1>
     <p class="notice">本文は転載しません。リンク先で確認してください。数値は速報です。</p>
+    <div class="card" id="watched-card">
+      <h2>県・国の公式お知らせ（受付状態・更新検知つき）</h2>
+      <p class="empty">義援金・災害救助法・生活再建支援・資金繰りなど。受付状態と確認日は有志が見た時点のもの。ページ本文の変化は約3時間おきに自動で見ています（「更新検知」の時刻は検知時刻）。</p>
+      <h3>千葉県</h3>
+      <ul class="support-list" id="pref-support"></ul>
+      <h3>国</h3>
+      <ul class="support-list" id="japan-support"></ul>
+      <p class="meta"><a id="issue-link" data-report data-report-target="千葉県・国 / 公式リンクの追加・修正" href="https://github.com/office626/r808chibagouu/issues/new" target="_blank" rel="noopener">県・国の公式お知らせを足す・直す（報告フォーム。名前不要）</a></p>
+    </div>
     <div class="card" id="page-actions">
       <h2>千葉県 <span class="badge admin">行政</span></h2>
       <ul>
@@ -97,8 +106,18 @@
     </p>
     <div data-share></div>
   </footer>
+  <script src="../js/supports.js"></script>
   <script>
     function fmt(iso) { return iso.replace("T", " ").replace("+09:00", " JST"); }
+    Promise.all([
+      fetch("../data/supports.json").then(function (r) { return r.json(); }),
+      fetch("../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
+    ]).then(function (pair) {
+      SupportsView.setWatch(pair[1]);
+      var bySlug = pair[0].by_slug || {};
+      SupportsView.renderList(document.getElementById("pref-support"), bySlug["pref-chiba"] || [], "千葉県");
+      SupportsView.renderList(document.getElementById("japan-support"), bySlug["japan"] || [], "国");
+    });
     fetch("../data/collection.json")
       .then(function (r) { return r.json(); })
       .then(function (col) {

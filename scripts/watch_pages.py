@@ -127,6 +127,7 @@ def digest(lines: list[str]) -> str:
 
 def main() -> int:
     munis = {m["slug"]: m["name"] for m in json.loads(MUNIS.read_text(encoding="utf-8"))}
+    munis.update({"pref-chiba": "千葉県", "japan": "国"})
     rows = list(csv.DictReader(CSV.open(encoding="utf-8", newline="")))
     state = {"checked_at": "", "by_url": {}, "events": [], "errors": []}
     if STATE.exists():
