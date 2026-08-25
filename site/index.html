@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CTZC 千葉豪雨ポータル（有志）</title>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="令和8年8月千葉豪雨の被害経過と支援策を、千葉県にお住まいの方と支援・協働する方の二つの入口で案内します。CivicTechZenChiba の有志運営で、行政の公式発表ではありません。">
+  <meta name="description" content="令和8年8月千葉豪雨で被災された方が、市町村と困りごとから必要な公式情報にたどりつくためのページです。CivicTechZenChiba の有志運営で、行政の公式発表ではありません。">
   <meta name="theme-color" content="#0b5cab">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="CTZC 千葉豪雨ポータル">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="CTZC 千葉豪雨ポータル（有志）">
-  <meta property="og:description" content="令和8年8月千葉豪雨の被害経過と支援策を、千葉県にお住まいの方と支援・協働する方の二つの入口で案内します。CivicTechZenChiba の有志運営で、行政の公式発表ではありません。">
+  <meta property="og:description" content="令和8年8月千葉豪雨で被災された方が、市町村と困りごとから必要な公式情報にたどりつくためのページです。CivicTechZenChiba の有志運営で、行政の公式発表ではありません。">
   <meta property="og:url" content="https://office626.github.io/r808chibagouu/">
   <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
   <meta property="og:image:width" content="1024">
@@ -27,7 +27,7 @@
   <meta property="og:image:alt" content="令和8年8月千葉豪雨からの復旧のために。主催 CivicTechZenChiba">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CTZC 千葉豪雨ポータル（有志）">
-  <meta name="twitter:description" content="令和8年8月千葉豪雨の被害経過と支援策を、千葉県にお住まいの方と支援・協働する方の二つの入口で案内します。CivicTechZenChiba の有志運営で、行政の公式発表ではありません。">
+  <meta name="twitter:description" content="令和8年8月千葉豪雨で被災された方が、市町村と困りごとから必要な公式情報にたどりつくためのページです。CivicTechZenChiba の有志運営で、行政の公式発表ではありません。">
   <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
 </head>
 <body>
@@ -41,20 +41,74 @@
       本サイトは CTZC の有志による運営であり、<strong>行政の公式発表ではありません</strong>。
       申請・問い合わせは千葉県および各市町村の公式窓口へ。最新情報は必ず公式サイトで確認してください。
     </p>
-    <div class="doors" id="page-actions">
-      <a class="door" href="resident/index.html">
-        <strong>千葉県にお住まいの方へ</strong>
-        被害の経過、これから起きること、住まい・移動・事業者・支援策を見る
+
+    <div class="card step" id="page-actions">
+      <h2><span class="step-num" aria-hidden="true">1</span>お住まいの市町村を選ぶ</h2>
+      <p>市町村ごとに、公式のお知らせ・支援策・被害の経過をまとめています。</p>
+      <p class="muni-pick">
+        <label class="sort-label" for="muni-select">市町村</label>
+        <select id="muni-select"></select>
+      </p>
+      <p id="muni-go-line" hidden><a class="btn" id="muni-go" href="resident/municipalities.html">市町村のページを開く</a></p>
+      <p class="meta">選んだ市町村はこの端末に残り、ほかのページでは画面の上に出ます。サイトには送られません。<a href="resident/municipalities.html">一覧から探す</a></p>
+    </div>
+
+    <div class="card step">
+      <h2><span class="step-num" aria-hidden="true">2</span>いま困っていることを選ぶ</h2>
+      <p>状況ごとに「まずやること」「あとで困ること」「見落としがちな支援」を並べています。</p>
+      <div class="chips">
+        <a class="chip-link" href="resident/situations.html?s=house-over">床上まで浸水した</a>
+        <a class="chip-link" href="resident/situations.html?s=house-under">床下浸水だけ</a>
+        <a class="chip-link" href="resident/situations.html?s=house-roof">屋根・雨漏り・土砂</a>
+        <a class="chip-link" href="resident/situations.html?s=rent">賃貸に住んでいる</a>
+        <a class="chip-link" href="resident/situations.html?s=car">車が水没した</a>
+        <a class="chip-link" href="resident/situations.html?s=lifeline">停電・断水があった</a>
+        <a class="chip-link" href="resident/situations.html?s=shop">店舗・工場・農地</a>
+        <a class="chip-link" href="resident/situations.html?s=work">勤め先が休業</a>
+        <a class="chip-link" href="resident/situations.html?s=child">子どもがいる</a>
+        <a class="chip-link" href="resident/situations.html?s=elder">高齢の家族・介護</a>
+        <a class="chip-link" href="resident/situations.html?s=health">持病・薬・透析</a>
+        <a class="chip-link" href="resident/situations.html?s=pet">ペット</a>
+        <a class="chip-link" href="resident/situations.html?s=foreign">外国籍・日本語が不安</a>
+      </div>
+      <p class="meta"><a href="resident/situations.html">困りごとの一覧を見る</a> ／ <a href="resident/timeline.html">これから起きること（時期別）</a></p>
+    </div>
+
+    <div class="card step">
+      <h2><span class="step-num" aria-hidden="true">3</span>いますぐの3つ</h2>
+      <ol class="now-list">
+        <li>
+          <strong>片付ける前に写真を撮る</strong>
+          四方向、浸水の深さ、部屋ごと、捨てる家財。あとから撮り直せません。
+        </li>
+        <li>
+          <strong>領収書を全部残す</strong>
+          修理・清掃・宿泊・買い直し。支援や保険の請求で必要になります。
+        </li>
+        <li>
+          <strong>直す前に市町村へ確認する</strong>
+          先に修理を契約すると、公費の応急修理の対象外になり得ます。
+        </li>
+      </ol>
+      <p class="meta"><a href="resident/housing.html">住まいが被災した方へ</a></p>
+    </div>
+
+    <p class="meta" id="updates-line" hidden><a href="resident/updates.html" id="updates-link">昨日から市町村の公式ページが更新されています →</a></p>
+
+    <div class="doors">
+      <a class="door quiet" href="resident/index.html">
+        <strong>千葉県にお住まいの方へ（すべての案内）</strong>
+        住まい・移動と生活・事業者、県と国の支援、更新履歴
       </a>
-      <a class="door" href="supporters/index.html">
+      <a class="door quiet" href="supporters/index.html">
         <strong>支援・協働する方へ</strong>
         情報共有と参加（Slack・投票・やること）
       </a>
     </div>
-    <p class="meta" id="updates-line" hidden><a href="resident/updates.html" id="updates-link">昨日から市町村の公式ページが更新されています →</a></p>
+
     <figure class="infographic">
       <figcaption>このページの要点（A4縦）。図をタップしても進みません。ボタンは上にあります。<a href="img/info-portal.png" download>画像を保存</a></figcaption>
-      <img loading="lazy" decoding="async" src="img/info-portal.png" width="1240" height="1754" alt="A4縦の要点図。図の中はボタンではない。実際の入口はページの上。千葉県にお住まいの方へと支援者向け。公式が一次情報。CTZC有志運営。">
+      <img loading="lazy" decoding="async" src="img/info-portal.png" width="1240" height="1754" alt="A4縦の要点図。図の中はボタンではない。実際の入口はページの上。市町村を選ぶ、困りごとを選ぶ、いますぐの3つ。公式が一次情報。CTZC有志運営。">
     </figure>
   </main>
   <footer>
@@ -93,6 +147,7 @@
         document.getElementById("fetched").textContent = "最終取得: 読み込み失敗";
       });
   </script>
+  <script src="js/muni-pref.js"></script>
   <script src="js/share.js"></script>
   <script src="js/report.js"></script>
   <script src="js/language-switch.js"></script>

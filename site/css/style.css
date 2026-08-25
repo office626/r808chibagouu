@@ -377,3 +377,53 @@ code { font-size: 0.92em; padding: 0.05em 0.3em; border-radius: 4px; background:
   padding: 0.6rem 0.9rem; margin: 0.4rem 0 0.9rem; font-size: 0.95rem;
 }
 .about-strip a { white-space: nowrap; }
+
+/* 入口（トップ）: 番号つきの手順カードと、市町村の選択バー */
+.step { border-left: 4px solid var(--accent); }
+.step h2 { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0; }
+.step-num {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+}
+.chip-link {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+}
+.chip-link:hover,
+.chip-link:focus-visible { border-color: var(--accent); color: var(--accent); }
+.muni-pick { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0.5rem 0 0; }
+.muni-pick select { font: inherit; padding: 0.45rem 0.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--card); }
+.now-list { margin: 0; padding-left: 1.3rem; }
+.now-list li { margin-bottom: 0.6rem; }
+.now-list li:last-child { margin-bottom: 0; }
+.now-list strong { display: block; }
+.muni-bar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.muni-bar-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.5rem 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.9rem;
+}
+.muni-bar-label { color: var(--muted); }
+.muni-bar-name { font-weight: 700; }
+.door.quiet { border-color: var(--border); min-height: 0; padding: 1rem; }
+.door.quiet strong { color: var(--text); font-size: 1.05rem; }

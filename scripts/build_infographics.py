@@ -2,15 +2,37 @@
 """各公開ページ用の A4 縦インフォグラフィック（PNG）を描画する。"""
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
+# 引数にファイル名を渡すと、その分だけ描き直す（例: info-portal.png）。無指定なら全部。
+ONLY = set(sys.argv[1:])
 OUT = ROOT / "site" / "img"
-FONT_R = r"C:\Windows\Fonts\YuGothR.ttc"
-FONT_M = r"C:\Windows\Fonts\YuGothM.ttc"
-FONT_B = r"C:\Windows\Fonts\YuGothB.ttc"
+# 描画に使う日本語フォント。上から順に、最初に見つかったものを使う。
+# Windows・macOS・Linux のどこで実行しても描けるようにするため。書体は環境で変わる。
+FONT_CANDIDATES = {
+    "r": [
+        r"C:\Windows\Fonts\YuGothR.ttc",
+        "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf",
+    ],
+    "m": [
+        r"C:\Windows\Fonts\YuGothM.ttc",
+        "/System/Library/Fonts/ヒラギノ角ゴシック W5.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc",
+        "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf",
+    ],
+    "b": [
+        r"C:\Windows\Fonts\YuGothB.ttc",
+        "/System/Library/Fonts/ヒラギノ角ゴシック W7.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf",
+    ],
+}
 
 # A4 縦 150dpi（210mm x 297mm）
 W, H = 1240, 1754
@@ -31,6 +53,18 @@ BLUE_BG = (231, 241, 251)
 
 def font(path: str, size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(path, size, index=0)
+
+
+def font_path(kind: str) -> str:
+    """kind（r=標準 / m=中太 / b=太字）に対して、この環境にあるフォントを1つ返す。"""
+    for path in FONT_CANDIDATES[kind]:
+        if Path(path).exists():
+            return path
+    tried = "\n  ".join(FONT_CANDIDATES[kind])
+    raise SystemExit(
+        "描画に使えるフォントが見つかりません。いずれかを入れるか、"
+        f"FONT_CANDIDATES に足してください:\n  {tried}"
+    )
 
 
 def wrap(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.FreeTypeFont, max_w: int) -> list[str]:
@@ -88,8 +122,7 @@ class Sheet:
         self._footer()
 
     def f(self, kind: str, size: int) -> ImageFont.FreeTypeFont:
-        path = {"r": FONT_R, "m": FONT_M, "b": FONT_B}[kind]
-        return font(path, size)
+        return font(font_path(kind), size)
 
     def _header(self):
         self.d.rectangle((0, 0, W, 228), fill=ACCENT)
@@ -233,6 +266,8 @@ class Sheet:
         self.y = y + 60
 
     def save(self, name: str):
+        if ONLY and name not in ONLY:
+            return
         path = OUT / name
         self.im.save(path, "PNG", optimize=True)
         print("wrote", path)
@@ -244,17 +279,25 @@ def build_all() -> None:
     s = Sheet(
         "令和8年8月千葉豪雨　復興支援ポータル",
         "このサイトの入り口",
-        "千葉県にお住まいの方の状況・支援案内と、支援者が協働する場を分けています。",
+        "被災された方が、市町村と困りごとから必要な公式情報にたどりつくためのページです。",
         "anime-guide-map.jpg",
-        "上にある二つの入口から、あなたに合う方を選んでください。",
+        "ページの上から、市町村と困りごとを順に選んでください。",
         (0.5, 0.55),
     )
     s.note("有志運営です。行政の公式発表ではありません。申請は県・市町村の公式窓口へ。")
-    s.h2("二つの入口（ボタンはページの上）")
+    s.h2("三つの手順（ボタンはページの上）")
+    s.steps(
+        [
+            "お住まいの市町村を選ぶ：公式のお知らせ・支援策・被害の経過が市町村ごとに出ます。選択はこの端末に残ります。",
+            "いま困っていることを選ぶ：床上浸水・車の水没・賃貸・持病など、状況ごとの案内に直接進みます。",
+            "いますぐの3つ：片付ける前に写真、領収書を全部残す、直す前に市町村へ確認。",
+        ]
+    )
+    s.h2("支援・協働する方へ")
     s.grid(
         [
-            ("千葉県にお住まいの方へ", "住まい・移動と生活・事業者。市町村ごとの被害経過と公式リンク。支援策の探し方。"),
-            ("支援・協働する方へ", "公開情報の収集と拡散。Slack。今後の案への投票。救命や現地マッチングは担いません。"),
+            ("参加する", "公開情報の収集と拡散、Slack、今後の案への投票。救命や現地マッチングは担いません。"),
+            ("入口はページの下", "被災された方の導線を先に置いているため、支援者向けの入口はページの下にあります。"),
         ]
     )
     s.h2("使うときの約束")
