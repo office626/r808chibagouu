@@ -333,16 +333,22 @@ def build_all() -> None:
     s = Sheet(
         "August 2026 Chiba Heavy Rain Recovery Support Portal",
         "Start Here",
-        "Separate routes for Chiba residents seeking guidance and people wishing to help or collaborate.",
+        "A page that helps affected residents reach official information, starting from their municipality and their situation.",
         "anime-guide-map.jpg",
-        "Choose the route above that best fits you.",
+        "Work down the page: choose your municipality, then your situation.",
         (0.5, 0.55),
     )
     s.note("This site is volunteer-run, not an official government source. Apply through official prefectural or municipal offices.")
-    s.h2("Two routes (buttons are above this graphic)")
+    s.h2("Three steps (buttons are above this graphic)")
+    s.steps([
+        "Choose your municipality: official notices, support programs and damage timelines are shown per municipality. Your choice stays on your device.",
+        "Choose what you are dealing with: flooding above floor level, a flooded car, rented housing, medication and more lead straight to that guidance.",
+        "Three things to do right now: photos before you clean up, keep every receipt, check with your municipality before repairs.",
+    ])
+    s.h2("For supporters and collaborators")
     s.grid([
-        ("For Chiba Residents", "Housing, transport and daily life, and businesses. Damage timelines and official links by municipality. How to find support."),
-        ("For Supporters & Collaborators", "Collecting and sharing public information, Slack, and voting on future ideas. We do not handle rescue or on-site matching."),
+        ("Take part", "Collecting and sharing public information, Slack, and voting on future ideas. We do not handle rescue or on-site matching."),
+        ("Entrance is lower down", "The route for affected residents comes first, so the supporter entrance sits at the bottom of the page."),
     ])
     s.h2("Three rules for using this site")
     s.steps([

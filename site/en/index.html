@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CTZC Chiba Heavy Rain Portal (Volunteer-Run)</title>
+  <title>CTZC Chiba Heavy Rain Portal (Volunteer-run)</title>
   <link rel="stylesheet" href="../css/style.css">
-  <meta name="description" content="Information on damage and support following the August 2026 Chiba heavy rain, with separate guides for Chiba residents and for people providing support or working together. Volunteer-run by CivicTechZenChiba; not an official government website.">
+  <meta name="description" content="A page that helps people affected by the August 2026 Chiba heavy rain reach the official information they need, starting from their municipality and their situation. Run by CivicTechZenChiba volunteers; not an official government publication.">
   <meta name="theme-color" content="#0b5cab">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -14,19 +14,20 @@
   <link rel="alternate" hreflang="ja" href="https://office626.github.io/r808chibagouu/">
   <link rel="alternate" hreflang="en" href="https://office626.github.io/r808chibagouu/en/">
   <link rel="alternate" hreflang="x-default" href="https://office626.github.io/r808chibagouu/">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CTZC Chiba Heavy Rain Portal">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="CTZC Chiba Heavy Rain Portal (Volunteer-Run)">
-  <meta property="og:description" content="Information on damage and support following the August 2026 Chiba heavy rain. Volunteer-run by CivicTechZenChiba; not an official government website.">
+  <meta property="og:title" content="CTZC Chiba Heavy Rain Portal (Volunteer-run)">
+  <meta property="og:description" content="A page that helps people affected by the August 2026 Chiba heavy rain reach the official information they need, starting from their municipality and their situation. Run by CivicTechZenChiba volunteers; not an official government publication.">
   <meta property="og:url" content="https://office626.github.io/r808chibagouu/en/">
   <meta property="og:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="537">
-  <meta property="og:image:alt" content="Working toward recovery from the August 2026 Chiba heavy rain. Organized by CivicTechZenChiba.">
+  <meta property="og:image:alt" content="For recovery from the August 2026 Chiba heavy rain. Organized by CivicTechZenChiba">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CTZC Chiba Heavy Rain Portal (Volunteer-Run)">
-  <meta name="twitter:description" content="Information on damage and support following the August 2026 Chiba heavy rain. Volunteer-run by CivicTechZenChiba; not an official government website.">
+  <meta name="twitter:title" content="CTZC Chiba Heavy Rain Portal (Volunteer-run)">
+  <meta name="twitter:description" content="A page that helps people affected by the August 2026 Chiba heavy rain reach the official information they need, starting from their municipality and their situation. Run by CivicTechZenChiba volunteers; not an official government publication.">
   <meta name="twitter:image" content="https://office626.github.io/r808chibagouu/img/chiba-recovery-banner.jpg">
 </head>
 <body>
@@ -40,20 +41,74 @@
       This website is run by CTZC volunteers and <strong>is not an official government publication</strong>.
       Apply and make inquiries through the official Chiba Prefecture or municipal contact points. Always check official websites for the latest information.
     </p>
-    <div class="doors" id="page-actions">
-      <a class="door" href="resident/index.html">
-        <strong>For Chiba Residents</strong>
-        See how the disaster is developing, what may happen next, and information on housing, travel, businesses, and support programs
+
+    <div class="card step" id="page-actions">
+      <h2><span class="step-num" aria-hidden="true">1</span>Choose the municipality you live in</h2>
+      <p>Each municipality has its own page with official notices, support programs, and how the damage has developed.</p>
+      <p class="muni-pick">
+        <label class="sort-label" for="muni-select">Municipality</label>
+        <select id="muni-select"></select>
+      </p>
+      <p id="muni-go-line" hidden><a class="btn" id="muni-go" href="resident/municipalities.html">Open the municipality page</a></p>
+      <p class="meta">Your choice stays on this device and appears at the top of other pages. Nothing is sent to this site. <a href="resident/municipalities.html">Browse the full list</a></p>
+    </div>
+
+    <div class="card step">
+      <h2><span class="step-num" aria-hidden="true">2</span>Choose what you are dealing with</h2>
+      <p>For each situation, the site lists what to do first, what causes trouble later, and support that is easy to miss.</p>
+      <div class="chips">
+        <a class="chip-link" href="resident/situations.html?s=house-over">Flooded above floor level</a>
+        <a class="chip-link" href="resident/situations.html?s=house-under">Below floor level only</a>
+        <a class="chip-link" href="resident/situations.html?s=house-roof">Roof, leaks, landslides</a>
+        <a class="chip-link" href="resident/situations.html?s=rent">Living in rented housing</a>
+        <a class="chip-link" href="resident/situations.html?s=car">Car was flooded</a>
+        <a class="chip-link" href="resident/situations.html?s=lifeline">Power or water outage</a>
+        <a class="chip-link" href="resident/situations.html?s=shop">Shop, factory, farmland</a>
+        <a class="chip-link" href="resident/situations.html?s=work">Workplace closed</a>
+        <a class="chip-link" href="resident/situations.html?s=child">Have children</a>
+        <a class="chip-link" href="resident/situations.html?s=elder">Older family, nursing care</a>
+        <a class="chip-link" href="resident/situations.html?s=health">Medication or dialysis</a>
+        <a class="chip-link" href="resident/situations.html?s=pet">Pets</a>
+        <a class="chip-link" href="resident/situations.html?s=foreign">Non-Japanese residents</a>
+      </div>
+      <p class="meta"><a href="resident/situations.html">See all situations</a> / <a href="resident/timeline.html">What happens next (by period)</a></p>
+    </div>
+
+    <div class="card step">
+      <h2><span class="step-num" aria-hidden="true">3</span>Three things to do right now</h2>
+      <ol class="now-list">
+        <li>
+          <strong>Take photos before you clean up</strong>
+          All four sides, the water line, each room, and everything you throw away. You cannot take them again later.
+        </li>
+        <li>
+          <strong>Keep every receipt</strong>
+          Repairs, cleaning, lodging, and replacement purchases. You will need them for support programs and insurance.
+        </li>
+        <li>
+          <strong>Check with your municipality before repairs</strong>
+          Signing a repair contract first can make you ineligible for publicly funded emergency repairs.
+        </li>
+      </ol>
+      <p class="meta"><a href="resident/housing.html">If your home was damaged</a></p>
+    </div>
+
+    <p class="meta" id="updates-line" hidden><a href="resident/updates.html" id="updates-link">Official municipal pages have been updated →</a></p>
+
+    <div class="doors">
+      <a class="door quiet" href="resident/index.html">
+        <strong>For Chiba residents (all guidance)</strong>
+        Housing, travel and daily life, businesses, prefectural and national support, update history
       </a>
-      <a class="door" href="supporters/index.html">
-        <strong>For Supporters and Partners</strong>
+      <a class="door quiet" href="supporters/index.html">
+        <strong>For supporters and partners</strong>
         Share information and take part through Slack, voting, and action items
       </a>
     </div>
-    <p class="meta" id="updates-line" hidden><a href="resident/updates.html" id="updates-link">Official municipal pages have been updated →</a></p>
+
     <figure class="infographic">
       <figcaption>Key points from this page (A4 portrait). Tapping the graphic will not open another page; use the buttons above. <a href="../img/info-portal-en.png" download>Save image</a></figcaption>
-      <img loading="lazy" decoding="async" src="../img/info-portal-en.png" width="1240" height="1754" alt="A4 portrait summary. The items in the graphic are not buttons; use the actual links above. Separate entrances are provided for Chiba residents and supporters. Official sources provide primary information. This site is run by CTZC volunteers.">
+      <img loading="lazy" decoding="async" src="../img/info-portal-en.png" width="1240" height="1754" alt="A4 portrait summary. The items in the graphic are not buttons; use the actual links above. Choose your municipality, choose your situation, and three things to do right now. Official sources provide primary information. This site is run by CTZC volunteers.">
     </figure>
   </main>
   <footer>
@@ -78,7 +133,7 @@
         });
         if (!n) return;
         document.getElementById("updates-link").textContent =
-          Object.keys(munis).length + " municipalities / " + n + " official pages updated in the last 24 hours → see update history";
+          "In the last 24 hours, " + n + " official page(s) in " + Object.keys(munis).length + " municipalities changed → see the update history";
         document.getElementById("updates-line").hidden = false;
       })
       .catch(function () {});
@@ -86,12 +141,13 @@
       .then(function (r) { return r.json(); })
       .then(function (col) {
         document.getElementById("fetched").textContent =
-          "Last updated: " + col.fetched_at.replace("T", " ").replace("+09:00", " JST");
+          "Last collected: " + col.fetched_at.replace("T", " ").replace("+09:00", " JST");
       })
       .catch(function () {
-        document.getElementById("fetched").textContent = "Last updated: failed to load";
+        document.getElementById("fetched").textContent = "Last collected: failed to load";
       });
   </script>
+  <script src="../js/muni-pref.js"></script>
   <script src="../js/share.js"></script>
   <script src="../js/report.js"></script>
   <script src="../js/language-switch.js"></script>
