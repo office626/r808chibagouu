@@ -35,14 +35,31 @@ CTX = ssl.create_default_context()
 MAX_EVENTS = 600
 MAX_ADDED = 5
 MAX_REMOVED = 3
+EXTRACT = 2               # 本文抽出のやり方の版。変えたら全ページの基準を取り直す
 ARCHIVE_MAX = 10          # 1回の実行で Wayback に依頼する最大件数
 ARCHIVE_WAIT = 4          # 依頼の間隔（秒）
 LOG_DIR = ROOT / "site" / "data" / "watch-log"
 
-STRIP = re.compile(r"<(script|style|noscript|nav|header|footer|svg)\b[^>]*>.*?</\1>", re.S | re.I)
+STRIP = re.compile(r"<(script|style|noscript|nav|header|footer|aside|svg|iframe)\b[^>]*>.*?</\1>", re.S | re.I)
+# 共通パーツ（パンくず・関連リンク・問い合わせ欄など）は div で組まれていることが多く、
+# タグ名だけでは落とせない。id/class で見て切る
+TAG = re.compile(r"<(/?)([a-zA-Z][\w:-]*)([^>]*)>")
+VOID = {"br", "hr", "img", "input", "meta", "link", "area", "base", "col", "embed", "source", "track", "wbr"}
+CHROME = re.compile(
+    r'(id|class)="[^"]*('
+    r"nav|menu|sidebar|side_|side-|breadcrumb|pankuzu|topicpath|topic-path|topic_path"
+    r"|related|relation|banner|social|share|footer|header|search|pagetop|page-top|page_top|totop"
+    r"|inquiry|otoiawase|toiawase|utility|language|fontsize|font-size|moji|onsei|accessibility"
+    r')[^"]*"',
+    re.I,
+)
+# 本文らしい id/class を持つ要素は、共通パーツの語を含んでいても切らない
+CONTENT = re.compile(r'(id|class)="[^"]*(content|honbun|main|detail|article|kiji|shousai)[^"]*"', re.I)
+CHROME_MAX = 1200         # これより本文が長い要素は共通パーツ扱いしない（本文を丸ごと切らないため）
+CHROME_RATIO = 0.3        # ページ全体の文字数に対する上限も同時にかける
 TAGS = re.compile(r"<[^>]+>")
 BLOCK = re.compile(r"</(p|li|h[1-6]|div|tr|td|th|section|article|dd|dt)>|<br\s*/?>", re.I)
-NOISE = re.compile(r"(現在時刻|アクセス数|カウンター|\d{4}年\d{1,2}月\d{1,2}日\s*\d{1,2}:\d{2}:\d{2}|ファクス|FAX|ＦＡＸ|かけ間違い|お問い合わせフォーム|お問い合わせ先|ページの先頭|ページトップ|文字サイズ|印刷する|Copyright|All Rights Reserved|メニューを閉じる|閲覧支援|音声読み上げ|ふりがな)", re.I)
+NOISE = re.compile(r"(現在時刻|アクセス数|カウンター|\d{4}年\d{1,2}月\d{1,2}日\s*\d{1,2}:\d{2}:\d{2}|ファクス|FAX|ＦＡＸ|かけ間違い|お問い合わせフォーム|お問い合わせ先|ページの先頭|ページトップ|文字サイズ|印刷する|Copyright|All Rights Reserved|メニューを閉じる|閲覧支援|音声読み上げ|ふりがな|スキップ|本文へ移動|メニューを飛ばして)", re.I)
 
 
 def now() -> datetime:
@@ -101,12 +118,56 @@ def append_month_log(new_events: list[dict]) -> None:
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
+def close_at(html: str, start: int, name: str) -> int | None:
+    """start 以降で name の対応する閉じタグを探し、その終端位置を返す。"""
+    depth = 1
+    for m in TAG.finditer(html, start):
+        if m.group(2).lower() != name:
+            continue
+        if m.group(3).rstrip().endswith("/"):
+            continue
+        if m.group(1):
+            depth -= 1
+            if depth == 0:
+                return m.end()
+        else:
+            depth += 1
+    return None
+
+
+def cut_chrome(html: str) -> str:
+    """id/class が共通パーツらしい要素を、対応する閉じタグまで丸ごと取り除く。
+
+    本文を包む div が class に navi などを含むことがあるので、中の文字数が多い要素は
+    共通パーツとみなさず、その内側だけを見に行く。
+    """
+    limit = max(CHROME_MAX, int(len(TAGS.sub(" ", html)) * CHROME_RATIO))
+    kept: list[str] = []
+    cursor = pos = 0
+    while True:
+        m = next((m for m in TAG.finditer(html, pos)
+                  if not m.group(1) and m.group(2).lower() not in VOID
+                  and not m.group(3).rstrip().endswith("/")
+                  and CHROME.search(m.group(3)) and not CONTENT.search(m.group(3))), None)
+        if m is None:
+            break
+        end = close_at(html, m.end(), m.group(2).lower())
+        if end is None or len(TAGS.sub(" ", html[m.end():end])) > limit:
+            pos = m.end()
+            continue
+        kept.append(html[cursor:m.start()])
+        cursor = pos = end
+    kept.append(html[cursor:])
+    return " ".join(kept)
+
+
 def to_lines(page: str) -> list[str]:
     body = page
     m = re.search(r"<main\b[^>]*>(.*?)</main>", page, re.S | re.I)
     if m:
         body = m.group(1)
     body = STRIP.sub(" ", body)
+    body = cut_chrome(body)
     body = BLOCK.sub("\n", body)
     text = TAGS.sub(" ", body)
     text = htmlmod.unescape(text)
@@ -140,6 +201,7 @@ def main() -> int:
     errors: list = []
     ts = now().isoformat(timespec="seconds")
     changed = 0
+    rebaselined = 0
     seen = 0
     new_events: list[dict] = []
     only = sys.argv[1:]  # slug で絞る（手動確認用）
@@ -172,6 +234,7 @@ def main() -> int:
             "kind": r.get("kind", ""),
             "title": (r.get("title") or "").strip(),
             "hash": h,
+            "extract": EXTRACT,
             "last_checked": ts,
         })
         if not prev or not prev.get("hash"):
@@ -179,6 +242,10 @@ def main() -> int:
             entry["last_changed"] = ""
             entry["added"] = []
             entry["lines"] = lines[:400]
+        elif prev.get("extract") != EXTRACT:
+            # 抽出方法を変えた直後は前回と比べる土台が違う。基準を取り直すだけで「更新」にはしない
+            entry["lines"] = lines[:400]
+            rebaselined += 1
         elif prev.get("hash") != h:
             old = set(prev.get("lines") or [])
             newset = set(lines)
@@ -206,7 +273,7 @@ def main() -> int:
     prev_errors = {(e.get("url"), e.get("error")) for e in state.get("errors", [])}
     now_errors = {(e.get("url"), e.get("error")) for e in errors}
     new_urls = [u for u, e in by_url.items() if e.get("first_seen") == ts]
-    significant = changed > 0 or prev_errors != now_errors or bool(new_urls) or bool(removed) or not OUT.exists() or not STATE.exists()
+    significant = changed > 0 or rebaselined > 0 or prev_errors != now_errors or bool(new_urls) or bool(removed) or not OUT.exists() or not STATE.exists()
     if not significant:
         print(f"watched={seen} changed=0 errors={len(errors)} no-change at {ts}")
         return 0
@@ -233,12 +300,12 @@ def main() -> int:
     public = {
         "checked_at": ts,
         "note": "市町村公式ページの本文が前回取得時から変わったかを自動で見ています。何が変わったかは公式ページで確認してください。added は機械抽出の見出し候補で、正確でないことがあります。",
-        "by_url": {u: {k: v for k, v in e.items() if k != "lines"} for u, e in by_url.items()},
+        "by_url": {u: {k: v for k, v in e.items() if k not in ("lines", "extract")} for u, e in by_url.items()},
         "events": events,
         "errors": errors,
     }
     OUT.write_text(json.dumps(public, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    print(f"watched={seen} changed={changed} errors={len(errors)} events={len(events)} at {ts}")
+    print(f"watched={seen} changed={changed} rebaselined={rebaselined} errors={len(errors)} events={len(events)} at {ts}")
     for e in errors:
         print("  ERR", e["slug"], e["url"], e["error"])
     return 0
