@@ -2,15 +2,34 @@
 """Generate ten English A4 portrait infographics for the public site."""
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
+# 引数にファイル名を渡すと、その分だけ描き直す（例: info-portal-en.png）。無指定なら全部。
+ONLY = set(sys.argv[1:])
 OUT = ROOT / "site" / "img"
-FONT_R = r"C:\Windows\Fonts\segoeui.ttf"
-FONT_M = r"C:\Windows\Fonts\seguisb.ttf"
-FONT_B = r"C:\Windows\Fonts\segoeuib.ttf"
+# 描画に使う欧文フォント。上から順に、最初に見つかったものを使う。
+# Windows・macOS・Linux のどこで実行しても描けるようにするため。書体は環境で変わる。
+FONT_CANDIDATES = {
+    "r": [
+        r"C:\Windows\Fonts\segoeui.ttf",
+        "/System/Library/Fonts/Supplemental/Arial.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ],
+    "m": [
+        r"C:\Windows\Fonts\seguisb.ttf",
+        "/System/Library/Fonts/Supplemental/Arial.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ],
+    "b": [
+        r"C:\Windows\Fonts\segoeuib.ttf",
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    ],
+}
 
 # A4 portrait at 150 dpi (210 mm x 297 mm)
 W, H = 1240, 1754
@@ -31,6 +50,18 @@ BLUE_BG = (231, 241, 251)
 
 def font(path: str, size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(path, size)
+
+
+def font_path(kind: str) -> str:
+    """kind（r=標準 / m=中太 / b=太字）に対して、この環境にあるフォントを1つ返す。"""
+    for path in FONT_CANDIDATES[kind]:
+        if Path(path).exists():
+            return path
+    tried = "\n  ".join(FONT_CANDIDATES[kind])
+    raise SystemExit(
+        "描画に使えるフォントが見つかりません。いずれかを入れるか、"
+        f"FONT_CANDIDATES に足してください:\n  {tried}"
+    )
 
 
 def wrap(
@@ -105,7 +136,7 @@ class Sheet:
         self._footer()
 
     def f(self, kind: str, size: int) -> ImageFont.FreeTypeFont:
-        return font({"r": FONT_R, "m": FONT_M, "b": FONT_B}[kind], size)
+        return font(font_path(kind), size)
 
     def _header(self):
         self.d.rectangle((0, 0, W, 228), fill=ACCENT)
@@ -320,6 +351,8 @@ class Sheet:
         self.y = y + 54
 
     def save(self, name: str):
+        if ONLY and name not in ONLY:
+            return
         if self.y > H - 160:
             raise RuntimeError(f"Content overflow in {name}: y={self.y}")
         path = OUT / name
