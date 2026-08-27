@@ -6,8 +6,15 @@ chiba,support,被災者生活再建支援金（千葉県制度）,https://www.ci
 chiba,support,災害に伴う各種支援制度一覧,https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/shienseidoichiran.html,open,2026-08-16,,
 chiba,support,令和8年8月千葉豪雨にかかる義援金の受付,https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/r8chibagouugiennkin.html,open,2026-08-23,,
 chiba,support,令和8年8月千葉豪雨に伴う災害支援寄附金（ふるさと納税）,https://www.city.chiba.jp/zaiseikyoku/zaisei/shikin/r808-chibagouu.html,open,2026-08-23,,
+chiba,support,【千葉豪雨】床上浸水された方への支援,https://www.city.chiba.jp/sogoseisaku/kikikanri/bosai/chibagouu/yukauesinsui.html,open,2026-08-25,,床上浸水された方向けに支援制度をまとめた市のページ
+chiba,support,【千葉豪雨】生活の支援,https://www.city.chiba.jp/sogoseisaku/kikikanri/bosai/chibagouu/seikatsu.html,open,2026-08-25,,
+chiba,support,【千葉豪雨】給付・貸付・免除等の手続き,https://www.city.chiba.jp/sogoseisaku/kikikanri/bosai/chibagouu/kyuhu.html,open,2026-08-25,,見舞金・貸付・各種減免の一覧
+chiba,support,小規模自然災害に係る千葉市被災者生活再建支援金（市制度）,https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/hisaisha-shien_shoukibo.html,open,2026-08-25,,
+chiba,support,【千葉豪雨】事業者への支援,https://www.city.chiba.jp/sogoseisaku/kikikanri/bosai/chibagouu/zigyousyashien.html,open,2026-08-25,,事業者向け
 chiba,waste,大雨の被害により発生した災害ごみの出し方,https://www.city.chiba.jp/kankyo/junkan/haikibutsu/junbichu-saigaigomi.html,open,2026-08-16,,
 chiba,disinfect,浸水被害発生時の衛生対策（消毒）,https://www.city.chiba.jp/hokenfukushi/iryoeisei/seikatsueisei/shinsui_shoudoku.html,open,2026-08-16,,
+chiba,housing,災害救助法に基づく住宅の応急修理,https://www.city.chiba.jp/toshi/kenchiku/jutakuseisaku/r8gouusaigai_oukyuushuuri.html,open,2026-08-25,,準半壊以上が対象
+chiba,housing,令和8年8月千葉豪雨で被災された方へ市営住宅を提供します,https://www.city.chiba.jp/toshi/kenchiku/jutakuseibi/r80813rain.html,open,2026-08-25,,半壊以上が対象
 chiba,vc,千葉市災害ボランティアセンターについて,https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/saigaivolunteer.html,unknown,2026-08-16,,
 ichikawa,risai,罹災証明書等の申請（地震等・風水害）,https://www.city.ichikawa.lg.jp/page/7339.html,unknown,2026-08-16,,
 ichikawa,support,災害見舞金,https://www.city.ichikawa.lg.jp/page/6987.html,unknown,2026-08-16,,
@@ -93,9 +100,8 @@ oamishirasato,housing,令和8年8月千葉豪雨の被災者に対する県営�
 oamishirasato,vc,災害ボランティアセンターの開設について,https://www.city.oamishirasato.lg.jp/0000015516.html,open,2026-08-16,,
 kujukuri,risai,罹災証明書・被災証明書,https://www.town.kujukuri.chiba.jp/0000001345.html,unknown,2026-08-16,,
 kujukuri,risai,令和8年8月千葉豪雨に伴う罹災証明および被災証明の申請受付開始,https://www.town.kujukuri.chiba.jp/0000008246.html,open,2026-08-16,,
-kujukuri,support,ご自宅が床上浸水の被害にあわれた方へ,https://www.town.kujukuri.chiba.jp/0000009054.html,open,2026-08-16,,
+kujukuri,disinfect,ご自宅が床上浸水の被害にあわれた方へ,https://www.town.kujukuri.chiba.jp/0000009054.html,open,2026-08-25,,
 kujukuri,support,令和8年8月千葉豪雨に伴う中小企業者等相談窓口の設置について,https://www.town.kujukuri.chiba.jp/0000009058.html,open,2026-08-20,,
-kujukuri,waste,令和8年8月千葉豪雨における災害廃棄物の仮置場の設置について,https://www.town.kujukuri.chiba.jp/0000009055.html,open,2026-08-20,,
 shirako,risai,り災証明書の発行,https://www.town.shirako.lg.jp/0000001936.html,unknown,2026-08-16,,
 nagara,hub,令和8年8月千葉豪雨に関するお知らせ,https://www.town.nagara.chiba.jp/soshiki/1/18259.html,open,2026-08-20,,
 nagara,vc,「令和8年8月千葉豪雨」に伴う、災害ボランティアセンターについて,https://www.town.nagara.chiba.jp/soshiki/21/18256.html,open,2026-08-20,,
