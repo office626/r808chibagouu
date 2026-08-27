@@ -33,6 +33,7 @@ KIND_LABEL = {
     "hub": "大雨情報まとめ",
     "risai": "罹災証明",
     "support": "支援策",
+    "business": "事業者向け",
     "waste": "災害ごみ",
     "disinfect": "消毒",
     "water": "断水・水道",
@@ -44,6 +45,7 @@ KIND_LABEL_EN = {
     "hub": "Heavy-rain information hub",
     "risai": "Damage certificate",
     "support": "Support",
+    "business": "For businesses",
     "waste": "Disaster waste",
     "disinfect": "Disinfection",
     "water": "Water supply",
@@ -51,7 +53,7 @@ KIND_LABEL_EN = {
     "vc": "Volunteer center",
     "home": "Official site",
 }
-KIND_ORDER = ["hub", "risai", "support", "waste", "disinfect", "water", "housing", "vc", "home"]
+KIND_ORDER = ["hub", "risai", "support", "business", "waste", "disinfect", "water", "housing", "vc", "home"]
 STATUS_LABEL = {"open": "受付中・掲載中", "preparing": "準備中", "closed": "終了", "checking": "確認中", "unknown": "要確認"}
 STATUS_LABEL_EN = {"open": "Open / posted", "preparing": "Preparing", "closed": "Closed", "checking": "Being verified", "unknown": "Unverified"}
 
