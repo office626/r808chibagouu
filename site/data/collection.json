@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-27T09:26:28+09:00",
+  "fetched_at": "2026-08-28T14:05:50+09:00",
   "method": "日次ジョブ。許可リストの見出しとURLのみ。失敗したソースは前回を維持。",
   "links": {
     "portal": "https://www.bousai.pref.chiba.lg.jp/",
@@ -63,8 +63,8 @@
         "label": "解除"
       },
       "shelter": {
-        "status": "[訂正]",
-        "at": "08/23 14:06"
+        "status": "開設",
+        "at": "08/28 11:38"
       }
     },
     "mobara": {
@@ -2784,6 +2784,28 @@
       "occurred_at": "2026-08-13T07:06:47+09:00",
       "kind": "damage",
       "title": "令和８年８月千葉豪雨による被害及び消防機関等の対応状況（第17報・R8.8.25更新）",
+      "summary": "消防庁の災害情報一覧の見出し。詳細は公式PDF・ページで確認すること。速報であり数値は変わりうる。",
+      "source_url": "https://www.fdma.go.jp/disaster/info/#070115",
+      "source_type": "admin",
+      "medium": "総務省消防庁"
+    },
+    {
+      "id": "shelter-matsudo-08/28-1138",
+      "slug": "matsudo",
+      "occurred_at": "2026-08-28T11:38:00+09:00",
+      "kind": "shelter",
+      "title": "県ポータル：松戸市の避難所は開設（08/28 11:38発表）",
+      "summary": "県防災ポータルの避難所開設状況の見出し。施設名・対象は県ポータルと市町村公式で確認すること。",
+      "source_url": "https://www.bousai.pref.chiba.lg.jp/",
+      "source_type": "admin",
+      "medium": "千葉県防災ポータル"
+    },
+    {
+      "id": "fdma-ttps-www-fdma-go-jp-disaster-info-070115",
+      "slug": "prefecture",
+      "occurred_at": "2026-08-13T07:06:47+09:00",
+      "kind": "damage",
+      "title": "令和８年８月千葉豪雨による被害及び消防機関等の対応状況（第18報・R8.8.27更新）",
       "summary": "消防庁の災害情報一覧の見出し。詳細は公式PDF・ページで確認すること。速報であり数値は変わりうる。",
       "source_url": "https://www.fdma.go.jp/disaster/info/#070115",
       "source_type": "admin",
