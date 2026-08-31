@@ -33,13 +33,13 @@ matsudo,waste,令和8年8月千葉豪雨の被害により発生した災害ご�
 matsudo,disinfect,浸水被害に遭われた家屋等の消毒について,https://www.city.matsudo.chiba.jp/kurashi/kankyou/202608syoudoku.html,open,2026-08-16,,
 matsudo,housing,市内被災者に対する市営住宅の提供について,https://www.city.matsudo.chiba.jp/kurashi/sumai/tatemono_jyosei/kouei/kumamoto.html,open,2026-08-16,,
 matsudo,housing,災害救助法に基づく住宅の応急修理（申込受付準備中）,https://www.city.matsudo.chiba.jp/kurashi/sumai/tatemono_jyosei/oukyushuri.html,preparing,2026-08-23,,
-matsudo,vc,松戸市災害ボランティアセンター（松戸市社会福祉協議会）,https://www.matsudo-shakyo.or.jp/,open,2026-08-23,,
+matsudo,vc,松戸市災害ボランティアセンター（松戸市社会福祉協議会）,https://www.matsudo-shakyo.or.jp/,open,2026-08-27,,8/20 に社協が「8月13日の大雨被害に伴うボランティア募集は終了」と掲載。依頼の受付は社協へ確認
 mobara,risai,罹災証明書・被災証明書,https://www.city.mobara.chiba.jp/0000000787.html,unknown,2026-08-16,,
 mobara,risai,「罹災証明」「被災証明」の発行について（令和8年8月大雨）,https://www.city.mobara.chiba.jp/0000008102.html,open,2026-08-16,,
 mobara,support,令和8年8月千葉豪雨に伴う各種証明書交付手数料の減免について,https://www.city.mobara.chiba.jp/0000009632.html,open,2026-08-20,,
 mobara,support,令和8年8月千葉豪雨に伴う税証明書交付手数料の減免について,https://www.city.mobara.chiba.jp/0000009630.html,open,2026-08-23,,
 mobara,business,被災中小企業・小規模事業者支援措置について,https://www.city.mobara.chiba.jp/0000009626.html,open,2026-08-27,,
-mobara,waste,災害廃棄物の出し方について,https://www.city.mobara.chiba.jp/0000008100.html,open,2026-08-16,,
+mobara,waste,災害廃棄物の出し方について,https://www.city.mobara.chiba.jp/0000008100.html,open,2026-09-01,,仮置場（茂原公園第2駐車場）は8/31で受け入れ終了。自宅前収集は環境保全課へ連絡
 mobara,disinfect,屋内用消毒薬の配布について,https://www.city.mobara.chiba.jp/emergencyinfo/0000000303.html,open,2026-08-16,,
 sakura,hub,8月13日大雨警報について（市の総合ページ）,https://www.city.sakura.lg.jp/kinkyu/22247.html,open,2026-08-16,,
 sakura,risai,罹災証明書・被災証明書の発行,https://www.city.sakura.lg.jp/soshiki/kikikanrika/112/risai/4872.html,unknown,2026-08-16,,
@@ -67,7 +67,7 @@ yachiyo,support,被災したら・被災者支援,https://www.city.yachiyo.lg.jp
 yachiyo,disinfect,浸水した住居等の消毒について,https://www.city.yachiyo.lg.jp/soshiki/22/84262.html,open,2026-08-16,,
 yachiyo,water,水道・断水情報（八千代市上下水道局）,https://www.city.yachiyo.lg.jp/site/jougesui/,unknown,2026-08-16,,
 abiko,hub,大雨による浸水被害にあわれた方へ,https://www.city.abiko.chiba.jp/anshin/bousai/hisaichifukko/oame_shinsuihigai.html,open,2026-08-20,,
-abiko,risai,り災証明書・被災証明書・り災届出証明書,https://www.city.abiko.chiba.jp/anshin/bousai/hisaichifukko/risaishomeisho.html,unknown,2026-08-16,,
+abiko,risai,り災証明書・被災証明書・り災届出証明書,https://www.city.abiko.chiba.jp/anshin/bousai/hisaichifukko/risaishomeisho.html,open,2026-08-27,,
 abiko,support,令和8年8月千葉豪雨被害による学用品の支給について,https://www.city.abiko.chiba.jp/kosodate/gakko_houkago/shogaku_chugaku/oshirase/saigaigakuyouhin.html,open,2026-08-20,,
 abiko,waste,災害ごみの受け入れについて（臨時対応）,https://www.city.abiko.chiba.jp/kurashi/gomi_shigen/wakekata/saigai-gomi_ukeire.html,open,2026-08-16,,
 kamagaya,risai,罹災証明書等の交付,https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/hisaishoumeisho.html,unknown,2026-08-16,,
@@ -87,10 +87,9 @@ sammu,risai,罹災証明書の発行,https://www.city.sammu.lg.jp/bousai-syobo/b
 sammu,risai,罹災証明書の発行について（令和8年8月13日大雨特別警報）,https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008729.html,open,2026-08-23,,移設先へ張り替え
 sammu,risai,被災証明書の発行について（令和8年8月13日大雨特別警報）,https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008734.html,open,2026-08-23,,移設先へ張り替え
 sammu,support,し尿処理手数料の減免について（令和8年8月13日大雨特別警報）,https://www.city.sammu.lg.jp/kurashi/kurashi-info/page005220.html,open,2026-08-23,,
-sammu,waste,災害ごみの処理について（令和8年8月13日大雨特別警報に伴う災害情報）,https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008741.html,open,2026-08-23,,移設先へ張り替え
+sammu,waste,災害ごみの処理について（令和8年8月13日大雨特別警報に伴う災害情報）,https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008741.html,closed,2026-08-27,2026-08-21,申込期間は8/17〜8/21とページに記載。延長の有無は市に確認
 sammu,disinfect,床上浸水に係る消毒液の配付について,https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008730.html,open,2026-08-23,,移設先へ張り替え
-sammu,vc,山武市社協ボランティア・市民活動センターによるボランティアの依頼について,https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008732.html,open,2026-08-23,,移設先へ張り替え
-oamishirasato,risai,罹災証明書・被災証明書について（令和8年8月大雨）,https://www.city.oamishirasato.lg.jp/0000015510.html,open,2026-08-16,,
+oamishirasato,risai,罹災証明書・被災証明書について（令和8年8月大雨）,https://www.city.oamishirasato.lg.jp/0000015510.html,open,2026-09-01,,8/30（日）の臨時窓口は終了。通常の受付は継続
 oamishirasato,support,被災された方への支援内容一覧,https://www.city.oamishirasato.lg.jp/0000015509.html,open,2026-08-16,,
 oamishirasato,support,災害支援センターによる「被災家屋の対応説明会」（8月16日）,https://www.city.oamishirasato.lg.jp/0000015523.html,closed,2026-08-16,,
 oamishirasato,support,大雨で被災された方へ「災害サポート・レンタカー」を無償で貸し出します,https://www.city.oamishirasato.lg.jp/0000015545.html,open,2026-08-20,,
@@ -104,7 +103,7 @@ kujukuri,disinfect,ご自宅が床上浸水の被害にあわれた方へ,https:
 kujukuri,business,令和8年8月千葉豪雨に伴う中小企業者等相談窓口の設置について,https://www.town.kujukuri.chiba.jp/0000009058.html,open,2026-08-27,,
 shirako,risai,り災証明書の発行,https://www.town.shirako.lg.jp/0000001936.html,unknown,2026-08-16,,
 nagara,hub,令和8年8月千葉豪雨に関するお知らせ,https://www.town.nagara.chiba.jp/soshiki/1/18259.html,open,2026-08-20,,
-nagara,vc,「令和8年8月千葉豪雨」に伴う、災害ボランティアセンターについて,https://www.town.nagara.chiba.jp/soshiki/21/18256.html,open,2026-08-20,,
+nagara,vc,災害ボランティアセンターについて（長柄町社会福祉協議会）,https://www.nagara-shakyo.jp/,unknown,2026-08-27,,町のページは削除。町は災害VCの情報を社協サイトで案内していた
 nagareyama,hub,令和8年8月千葉豪雨に対する支援・手続きについて,https://www.city.nagareyama.chiba.jp/life/1003604/1055358.html,open,2026-08-16,,
 nagareyama,risai,罹災証明書・被災証明書の発行,https://www.city.nagareyama.chiba.jp/life/1003604/1027795/1023527.html,unknown,2026-08-16,,
 choshi,risai,罹災証明書,https://www.city.choshi.chiba.jp/kurashi/page040031.html,unknown,2026-08-16,,
@@ -125,14 +124,14 @@ sodegaura,hub,令和8年8月13日発生大雨に伴う情報一覧,https://www.c
 sodegaura,risai,罹災証明書及び被災届出証明書の発行,https://www.city.sodegaura.lg.jp/soshiki/chiiki/risaisyoumeisyo.html,unknown,2026-08-16,,
 tomisato,risai,罹災証明書（罹災届出証明書）の申請方法,https://www.city.tomisato.lg.jp/0000013819.html,unknown,2026-08-16,,
 minamiboso,risai,罹災証明書等の交付,https://www.city.minamiboso.chiba.jp/bousai/0000019689.html,unknown,2026-08-16,,
-sosa,risai,罹災証明書、被害届出証明の交付,https://www.city.sosa.lg.jp/page/page000398.html,unknown,2026-08-16,,
+sosa,risai,罹災証明書、被害届出証明の交付,https://www.city.sosa.lg.jp/page/page000398.html,unknown,2026-08-27,,今回の大雨専用ページではない。ページ内の申請期限は令和元年台風のもの
 katori,risai,り災証明書,https://www.city.katori.lg.jp/download/other/somu001.html,unknown,2026-08-16,,
 katori,support,災害に見舞われたとき,https://www.city.katori.lg.jp/kenko_fukushi/saigai/index.html,unknown,2026-08-16,,
 isumi,support,オンライン手続き（被災証明関係）,https://www.city.isumi.lg.jp/gyosei/kurashi_tetsuzuki/6574.html,unknown,2026-08-16,,
 shisui,risai,罹災証明書及び被災証明書,https://www.town.shisui.chiba.jp/docs/2021040900042/,unknown,2026-08-16,,
 sakae,risai,り災証明交付申請書（自然災害）,https://www.town.sakae.chiba.jp/kurashi/emergency/disaster-about/page004412.html,unknown,2026-08-16,,
 kozaki,risai,オンライン申請（罹災証明書の発行申請）,https://www.town.kozaki.chiba.jp/kurashi/todokede/one-stop-service.html,unknown,2026-08-16,,
-kozaki,support,災害情報・被災者支援,https://www.town.kozaki.chiba.jp/kurashi/living_bosai/bosai/saigai.html,unknown,2026-08-16,,
+kozaki,home,生活・環境・防災（町公式）,https://www.town.kozaki.chiba.jp/kurashi/living_bosai/index.html,unknown,2026-08-27,,今回の大雨専用のページは町が出していない（8/27時点）。従来の災害ページは令和元年台風の内容
 tako,risai,罹災証明書等の申請,https://www.town.tako.chiba.jp/docs/2020081300026/,unknown,2026-08-16,,
 tako,support,被災者相談等窓口について,https://www.town.tako.chiba.jp/docs/2026081200038/,open,2026-08-16,,
 tonosho,risai,罹災証明書の発行,https://www.town.tohnosho.chiba.jp/soshiki/chominka/koteishisanzei_kakari/shinseisho_shoshikidownlord/20/6730.html,unknown,2026-08-16,,
@@ -149,11 +148,11 @@ pref-chiba,hub,令和8年8月千葉豪雨に対する取組について（県の
 pref-chiba,hub,令和8年8月千葉豪雨に伴う対応（本部会議・報道発表）,https://www.pref.chiba.lg.jp/bousai/bousai/r8-0813ooame.html,open,2026-08-24,,
 pref-chiba,hub,千葉県防災ポータル,https://www.bousai.pref.chiba.lg.jp/,open,2026-08-24,,
 pref-chiba,risai,罹災証明書について（写真の撮り方など）,https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/risaisyomei.html,open,2026-08-24,,
-pref-chiba,support,令和8年8月千葉豪雨災害義援金の募集について,https://www.pref.chiba.lg.jp/bousaik/press/2026/r8-chibagouu-gienkin.html,open,2026-08-24,,
+pref-chiba,support,令和8年8月千葉豪雨災害義援金の募集について,https://www.pref.chiba.lg.jp/bousaik/press/2026/r8-chibagouu-gienkin.html,open,2026-08-27,2026-11-30,義援金の募集期間は令和8年11月30日まで
 pref-chiba,support,災害救助法の適用（第3報）,https://www.pref.chiba.lg.jp/bousaik/press/2026/saigaikyujoho-r813v3.html,open,2026-08-24,,続報が出たら差し替え
 pref-chiba,support,千葉県被災者生活再建支援事業,https://www.pref.chiba.lg.jp/bousaik/jibun/koudou/hisaisyashien-chiba.html,open,2026-08-24,,
 pref-chiba,business,中小企業者への資金繰り支援について,https://www.pref.chiba.lg.jp/keishi/press/2026/r8chibagouu.html,open,2026-08-27,2027-03-31,県制度融資のセーフティネット資金。取扱期間は令和8年8月19日から令和9年3月31日。被災証明書等が必要
-pref-chiba,support,社会福祉施設等の災害復旧費に対する補助,https://www.pref.chiba.lg.jp/koufuku/shisetsumuke/saigaihojyo.html,open,2026-08-24,2026-08-28,応募締切あり
+pref-chiba,support,社会福祉施設等の災害復旧費に対する補助,https://www.pref.chiba.lg.jp/koufuku/shisetsumuke/saigaihojyo.html,open,2026-09-01,2026-09-04,提出期限は8/28から9/4へ延長。国への協議が発災から30日以内のため
 pref-chiba,vc,千葉県 災害ボランティア情報,https://www.pref.chiba.lg.jp/kkbunka/npo/volunteer/index.html,open,2026-08-24,,
 pref-chiba,vc,千葉災害ボランティア情報（県社協・特設）,https://saigai-chiba.com/,open,2026-08-24,,
 japan,hub,令和8年8月千葉豪雨による被害状況等（国土交通省）,https://www.mlit.go.jp/saigai/saigai_260813.html,open,2026-08-24,,
