@@ -43,7 +43,7 @@ def main() -> int:
         "generated_at": datetime.now(JST).isoformat(timespec="seconds"),
         "note": (
             "令和8年8月千葉豪雨で、千葉県内の市町村・県・国の公式ページの本文が変わったことを"
-            "約3時間おきに自動で見た記録の要約。検知した時刻であり、実際の更新はそれより前のことがある。"
+            "数時間おきに自動で見た記録の要約。検知した時刻であり、実際の更新はそれより前のことがある。"
         ),
         "period": {"first": events[0].get("at", ""), "last": events[-1].get("at", "")},
         "events_total": len(events),

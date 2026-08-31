@@ -9,7 +9,7 @@
     sourceSuffix: " (Japanese source title)",
     official: "Official site",
     updated: function (md) { return "Update detected " + md; },
-    updatedTitle: "The page text changed by this time (checks run about every 3 hours; the actual edit was up to 3 hours earlier). Check the official page for what changed.",
+    updatedTitle: "The page text changed by this time (checks run every few hours; the actual edit happened before that). Check the official page for what changed.",
     broken: "Could not open (auto check)",
     brokenTitle: "The page could not be fetched at the last automatic check. It may have moved.",
     archived: "archived copy"
@@ -19,7 +19,7 @@
     sourceSuffix: "",
     official: "公式",
     updated: function (md) { return "更新検知 " + md; },
-    updatedTitle: "この時刻までに本文が変わったことを検知しました（確認は約3時間おき。実際の更新は最大3時間前）。何が変わったかは公式ページで確認してください。",
+    updatedTitle: "この時刻までに本文が変わったことを検知しました（確認は数時間おき。実際の更新はそれより前）。何が変わったかは公式ページで確認してください。",
     broken: "開けない（自動確認）",
     brokenTitle: "直近の自動確認でページを取得できませんでした。移動した可能性があります。",
     archived: "当時の内容（アーカイブ）"
