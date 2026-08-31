@@ -6,9 +6,11 @@ import json
 from pathlib import Path
 from urllib.parse import quote
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
-BASE = "https://office626.github.io/r808chibagouu/"
+BASE = site_config.base_url()
 
 STATIC = [
     ("", "daily", "1.0"),

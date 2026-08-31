@@ -22,11 +22,13 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
 CSV = ROOT / "data" / "supports.csv"
 INDEX = ROOT / "site" / "data" / "archive-index.json"
 JST = timezone(timedelta(hours=9))
-UA = "CTZC-r808chibagouu-archive/1.0 (+https://github.com/office626/r808chibagouu)"
+UA = site_config.user_agent("archive")
 CTX = ssl.create_default_context()
 
 

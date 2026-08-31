@@ -13,8 +13,10 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import urljoin
 
+import site_config
+
 JST = timezone(timedelta(hours=9))
-UA = "CTZC-r808chibagouu-collector/1.0 (+https://github.com/office626/r808chibagouu)"
+UA = site_config.user_agent("collector")
 CTX = ssl.create_default_context()
 
 PORTAL = "https://www.bousai.pref.chiba.lg.jp/"
