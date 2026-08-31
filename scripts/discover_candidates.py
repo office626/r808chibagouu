@@ -17,12 +17,14 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urljoin
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
 CSV = ROOT / "data" / "supports.csv"
 MUNIS = ROOT / "site" / "data" / "municipalities.json"
 OUT = ROOT / "site" / "data" / "candidates.json"
 JST = timezone(timedelta(hours=9))
-UA = "CTZC-r808chibagouu-discover/1.0 (+https://github.com/office626/r808chibagouu)"
+UA = site_config.user_agent("discover")
 CTX = ssl.create_default_context()
 
 KW = re.compile(r"(豪雨|大雨.{0,12}(被害|被災|災害|情報)|罹災|り災|災害ごみ|災害廃棄物|仮置|消毒|義援|応急修理|みなし仮設|応急住宅|市営住宅.{0,10}提供|県営住宅.{0,10}提供|災害ボランティア|被災者支援|被災された|見舞金|災害弔慰金|援護資金|生活再建支援金|減免.{0,10}(災害|大雨|豪雨)|(災害|大雨|豪雨).{0,10}減免)")

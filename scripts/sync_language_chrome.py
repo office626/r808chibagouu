@@ -5,9 +5,11 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
-BASE = "https://office626.github.io/r808chibagouu/"
+BASE = site_config.base_url()
 
 
 def page_files() -> list[Path]:

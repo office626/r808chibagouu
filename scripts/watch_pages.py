@@ -26,13 +26,15 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
 CSV = ROOT / "data" / "supports.csv"
 OUT = ROOT / "site" / "data" / "watch.json"
 STATE = ROOT / "data" / "watch-state.json"
 MUNIS = ROOT / "site" / "data" / "municipalities.json"
 JST = timezone(timedelta(hours=9))
-UA = "CTZC-r808chibagouu-watch/1.0 (+https://github.com/office626/r808chibagouu)"
+UA = site_config.user_agent("watch")
 CTX = ssl.create_default_context()
 MAX_EVENTS = 600
 MAX_ADDED = 5
@@ -190,7 +192,7 @@ def digest(lines: list[str]) -> str:
 
 def main() -> int:
     munis = {m["slug"]: m["name"] for m in json.loads(MUNIS.read_text(encoding="utf-8"))}
-    munis.update({"pref-chiba": "千葉県", "japan": "国"})
+    munis.update(site_config.region_names())
     rows = list(csv.DictReader(CSV.open(encoding="utf-8", newline="")))
     state = {"checked_at": "", "by_url": {}, "events": [], "errors": []}
     if STATE.exists():

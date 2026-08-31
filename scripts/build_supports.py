@@ -20,6 +20,8 @@ import csv
 import json
 from pathlib import Path
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
 CSV = ROOT / "data" / "supports.csv"
 OUT = ROOT / "site" / "data" / "supports.json"
@@ -58,10 +60,7 @@ STATUS_LABEL = {"open": "受付中・掲載中", "preparing": "準備中", "clos
 STATUS_LABEL_EN = {"open": "Open / posted", "preparing": "Preparing", "closed": "Closed", "checking": "Being verified", "unknown": "Unverified"}
 
 
-EXTRA_GROUPS = [
-    {"slug": "pref-chiba", "name": "千葉県", "name_en": "Chiba Prefecture"},
-    {"slug": "japan", "name": "国", "name_en": "National government"},
-]
+EXTRA_GROUPS = site_config.regions()
 
 
 def main() -> int:

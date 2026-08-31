@@ -17,11 +17,14 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
 WATCH = ROOT / "site" / "data" / "watch.json"
 CAND = ROOT / "site" / "data" / "candidates.json"
 JST = timezone(timedelta(hours=9))
-SITE = "https://office626.github.io/r808chibagouu/"
+SITE = site_config.base_url()
+REPO = site_config.repo()
 KIND_JA = {
     "hub": "大雨情報まとめ", "risai": "罹災証明", "support": "支援策", "waste": "災害ごみ",
     "disinfect": "消毒", "water": "断水・水道", "housing": "住まい", "vc": "ボランティア", "home": "公式",
@@ -119,7 +122,7 @@ def main() -> int:
             lines.append(f"・ほか{len(cands) - 10}件")
 
     lines.append(f"\n検知は数時間おきで、実際の更新は検知より前のことがあります。何が変わったかは公式ページで確認してください。サイト: <{SITE}resident/index.html|最近の更新一覧>")
-    lines.append(f"CSV を直す: <https://github.com/office626/r808chibagouu/edit/main/data/supports.csv|data/supports.csv を編集>（列: slug,kind,title,url,status,checked,deadline,note）。反映は毎朝6:00、急ぎは Actions の Daily collect を手動実行。")
+    lines.append(f"CSV を直す: <https://github.com/{REPO}/edit/main/data/supports.csv|data/supports.csv を編集>（列: slug,kind,title,url,status,checked,deadline,note）。反映は毎朝6:00、急ぎは Actions の Daily collect を手動実行。")
     text = "\n".join(lines)
 
     if args.dry_run:
