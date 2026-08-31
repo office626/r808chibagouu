@@ -1,6 +1,8 @@
-name: Weekly Wayback archive
+name: Wayback archive
 
-# data/supports.csv の全公式ページを週1回 Wayback Machine に保存する（変更検知時の保存の補完）。
+# data/supports.csv の全公式ページを Wayback Machine に保存する（変更検知時の保存の補完）。
+# Wayback 側の保存に1件あたり45秒前後かかるため、160件で2時間半ほどかかる。
+# --max-minutes で自前に止めて、途中経過のコミットに必ず到達させる。
 # 直近6日以内に保存済みの URL はスキップ。日曜 3:10 JST（土曜 18:10 UTC）。
 
 on:
@@ -18,16 +20,18 @@ concurrency:
 jobs:
   archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 200
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Save pages to Wayback Machine
-        run: python scripts/archive_pages.py --wait 20
+        run: python scripts/archive_pages.py --wait 5 --max-minutes 170
         continue-on-error: true
       - name: Commit archive index if changed
+        # 途中で止まっても、そこまでの保存結果は必ず残す
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -35,7 +39,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "no changes"
           else
-            git commit -m "週次の Wayback 保存の結果を archive-index に記録する。"
+            git commit -m "Wayback 保存の結果を archive-index に記録する。"
             git pull --rebase origin main
             git push
           fi
