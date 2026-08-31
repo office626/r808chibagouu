@@ -60,8 +60,9 @@
         <li><strong>You did not know a program existed.</strong> In addition to a disaster damage certificate, help may be available for utility bills, taxes, insurance premiums, loans, employment, and school.</li>
       </ol>
       <p>To search by your own situation, such as above-floor flooding, renting, a flooded car, business damage, children, or older family members, see <a href="situations.html">Find Help for Your Situation</a>.</p>
+      <p class="meta" id="phase-now"></p>
       <p class="page-toc">
-        <a href="#week1">First week: now</a>
+        <a href="#week1">First week</a>
         <a href="#week2">From week two</a>
         <a href="#month1">From one month</a>
         <a href="#month3">From three months</a>
@@ -70,8 +71,8 @@
       </p>
     </div>
 
-    <div class="card" id="week1">
-      <h2>First week, including now: keep records, protect your health, and do not repair first</h2>
+    <div class="card" id="week1" data-phase-from="0" data-phase-to="6">
+      <h2>First week: keep records, protect your health, and do not repair first</h2>
       <p>This is the week when cleanup and returning to work overlap. It is natural to want to restore things quickly, but first make sure you preserve <strong>evidence and receipts</strong>.</p>
       <ul class="timeline">
         <li data-tags="house-over house-under house-roof rent car shop">
@@ -122,7 +123,7 @@
       </ul>
     </div>
 
-    <div class="card" id="week2">
+    <div class="card" id="week2" data-phase-from="7" data-phase-to="29">
       <h2>From week two: inspections and classifications, repairs or temporary housing, and financial services</h2>
       <p>Municipal damage inspections begin, followed by disaster damage classifications such as total or partial destruction. The classification determines which programs are available.</p>
       <ul class="timeline">
@@ -167,7 +168,7 @@
       </ul>
     </div>
 
-    <div class="card" id="month1">
+    <div class="card" id="month1" data-phase-from="30" data-phase-to="89">
       <h2>From one month: support payments, loans, donations, and mental health care</h2>
       <p>This is when disaster damage certificates begin to arrive and applications open for support payments and loans based on the classification. It is also when accumulated fatigue often appears.</p>
       <ul class="timeline">
@@ -196,7 +197,7 @@
       </ul>
     </div>
 
-    <div class="card" id="month3">
+    <div class="card" id="month3" data-phase-from="90" data-phase-to="">
       <h2>From three months to six months and one year: rebuilding choices, tax filing, and final deadline checks</h2>
       <ul class="timeline">
         <li data-tags="house-over house-under house-roof rent money">
@@ -254,6 +255,7 @@
     </p>
     <div data-share></div>
   </footer>
+  <script src="../../js/phase.js"></script>
   <script src="../../js/share.js"></script>
   <script src="../../js/report.js"></script>
   <script src="../../js/muni-pref.js"></script>
