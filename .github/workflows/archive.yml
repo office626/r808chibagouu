@@ -1,8 +1,9 @@
 name: Wayback archive
 
 # data/supports.csv の全公式ページを Wayback Machine に保存する（変更検知時の保存の補完）。
-# Wayback 側の保存に1件あたり45秒前後かかるため、160件で2時間半ほどかかる。
-# --max-minutes で自前に止めて、途中経過のコミットに必ず到達させる。
+# Wayback 側の保存に1件あたり35〜45秒かかり、依頼の間隔20秒と合わせて160件で2時間半ほど。
+# 間隔を詰めると弾かれる（5秒にしたら159件中124件が失敗した）ので 20秒から下げない。
+# --max-minutes と連続失敗の打ち切りで自前に止め、途中経過のコミットに必ず到達させる。
 # 直近6日以内に保存済みの URL はスキップ。日曜 3:10 JST（土曜 18:10 UTC）。
 
 on:
@@ -27,7 +28,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Save pages to Wayback Machine
-        run: python scripts/archive_pages.py --wait 5 --max-minutes 170
+        run: python scripts/archive_pages.py --wait 20 --max-minutes 170
         continue-on-error: true
       - name: Commit archive index if changed
         # 途中で止まっても、そこまでの保存結果は必ず残す
