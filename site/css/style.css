@@ -49,6 +49,20 @@ a { color: var(--accent); }
   color: #fff;
   font-weight: 700;
 }
+/* 更新を止めたあとに全ページの先頭へ出す帯 */
+.archived-bar {
+  background: #fff8e6;
+  border-bottom: 2px solid #ead9a8;
+  color: #5a4300;
+}
+.archived-bar-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.95rem;
+}
+.archived-bar strong { margin-right: 0.3rem; }
+
 header, main, footer { max-width: var(--max); margin: 0 auto; padding: 1rem 1.1rem; }
 header { padding-top: 1.25rem; }
 .brand { font-weight: 700; font-size: 0.95rem; }
@@ -427,17 +441,3 @@ code { font-size: 0.92em; padding: 0.05em 0.3em; border-radius: 4px; background:
 .muni-bar-name { font-weight: 700; }
 .door.quiet { border-color: var(--border); min-height: 0; padding: 1rem; }
 .door.quiet strong { color: var(--text); font-size: 1.05rem; }
-
-/* 更新を止めたあとに全ページの先頭へ出す帯 */
-.archived-bar {
-  background: #fff8e6;
-  border-bottom: 2px solid #ead9a8;
-  color: #5a4300;
-}
-.archived-bar-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0.7rem 1.1rem;
-  font-size: 0.95rem;
-}
-.archived-bar strong { margin-right: 0.3rem; }
