@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 """data/supports.csv の全公式ページを Wayback Machine に保存する（初回バックフィルと週次の定期保存）。
 
-- 1件ずつ直列で、間隔（--wait 秒、既定10）をあけて依頼する。失敗は記録して続行
+- 1件ずつ直列で、間隔（--wait 秒、既定20）をあけて依頼する。失敗は記録して続行
+- 間隔を詰めると Wayback 側に弾かれる。5秒にしたところ 429 のあと接続拒否が連鎖し、
+  159件中124件が失敗した（2026-09-01）。20秒は実績のある値なので下げないこと
 - Wayback 側の保存に1件あたり45秒前後かかる。全体の所要はほぼこれで決まる
 - 保存結果は site/data/archive-index.json（url → [{at, archive_url}] の追記）に残す
 - 既定では「直近 --skip-days 日以内に保存済みの URL」はスキップする（再実行・再開に安全）
 - 保存が古いものから先に処理する。1回で全部を回れなくても、次の回で取り残しが先頭に来る
 - --max-minutes を過ぎたら、そこで止めて残りを次回に回す（ジョブのタイムアウトで
   強制終了され、途中経過のコミットに到達しない事故を避けるため）
+- 連続で失敗が続くときも止める。弾かれている状態で残りを叩き続けても保存できないため
 - 手動: python scripts/archive_pages.py [--wait 10] [--skip-days 6] [--limit N]
         [--max-minutes N] [--dry-run]
 """
@@ -54,11 +57,13 @@ def save(url: str, timeout: int = 60) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--wait", type=int, default=10)
+    ap.add_argument("--wait", type=int, default=20)
     ap.add_argument("--skip-days", type=int, default=6)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--max-minutes", type=int, default=0, help="この分数を過ぎたら止める（0は無制限）")
     ap.add_argument("--timeout", type=int, default=60, help="1件あたりの待ち上限（秒）")
+    ap.add_argument("--max-consecutive-errors", type=int, default=8,
+                    help="この回数だけ続けて失敗したら止める（Wayback 側に弾かれているとみなす）")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -99,9 +104,15 @@ def main() -> int:
     started = time.monotonic()
     budget = args.max_minutes * 60
     stopped_at = 0
+    stopped_reason = ""
+    consecutive_errors = 0
     for i, u in enumerate(urls):
         if budget and time.monotonic() - started > budget:
+            stopped_at, stopped_reason = i, f"{args.max_minutes}分の上限に達した"
+            break
+        if consecutive_errors >= args.max_consecutive_errors:
             stopped_at = i
+            stopped_reason = f"{consecutive_errors}件続けて失敗した（Wayback 側に弾かれているとみなす）"
             break
         if i:
             time.sleep(args.wait)
@@ -110,12 +121,15 @@ def main() -> int:
         if a:
             entries.setdefault(u, []).append({"at": ts, "archive_url": a})
             done += 1
+            consecutive_errors = 0
             print(f"[{i + 1}/{len(urls)}] saved {u}")
+        else:
+            consecutive_errors += 1
         # 途中経過を毎回書き出す（中断しても再開できる）
         index["updated_at"] = ts
         INDEX.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     if stopped_at:
-        print(f"saved={done}/{len(urls)} (stopped at {stopped_at} after {args.max_minutes} min; "
+        print(f"saved={done}/{len(urls)} (stopped at {stopped_at}: {stopped_reason}; "
               f"{len(urls) - stopped_at} left for the next run)")
     else:
         print(f"saved={done}/{len(urls)}")
