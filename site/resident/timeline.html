@@ -60,8 +60,9 @@
         <li><strong>制度があると知らなかった。</strong> 罹災証明のほかにも、公共料金・税・保険料・ローン・雇用・学校で使えるものがあります。</li>
       </ol>
       <p>自分の状況（床上浸水、賃貸、車、事業、子ども、高齢の家族…）から引きたいときは <a href="situations.html">困りごとから探す</a> へ。</p>
+      <p class="meta" id="phase-now"></p>
       <p class="page-toc">
-        <a href="#week1">〜1週目（いま）</a>
+        <a href="#week1">〜1週目</a>
         <a href="#week2">2週目〜</a>
         <a href="#month1">1か月〜</a>
         <a href="#month3">3か月〜</a>
@@ -70,8 +71,8 @@
       </p>
     </div>
 
-    <div class="card" id="week1">
-      <h2>〜1週目（いま）：記録を残し、健康を守り、先に直さない</h2>
+    <div class="card" id="week1" data-phase-from="0" data-phase-to="6">
+      <h2>〜1週目：記録を残し、健康を守り、先に直さない</h2>
       <p>片付けと出勤が重なる週です。急いで元に戻したい気持ちは当然ですが、<strong>証拠と領収書</strong>だけは先に確保してください。</p>
       <ul class="timeline">
         <li data-tags="house-over house-under house-roof rent car shop">
@@ -122,7 +123,7 @@
       </ul>
     </div>
 
-    <div class="card" id="week2">
+    <div class="card" id="week2" data-phase-from="7" data-phase-to="29">
       <h2>2週目〜：調査と判定、修理か仮住まいか、お金の窓口が開く</h2>
       <p>市町村の被害認定調査が入り、罹災証明の判定（全壊・半壊など）が出始めます。判定で使える制度が変わります。</p>
       <ul class="timeline">
@@ -167,7 +168,7 @@
       </ul>
     </div>
 
-    <div class="card" id="month1">
+    <div class="card" id="month1" data-phase-from="30" data-phase-to="89">
       <h2>1か月〜：支援金・貸付・義援金、心のケア</h2>
       <p>罹災証明が手元に来て、判定に応じた支援金や貸付の申請が始まる時期です。疲れが出る時期でもあります。</p>
       <ul class="timeline">
@@ -196,7 +197,7 @@
       </ul>
     </div>
 
-    <div class="card" id="month3">
+    <div class="card" id="month3" data-phase-from="90" data-phase-to="">
       <h2>3か月〜半年〜1年：再建の選択、税の申告、期限の最終確認</h2>
       <ul class="timeline">
         <li data-tags="house-over house-under house-roof rent money">
@@ -254,6 +255,7 @@
     </p>
     <div data-share></div>
   </footer>
+  <script src="../js/phase.js"></script>
   <script src="../js/share.js"></script>
   <script src="../js/report.js"></script>
   <script src="../js/muni-pref.js"></script>
