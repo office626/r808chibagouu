@@ -109,6 +109,35 @@
     </div>
 
     <div class="card">
+      <h2>いま動いている県の制度</h2>
+      <p class="meta" id="biz-asof">千葉県の公式発表を有志が確認した時点の内容です。金額・利率はこのサイトには書きません。対象・条件は必ず公式とお申し込み先で確認してください。</p>
+      <ul>
+        <li>
+          <strong>県制度融資「セーフティネット資金（一般枠）」</strong><br>
+          令和8年8月千葉豪雨で被害を受けた中小企業者が、新たに融資対象になりました。
+          <strong>被災の事実を証明する書類（被災証明書等）</strong>が必要です。
+          <strong>取扱期間は令和8年8月19日から令和9年3月31日。</strong>
+          申し込みは県の指定する取扱金融機関（地方銀行・信用金庫・信用組合・都市銀行・商工中金など）へ。
+          <br><a href="https://www.pref.chiba.lg.jp/keishi/press/2026/r8chibagouu.html" target="_blank" rel="noopener">中小企業者への資金繰り支援について</a>（千葉県 経営支援課） <span class="badge admin">行政</span>
+        </li>
+        <li>
+          <strong>セーフティネット保証4号は「指定が予定」の段階です。</strong>
+          県は8月18日の発表で、災害救助法の適用を受けた地域について国による指定が予定されており、
+          指定後は一般枠より低利な<strong>市町村認定枠</strong>が使えるようになる、利用開始は改めて知らせる、としています。
+          使うには<strong>本店のある市町村での認定</strong>が要ります。県と市町村の公式を確認してください。
+          <br><a href="https://www.chusho.meti.go.jp/kinyu/sefu_net_4gou.html" target="_blank" rel="noopener">セーフティネット保証制度（4号）</a>（中小企業庁） <span class="badge admin">行政</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card" id="biz-muni-card" hidden>
+      <h2>市町村の事業者向け窓口</h2>
+      <p class="meta">各市町村が出している事業者向けの相談窓口・支援措置の案内です。受付状態と確認日は有志が見た時点のもの。必ず公式で確認してください。</p>
+      <ul class="muni-support-list" id="biz-muni-list"></ul>
+      <p class="meta"><a href="municipalities.html">市町村から探す</a>（事業者向け以外の案内もこちら）</p>
+    </div>
+
+    <div class="card">
       <h2>これから受けられる可能性のある支援</h2>
       <p>災害救助法は応急の住まい・生活が中心です。事業者向けは、別の融資・保証・税・雇用の制度が動くことがあります。いま「必ずもらえる」と書いてあるわけではありません。指定・公募・認定があってから使えるものが多いです。</p>
       <ol class="steps">
@@ -155,6 +184,8 @@
         <li><strong>便乗商法に注意。</strong> 急かして契約させる、「補助金で無料になる」と断言する業者には、消費生活センターへ。</li>
         <li><strong>融資は借り入れです。</strong> 保証や貸付けは返済が前提です。条件は窓口で確認してください。</li>
         <li><strong>市町村の商工課の案内はこれから増えることがあります。</strong> 「千葉県にお住まいの方へ」の市町村検索と、各公式を何度か見に行ってください。</li>
+        <li><strong>証明書の判定に納得できないときは、再調査を頼めることがあります。</strong> 被害の程度は現地調査で決まります。判定が実態と違うと感じたら、市町村の窓口に再調査の依頼ができるか聞いてください。受付の期限がある市町村もあります。</li>
+        <li><strong>保険・共済の請求には期限があります。</strong> 契約ごとに違うので、被害の写真がそろった段階で契約先に期限を確認してください。</li>
       </ul>
       <ul>
         <li><a href="https://www.caa.go.jp/notice/entry/035897/" target="_blank" rel="noopener">災害に便乗した悪質商法に注意</a>（消費者庁） <span class="badge admin">行政</span></li>
@@ -181,6 +212,36 @@
     </p>
     <div data-share></div>
   </footer>
+  <script src="../js/supports.js"></script>
+  <script>
+    // 市町村の事業者向け窓口（kind=business）を supports.json から出す
+    Promise.all([
+      fetch("../data/municipalities.json").then(function (r) { return r.json(); }),
+      fetch("../data/supports.json").then(function (r) { return r.json(); }),
+      fetch("../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
+    ]).then(function (all) {
+      var munis = all[0].concat([{ slug: "pref-chiba", name: "千葉県" }, { slug: "japan", name: "国" }]);
+      var supports = all[1];
+      if (all[2]) SupportsView.setWatch(all[2]);
+      var list = document.getElementById("biz-muni-list");
+      var shown = 0;
+      munis.forEach(function (m) {
+        var items = ((supports.by_slug && supports.by_slug[m.slug]) || []).filter(function (it) {
+          return it.kind === "business";
+        });
+        // renderList は毎回 ul を空にするので、市町村ごとに1件ずつ足す。
+        // このページは市町村をまたいで並べるので、どこの窓口か分かるよう見出しに市町村名を付ける。
+        items.forEach(function (it) {
+          var row = {};
+          for (var k in it) { if (Object.prototype.hasOwnProperty.call(it, k)) row[k] = it[k]; }
+          row.title = m.name + "：" + it.title;
+          list.appendChild(SupportsView.renderItem(row, m.name));
+        });
+        shown += items.length;
+      });
+      if (shown) document.getElementById("biz-muni-card").hidden = false;
+    }).catch(function () { /* 読めなければカードを出さない */ });
+  </script>
   <script src="../js/share.js"></script>
   <script src="../js/report.js"></script>
   <script src="../js/muni-pref.js"></script>

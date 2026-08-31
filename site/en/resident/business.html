@@ -87,6 +87,34 @@
     </div>
 
     <div class="card">
+      <h2>Prefectural Programs Now Running</h2>
+      <p class="meta" id="biz-asof">Summarized from Chiba Prefecture's official announcement as checked by volunteers. Amounts and interest rates are not listed on this site. Always confirm eligibility and terms with the official source and the institution you apply to.</p>
+      <ul>
+        <li>
+          <strong>Prefectural “Safety Net Fund (general category)” loan</strong><br>
+          Small and medium-sized businesses damaged by the August 2026 Chiba heavy rain have been added as eligible borrowers.
+          <strong>A document proving the damage (a damage certificate or equivalent)</strong> is required.
+          <strong>The application period runs from 19 August 2026 to 31 March 2027.</strong>
+          Apply through one of the financial institutions designated by the prefecture (regional banks, shinkin banks, credit cooperatives, city banks, Shoko Chukin Bank and others).
+          <br><a href="https://www.pref.chiba.lg.jp/keishi/press/2026/r8chibagouu.html" target="_blank" rel="noopener">Financing support for small and medium-sized businesses</a> (Chiba Prefecture, Management Support Division) <span class="badge admin">Government</span>
+        </li>
+        <li>
+          <strong>Safety Net Guarantee No. 4 is still at the “designation expected” stage.</strong>
+          In its 18 August announcement the prefecture said national designation was expected for areas covered by the Disaster Relief Act, that a <strong>municipality-certified category</strong> with lower interest than the general category would become available after designation, and that it would announce when applications open.
+          Using it requires <strong>certification by the municipality where your head office is located</strong>. Check the prefectural and municipal official pages.
+          <br><a href="https://www.chusho.meti.go.jp/kinyu/sefu_net_4gou.html" target="_blank" rel="noopener">Safety Net Guarantee No. 4</a> (Small and Medium Enterprise Agency) <span class="badge admin">Government</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card" id="biz-muni-card" hidden>
+      <h2>Municipal Contact Points for Businesses</h2>
+      <p class="meta">Guidance on consultation desks and support measures for businesses published by each municipality. Status and check dates reflect what volunteers saw at that time. Always confirm with the official source.</p>
+      <ul class="muni-support-list" id="biz-muni-list"></ul>
+      <p class="meta"><a href="municipalities.html">Search by municipality</a> (for guidance other than business support)</p>
+    </div>
+
+    <div class="card">
       <h2>Support That May Become Available</h2>
       <p>The Disaster Relief Act mainly covers emergency housing and daily life. Separate financing, guarantee, tax, and employment programs may be activated for businesses. This does not mean that assistance is guaranteed. Many programs can be used only after an official designation, call for applications, or certification.</p>
       <ol class="steps">
@@ -133,6 +161,8 @@
         <li><strong>Watch for disaster-related scams.</strong> Consult a consumer affairs center about contractors who pressure you to sign or insist that a subsidy will make the work free.</li>
         <li><strong>Financing means debt.</strong> Guarantees and loans must be repaid. Confirm the terms with the provider.</li>
         <li><strong>Municipal commerce departments may publish more guidance later.</strong> Recheck the municipality search under “For Chiba Residents” and each official source.</li>
+        <li><strong>You may be able to request a re-inspection if you disagree with the assessment.</strong> The level of damage is decided by an on-site inspection. If the result does not match what you saw, ask your municipal office whether you can request a re-inspection. Some municipalities set a deadline.</li>
+        <li><strong>Insurance and mutual aid claims have deadlines.</strong> They differ by contract, so once your photographs are in order, confirm the deadline with your provider.</li>
       </ul>
       <ul>
         <li><a href="https://www.caa.go.jp/notice/entry/035897/" target="_blank" rel="noopener">Beware of dishonest sales practices exploiting disasters</a> (Consumer Affairs Agency) <span class="badge admin">Government</span></li>
@@ -151,6 +181,37 @@
     <p class="org-links"><a href="https://sites.google.com/view/civictechzenchiba/" target="_blank" rel="noopener">CTZC website</a><a href="https://www.facebook.com/groups/civictechzenchiba/" target="_blank" rel="noopener">Facebook group</a><a href="https://www.facebook.com/p/Civic-Tech-Zen-Chiba-100064346395345/" target="_blank" rel="noopener">Facebook page</a></p>
     <div data-share></div>
   </footer>
+  <script src="../../js/supports.js"></script>
+  <script>
+    // 市町村の事業者向け窓口（kind=business）を supports.json から出す
+    Promise.all([
+      fetch("../../data/municipalities.json").then(function (r) { return r.json(); }),
+      fetch("../../data/supports.json").then(function (r) { return r.json(); }),
+      fetch("../../data/watch.json").then(function (r) { return r.json(); }).catch(function () { return null; })
+    ]).then(function (all) {
+      var munis = all[0].concat([{ slug: "pref-chiba", name: "千葉県" }, { slug: "japan", name: "国" }]);
+      var supports = all[1];
+      if (all[2]) SupportsView.setWatch(all[2]);
+      var list = document.getElementById("biz-muni-list");
+      var shown = 0;
+      munis.forEach(function (m) {
+        var items = ((supports.by_slug && supports.by_slug[m.slug]) || []).filter(function (it) {
+          return it.kind === "business";
+        });
+        if (!items.length) return;
+        // renderList は毎回 ul を空にするので、市町村ごとに1件ずつ足す。
+        // このページは市町村をまたいで並べるので、どこの窓口か分かるよう見出しに市町村名を付ける。
+        items.forEach(function (it) {
+          var row = {};
+          for (var k in it) { if (Object.prototype.hasOwnProperty.call(it, k)) row[k] = it[k]; }
+          row.title = m.name + "：" + it.title;
+          list.appendChild(SupportsView.renderItem(row, m.name));
+        });
+        shown += items.length;
+      });
+      if (shown) document.getElementById("biz-muni-card").hidden = false;
+    }).catch(function () { /* 読めなければカードを出さない */ });
+  </script>
   <script src="../../js/share.js"></script>
   <script src="../../js/report.js"></script>
   <script src="../../js/muni-pref.js"></script>
