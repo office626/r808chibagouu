@@ -8,7 +8,9 @@
 - 変更を検知したページは Internet Archive（Wayback Machine）へ保存を依頼し、スナップショットURLを記録する
   （fire-and-forget。失敗しても処理は続行。1回の実行で最大 ARCHIVE_MAX 件・間隔をあけて直列）
 - events は消さずに月別ログ site/data/watch-log/YYYY-MM.json へも追記する（追記専用。履歴ページが読む）
-- 3時間おきに GitHub Actions から実行する想定。手動: python scripts/watch_pages.py
+- 3時間おきの schedule で GitHub Actions から実行する想定。ただし実際の間隔は
+  GitHub 側の都合で延びる（実測の中央値は約5時間、最大8時間超）。表示の文言は
+  「数時間おき」に合わせてある。手動: python scripts/watch_pages.py
 """
 from __future__ import annotations
 
@@ -269,7 +271,7 @@ def main() -> int:
     by_url = {u: v for u, v in by_url.items() if u in keep}
     events = events[-MAX_EVENTS:]
 
-    # 変化がないときはファイルを書かない（3時間おきのコミットを増やさないため）
+    # 変化がないときはファイルを書かない（定期実行のたびにコミットを増やさないため）
     prev_errors = {(e.get("url"), e.get("error")) for e in state.get("errors", [])}
     now_errors = {(e.get("url"), e.get("error")) for e in errors}
     new_urls = [u for u, e in by_url.items() if e.get("first_seen") == ts]

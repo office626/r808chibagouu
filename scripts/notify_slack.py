@@ -118,7 +118,7 @@ def main() -> int:
         if len(cands) > 10:
             lines.append(f"・ほか{len(cands) - 10}件")
 
-    lines.append(f"\n検知は約3時間おきで、実際の更新は検知より前のことがあります。何が変わったかは公式ページで確認してください。サイト: <{SITE}resident/index.html|最近の更新一覧>")
+    lines.append(f"\n検知は数時間おきで、実際の更新は検知より前のことがあります。何が変わったかは公式ページで確認してください。サイト: <{SITE}resident/index.html|最近の更新一覧>")
     lines.append(f"CSV を直す: <https://github.com/office626/r808chibagouu/edit/main/data/supports.csv|data/supports.csv を編集>（列: slug,kind,title,url,status,checked,deadline,note）。反映は毎朝6:00、急ぎは Actions の Daily collect を手動実行。")
     text = "\n".join(lines)
 
