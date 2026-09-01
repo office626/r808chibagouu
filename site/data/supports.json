@@ -113,9 +113,9 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-24",
-        "deadline": "",
-        "note": ""
+        "checked": "2026-08-27",
+        "deadline": "2026-11-30",
+        "note": "義援金の募集期間は令和8年11月30日まで"
       },
       {
         "kind": "support",
@@ -152,9 +152,9 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-24",
-        "deadline": "2026-08-28",
-        "note": "応募締切あり"
+        "checked": "2026-09-01",
+        "deadline": "2026-09-04",
+        "note": "提出期限は8/28から9/4へ延長。国への協議が発災から30日以内のため"
       },
       {
         "kind": "business",
@@ -605,6 +605,32 @@
         "checked": "2026-08-16",
         "deadline": "",
         "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "令和8年8月千葉豪雨の被災者に対する市営住宅の提供について",
+        "url": "https://www.city.funabashi.lg.jp/machi/juutaku/003/p149418.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "令和8年8月千葉豪雨による住宅の応急修理について",
+        "url": "https://www.city.funabashi.lg.jp/machi/juutaku/005/p149445.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
       }
     ],
     "matsudo": [
@@ -708,9 +734,9 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-23",
+        "checked": "2026-08-27",
         "deadline": "",
-        "note": ""
+        "note": "8/20 に社協が「8月13日の大雨被害に伴うボランティア募集は終了」と掲載。依頼の受付は社協へ確認"
       }
     ],
     "mobara": [
@@ -788,9 +814,9 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-01",
         "deadline": "",
-        "note": ""
+        "note": "仮置場（茂原公園第2駐車場）は8/31で受け入れ終了。自宅前収集は環境保全課へ連絡"
       },
       {
         "kind": "disinfect",
@@ -802,6 +828,19 @@
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
         "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "【令和8年8月千葉県豪雨】災害救助法に基づく住宅の応急修理について",
+        "url": "https://www.city.mobara.chiba.jp/0000009731.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       }
@@ -914,6 +953,45 @@
         "note": ""
       },
       {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "令和8年8月千葉豪雨に伴う下水道使用料の減免について",
+        "url": "https://www.city.togane.chiba.jp/0000014663.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "災害ごみ仮置場を8月31日(月)まで開設",
+        "url": "https://www.city.togane.chiba.jp/0000014678.html",
+        "status": "closed",
+        "status_label": "終了",
+        "status_label_en": "Closed",
+        "checked": "2026-09-01",
+        "deadline": "2026-08-31",
+        "note": "仮置場は8/31で開設終了"
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "床上浸水した家屋等の消毒液配布",
+        "url": "https://www.city.togane.chiba.jp/0000012316.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "water",
         "kind_label": "断水・水道",
         "kind_label_en": "Water supply",
@@ -923,6 +1001,19 @@
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
         "checked": "2026-08-20",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "住宅の応急修理",
+        "url": "https://www.city.togane.chiba.jp/0000014681.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       },
@@ -964,6 +1055,58 @@
         "status_label": "要確認",
         "status_label_en": "Unverified",
         "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害見舞金",
+        "url": "https://www.city.narashino.lg.jp/soshiki/kikikanri/kinkyu/r8813chibagouu/31626.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "災害ごみの収集",
+        "url": "https://www.city.narashino.lg.jp/soshiki/kikikanri/kinkyu/r8813chibagouu/31625.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水住家の消毒",
+        "url": "https://www.city.narashino.lg.jp/soshiki/kikikanri/kinkyu/r8813chibagouu/31624.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "床上浸水等による住宅の応急修理支援",
+        "url": "https://www.city.narashino.lg.jp/soshiki/kikikanri/kinkyu/r8813chibagouu/31670.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       }
@@ -1018,6 +1161,32 @@
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
         "checked": "2026-08-23",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水被害に遭われた一戸建て住宅の床下消毒",
+        "url": "https://www.city.kashiwa.lg.jp/bosaianzen/anshinanzen/disaster/hisaishashien/syodoku.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "water",
+        "kind_label": "断水・水道",
+        "kind_label_en": "Water supply",
+        "title": "令和8年8月千葉豪雨に係る上下水道料金の減免",
+        "url": "https://www.city.kashiwa.lg.jp/ryokin/20231031.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       },
@@ -1141,6 +1310,32 @@
         "checked": "2026-08-16",
         "deadline": "",
         "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "令和8年8月千葉豪雨 災害救助法に基づく住宅の応急修理について",
+        "url": "https://www.city.yachiyo.lg.jp/soshiki/44/84490.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "vc",
+        "kind_label": "ボランティア",
+        "kind_label_en": "Volunteer center",
+        "title": "災害ボランティアセンターについて（8月26日17時更新）",
+        "url": "https://www.city.yachiyo.lg.jp/soshiki/97/84800.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
       }
     ],
     "abiko": [
@@ -1163,10 +1358,10 @@
         "kind_label_en": "Damage certificate",
         "title": "り災証明書・被災証明書・り災届出証明書",
         "url": "https://www.city.abiko.chiba.jp/anshin/bousai/hisaichifukko/risaishomeisho.html",
-        "status": "unknown",
-        "status_label": "要確認",
-        "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-08-27",
         "deadline": "",
         "note": ""
       },
@@ -1195,22 +1390,35 @@
         "checked": "2026-08-16",
         "deadline": "",
         "note": ""
-      }
-    ],
-    "kamagaya": [
+      },
       {
-        "kind": "risai",
-        "kind_label": "罹災証明",
-        "kind_label_en": "Damage certificate",
-        "title": "罹災証明書等の交付",
-        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/hisaishoumeisho.html",
-        "status": "unknown",
-        "status_label": "要確認",
-        "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水時の消毒方法",
+        "url": "https://www.city.abiko.chiba.jp/kurashi/faq/kenkohukushi/shoudoku/abk1000300022.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "災害救助法に基づく住宅の応急修理",
+        "url": "https://www.city.abiko.chiba.jp/shisei/toshiseibi/keikaku/juutakuoukyuusyori.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      }
+    ],
+    "kamagaya": [
       {
         "kind": "risai",
         "kind_label": "罹災証明",
@@ -1249,6 +1457,19 @@
         "checked": "2026-08-16",
         "deadline": "",
         "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "【令和8年8月千葉豪雨】災害救助法に基づく住宅の応急修理について",
+        "url": "https://www.city.kamagaya.chiba.jp/anzen_anshin/bousai/saigai/r808chibahisai/oukyushuri.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
       }
     ],
     "yotsukaido": [
@@ -1279,6 +1500,45 @@
         "note": ""
       },
       {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "令和8年8月千葉豪雨によるこどもルーム保育料の取扱いについて",
+        "url": "https://www.city.yotsukaido.chiba.jp/kosodate/kosodateshien/childroom/roomooame.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "令和8年8月千葉豪雨による保育料の取り扱いについて",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/saigai/r8-8-13rain/hoikuryougenmen.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害見舞金の支給について（事前周知）",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/saigai/r8-8-13rain/saigaimimaikin.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "waste",
         "kind_label": "災害ごみ",
         "kind_label_en": "Disaster waste",
@@ -1288,6 +1548,58 @@
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
         "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "令和8年8月13日からの大雨により家屋等が浸水被害にあわれた方へ（消毒について）",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/bosai/saigai-hassei/shinnsui-higai.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "令和8年8月千葉豪雨で被災した住宅の応急修理に対する支援について",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/saigai/r8-8-13rain/oukyu-shuriR8-jizen.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "令和8年8月千葉豪雨の被災者に対する県営住宅の提供について",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/saigai/r8-8-13rain/R8-8gatsu-ken-jutaku.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "vc",
+        "kind_label": "ボランティア",
+        "kind_label_en": "Volunteer center",
+        "title": "四街道市災害ボランティアセンターを開設しました",
+        "url": "https://www.city.yotsukaido.chiba.jp/kurashi/bohan/saigai/r8-8-13rain/saigaiVC.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       }
@@ -1346,6 +1658,19 @@
         "checked": "2026-08-16",
         "deadline": "",
         "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害援護資金の貸付",
+        "url": "https://www.city.inzai.lg.jp/0000022382.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
       }
     ],
     "shiroi": [
@@ -1372,6 +1697,58 @@
         "status_label": "要確認",
         "status_label_en": "Unverified",
         "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害見舞金を受け取りたい",
+        "url": "https://www.city.shiroi.chiba.jp/kinkyu/r8-8chibagouu/18126.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "災害ごみを捨てたい",
+        "url": "https://www.city.shiroi.chiba.jp/kinkyu/r8-8chibagouu/18136.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水した家屋等を消毒したい",
+        "url": "https://www.city.shiroi.chiba.jp/kinkyu/r8-8chibagouu/18128.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "住宅の応急修理をしたい",
+        "url": "https://www.city.shiroi.chiba.jp/kinkyu/r8-8chibagouu/18200.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       }
@@ -1435,12 +1812,12 @@
         "kind_label_en": "Disaster waste",
         "title": "災害ごみの処理について（令和8年8月13日大雨特別警報に伴う災害情報）",
         "url": "https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008741.html",
-        "status": "open",
-        "status_label": "受付中・掲載中",
-        "status_label_en": "Open / posted",
-        "checked": "2026-08-23",
-        "deadline": "",
-        "note": "移設先へ張り替え"
+        "status": "closed",
+        "status_label": "終了",
+        "status_label_en": "Closed",
+        "checked": "2026-08-27",
+        "deadline": "2026-08-21",
+        "note": "申込期間は8/17〜8/21とページに記載。延長の有無は市に確認"
       },
       {
         "kind": "disinfect",
@@ -1456,17 +1833,17 @@
         "note": "移設先へ張り替え"
       },
       {
-        "kind": "vc",
-        "kind_label": "ボランティア",
-        "kind_label_en": "Volunteer center",
-        "title": "山武市社協ボランティア・市民活動センターによるボランティアの依頼について",
-        "url": "https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008732.html",
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "【令和8年8月13日大雨特別警報に伴う災害情報】被災住宅の応急修理について",
+        "url": "https://www.city.sammu.lg.jp/bousai-syobo/saigai/chibagouu/page008756.html",
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-23",
+        "checked": "2026-09-01",
         "deadline": "",
-        "note": "移設先へ張り替え"
+        "note": ""
       }
     ],
     "oamishirasato": [
@@ -1479,9 +1856,9 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-01",
         "deadline": "",
-        "note": ""
+        "note": "8/30（日）の臨時窓口は終了。通常の受付は継続"
       },
       {
         "kind": "support",
@@ -1603,6 +1980,19 @@
         "note": ""
       },
       {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "令和8年8月千葉豪雨被災者に対する各種支援制度について",
+        "url": "https://www.town.kujukuri.chiba.jp/0000009074.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
         "kind": "business",
         "kind_label": "事業者向け",
         "kind_label_en": "For businesses",
@@ -1625,6 +2015,32 @@
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
         "checked": "2026-08-25",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "water",
+        "kind_label": "断水・水道",
+        "kind_label_en": "Water supply",
+        "title": "【山武郡市広域水道企業団】「令和8年8月千葉豪雨」による被害を受けた方の水道料金の一部減免について",
+        "url": "https://www.town.kujukuri.chiba.jp/0000009077.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "housing",
+        "kind_label": "住まい",
+        "kind_label_en": "Housing",
+        "title": "【令和8年8月千葉豪雨】災害救助法に基づく住宅の応急修理について",
+        "url": "https://www.town.kujukuri.chiba.jp/0000009067.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       }
@@ -1659,17 +2075,30 @@
         "note": ""
       },
       {
-        "kind": "vc",
-        "kind_label": "ボランティア",
-        "kind_label_en": "Volunteer center",
-        "title": "「令和8年8月千葉豪雨」に伴う、災害ボランティアセンターについて",
-        "url": "https://www.town.nagara.chiba.jp/soshiki/21/18256.html",
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "令和8年8月千葉豪雨による町設置型浄化槽使用料及び農業集落排水施設使用料の減免措置について",
+        "url": "https://www.town.nagara.chiba.jp/soshiki/5/18263.html",
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-20",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
+      },
+      {
+        "kind": "vc",
+        "kind_label": "ボランティア",
+        "kind_label_en": "Volunteer center",
+        "title": "災害ボランティアセンターについて（長柄町社会福祉協議会）",
+        "url": "https://www.nagara-shakyo.jp/",
+        "status": "unknown",
+        "status_label": "要確認",
+        "status_label_en": "Unverified",
+        "checked": "2026-08-27",
+        "deadline": "",
+        "note": "町のページは削除。町は災害VCの情報を社協サイトで案内していた"
       }
     ],
     "nagareyama": [
@@ -1696,6 +2125,58 @@
         "status_label": "要確認",
         "status_label_en": "Unverified",
         "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害見舞金制度について（住家）",
+        "url": "https://www.city.nagareyama.chiba.jp/life/1001061/1001066/1001076.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "business",
+        "kind_label": "事業者向け",
+        "kind_label_en": "For businesses",
+        "title": "災害見舞金制度について（事業者）",
+        "url": "https://www.city.nagareyama.chiba.jp/business/1006712/1055469.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": "事業者向け"
+      },
+      {
+        "kind": "waste",
+        "kind_label": "災害ごみ",
+        "kind_label_en": "Disaster waste",
+        "title": "令和8年8月千葉県豪雨の被害により発生した災害ごみについて",
+        "url": "https://www.city.nagareyama.chiba.jp/life/1002401/1002564/1055378/index.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水した家屋等の消毒について",
+        "url": "https://www.city.nagareyama.chiba.jp/life/1002584/1002623/1055360.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       }
@@ -1752,6 +2233,45 @@
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
         "checked": "2026-08-16",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "災害援護資金貸付のご案内",
+        "url": "https://www.city.tateyama.chiba.jp/shafuku/page000001_00124.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "support",
+        "kind_label": "支援策",
+        "kind_label_en": "Support",
+        "title": "令和8年千葉豪雨の被害に伴う下水道使用料の減免について",
+        "url": "https://www.city.tateyama.chiba.jp/gesui/page100038.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水した家屋を消毒される方へ（消毒方法について）",
+        "url": "https://www.city.tateyama.chiba.jp/kenkou/page100075.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
         "deadline": "",
         "note": ""
       },
@@ -1945,6 +2465,19 @@
         "checked": "2026-08-16",
         "deadline": "",
         "note": ""
+      },
+      {
+        "kind": "disinfect",
+        "kind_label": "消毒",
+        "kind_label_en": "Disinfection",
+        "title": "浸水被害発生時の消毒方法",
+        "url": "https://www.city.tomisato.lg.jp/0000005328.html",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-01",
+        "deadline": "",
+        "note": ""
       }
     ],
     "minamiboso": [
@@ -1972,9 +2505,9 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-08-27",
         "deadline": "",
-        "note": ""
+        "note": "今回の大雨専用ページではない。ページ内の申請期限は令和元年台風のもの"
       }
     ],
     "katori": [
@@ -2065,17 +2598,17 @@
         "note": ""
       },
       {
-        "kind": "support",
-        "kind_label": "支援策",
-        "kind_label_en": "Support",
-        "title": "災害情報・被災者支援",
-        "url": "https://www.town.kozaki.chiba.jp/kurashi/living_bosai/bosai/saigai.html",
+        "kind": "home",
+        "kind_label": "公式",
+        "kind_label_en": "Official site",
+        "title": "生活・環境・防災（町公式）",
+        "url": "https://www.town.kozaki.chiba.jp/kurashi/living_bosai/index.html",
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-08-27",
         "deadline": "",
-        "note": ""
+        "note": "今回の大雨専用のページは町が出していない（8/27時点）。従来の災害ページは令和元年台風の内容"
       }
     ],
     "tako": [
