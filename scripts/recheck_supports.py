@@ -4,8 +4,11 @@
 このスクリプトは status を書き換えない。判断は人がする。
 自動で「終了」を付けると、本文にある別の災害の話や過去の期限を拾って
 誤って閉じてしまう（実例：我孫子市の東日本大震災の記述、匝瑳市の2019年の期限）。
-そこで、判断に使える証拠（更新日・終了らしき文とその前後・期限らしき日付）を
-そのまま出して、人が読んで決められる形にする。
+そこで、判断に使える証拠をそのまま出して、人が読んで決められる形にする。
+
+一番効くのは watch.json の last_changed。watch_pages.py が数時間おきに本文の
+ハッシュを見ているので、ページ側の「更新日」表記より確かに「前回の確認以降に
+本文が動いたか」が分かる。動いていない行は読み直す必要がない。
 
 使い方:
     python3 scripts/recheck_supports.py --stale-before 2026-08-20
@@ -30,6 +33,7 @@ from watch_pages import CTX, cut_chrome, to_lines  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "supports.csv"
+WATCH_PATH = ROOT / "site" / "data" / "watch.json"
 UA = site_config.user_agent("recheck")
 
 # 受付が終わったことを示しそうな言い回し。これだけでは決められないので前後を一緒に出す。
@@ -44,6 +48,14 @@ DEADLINE = re.compile(
     r"(まで|必着|消印有効|をもって|が期限|が締切)"
 )
 UPDATED = re.compile(r"(更新日|掲載日|公開日)\s*[:：]?\s*([^\s<]{4,24})")
+
+
+def watch_index() -> dict:
+    """watch.json の by_url。数時間おきに本文の変化を見ているので、
+    ページ側の「更新日」より確かな「最後に本文が変わった日」が取れる。"""
+    if not WATCH_PATH.exists():
+        return {}
+    return (json.loads(WATCH_PATH.read_text(encoding="utf-8")) or {}).get("by_url", {})
 
 
 def fetch(url: str) -> tuple[int, str, str]:
@@ -75,9 +87,12 @@ def context(text: str, m: re.Match, width: int = 60) -> str:
     return text[max(0, m.start() - width): m.end() + width].strip()
 
 
-def inspect(row: dict) -> dict:
+def inspect(row: dict, watch: dict) -> dict:
     status, final, html = fetch(row["url"])
+    entry = watch.get(row["url"]) or {}
     out = {
+        "last_changed": (entry.get("last_changed") or "")[:10],
+        "watched_since": (entry.get("first_seen") or "")[:10],
         "slug": row["slug"],
         "kind": row["kind"],
         "title_csv": row["title"],
@@ -126,12 +141,24 @@ def verdict(r: dict) -> str:
         return "要確認:取得できず"
     if r["closed_hits"]:
         return "要確認:終了らしき記述"
+    # 監視が始まってから本文が変わっていれば、前回の確認以降に何かが動いている。
+    if r["last_changed"] and r["last_changed"] > r["checked_csv"]:
+        return "要確認:本文が変わった"
     if r["deadline_hits"]:
         return "要確認:期限の記述"
-    return "変化なしに見える"
+    if r["watched_since"]:
+        return "監視中ずっと同じ"
+    return "変化を追えていない"
 
 
-ORDER = {"要確認:取得できず": 0, "要確認:終了らしき記述": 1, "要確認:期限の記述": 2, "変化なしに見える": 3}
+ORDER = {
+    "要確認:取得できず": 0,
+    "要確認:終了らしき記述": 1,
+    "要確認:本文が変わった": 2,
+    "要確認:期限の記述": 3,
+    "変化を追えていない": 4,
+    "監視中ずっと同じ": 5,
+}
 
 
 def main() -> int:
@@ -154,10 +181,12 @@ def main() -> int:
     if args.limit:
         rows = rows[: args.limit]
 
-    print(f"# 見直しの材料 {date.today().isoformat()}  対象 {len(rows)} 行", file=sys.stderr)
+    watch = watch_index()
+    print(f"# 見直しの材料 {date.today().isoformat()}  対象 {len(rows)} 行"
+          f"（watch.json {len(watch)} 件を参照）", file=sys.stderr)
     results = []
     for i, row in enumerate(rows, 1):
-        r = inspect(row)
+        r = inspect(row, watch)
         r["verdict"] = verdict(r)
         results.append(r)
         print(f"  {i}/{len(rows)} {r['slug']:<14} {r['verdict']}", file=sys.stderr)
@@ -177,8 +206,12 @@ def main() -> int:
             print(f"- 転送先: {r['final_url']}")
         if r["title_web"]:
             print(f"- ページ題: {r['title_web']}")
+        if r["last_changed"]:
+            print(f"- 本文が最後に変わった日（自動監視）: {r['last_changed']}（監視開始 {r['watched_since']}）")
+        elif r["watched_since"]:
+            print(f"- 監視開始（{r['watched_since']}）から本文は変わっていない")
         if r["updated"]:
-            print(f"- {r['updated']}")
+            print(f"- ページ表記の{r['updated']}")
         for c in r["closed_hits"]:
             print(f"- 終了？: …{c}…")
         for c in r["deadline_hits"]:
