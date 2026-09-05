@@ -149,12 +149,12 @@
         "kind_label_en": "Support",
         "title": "社会福祉施設等の災害復旧費に対する補助",
         "url": "https://www.pref.chiba.lg.jp/koufuku/shisetsumuke/saigaihojyo.html",
-        "status": "open",
-        "status_label": "受付中・掲載中",
-        "status_label_en": "Open / posted",
-        "checked": "2026-09-01",
+        "status": "closed",
+        "status_label": "終了",
+        "status_label_en": "Closed",
+        "checked": "2026-09-05",
         "deadline": "2026-09-04",
-        "note": "提出期限は8/28から9/4へ延長。国への協議が発災から30日以内のため"
+        "note": "提出期限9/4（8/28から延長）を過ぎた。県ページは9/2更新のまま終了と書いていないので、協議中の施設は県へ確認"
       },
       {
         "kind": "business",
