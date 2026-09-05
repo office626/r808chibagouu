@@ -312,7 +312,7 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -411,14 +411,14 @@
         "kind": "waste",
         "kind_label": "災害ごみ",
         "kind_label_en": "Disaster waste",
-        "title": "大雨の被害により発生した災害ごみの出し方",
+        "title": "災害ごみの出し方・仮置き場のご案内",
         "url": "https://www.city.chiba.jp/kankyo/junkan/haikibutsu/junbichu-saigaigomi.html",
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
-        "note": ""
+        "note": "仮置き場はレベル3警報で一時閉鎖、レベル4で終日閉鎖"
       },
       {
         "kind": "disinfect",
@@ -465,12 +465,12 @@
         "kind_label_en": "Volunteer center",
         "title": "千葉市災害ボランティアセンターについて",
         "url": "https://www.city.chiba.jp/hokenfukushi/kenkofukushi/chiikifukushi/saigaivolunteer.html",
-        "status": "unknown",
-        "status_label": "要確認",
-        "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "status": "open",
+        "status_label": "受付中・掲載中",
+        "status_label_en": "Open / posted",
+        "checked": "2026-09-06",
         "deadline": "",
-        "note": ""
+        "note": "センターは開設中。天候により活動を取りやめる日がある（9/4〜6は雨予報で中止）"
       }
     ],
     "ichikawa": [
@@ -483,7 +483,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -734,7 +734,7 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-27",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": "8/20 に社協が「8月13日の大雨被害に伴うボランティア募集は終了」と掲載。依頼の受付は社協へ確認"
       }
@@ -749,7 +749,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -814,7 +814,7 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-09-01",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": "仮置場（茂原公園第2駐車場）は8/31で受け入れ終了。自宅前収集は環境保全課へ連絡"
       },
@@ -850,12 +850,12 @@
         "kind": "hub",
         "kind_label": "大雨情報まとめ",
         "kind_label_en": "Heavy-rain information hub",
-        "title": "8月13日大雨警報について（市の総合ページ）",
+        "title": "令和8年8月千葉豪雨について（市の総合ページ）",
         "url": "https://www.city.sakura.lg.jp/kinkyu/22247.html",
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -868,7 +868,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -969,12 +969,12 @@
         "kind": "waste",
         "kind_label": "災害ごみ",
         "kind_label_en": "Disaster waste",
-        "title": "災害ごみ仮置場を8月31日(月)まで開設",
+        "title": "災害ごみ仮置場の設置は終了しました",
         "url": "https://www.city.togane.chiba.jp/0000014678.html",
         "status": "closed",
         "status_label": "終了",
         "status_label_en": "Closed",
-        "checked": "2026-09-01",
+        "checked": "2026-09-06",
         "deadline": "2026-08-31",
         "note": "仮置場は8/31で開設終了"
       },
@@ -1054,7 +1054,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -1134,7 +1134,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -1227,7 +1227,7 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -1240,7 +1240,7 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -1441,7 +1441,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -1627,7 +1627,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -1655,7 +1655,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -1696,7 +1696,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -1763,7 +1763,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -1962,7 +1962,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -2191,7 +2191,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2232,7 +2232,7 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -2299,7 +2299,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2344,7 +2344,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2359,7 +2359,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2374,7 +2374,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2419,7 +2419,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2442,12 +2442,12 @@
         "kind": "risai",
         "kind_label": "罹災証明",
         "kind_label_en": "Damage certificate",
-        "title": "罹災証明書及び被災届出証明書の発行",
+        "title": "罹災証明書及び被災届出受理証の発行",
         "url": "https://www.city.sodegaura.lg.jp/soshiki/chiiki/risaisyoumeisyo.html",
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2462,7 +2462,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -2490,7 +2490,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2520,7 +2520,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -2548,7 +2548,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2563,7 +2563,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2578,7 +2578,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2593,7 +2593,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -2621,7 +2621,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       },
@@ -2634,7 +2634,7 @@
         "status": "open",
         "status_label": "受付中・掲載中",
         "status_label_en": "Open / posted",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2649,7 +2649,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2664,7 +2664,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2679,7 +2679,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2694,7 +2694,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2709,7 +2709,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2724,7 +2724,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2739,7 +2739,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2754,7 +2754,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2769,7 +2769,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
@@ -2784,7 +2784,7 @@
         "status": "unknown",
         "status_label": "要確認",
         "status_label_en": "Unverified",
-        "checked": "2026-08-16",
+        "checked": "2026-09-06",
         "deadline": "",
         "note": ""
       }
