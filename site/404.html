@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>移転しました — 令和8年8月千葉豪雨 復興支援ポータル</title>
+  <link rel="canonical" href="https://civictechzenchiba.github.io/chibagouu/">
+  <meta http-equiv="refresh" content="3; url=https://civictechzenchiba.github.io/chibagouu/">
+  <style>
+    body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; padding: 48px 20px; color: #1b2a3a; background: #f5f7fa; }
+    main { max-width: 640px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 32px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    h1 { font-size: 1.4rem; margin: 0 0 16px; }
+    a { color: #0b5cad; font-weight: 600; word-break: break-all; }
+    p { line-height: 1.7; }
+    .en { color: #4a5a6a; border-top: 1px solid #e3e8ee; margin-top: 24px; padding-top: 16px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>このサイトは移転しました</h1>
+    <p>令和8年8月千葉豪雨 復興支援ポータルは、CTZC（CivicTechZenChiba）のサイトへ移りました。3 秒後に自動で移動します。</p>
+    <p><a id="to" href="https://civictechzenchiba.github.io/chibagouu/">https://civictechzenchiba.github.io/chibagouu/</a></p>
+    <p class="en">This site has moved to <a href="https://civictechzenchiba.github.io/chibagouu/en/">https://civictechzenchiba.github.io/chibagouu/en/</a>. You will be redirected automatically.</p>
+  </main>
+  <script>
+    // 旧 URL の path と query をそのまま新サイトへ引き継ぐ（市町村ページの ?slug= や英語版の /en/ を保つ）
+    (function () {
+      var rest = location.pathname.replace(/^\/r808chibagouu\/?/, "");
+      var to = "https://civictechzenchiba.github.io/chibagouu/" + rest + location.search + location.hash;
+      document.getElementById("to").href = to;
+      setTimeout(function () { location.replace(to); }, 1500);
+    })();
+  </script>
+</body>
+</html>

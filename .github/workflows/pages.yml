@@ -1,5 +1,8 @@
 name: Deploy GitHub Pages
 
+# 移転後の転送ページだけを公開する。収集・更新検知・Wayback・Slack 通知は
+# civictechzenchiba/chibagouu 側で動いている。
+
 on:
   push:
     branches: [main]
@@ -22,10 +25,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify Japanese and English mirrors
-        run: python scripts/check_bilingual.py
-      - name: Build bilingual sitemap
-        run: python scripts/build_sitemap.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
